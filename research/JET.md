@@ -49,10 +49,9 @@ This is the ChatGPT approach, This is the thing no one else is doing in AUTOML.
 
 ### class levels 
 The class or labels of dataset optimal algorithm will be hierarchical.<br>
-Classifier           Regression       Clustering<br>
-    |                     |               |<br>
-ensemble                linear         cluster<br>
-    |                     |               |<br>
-random-forest        linearregression   kmeans<br>
-
+---
+classifier: [ ensemble, random-forest]
+regressor: [ linear, linear-regression]
+clusterer: [ cluster, kmeans ]
+---
 ### Areas that need Work 
