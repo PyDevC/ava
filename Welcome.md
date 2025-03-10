@@ -7,7 +7,7 @@ tags: []
 Hey! having great day still I guess. Grow more.
 
 Here's a list of developers to talk[[developers]]
-Here's some keywords you should look at [[ml-keyword]]
+I have also done some chatgpt research so look this [[chatgpt-discussion]]
 
 ## Naming convension
 

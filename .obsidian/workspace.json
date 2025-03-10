@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "e26abd91a8578e6e",
+    "type": "split",
+    "children": [
+      {
+        "id": "791f87a7b858750b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "294a1a415ffe05c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "machine-learning/mathematical-function/softmax-function.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "softmax-function"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "327eed51cd7f5564",
+    "type": "split",
+    "children": [
+      {
+        "id": "98556c43546db7e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6801e6a76c076f77",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "faceec30cbbed64a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "770ceef4fa75bbf9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "936101b823933358",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7e9ac8364e6448e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "505b08c5125fb3a7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "people.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for people"
+            }
+          },
+          {
+            "id": "b4562626015b4a32",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "59a2ace02702d371",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "41a003178ab9b1b0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "machine-learning/mathematical-function/softmax-function.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of softmax-function"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "294a1a415ffe05c6",
+  "lastOpenFiles": [
+    "research/JET.md~",
+    "machine-learning/mathematical-function/logistic-function.md",
+    "machine-learning/mathematical-function/logit-function.md",
+    "machine-learning/mathematical-function/softmax-function.md",
+    "research/JET.md",
+    "machine-learning/mathematical-function/softmax-function.md~",
+    "machine-learning/mathematical-function",
+    "chatgpt-discussion/jet-mathematical-modeling.md~",
+    "machine-learning/automl/meta-learning.md~",
+    "machine-learning/automl/h2o-automl.md~",
+    "machine-learning/ml-keyword.md",
+    "developers.md~",
+    "Welcome.md~",
+    "machine-learning/descision-trees.md",
+    "machine-learning/base-esitmator.md",
+    "machine-learning/LightGBM.md",
+    "machine-learning/XGBoost.md",
+    "machine-learning/ranking.md",
+    "machine-learning/classification.md",
+    "machine-learning/tabular-regression.md",
+    "machine-learning/Gradient-boosting.md",
+    "machine-learning/linear-function.md",
+    "machine-learning/affine-function.md",
+    "machine-learning/injectivity.md",
+    "machine-learning/lipsschitz-function.md",
+    "machine-learning/Universal-approximation-function.md",
+    "machine-learning/weighted-linear-regression.md",
+    "chatgpt-discussion/jet-mathematical-modeling.md",
+    "machine-learning/automl/few-shot-learning.md",
+    "machine-learning/automl/metric-learning.md",
+    "machine-learning/automl/model-agnostic-meta-learning.md",
+    "machine-learning/automl/model-agnostic-learning.md",
+    "machine-learning/automl/meta-learning.md",
+    "machine-learning/automl/h2o-automl",
+    "research/prompting-methods.md~"
+  ]
+}

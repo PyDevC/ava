@@ -1,0 +1,11 @@
+{
+  "promptDelete": false,
+  "defaultViewMode": "preview",
+  "showLineNumber": true,
+  "autoPairBrackets": false,
+  "autoPairMarkdown": false,
+  "vimMode": true,
+  "trashOption": "local",
+  "alwaysUpdateLinks": false,
+  "showUnsupportedFiles": true
+}
