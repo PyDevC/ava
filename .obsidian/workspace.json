@@ -164,6 +164,8 @@
   },
   "active": "294a1a415ffe05c6",
   "lastOpenFiles": [
+    "machine-learning/loss-function.md",
+    "machine-learning/mathematical-function/indicator-function.md",
     "research/JET.md~",
     "research/JET.md",
     "machine-learning/cost-function.md",
@@ -196,7 +198,6 @@
     "machine-learning/Universal-approximation-function.md",
     "machine-learning/weighted-linear-regression.md",
     "chatgpt-discussion/jet-mathematical-modeling.md",
-    "machine-learning/automl/few-shot-learning.md",
     "machine-learning/automl/h2o-automl",
     "research/prompting-methods.md~"
   ]

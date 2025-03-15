@@ -4,4 +4,5 @@ aliases: []
 tags: []
 ---
 
-pyproject.toml
+# pyproject.toml
+whole article available on (pyproject.toml)[https://packaging.python.org/en/latest/guides/writing-pyproject-toml/]
