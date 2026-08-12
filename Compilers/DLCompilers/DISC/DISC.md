@@ -1,0 +1,9 @@
+# DISC: Dyanmic Shape Compiler
+
+DISC is an end-to-end dynamic shape compiler build on MLIR infrastructure, it natively supports optimizations for dynamic shapes by introducing first-class feature of shapes in IR. It produces shapes calculation logic for runtime at compile-time which reduces overheads of shape calculations by CPU. It provides opportunities for host-device co-optimization, solves kernel fusion problem with shape propagation.
+
+Major problem with dynamic shapes is lack of fusion, and shape specific optimizations such as proper tilings [check if it's correct?]. The dynamic shape usually occurs in small sized computations such as element-wise and reduction, and most of the large computations are offloaded to computation libraries. The existing kernel fusion engines can only generate kernels with static shape info inferred during compilation time [check if it's true now?], this can lead to the problem of recompilation for every new input. Due to these problems XLA does not support dynamic shapes [check if it's true still].
+
+There are some workaround solutions that can prevent too much lose of performance from dyanmic shapes, we can group static shape ops and dynamic shape ops where we only optimize static shape ops and leave dynamic shape ops as it is, these leads to optimization opportunity loss. Another workaround is using padding and slicing that will only recompile if input is larger than padded tensor, but this wastes the resources and could even lead to negative optimizations.
+
+DISC solves the problem by encforcing dynamic shapes in it's High level IR, it's adding shapes support on top of HLO dialect from MLIR. It produces runtime and compiles it with model binary to allow for host-device co-optimization. It generate efficient fusion kernels without full shape info. While it also supports various static shape optimizations for the operations where shape is known, for better performance.
