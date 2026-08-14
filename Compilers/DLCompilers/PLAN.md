@@ -11,16 +11,21 @@ Cover the **deep learning compiler landscape**: what each compiler does, how it'
 - **TensorRT/** — NVIDIA's: Parser → Builder → Engine → Runtime, precision/fusion, optimization profiles.
 - **DISC/** — BladeDISC: graph optimizations + kernel-level, XLA heritage, dynamic shapes.
 - **TorchInductor/** — PyTorch's default `torch.compile` backend: Dynamo → FX → loop-level IR → Triton/C++.
+- **TVM** — the historical baseline: Relay + TE + AutoTVM/Ansor.
+- **XLA/StableHLO** — Google's compiler and the shared frontend IR.
+- **ONNX Runtime** — the executor + fusion layer for ONNX models.
+- **OpenVINO/TFLite** — Intel and mobile/embedded deployment stacks.
+- **Comparison-Matrix** — frontends, IRs, backends, dynamic shapes, open-source, all in one table.
 
 ## What to add next
 
-- [ ] **TVM** — the historical baseline: Relay (graph IR) + TE (tensor expression) + AutoTVM/Ansor. Worth one note just to see what Inductor's ideas came from.
-- [ ] **XLA / StableHLO / JAX** — Google's compiler; StableHLO is the shared frontend IR now (IREE consumes it too).
-- [ ] **ONNX Runtime** — the graph-optimization story for ONNX models; how it differs from full compilers (it's more of an executor + fusion layer).
-- [ ] **OpenVINO** (Intel), **TFLite/XNNPACK** (mobile) — quick notes for completeness on the deployment side.
-- [ ] **A comparison matrix** — one note comparing: frontends, IRs, backends, dynamic-shape support, open-source? That comparison is the actual payoff of this directory.
-- [ ] **MLIR linalg/tosa** — the common lowering target many of these compilers share (see [[../MLIR]] plan).
-- [ ] **Per-compiler deep dives** to extend existing notes:
+- [x] **TVM** — the historical baseline: Relay (graph IR) + TE (tensor expression) + AutoTVM/Ansor. Worth one note just to see what Inductor's ideas came from.
+- [x] **XLA / StableHLO / JAX** — Google's compiler; StableHLO is the shared frontend IR now (IREE consumes it too).
+- [x] **ONNX Runtime** — the graph-optimization story for ONNX models; how it differs from full compilers (it's more of an executor + fusion layer).
+- [x] **OpenVINO** (Intel), **TFLite/XNNPACK** (mobile) — quick notes for completeness on the deployment side.
+- [x] **A comparison matrix** — one note comparing: frontends, IRs, backends, dynamic-shape support, open-source? That comparison is the actual payoff of this directory.
+- [ ] **MLIR linalg/tosa** — the common lowering target many of these compilers share (see [[../MLIR]] plan) → covered in [[../MLIR/Dialects/linalg]] and [[../MLIR/Dialects/tosa-stablehlo]]
+- [ ] **Per-compiler deep dives** to extend existing notes (as I use each one):
   - [ ] IREE: walk a real `.vmfb` compile+run, the HAL dispatch flow.
   - [ ] TensorRT: working through a real engine build with a graph (tensorrt onnx → engine), precision (FP16/INT8) calibration.
   - [ ] DISC: the graph/kernel split and how dynamic shapes are handled.

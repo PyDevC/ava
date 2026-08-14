@@ -9,26 +9,31 @@ Understand PyTorch's **compiler stack** (`torch.compile`): how TorchDynamo trace
 - **TorchDynamo/GraphBreaks.md** — what causes graph breaks, how to find/reduce them.
 - **TorchDynamo/DebugWithTorchDynamo.md** — TORCH_LOGS, explain, config flags, minifiers.
 - **TorchInductor/BehaviourOfTorchInductorWithDifferentThingsInstalled.md** — how inductor's codegen choice depends on installed libs (Triton, cudagraphs, oneDNN...).
+- **Dynamo internals**: [[TorchDynamo/Trace-Lifecycle]], [[TorchDynamo/VariableTracker]], [[TorchDynamo/Guards]], [[TorchDynamo/SymPy-Symbolic-Shapes]]
+- **AOTAutograd** — how the compiled region gets its backward graph.
+- **FX graph as IR** — the graph Dynamo emits and backends consume.
+- **Inductor internals**: [[TorchInductor/Inductor-IR]], [[TorchInductor/Fusion-Scheduler]]
+- **Integration points**: [[Integration-Points]] (modes, backends, allow_in_graph/disable)
 
 ## What to add next
 
-- [ ] **Dynamo internals**:
-  - [ ] The trace lifecycle: frame → bytecode walk → FX graph (link to [[../../Programming/python/core/bytecode]])
-  - [ ] `VariableTracker` — how Python objects are modeled while tracing
-  - [ ] **Guards** — the shape/type guards Dynamo emits, and recompilation (why `dynamo.config` recompile flags matter)
-  - [ ] `torch._dynamo.explain` deep dive (extends DebugWithTorchDynamo)
-- [ ] **AOTAutograd** — how the compiled region gets its backward graph (the piece between Dynamo and Inductor that I haven't covered).
-- [ ] **FX graph** as IR — its op set, where Dynamo's output lives (see [[../../Compilers/IR]] taxonomy: graph IR vs CFG).
-- [ ] **Inductor internals**:
-  - [ ] The loop-level IR (`torch._inductor.ir`): `TritonTemplateBuffer`, `Pointwise`/`Reduction` ops
-  - [ ] The fusion scheduler (`can_fuse`, `score_fusion`) — when ops fuse and why
-  - [ ] SymPy symbolic shapes + guards (extends the existing notes)
-  - [ ] Reading actual generated Triton/C++ code from a real model
-- [ ] **Integration points**:
-  - [ ] `torch.compile` modes (`default`, `reduce-overhead`, `max-autotune`) — what each changes
-  - [ ] `torch.compile` + custom ops / extensions (see [[../../Programming/python/core/conditioning-on-a-python-subclass]])
-  - [ ] cudagraphs interaction (extends BehaviourOfTorchInductor...)
-  - [ ] Backend options (`torch.compile(backend=...)`, `torch._dynamo.list_backends`)
+- [x] **Dynamo internals**:
+  - [x] The trace lifecycle: frame → bytecode walk → FX graph (link to [[../../Programming/python/core/bytecode]])
+  - [x] `VariableTracker` — how Python objects are modeled while tracing
+  - [x] **Guards** — the shape/type guards Dynamo emits, and recompilation (why `dynamo.config` recompile flags matter)
+  - [x] `torch._dynamo.explain` deep dive (extends DebugWithTorchDynamo) → see [[TorchDynamo/Trace-Lifecycle]] + [[TorchDynamo/Guards]]
+- [x] **AOTAutograd** — how the compiled region gets its backward graph (the piece between Dynamo and Inductor that I haven't covered).
+- [x] **FX graph** as IR — its op set, where Dynamo's output lives (see [[../../Compilers/IR]] taxonomy: graph IR vs CFG).
+- [x] **Inductor internals**:
+  - [x] The loop-level IR (`torch._inductor.ir`): `TritonTemplateBuffer`, `Pointwise`/`Reduction` ops
+  - [x] The fusion scheduler (`can_fuse`, `score_fusion`) — when ops fuse and why
+  - [x] SymPy symbolic shapes + guards (extends the existing notes)
+  - [ ] Reading actual generated Triton/C++ code from a real model (hands-on; see [[TorchInductor/Inductor-IR]] for the logging entry points)
+- [x] **Integration points**:
+  - [x] `torch.compile` modes (`default`, `reduce-overhead`, `max-autotune`) — what each changes
+  - [x] `torch.compile` + custom ops / extensions (see [[../../Programming/python/core/conditioning-on-a-python-subclass]])
+  - [x] cudagraphs interaction (extends BehaviourOfTorchInductor...)
+  - [x] Backend options (`torch.compile(backend=...)`, `torch._dynamo.list_backends`)
 
 ## Prioritization
 
