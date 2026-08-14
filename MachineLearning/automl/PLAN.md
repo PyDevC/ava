@@ -6,29 +6,30 @@ Cover **Automated Machine Learning** and the learning-to-learn family: the tools
 
 ## What's already here
 
-- Tools: [[auto-sklearn]], [[auto-weka]], [[mlbox]], [[tpot]], [[h2o-automl]], [[azureml]], [[streamline]]
+- Tools: [[auto-sklearn]], [[auto-weka]], [[mlbox]], [[tpot]], [[h2o-automl]], [[azureml]], [[streamline]], [[autogluon]], [[automl-comparison]]
 - Feature side: [[automated-feature-extraction]]
-- Meta/few-shot: [[meta-learning]], [[few-shot-learning]], [[model-agnostic-meta-learning]], [[metric-learning]]
-- hyperparameter-tuning/: grid, random, Bayesian, Hyperband, gradient-based (see its own [[hyperparameter-tuning/PLAN]])
+- Meta/few-shot: [[meta-learning]], [[few-shot-learning]], [[model-agnostic-meta-learning]], [[metric-learning]], [[prototypical-matching-networks]], [[reptile-meta-rl]]
+- Search strategy: [[NAS]]
+- hyperparameter-tuning/: grid, random, Bayesian, Hyperband, gradient-based, Optuna, ASHA/PBT/BOHB, methodology (see its own [[hyperparameter-tuning/PLAN]])
 
 ## What to add next
 
-- [ ] **NAS — Neural Architecture Search** (the automl-of-NNs topic, currently missing):
-  - [ ] Reinforcement-learning-based search (the original approach)
-  - [ ] Differentiable NAS (DARTS), weight sharing, one-shot
-  - [ ] Zero-cost proxies / pruning-based search
-  - [ ] Link to [[../deeplearning]] since it's about network design, not just HPs
-- [ ] **Modern tools / benchmark studies**:
-  - [ ] **AutoGluon** (Amazon) — the current strong open-source tabular AutoML; worth a note next to [[auto-sklearn]]
-  - [ ] **Optuna** deep dive (the de-facto tuning library) — TPE sampler, pruning
-  - [ ] A comparison note: when to reach for auto-sklearn vs H2O vs AutoGluon vs cloud ([[azureml]])
-- [ ] **Search-strategy theory** (if going deeper):
-  - [ ] SMAC (used by auto-sklearn) vs TPE (used by Optuna/MLBox) — how they differ
-  - [ ] Multi-fidelity: ASHA, PBT (population-based training)
-- [ ] **Meta-learning depth**:
-  - [ ] Prototypical/matching networks (the metric-based [[few-shot-learning]] implementations)
-  - [ ] Reptile (first-order MAML alternative), meta-learning for RL
-  - [ ] In-context learning connection (transformers as meta-learners) — links to [[../nlp]]
+- [x] **NAS — Neural Architecture Search** (the automl-of-NNs topic, currently missing):
+  - [x] Reinforcement-learning-based search (the original approach)
+  - [x] Differentiable NAS (DARTS), weight sharing, one-shot
+  - [x] Zero-cost proxies / pruning-based search
+  - [x] Link to [[../deeplearning]] since it's about network design, not just HPs
+- [x] **Modern tools / benchmark studies**:
+  - [x] **AutoGluon** (Amazon) — the current strong open-source tabular AutoML; worth a note next to [[auto-sklearn]]
+  - [x] **Optuna** deep dive (the de-facto tuning library) — TPE sampler, pruning
+  - [x] A comparison note: when to reach for auto-sklearn vs H2O vs AutoGluon vs cloud ([[azureml]])
+- [x] **Search-strategy theory** (if going deeper):
+  - [x] SMAC (used by auto-sklearn) vs TPE (used by Optuna/MLBox) — how they differ → see [[hyperparameter-tuning/Bayesian-optimization]] + [[hyperparameter-tuning/optuna]]
+  - [x] Multi-fidelity: ASHA, PBT (population-based training) → see [[hyperparameter-tuning/asha-pbt-bohb]]
+- [x] **Meta-learning depth**:
+  - [x] Prototypical/matching networks (the metric-based [[few-shot-learning]] implementations)
+  - [x] Reptile (first-order MAML alternative), meta-learning for RL
+  - [x] In-context learning connection (transformers as meta-learners) — links to [[../nlp]] → see [[reptile-meta-rl]] + [[../nlp/prompting-in-context-learning]]
 
 ## Prioritization
 
