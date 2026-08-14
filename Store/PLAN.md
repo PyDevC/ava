@@ -1,0 +1,29 @@
+# Store — Plan
+
+## Goal of this directory
+
+A **catch-all / reference** directory for material that doesn't fit the structured notes: hardware references, curated links, saved resources, and pointers for future reading. Less "explain the concept" (that's [[../MachineLearning]] and [[../Compilers]]) and more "store the reference so I can find it".
+
+## What's already here
+
+- [[deep-learning-hardware]] — the hardware landscape: GPUs (tensor cores), dedicated accelerators (TPU, Inferentia, NNP), and how they execute DL models.
+
+## What to add next
+
+- [ ] **Hardware references** (extends the one existing note):
+  - [ ] A GPU spec catalog: NVIDIA (Volta→Hopper/Blackwell) — tensor core generations, memory, NVLink
+  - [ ] AMD (CDNA/RDNA) + Intel + cloud custom chips (TPU v4+, Inferentia, Trainium)
+  - [ ] Why bandwidth > compute for many workloads (roofline mental model)
+- [ ] **Paper / resource library**:
+  - [ ] The papers I've read or want to read (with one-line summaries and links) — starts with [[../MachineLearning/deeplearning/attention-is-all-you-need]]
+  - [ ] Conference/reading-list pointers (NeurIPS/ICML/ICLR, ISCA/MICRO/HotChips for hardware)
+- [ ] **Bookmarks / tooling**:
+  - [ ] Tools worth installing (profilers, compilers, autotuners) — links only
+  - [ ] Repos worth studying (PyTorch, Triton, IREE, MLIR) — see [[../OpenSource/how-to-explore-large-repos]]
+- [ ] **Naming / vocabulary reference** — the acronyms that keep appearing (XLA, HAL, HSA, DDP, FSDP...) — a glossary index linking into the real notes.
+
+## Prioritization
+
+1. **Paper library** — highest value-to-effort for keeping my reading organized.
+2. **GPU spec catalog** — completes [[deep-learning-hardware]] and supports [[../Roadmaps/gpu-architect]].
+3. **Glossary index** — cheap, and turns the whole repo into a usable reference.
