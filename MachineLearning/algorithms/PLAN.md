@@ -8,30 +8,33 @@ Cover the **core algorithms and modeling building blocks**: how the main ML algo
 
 - Boosting family: [[Gradient-boosting]], [[XGBoost]], [[LightGBM]], [[base-esitmator]]
 - Trees: [[descision-trees]]
-- Linear-ish: [[weighted-linear-regression]], [[tabular-regression]], [[cost-function]], [[loss-function]]
-- Tasks: [[classification]], [[ranking]]
+- Linear-ish: [[weighted-linear-regression]], [[tabular-regression]], [[cost-function]], [[loss-function]], [[regularization]], [[logistic-regression]]
+- Tasks: [[classification]], [[ranking]], [[imbalanced-classification]]
+- Ensembles: [[bagging-random-forests]], [[stacking]]
 - NN: [[neural-network]], [[transfer-learning]], [[Universal-approximation-function]], [[injectivity]]
-- Unsupervised: [[SOM]]
+- Unsupervised: [[SOM]], [[k-means]], [[PCA]]
+- Lazy/similarity: [[k-nearest-neighbors]], [[SVM]], [[naive-bayes]]
+- Concepts: [[bias-variance-tradeoff]], [[cross-validation]]
 
 ## What to add next
 
-- [ ] **Missing classic algorithms**:
-  - [ ] Logistic regression (the classification workhorse — currently only implied via loss/softmax notes)
-  - [ ] k-Nearest Neighbors (lazy learning, curse of dimensionality)
-  - [ ] Support Vector Machines (max margin, kernels, dual)
-  - [ ] Naive Bayes (generative model, independence assumption)
-  - [ ] k-means + hierarchical clustering (only SOM covers unsupervised now)
-  - [ ] PCA / dimensionality reduction (see [[injectivity]] for the info-preservation framing)
-- [ ] **Model behavior concepts**:
-  - [ ] Bias-variance tradeoff, underfitting/overfitting
-  - [ ] Regularization: L1/L2/elastic net (extends [[cost-function]]'s penalty mention)
-  - [ ] Cross-validation and the train/val/test split discipline (extends [[classification]]'s eval section)
-  - [ ] Imbalanced classification (resampling, class weights, PR-vs-ROC)
-- [ ] **Ensembles beyond boosting**:
-  - [ ] Bagging + random forests (the diversity story vs boosting)
-  - [ ] Stacking / voting (mentioned in [[base-esitmator]])
-- [ ] **Interpretability** (grows in importance):
-  - [ ] Feature importance (tree-based), SHAP/permutation — ties to [[ranking]] and tabular work
+- [x] **Missing classic algorithms**:
+  - [x] Logistic regression (the classification workhorse — currently only implied via loss/softmax notes)
+  - [x] k-Nearest Neighbors (lazy learning, curse of dimensionality)
+  - [x] Support Vector Machines (max margin, kernels, dual)
+  - [x] Naive Bayes (generative model, independence assumption)
+  - [x] k-means + hierarchical clustering (only SOM covers unsupervised now)
+  - [x] PCA / dimensionality reduction (see [[injectivity]] for the info-preservation framing)
+- [x] **Model behavior concepts**:
+  - [x] Bias-variance tradeoff, underfitting/overfitting
+  - [x] Regularization: L1/L2/elastic net (extends [[cost-function]]'s penalty mention)
+  - [x] Cross-validation and the train/val/test split discipline (extends [[classification]]'s eval section)
+  - [x] Imbalanced classification (resampling, class weights, PR-vs-ROC)
+- [x] **Ensembles beyond boosting**:
+  - [x] Bagging + random forests (the diversity story vs boosting)
+  - [x] Stacking / voting (mentioned in [[base-esitmator]])
+- [x] **Interpretability** (grows in importance):
+  - [x] Feature importance (tree-based), SHAP/permutation — ties to [[ranking]] and tabular work
 
 ## Prioritization
 

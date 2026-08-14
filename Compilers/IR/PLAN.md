@@ -8,21 +8,28 @@ Understand **intermediate representations**: why compilers use them, the theory 
 
 - **SSA/Dominators.md** — dominance, immediate dominators, the dominance-frontier algorithm.
 - **SSA/PruneSSA.md** — minimal vs pruned SSA, liveness-based phi insertion.
+- **Liveness.md** — live-in/live-out dataflow equations, backward flow, uses (regalloc, pruning).
+- **SsaConstruction.md** — the full algorithm: phi placement via dominance frontiers + renaming.
+- **PhiElimination.md** — parallel copies, the swap problem, cycle resolution, coalescing.
+- **DeadCodeElimination.md** — use-count and liveness-based DCE, the side-effect rule.
+- **CommonSubexpressionElimination.md** — hash-based CSE, GVN, the dominance availability check.
+- **CopyPropagation.md** — name substitution on def-use chains; why SSA makes it free.
+- **RegisterAllocation.md** — graph coloring, spills, linear scan, why SSA → chordal graphs.
 
 ## What to add next
 
-- [ ] **SSA construction** — the full algorithm: phi placement using dominance frontiers, then renaming (the piece both current notes set up but don't complete).
-- [ ] **Phi elimination** — copy insertion, `PHI` → parallel copies, how backends get rid of phis (needed before register allocation).
-- [ ] **Liveness analysis** — live-in/live-out, dataflow equations; the analysis PruneSSA refers to. This is the #1 missing topic.
-- [ ] **Register allocation** — basic graph-coloring approach and why SSA makes it nicer (chordal graphs / linear scan).
+- [x] **SSA construction** — the full algorithm: phi placement using dominance frontiers, then renaming (the piece both current notes set up but don't complete).
+- [x] **Phi elimination** — copy insertion, `PHI` → parallel copies, how backends get rid of phis (needed before register allocation).
+- [x] **Liveness analysis** — live-in/live-out, dataflow equations; the analysis PruneSSA refers to. This is the #1 missing topic.
+- [x] **Register allocation** — basic graph-coloring approach and why SSA makes it nicer (chordal graphs / linear scan).
 - [ ] **IR taxonomy**:
   - [ ] CFG (basic-block) IRs vs **graph IRs** (like FX in PyTorch) — when each is used
   - [ ] High-level vs low-level IR (MLIR has both in one framework — [[../MLIR]])
   - [ ] Stack machines (JVM/CPython bytecode — see [[../../Programming/python/core/bytecode]]) vs register machines
-- [ ] **Optimization examples on SSA**:
-  - [ ] Dead code elimination (DCE)
-  - [ ] Common subexpression elimination (CSE)
-  - [ ] Copy propagation and why SSA makes it trivial
+- [x] **Optimization examples on SSA**:
+  - [x] Dead code elimination (DCE)
+  - [x] Common subexpression elimination (CSE)
+  - [x] Copy propagation and why SSA makes it trivial
 - [ ] **Static single information (SSI)** / other IR forms — optional, once the basics are solid.
 
 ## Prioritization

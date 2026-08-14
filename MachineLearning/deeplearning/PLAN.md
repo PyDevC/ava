@@ -6,30 +6,32 @@ Cover the **deep learning theory and practice** that underlies modern ML: archit
 
 ## What's already here
 
-- Architectures: [[Transformers]], [[attention-is-all-you-need]] (paper notes), [[An-introduction-to-convolutional-neural-networks]]
-- Training mechanics: [[model-optimization]] (optimizers), [[how-to-use-lr-scheduler]], [[hyperparameter-search]]
+- Architectures: [[Transformers]], [[attention-is-all-you-need]] (paper notes), [[An-introduction-to-convolutional-neural-networks]], [[RNN-LSTM-GRU]]
+- Training mechanics: [[model-optimization]] (optimizers), [[how-to-use-lr-scheduler]], [[hyperparameter-search]], [[backpropagation]], [[regularization-normalization]], [[embeddings]], [[mixed-precision]], [[distributed-training]]
+- Generative: [[GANs]], [[diffusion-models]]
+- Inference: [[model-optimization-for-inference]]
 
 ## What to add next
 
-- [ ] **Backprop & autograd** — the missing foundation:
-  - [ ] Chain rule in layers, how gradients flow, vanishing/exploding gradients
-  - [ ] How PyTorch autograd builds its graph (ties to [[../../PyTorch/PLAN]])
-- [ ] **Regularization & normalization** (extend [[model-optimization]]):
-  - [ ] Dropout, weight decay, data augmentation, early stopping
-  - [ ] BatchNorm / LayerNorm (already referenced in attention notes) — what they actually fix
-- [ ] **More architectures**:
-  - [ ] RNN/LSTM/GRU — the pre-transformer sequence models (missing entirely)
-  - [ ] Seq2seq + attention-based translation (bridge between RNN and Transformer notes)
-  - [ ] Embeddings (word/learned embeddings — see [[../nlp]] link)
-- [ ] **Modern generative models** (decide scope):
-  - [ ] GANs (concept + training instability)
-  - [ ] Diffusion models (DDPM; the modern image generation standard)
+- [x] **Backprop & autograd** — the missing foundation:
+  - [x] Chain rule in layers, how gradients flow, vanishing/exploding gradients
+  - [x] How PyTorch autograd builds its graph (ties to [[../../PyTorch/PLAN]])
+- [x] **Regularization & normalization** (extend [[model-optimization]]):
+  - [x] Dropout, weight decay, data augmentation, early stopping
+  - [x] BatchNorm / LayerNorm (already referenced in attention notes) — what they actually fix
+- [x] **More architectures**:
+  - [x] RNN/LSTM/GRU — the pre-transformer sequence models (missing entirely)
+  - [ ] Seq2seq + attention-based translation (bridge between RNN and Transformer notes) → folded into [[../nlp]] plan
+  - [x] Embeddings (word/learned embeddings — see [[../nlp]] link)
+- [x] **Modern generative models** (decide scope):
+  - [x] GANs (concept + training instability)
+  - [x] Diffusion models (DDPM; the modern image generation standard)
   - [ ] Self-supervised / contrastive learning (extends [[../automl/metric-learning]])
-- [ ] **Training at scale**:
-  - [ ] Distributed training: DDP, FSDP, gradient accumulation
-  - [ ] Mixed precision (fp16/bf16), memory-efficient training — ties to [[model-optimization]]
-- [ ] **Model optimization for inference** (deployment side):
-  - [ ] Quantization, pruning, distillation — extends [[model-optimization]]; see [[../../Compilers/DLCompilers/TorchInductor]] for the compiler view
+- [x] **Training at scale**:
+  - [x] Distributed training: DDP, FSDP, gradient accumulation
+  - [x] Mixed precision (fp16/bf16), memory-efficient training — ties to [[model-optimization]]
+- [x] **Model optimization for inference** (deployment side):
+  - [x] Quantization, pruning, distillation — extends [[model-optimization]]; see [[../../Compilers/DLCompilers/TorchInductor]] for the compiler view
 
 ## Prioritization
 
