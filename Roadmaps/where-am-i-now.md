@@ -26,14 +26,14 @@ The payoff of the roadmaps: map what **this repo already covers** onto the roles
 ## ML roles
 
 **ML engineer** ([ml-engineer](ml-engineer.md))
-- [x] Algorithms + math toolbox → [PLAN](../MachineLearning/algorithms/PLAN.md), [PLAN](../MachineLearning/mathematical-function/PLAN.md)
+- [x] Algorithms + math toolbox → [algorithms](../MachineLearning/algorithms/), [mathematical-function](../MachineLearning/mathematical-function/)
 - [x] Deep learning: backprop, optimizers, normalization → [PLAN](../MachineLearning/deeplearning/PLAN.md)
-- [x] AutoML/tuning → [PLAN](../MachineLearning/automl/PLAN.md)
-- [x] NLP/CV applications → [PLAN](../MachineLearning/nlp/PLAN.md), [PLAN](../MachineLearning/computer-vision/PLAN.md)
+- [x] AutoML/tuning → [automl](../MachineLearning/automl/)
+- [x] NLP/CV applications → [nlp](../MachineLearning/nlp/), [PLAN](../MachineLearning/computer-vision/PLAN.md)
 - [ ] Ship a complete trained+deployed model to production (hands-on gap)
 
 **LLM engineer** ([llm-engineer](llm-engineer.md))
-- [x] RAG, prompting, agents, fine-tuning theory → [PLAN](../MachineLearning/nlp/PLAN.md)
+- [x] RAG, prompting, agents, fine-tuning theory → [nlp](../MachineLearning/nlp/)
 - [x] Eval methodology → [GPT-evaluation](../MachineLearning/nlp/GPT-evaluation.md)
 - [ ] Build a production RAG/agent system end-to-end (hands-on gap)
 
@@ -50,7 +50,7 @@ The payoff of the roadmaps: map what **this repo already covers** onto the roles
 - [ ] Write and benchmark HIP/CUDA kernels (hands-on gap)
 
 **MLOps / backend** ([mlops-engineer](mlops-engineer.md), [backend-infra-engineer](backend-infra-engineer.md))
-- [x] Build/deploy/CI fundamentals → [PLAN](../Programming/PLAN.md), [PLAN](../OpenSource/PLAN.md)
+- [x] Build/deploy/CI fundamentals → [PLAN](../Programming/PLAN.md), [OpenSource](../OpenSource/)
 - [ ] Operating a real serving stack (Triton/K8s) (hands-on gap)
 
 ## The gaps, summed up

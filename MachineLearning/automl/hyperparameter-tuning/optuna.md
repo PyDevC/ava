@@ -48,5 +48,5 @@ for epoch in range(epochs):
 
 - [Bayesian-optimization](Bayesian-optimization.md) — the TPE theory.
 - [Hyperband](Hyperband.md) / [ASHA](asha-pbt-bohb.md) — the pruning machinery.
-- [PLAN](../PLAN.md) — where Optuna sits vs AutoGluon/auto-sklearn.
+- [PLAN](../../PLAN.md) — where Optuna sits vs AutoGluon/auto-sklearn.
 - [cross-validation](../../algorithms/cross-validation.md) — the eval protocol inside each trial.

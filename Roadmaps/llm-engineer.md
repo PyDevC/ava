@@ -1,6 +1,6 @@
 # LLM / NLP engineer
 
-The modern high-demand role: building products on large language models — RAG, agents, fine-tuning, and evaluation. Sits between the modeling world ([nlp](../MachineLearning/nlp/PLAN.md)) and production engineering.
+The modern high-demand role: building products on large language models — RAG, agents, fine-tuning, and evaluation. Sits between the modeling world ([nlp](../MachineLearning/nlp/)) and production engineering.
 
 ## Core skills
 
@@ -25,7 +25,7 @@ Build/extend an LLM feature: design the retrieval pipeline, craft prompts, wire 
 
 ## How this repo maps
 
-- [PLAN](../MachineLearning/nlp/PLAN.md) — the whole application stack is written out here.
+- [nlp](../MachineLearning/nlp/) — the whole application stack is written out here.
 - [Transformers](../MachineLearning/deeplearning/Transformers.md) — the architecture underneath.
 - [Comparison-Matrix](../Compilers/DLCompilers/Comparison-Matrix.md) — the serving/compile choice.
 - [asyncio](../Programming/python/asyncio.md) — the agent-loop concurrency.

@@ -26,4 +26,4 @@ Data analysts turn raw data into **insight for decisions**: dashboards, reports,
 ## Related
 
 - [ml-engineer](ml-engineer.md) — the natural next step if you want to move into modeling.
-- [algorithms](../MachineLearning/algorithms/PLAN.md) — descriptive stats and simple models are where analysts touch ML.
+- [algorithms](../MachineLearning/algorithms/) — descriptive stats and simple models are where analysts touch ML.

@@ -5,6 +5,7 @@ Python's "magic" is a **protocol system**: special methods (`__dunder__`) let us
 ## Dunders and operator overloading
 
 - `__add__`, `__eq__`, `__getitem__`, `__call__`, `__enter__`/`__exit__` (context managers), `__iter__`/`__next__` (iterators), `__len__`, `__contains__`, `__repr__`/`__str__` — each *protocol* is triggered by syntax (`+`, `in`, `for`, `with`, `[]`, `()`, `repr()`).
+- **Generators** (`yield`/`yield from`) implement the iterator protocol *procedurally*: a function containing `yield` becomes an iterator object whose `__next__` resumes after the last yield. `yield from` delegates to a sub-iterator. Every generator is an iterator, but not every iterator is a generator (the protocol is what matters — anything with `__iter__`/`__next__` works in a `for`). Generators are also how `async` functions and `contextlib.contextmanager` are built.
 - `__init_subclass__` / `__set_name__` — class-creation hooks: a base class can run code *whenever it's subclassed*, and a descriptor can learn its attribute name when the class is created. The PyTorch `nn.Module` machinery (parameter registration on subclass) uses exactly these.
 - The precedence rule: **reflected** (`r`) versions (`int.__add__` when the left operand is a subclass), **data descriptor > instance dict > non-data descriptor** — get this wrong and attributes silently shadow (the classic `property` + `__dict__` confusion).
 

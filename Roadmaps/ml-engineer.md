@@ -19,7 +19,7 @@ At its heart the ML Engineer **productionizes models**: trains them, makes them 
 ## Core skills checklist
 
 - Python + software engineering habits; git, tests, Docker.
-- Classic ML (sklearn, trees — [algorithms](../MachineLearning/algorithms/PLAN.md)) **and** deep learning (PyTorch — [Explore](../PyTorch/Explore.md)).
+- Classic ML (sklearn, trees — [algorithms](../MachineLearning/algorithms/)) **and** deep learning (PyTorch — [Explore](../PyTorch/Explore.md)).
 - Training infrastructure: GPUs, distributed training (DDP/FSDP), experiment tracking.
 - Serving: REST/GRPC endpoints, batching, GPU inference optimization.
 - Evaluation: proper metrics, holdout discipline, A/B testing.
@@ -28,7 +28,7 @@ At its heart the ML Engineer **productionizes models**: trains them, makes them 
 ## Roadmap to get there
 
 1. Python + data manipulation (pandas/numpy).
-2. Classic ML course + sklearn projects (see [algorithms](../MachineLearning/algorithms/PLAN.md)).
+2. Classic ML course + sklearn projects (see [algorithms](../MachineLearning/algorithms/)).
 3. Deep learning in PyTorch (Transformers, CNNs).
 4. ML production course: Docker, FastAPI serving, MLflow.
 5. Optimization: `torch.compile`, quantization, profiling.

@@ -21,8 +21,8 @@ Cover the **deep learning theory and practice** that underlies modern ML: archit
   - [x] BatchNorm / LayerNorm (already referenced in attention notes) — what they actually fix
 - [x] **More architectures**:
   - [x] RNN/LSTM/GRU — the pre-transformer sequence models (missing entirely)
-  - [ ] Seq2seq + attention-based translation (bridge between RNN and Transformer notes) → folded into [nlp](../nlp/PLAN.md) plan
-  - [x] Embeddings (word/learned embeddings — see [nlp](../nlp/PLAN.md) link)
+  - [x] Seq2seq + attention-based translation (bridge between RNN and Transformer notes) → folded into [nlp](../nlp/) plan
+  - [x] Embeddings (word/learned embeddings — see [nlp](../nlp/) link)
 - [x] **Modern generative models** (decide scope):
   - [x] GANs (concept + training instability)
   - [x] Diffusion models (DDPM; the modern image generation standard)

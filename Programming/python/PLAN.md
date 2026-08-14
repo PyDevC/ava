@@ -6,7 +6,7 @@ The **Python language area** of the knowledge base. Currently contains only `cor
 
 ## What's here
 
-- [core](core/PLAN.md) — Python internals: bytecode, typechecking, subclass conditioning (see [PLAN](core/PLAN.md)).
+- [core](core/) — Python internals: bytecode, typechecking, subclass conditioning (see [PLAN](core/)).
 - [packaging](packaging.md) — pip/pyproject/uv, wheels, virtualenvs.
 - [asyncio](asyncio.md) — the concurrency model beyond threads.
 
@@ -15,4 +15,4 @@ The **Python language area** of the knowledge base. Currently contains only `cor
 - [x] Packaging: pip/pyproject/uv, wheels, virtualenvs — how a Python env actually works
 - [x] `asyncio` — the concurrency model beyond threads (GIL note in `core`)
 - [ ] Common ecosystem tooling: linters (ruff), formatters, test runners (pytest)
-- [ ] (C++/other languages would be new sibling sub-directories, per [PLAN](../PLAN.md))
+- [x] (C++/other languages would be new sibling sub-directories, per [PLAN](../PLAN.md))

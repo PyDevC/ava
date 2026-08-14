@@ -32,7 +32,7 @@ For most sequence tasks, **Transformers replaced RNNs** (parallelizable, long-ra
 
 - **Streaming/online** settings (speech, sensor data) where you can't attend to the future.
 - Efficient decoding on tiny devices.
-- History: seq2seq with attention (see [nlp](../nlp/PLAN.md) plan) was the bridge RNN→Transformer.
+- History: seq2seq with attention (see [nlp](../nlp/) plan) was the bridge RNN→Transformer.
 
 ## Related
 

@@ -20,7 +20,7 @@ A **catch-all / reference** directory for material that doesn't fit the structur
   - [x] Why bandwidth > compute for many workloads (roofline mental model)
 - [x] **Paper / resource library**:
   - [x] The papers I've read or want to read (with one-line summaries and links) — starts with [attention-is-all-you-need](../MachineLearning/deeplearning/attention-is-all-you-need.md)
-  - [ ] Conference/reading-list pointers (NeurIPS/ICML/ICLR, ISCA/MICRO/HotChips for hardware) → started in [paper-library](paper-library.md)
+  - [x] Conference/reading-list pointers (NeurIPS/ICML/ICLR, ISCA/MICRO/HotChips for hardware) → started in [paper-library](paper-library.md)
 - [ ] **Bookmarks / tooling**:
   - [ ] Tools worth installing (profilers, compilers, autotuners) — links only
   - [ ] Repos worth studying (PyTorch, Triton, IREE, MLIR) — see [how-to-explore-large-repos](../OpenSource/how-to-explore-large-repos.md)

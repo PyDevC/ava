@@ -6,7 +6,7 @@ Organize **programming-language knowledge**, one sub-directory per language/area
 
 ## What's already here
 
-- **python/core/** — Python internals: [bytecode](python/core/bytecode.md), [typechecking](python/core/typechecking.md), [conditioning-on-a-python-subclass](python/core/conditioning-on-a-python-subclass.md), plus the execution model, data model, C API, and performance notes (see its own [PLAN](python/core/PLAN.md)).
+- **python/core/** — Python internals: [bytecode](python/core/bytecode.md), [typechecking](python/core/typechecking.md), [conditioning-on-a-python-subclass](python/core/conditioning-on-a-python-subclass.md), plus the execution model, data model, C API, and performance notes (see its own [PLAN](python/core/)).
 - **python/** — [packaging](python/packaging.md), [asyncio](python/asyncio.md) (see [PLAN](python/PLAN.md)).
 - **cpp/** — C++ memory model, smart pointers, templates/STL, debugging, CMake (see [PLAN](cpp/PLAN.md)).
 
@@ -21,7 +21,7 @@ Organize **programming-language knowledge**, one sub-directory per language/area
   - [x] GIL and threading vs multiprocessing (ties to PyTorch DataLoader perf)
   - [x] Memory model: refcounting, GC, `weakref` (a natural companion note)
 - [ ] **Bash/shell** (day-to-day tooling) — a small `shell/` section.
-- [ ] **Version control beyond basics** — interactive rebase, bisect, worktrees, submodules (useful for OSS work; see [OpenSource](../OpenSource/PLAN.md)).
+- [ ] **Version control beyond basics** — interactive rebase, bisect, worktrees, submodules (useful for OSS work; see [OpenSource](../OpenSource/)).
 
 ## Prioritization
 

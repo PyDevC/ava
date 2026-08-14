@@ -19,5 +19,5 @@ Notes on **SSA (Static Single Assignment) form** and its supporting analyses —
 - [x] Phi elimination (parallel copies, coalescing)
 - [x] DCE/CSE on SSA — concrete examples
 - [x] Register allocation (graph coloring / linear scan) and why SSA helps
-- [ ] Copy propagation on SSA — the trivial case SSA makes free
+- [x] Copy propagation on SSA — the trivial case SSA makes free (see [CopyPropagation](../CopyPropagation.md))
 - [ ] IR taxonomy note — CFG vs graph IRs, stack vs register machines (parent plan)

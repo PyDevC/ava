@@ -1,6 +1,6 @@
 # AutoML tools comparison
 
-When do you reach for auto-sklearn vs H2O vs AutoGluon vs cloud AutoML? This is the decision guide for the tool notes in [PLAN](PLAN.md) ([auto-sklearn](auto-sklearn.md), [h2o-automl](h2o-automl.md), [tpot](tpot.md), [autogluon](autogluon.md), [azureml](azureml.md)).
+When do you reach for auto-sklearn vs H2O vs AutoGluon vs cloud AutoML? This is the decision guide for the tool notes in [PLAN](../PLAN.md) ([auto-sklearn](auto-sklearn.md), [h2o-automl](h2o-automl.md), [tpot](tpot.md), [autogluon](autogluon.md), [azureml](azureml.md)).
 
 ## The map
 
@@ -29,6 +29,6 @@ When do you reach for auto-sklearn vs H2O vs AutoGluon vs cloud AutoML? This is 
 ## Related
 
 - [autogluon](autogluon.md) — the modern standout.
-- [PLAN](hyperparameter-tuning/PLAN.md) — the algorithms these tools run.
+- [hyperparameter-tuning](hyperparameter-tuning/) — the algorithms these tools run.
 - [stacking](../algorithms/stacking.md) — the mechanism behind the wins.
 - [azureml](azureml.md) — the cloud option.

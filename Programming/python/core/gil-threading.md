@@ -19,7 +19,7 @@ CPython's memory model (refcounting, see [python-memory](python-memory.md)) is n
 | Use for | I/O-bound, waiting, coordinating | CPU-bound, heavy compute |
 
 - **Practical hybrid**: threads for I/O/queue-worker orchestration; processes for the actual CPU work. The GIL release in numpy/torch kernels means *many* PyTorch workloads can use threads fine — the kernel runs without the GIL; only the Python glue is serialized.
-- **3.13 free-threading**: a build option removing the GIL (`--disable-gil`/`free-threaded`). Same language, but mutable-shared-state code needs real synchronization now — the "GIL gives you safety" era is ending gradually (see the plan's note in [PLAN](PLAN.md)).
+- **3.13 free-threading**: a build option removing the GIL (`--disable-gil`/`free-threaded`). Same language, but mutable-shared-state code needs real synchronization now — the "GIL gives you safety" era is ending gradually (see the plan's note in [PLAN](../../PLAN.md)).
 
 ## The DataLoader connection
 

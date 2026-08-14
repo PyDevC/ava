@@ -1,6 +1,6 @@
 # newBrain — Index
 
-The map of the whole knowledge base. Each top-level directory has its own `PLAN.md` (the roadmap for that subtree); this file is the overview of what exists and where to start.
+The map of the whole knowledge base. Completed subtrees have their notes under each directory and their `PLAN.md` removed once done; open ones keep a `PLAN.md` roadmap. This file is the overview of what exists and where to start.
 
 ## Contents
 
@@ -154,7 +154,7 @@ Reference material that spans the rest.
 
 ## Tips for using this KB
 
-- **Each directory's `PLAN.md`** is that subtree's roadmap — notes already written vs to-do.
+- **Each directory's `PLAN.md`** is that subtree's roadmap — notes already written vs to-do. Completed subtrees drop the file entirely.
 - **Links are plain markdown** — `name → path/to/note.md` — so everything works on GitHub and any markdown viewer.
 - **Start broad, then deep**: `Roadmaps/where-am-i-now.md` → `Compilers/DLCompilers/Comparison-Matrix.md` (or `MachineLearning/automl/automl-comparison.md`) → the individual notes.
 - **`TODO.md`** at the root tracks the original completion checklist.

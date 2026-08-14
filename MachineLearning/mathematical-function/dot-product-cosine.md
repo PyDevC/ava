@@ -16,7 +16,7 @@ cos(a,b) = (a·b) / (‖a‖‖b‖)
 
 - Normalizes away magnitude: it's the *direction* similarity, in [-1, 1].
 - **L2-normalize the vectors first**, then cosine = plain dot product (see [norms](norms.md)).
-- The standard similarity for embeddings — words, documents, retrieved chunks (see [metric-learning](../automl/metric-learning.md), [nlp](../nlp/PLAN.md) RAG notes).
+- The standard similarity for embeddings — words, documents, retrieved chunks (see [metric-learning](../automl/metric-learning.md), [nlp](../nlp/) RAG notes).
 
 ## Dot product vs cosine — when each
 

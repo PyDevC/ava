@@ -18,10 +18,10 @@ A **career map** for the roles I'm interested in (compilers, frameworks, ML, har
   - [x] MLOps engineer (the "deployment half" that [ml-engineer](ml-engineer.md) touches)
   - [x] Backend/infra engineer (the general-SWE baseline underneath everything)
   - [x] Model optimization engineer (quantization/pruning/distillation specialist — spans ML and compilers)
-  - [x] NLP engineer / LLM engineer (modern and in-demand; builds on [nlp](../MachineLearning/nlp/PLAN.md))
+  - [x] NLP engineer / LLM engineer (modern and in-demand; builds on [nlp](../MachineLearning/nlp/))
 - [x] **Cross-cutting additions**:
   - [x] A **"where I am now"** mapping note — which boxes in each roadmap my current notes already tick (e.g. compilers ✓, GPU hardware ✗). This is the real payoff.
-  - [ ] Skills matrix: which repo directories feed each role (link-heavy index note) → largely covered by [where-am-i-now](where-am-i-now.md)
+  - [x] Skills matrix: which repo directories feed each role (link-heavy index note) → largely covered by [where-am-i-now](where-am-i-now.md)
   - [ ] Interview prep notes per role (systems design, ML design, coding)
 - [ ] **Depth per existing role** (as I learn):
   - [ ] [ai-compiler-engineer](ai-compiler-engineer.md) — add a concrete "project ladder" (build a dialect → write a pass → contribute to IREE/Inductor)

@@ -24,9 +24,9 @@ Document the **hestreg hand-gesture-recognition project** and the CV knowledge n
   - [x] Segmentation: U-Net, semantic vs instance (relevant to the "hand segmentation" module)
   - [x] Pose/landmark estimation (MediaPipe, the 21-point hand model) — deep dive
   - [x] Data augmentation for images (rotate/flip/hue) — practical recipes
-  - [ ] Model deployment on edge/low-latency (MobileNet, quantization) — ties to [deeplearning](../deeplearning/PLAN.md) inference notes → covered in [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md)
+  - [x] Model deployment on edge/low-latency (MobileNet, quantization) — ties to [deeplearning](../deeplearning/PLAN.md) inference notes → covered in [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md)
 - [ ] **Pipeline details**:
-  - [ ] Background removal / segmentation methods comparison (thresholding vs model-based) → covered in [segmentation](segmentation.md)
+  - [x] Background removal / segmentation methods comparison (thresholding vs model-based) → covered in [segmentation](segmentation.md)
   - [ ] Real-time processing: frame rate, batching, threading (extends [hestreg](hestreg.md)'s session notes)
 
 ## Prioritization

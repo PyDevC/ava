@@ -20,7 +20,7 @@ Measure a model's baseline, pick the optimization (usually: compile first → FP
 
 1. **ML fundamentals**: the training side ([PLAN](../MachineLearning/deeplearning/PLAN.md)) — you must know what the model does before you shrink it.
 2. **The compiler stack**: [PLAN](../Compilers/DLCompilers/PLAN.md) — the tooling is where the job happens.
-3. **Numerical precision**: mixed precision + quantization theory ([PLAN](../MachineLearning/mathematical-function/PLAN.md)).
+3. **Numerical precision**: mixed precision + quantization theory ([mathematical-function](../MachineLearning/mathematical-function/)).
 4. **Hardware + measurement**: profiling and the hardware memory model.
 
 ## How this repo maps

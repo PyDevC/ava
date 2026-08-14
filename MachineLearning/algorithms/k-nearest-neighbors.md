@@ -4,7 +4,7 @@ k-NN is the simplest classifier/regressor: **no training at all**. To predict a 
 
 ## The algorithm
 
-1. Compute distance from the query to every training point (usually Euclidean — see the L2 norm in [PLAN](../mathematical-function/PLAN.md)).
+1. Compute distance from the query to every training point (usually Euclidean — see the L2 norm in [mathematical-function](../mathematical-function/)).
 2. Take the `k` closest.
 3. Classify by majority vote / average.
 
@@ -24,7 +24,7 @@ k-NN is the simplest classifier/regressor: **no training at all**. To predict a 
 ## When to use it
 
 - Small, low-dimensional datasets where you want a strong baseline with zero training.
-- **Similarity-based retrieval** — the modern survival of k-NN: nearest-neighbor search in learned embedding spaces (see [metric-learning](../automl/metric-learning.md) and [nlp](../nlp/PLAN.md) RAG notes). The "k" in RAG retrieval is k-NN over embeddings.
+- **Similarity-based retrieval** — the modern survival of k-NN: nearest-neighbor search in learned embedding spaces (see [metric-learning](../automl/metric-learning.md) and [nlp](../nlp/) RAG notes). The "k" in RAG retrieval is k-NN over embeddings.
 
 ## Related
 

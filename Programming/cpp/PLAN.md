@@ -18,7 +18,7 @@ The **C++ language area** — the foundations for compiler, GPU, and framework-e
 - [x] Build systems: CMake basics (extends [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md)) → [cpp-cmake](cpp-cmake.md)
 - [x] Debugging: gdb/lldb, sanitizers (ASAN/TSAN), profilers (perf) → [cpp-debugging](cpp-debugging.md)
 - [ ] Memory layout details (struct layout, padding, alignment, cache lines) — deeper than the templates note
-- [ ] Concurrency: std::thread/atomics, lock-free basics (pairs with the GIL note in [core](../python/core/PLAN.md))
+- [ ] Concurrency: std::thread/atomics, lock-free basics (pairs with the GIL note in [core](../python/core/))
 
 ## Prioritization
 
