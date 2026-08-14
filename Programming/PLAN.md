@@ -6,18 +6,20 @@ Organize **programming-language knowledge**, one sub-directory per language/area
 
 ## What's already here
 
-- **python/core/** — Python internals: [[core/bytecode]], [[core/typechecking]], [[core/conditioning-on-a-python-subclass]] (see its own [[core/PLAN]]).
+- **python/core/** — Python internals: [[core/bytecode]], [[core/typechecking]], [[core/conditioning-on-a-python-subclass]], plus the execution model, data model, C API, and performance notes (see its own [[core/PLAN]]).
+- **python/** — [[python/packaging]], [[python/asyncio]] (see [[python/PLAN]]).
+- **cpp/** — C++ memory model, smart pointers, templates/STL, debugging, CMake (see [[cpp/PLAN]]).
 
 ## What to add next
 
-- [ ] **C++** (needed for all the compiler/GPU work — see [[../Roadmaps/ai-framework-engineer]]):
-  - [ ] A `cpp/` sub-directory: move semantics, RAII, templates/CRTP, STL performance, memory layout
-  - [ ] Build systems: CMake basics (extends [[../Compilers/MLIR/CMake_Guide]])
-  - [ ] Debugging: gdb/lldb, sanitizers (ASAN/TSAN), profilers (perf)
-- [ ] **Python non-core topics**:
-  - [ ] The C API / CPython extension writing (ties to [[core/bytecode]] and PyTorch bindings)
-  - [ ] GIL and threading vs multiprocessing (ties to PyTorch DataLoader perf)
-  - [ ] Memory model: refcounting, GC, `weakref` (a natural companion note)
+- [x] **C++** (needed for all the compiler/GPU work — see [[../Roadmaps/ai-framework-engineer]]):
+  - [x] A `cpp/` sub-directory: move semantics, RAII, templates/CRTP, STL performance, memory layout
+  - [x] Build systems: CMake basics (extends [[../Compilers/MLIR/CMake_Guide]])
+  - [x] Debugging: gdb/lldb, sanitizers (ASAN/TSAN), profilers (perf)
+- [x] **Python non-core topics**:
+  - [x] The C API / CPython extension writing (ties to [[core/bytecode]] and PyTorch bindings)
+  - [x] GIL and threading vs multiprocessing (ties to PyTorch DataLoader perf)
+  - [x] Memory model: refcounting, GC, `weakref` (a natural companion note)
 - [ ] **Bash/shell** (day-to-day tooling) — a small `shell/` section.
 - [ ] **Version control beyond basics** — interactive rebase, bisect, worktrees, submodules (useful for OSS work; see [[../OpenSource]]).
 
