@@ -1,6 +1,6 @@
 # OpenVINO and TFLite/XNNPACK
 
-Two deployment-side quick notes to complete the DL compiler landscape (from the parent [PLAN](PLAN.md)): Intel's OpenVINO and the mobile/TFLite stack. Both are *executor-with-fusion* tools (see [ONNXRuntime](ONNXRuntime.md)'s "compiler vs executor" distinction) tuned for specific hardware.
+Two deployment-side quick notes to complete the DL compiler landscape (from the parent [PLAN](./)): Intel's OpenVINO and the mobile/TFLite stack. Both are *executor-with-fusion* tools (see [ONNXRuntime](ONNXRuntime.md)'s "compiler vs executor" distinction) tuned for specific hardware.
 
 ## OpenVINO (Intel)
 

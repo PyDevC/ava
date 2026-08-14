@@ -37,7 +37,7 @@ Both penalties: L1 for sparsity, L2 for grouping correlated features. The practi
 The same "complexity penalty" idea shows up everywhere:
 
 - **Tree-based**: `max_depth`, `min_samples_leaf`, and the `γ`/`λ` terms in [XGBoost](XGBoost.md)'s objective.
-- **Dropout** (NNs): randomly zero neurons — a form of implicit ensembling (see [deeplearning](../deeplearning/PLAN.md)).
+- **Dropout** (NNs): randomly zero neurons — a form of implicit ensembling (see [deeplearning](../deeplearning/)).
 - **Early stopping**: stop training when validation error stops improving — limits how far weights travel.
 - **Data augmentation**: a "regularizer" on the data distribution itself.
 

@@ -21,7 +21,7 @@ Research Scientists work on **advancing the field**: new architectures, algorith
 1. BSc-level math + a solid ML course (from scratch, not just libraries).
 2. Read and reimplement 10–20 classic papers (AlexNet→ResNet, Transformer, BERT/GPT, diffusion...).
 3. Contribute to or run your own experiments in PyTorch ([Explore](../PyTorch/Explore.md)).
-4. Deep-dive into one area (NLP, CV, RL, optimization) — see my notes in [MachineLearning](../MachineLearning/PLAN.md).
+4. Deep-dive into one area (NLP, CV, RL, optimization) — see my notes in [MachineLearning](../MachineLearning/).
 5. PhD or equivalent deep-project experience → publications.
 
 ## Related

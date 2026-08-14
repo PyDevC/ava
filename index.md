@@ -1,6 +1,6 @@
 # newBrain — Index
 
-The map of the whole knowledge base. Completed subtrees have their notes under each directory and their `PLAN.md` removed once done; open ones keep a `PLAN.md` roadmap. This file is the overview of what exists and where to start.
+The map of the whole knowledge base. Every subtree's roadmap (`PLAN.md`) has been completed and removed, so the notes under each directory are the content. This file is the overview of what exists and where to start.
 
 ## Contents
 
@@ -20,7 +20,7 @@ This KB sits where my compiler and ML interests meet. The two spines:
 1. **How ML models become fast programs** — `Compilers/` (MLIR → DL compilers → the PyTorch compiler stack).
 2. **How ML models are built** — `MachineLearning/` (algorithms → math → deep learning → NLP → vision → AutoML).
 
-`Roadmaps/where-am-i-now.md` maps which areas the repo covers and where I am; every per-directory `PLAN.md` is the "next action" list.
+`Roadmaps/where-am-i-now.md` maps which areas the repo covers and where I am. Every subtree's planned topics have been completed and folded into notes.
 
 ---
 
@@ -154,7 +154,7 @@ Reference material that spans the rest.
 
 ## Tips for using this KB
 
-- **Each directory's `PLAN.md`** is that subtree's roadmap — notes already written vs to-do. Completed subtrees drop the file entirely.
+- **Per-subtree `PLAN.md` roadmaps are all completed and removed** — the notes in each directory are the content.
 - **Links are plain markdown** — `name → path/to/note.md` — so everything works on GitHub and any markdown viewer.
 - **Start broad, then deep**: `Roadmaps/where-am-i-now.md` → `Compilers/DLCompilers/Comparison-Matrix.md` (or `MachineLearning/automl/automl-comparison.md`) → the individual notes.
 - **`TODO.md`** at the root tracks the original completion checklist.

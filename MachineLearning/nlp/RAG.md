@@ -24,7 +24,7 @@ query → embed → [vector store: top-k] → retrieve docs → prompt(model, qu
 
 ## Why it matters to me
 
-- It's the practical, shippable LLM application — and it connects the ML world (embeddings, [metric-learning](../automl/metric-learning.md)) to the systems world (vector DBs, serving, latency budgets, the same optimization thinking as [DLCompilers](../../Compilers/DLCompilers/PLAN.md)).
+- It's the practical, shippable LLM application — and it connects the ML world (embeddings, [metric-learning](../automl/metric-learning.md)) to the systems world (vector DBs, serving, latency budgets, the same optimization thinking as [DLCompilers](../../Compilers/DLCompilers/)).
 - It's also the natural place for the *evaluation* machinery (see [GPT-evaluation](GPT-evaluation.md)): groundedness, faithfulness, and retrieval recall are all measurable.
 
 ## Related

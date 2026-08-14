@@ -23,7 +23,7 @@ Key facts:
 - **No cross-validation needed** — OOB error estimates test error well.
 - Handles high-dim, non-linear, and mixed data with no scaling (see [tabular-regression](tabular-regression.md)).
 - `n_estimators` (more is better, diminishing returns), `max_depth`/`min_samples_leaf` control variance further.
-- Feature importance = how much splitting on a feature reduces impurity (see the interpretability note in [PLAN](../PLAN.md)).
+- Feature importance = how much splitting on a feature reduces impurity (see the interpretability note in [PLAN](../)).
 
 ## Bagging vs boosting
 

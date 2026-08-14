@@ -31,6 +31,18 @@ PyTorch developers contribute to PyTorch itself (or build heavily on its interna
 2. Reimplement small pieces (a custom autograd Function, a custom op) to learn the seams.
 3. Build from source; fix one thing; iterate.
 
+## PR-sized tasks
+
+The roadmap mapped to actual contribution-sized pieces — each is a real, mergeable PR (see [Contributing](../PyTorch/Contributing.md) for the full checklist):
+
+1. **Write a custom op** (CPU + CUDA, via `torch.library`) — the classic first contribution: full dispatch, tests, and codegen exposure in one small package (see [Custom-Ops](../PyTorch/Custom-Ops.md)).
+2. **Open a PR adding a test** — pick an existing op, find a missing edge case, add the regression test to the right `test/` file. Tiny in code, huge in learning the test matrix + CI etiquette.
+3. **Fix a dispatch issue** — a bug report about wrong backend selection / missing key on a subclass: add the missing dispatch-key handling (see [Dispatch-Key](../PyTorch/Dispatch-Key.md), [conditioning-on-a-python-subclass](../Programming/python/core/conditioning-on-a-python-subclass.md)).
+4. **Work on an inductor pass** — a fusion or layout decision in TorchInductor (see [PLAN](../Compilers/PyTorchCompiler/), [Inductor-IR](../Compilers/PyTorchCompiler/TorchInductor/Inductor-IR.md)): benchmark-driven, needs a local build to iterate ([Build-From-Source](../PyTorch/Build-From-Source.md)).
+5. **Perf fix** — profile a hot op, identify a kernel or allocator problem, fix it with a benchmark attached (see [Performance](../PyTorch/Performance.md)).
+
+Order matters: custom op → test PR → dispatch fix → inductor pass. Each requires the one before it, and step 4 is where the "compiler engineer" resume line comes from.
+
 ## Related
 
 - [ai-framework-engineer](ai-framework-engineer.md) — the wider role this is a specialization of.

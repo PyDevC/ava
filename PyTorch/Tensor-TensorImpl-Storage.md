@@ -24,7 +24,7 @@ Tensor (Python / C++ handle, the "smart pointer")
 
 - **Aliasing is real**: two Python tensors can share memory. In-place ops on a view affect the base. This is why functionalization matters for the compiled world (see [AOTAutograd](../Compilers/PyTorchCompiler/AOTAutograd.md)).
 - **`TensorImpl` is what the dispatcher keys on** (dtype, device, layout → dispatch key, see [Dispatch-Key](Dispatch-Key.md)).
-- Refcounting lives at the `Storage` level (memory is freed when no `TensorImpl` references it) — the "caching allocator" story (see [PyTorch](PLAN.md) perf notes).
+- Refcounting lives at the `Storage` level (memory is freed when no `TensorImpl` references it) — the "caching allocator" story (see [PyTorch](./) perf notes).
 
 ## Related
 

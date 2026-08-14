@@ -28,6 +28,17 @@ Each of these layers is a career in itself.
 4. One DL compiler end-to-end (Inductor or IREE are the best OSS choices).
 5. GPU programming to understand the codegen target.
 
+## Project ladder
+
+Concrete hands-on steps that turn this roadmap into shipped code (the gap in [where-am-i-now](where-am-i-now.md)):
+
+1. **Build a tiny dialect** — work the MLIR Toy tutorial end-to-end: parse, build an IR, write patterns/passes. The tutorial at [Toy-Tutorial](../Compilers/MLIR/Toy-Tutorial.md) is the canonical first step; the goal is a working `mlir-opt`-style pipeline, not a complete language.
+2. **Write a pass** — take a real dialect (Affine, linalg, tosa) and write a small transformation: DCE, a canonicalization pattern, a simple fusion. This is where IR-writing becomes second nature (see [PLAN](../Compilers/MLIR/), [Passes](../Compilers/MLIR/Passes.md)).
+3. **Lower something end-to-end** — hand-lower a small model (or a couple of ops) through your dialect to a target, exercising the full frontend→passes→codegen path (the [mental model](#the-mental-model) above).
+4. **Contribute to a real DL compiler** — pick IREE or TorchInductor, read how to approach the repo ([how-to-explore-large-repos](../OpenSource/how-to-explore-large-repos.md)), find a small issue, and land a pass/op change. Inductor has the direct PyTorch path ([PLAN](../Compilers/PyTorchCompiler/), [Contributing](../PyTorch/Contributing.md)); IREE's community is beginner-friendly for dialect work.
+
+Each step compounds: the dialect teaches the pass framework, the pass teaches a real codebase, and the contribution teaches CI/review culture (see [PR-Lifecycle](../OpenSource/PR-Lifecycle.md)).
+
 ## Related
 
 - [ai-framework-engineer](ai-framework-engineer.md) — framework side, overlapping heavily.

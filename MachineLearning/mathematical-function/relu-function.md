@@ -10,7 +10,7 @@ and its derivative is a step: 1 for `x > 0`, 0 for `x < 0` (undefined at exactly
 
 ## Why ReLU won
 
-- **Kills the vanishing gradient problem** (see [deeplearning](../deeplearning/PLAN.md) backprop notes): for positive inputs the gradient is exactly 1, so it doesn't shrink through layers (unlike [logistic-function](logistic-function.md)/tanh, which saturate to ~0 gradient).
+- **Kills the vanishing gradient problem** (see [deeplearning](../deeplearning/) backprop notes): for positive inputs the gradient is exactly 1, so it doesn't shrink through layers (unlike [logistic-function](logistic-function.md)/tanh, which saturate to ~0 gradient).
 - **Cheap**: a max, trivially parallel (unlike exp in sigmoid).
 - **Sparse activations**: dead neurons output exactly 0, which also regularizes.
 

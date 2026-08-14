@@ -43,4 +43,4 @@ LLVM builds CMake *itself* (add_subdirectory of `llvm/`), so MLIR is a subprojec
 - [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md) — the concrete MLIR wiring.
 - [cpp-debugging](cpp-debugging.md) — build types/sanitizer flags.
 - [TableGen](../../Compilers/MLIR/TableGen.md) — generated-file confusion.
-- [PLAN](../PLAN.md) — where this fits the C++ plan.
+- [PLAN](../) — where this fits the C++ plan.

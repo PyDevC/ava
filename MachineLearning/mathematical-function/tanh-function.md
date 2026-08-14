@@ -16,7 +16,7 @@ where `σ` is the [logistic-function](logistic-function.md). It's the sigmoid *c
 
 ## Where it's used
 
-- **RNN/LSTM gates**: `tanh` for the candidate cell state / hidden state, sigmoid for the gates (see [deeplearning](../deeplearning/PLAN.md) LSTM note).
+- **RNN/LSTM gates**: `tanh` for the candidate cell state / hidden state, sigmoid for the gates (see [deeplearning](../deeplearning/) LSTM note).
 - **Classic activation** (pre-ReLU era); replaced by [relu-function](relu-function.md) for deep feed-forward nets.
 - Numerical tricks: `tanh` is used in approximations (e.g. GELU's tanh approximation, see [relu-function](relu-function.md)).
 

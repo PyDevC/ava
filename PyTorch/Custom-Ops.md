@@ -1,6 +1,6 @@
 # Custom ops and torch.library
 
-The practical "extend PyTorch" path: write an op in C++ (CPU/CUDA), register it, and make it work with `torch.compile`. This is also the *contribution* path into PyTorch itself (native ops go through the same machinery via `native_functions.yaml`, see [PLAN](PLAN.md)).
+The practical "extend PyTorch" path: write an op in C++ (CPU/CUDA), register it, and make it work with `torch.compile`. This is also the *contribution* path into PyTorch itself (native ops go through the same machinery via `native_functions.yaml`, see [PLAN](./)).
 
 ## The modern API: `torch.library`
 
@@ -28,7 +28,7 @@ If your op can't satisfy these, `torch.compile` emits a graph break (see [GraphB
 
 ## The `native_functions.yaml` route (contributing upstream)
 
-Core ops are declared in `aten/src/ATen/native/native_functions.yaml`, and **codegen** produces the C++ decls, the Python bindings, the dispatcher entries, and the `torch.ops` accessors. A contribution = yaml entry + `native/` kernel + tests. The `torch.library` path is the *extension* equivalent of the same pipeline (see [PLAN](PLAN.md) for the repo-layout map in [Explore](Explore.md)).
+Core ops are declared in `aten/src/ATen/native/native_functions.yaml`, and **codegen** produces the C++ decls, the Python bindings, the dispatcher entries, and the `torch.ops` accessors. A contribution = yaml entry + `native/` kernel + tests. The `torch.library` path is the *extension* equivalent of the same pipeline (see [PLAN](./) for the repo-layout map in [Explore](Explore.md)).
 
 ## The practical checklist
 

@@ -11,7 +11,7 @@ Being a good reviewer is the fastest path to becoming a better contributor — a
 
 ## What reviewers look for (the checklist)
 
-- **Correctness**: edge cases, error handling, resource/lifetime correctness (esp. in C++: ownership, exceptions, see [PLAN](../Programming/PLAN.md)), thread-safety claims.
+- **Correctness**: edge cases, error handling, resource/lifetime correctness (esp. in C++: ownership, exceptions, see [PLAN](../Programming/)), thread-safety claims.
 - **Tests**: do they cover the change? Regression tests for the *fixed bug*, not just the happy path?
 - **Public API**: is the new API well-named, documented, and backward-compatible? (For PyTorch: does it need a `torch.library`/dispatch registration, see [Custom-Ops](../PyTorch/Custom-Ops.md).)
 - **Performance**: unnecessary copies (C++: passing by value when `const&` is right), hot-path allocations, hidden O(n²).

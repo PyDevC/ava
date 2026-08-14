@@ -1,6 +1,6 @@
 # Model optimization for inference
 
-After training, the model must run **fast and small** on deployment hardware. This note covers the four standard techniques. The compiler view of the same problem lives in the [DLCompilers](../../Compilers/DLCompilers/PLAN.md) notes.
+After training, the model must run **fast and small** on deployment hardware. This note covers the four standard techniques. The compiler view of the same problem lives in the [DLCompilers](../../Compilers/DLCompilers/) notes.
 
 ## Quantization
 

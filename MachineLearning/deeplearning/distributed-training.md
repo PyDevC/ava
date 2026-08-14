@@ -31,7 +31,7 @@ Compare: **tensor parallelism** (shard each layer's weight matrix, split matmuls
 
 - `torch.distributed` init → DDP/FSDP wrapper → data loader with a **different shard per rank** (per-rank seed offset, `DistributedSampler`) → checkpointing (sharded + consolidated).
 - The **collectives** are the real primitive: `all-reduce`, `all-gather`, `reduce-scatter` (see [hpc-engineer](../../Roadmaps/hpc-engineer.md) for the MPI connection).
-- Ties to the compiler story: gradient reduction is a collective op; kernels and comm overlap is where framework engineering shines (see [PLAN](../../PyTorch/PLAN.md)).
+- Ties to the compiler story: gradient reduction is a collective op; kernels and comm overlap is where framework engineering shines (see [PLAN](../../PyTorch/)).
 
 ## Related
 

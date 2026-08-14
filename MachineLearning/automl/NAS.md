@@ -27,7 +27,7 @@ NAS is the automl-of-NNs: instead of tuning hyperparameters for a fixed architec
 
 ## Related
 
-- [PLAN](../PLAN.md) — where NAS sits in the AutoML family.
+- [PLAN](../) — where NAS sits in the AutoML family.
 - [meta-learning](meta-learning.md) — the learning-to-learn research side.
 - [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md) — pruning, the NAS-adjacent technique.
 - [tuning-methodology](hyperparameter-tuning/tuning-methodology.md) — the practical alternative for most projects.

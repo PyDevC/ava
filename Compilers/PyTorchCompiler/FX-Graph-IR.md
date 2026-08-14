@@ -14,7 +14,7 @@ The FX graph (`torch.fx`) is the **graph IR that Dynamo outputs** (and that `tor
 FX nodes reference the **actual eager ops** (`torch.add`, `torch.nn.functional.linear`, ...) — it's a *graph-of-eager-ops*, not a lowered IR. Properties:
 - **Functional** (mostly): AOTAutograd functionalizes mutations (see [AOTAutograd](AOTAutograd.md)).
 - **High-level**: no loops/allocations — just ops on whole tensors.
-- This is "graph IR" in the taxonomy of the [IR](../IR/PLAN.md) notes: connectivity + types, not CFG/blocks.
+- This is "graph IR" in the taxonomy of the [IR](../IR/) notes: connectivity + types, not CFG/blocks.
 
 ## Why it matters
 
@@ -26,5 +26,5 @@ FX nodes reference the **actual eager ops** (`torch.add`, `torch.nn.functional.l
 
 - [Trace-Lifecycle](TorchDynamo/Trace-Lifecycle.md) — how the FX graph is produced.
 - [AOTAutograd](AOTAutograd.md) — the FX-level transformation for backward.
-- [PLAN](../IR/PLAN.md) — graph-IR vs CFG taxonomy.
+- [PLAN](../IR/) — graph-IR vs CFG taxonomy.
 - [XLA-StableHLO](../DLCompilers/XLA-StableHLO.md) — where exported FX graphs go.

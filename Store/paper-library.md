@@ -36,4 +36,4 @@ The "to read / read" shelf — one-line summaries with links into the notes. The
 
 - [attention-is-all-you-need](../MachineLearning/deeplearning/attention-is-all-you-need.md) — the flagship note.
 - [how-to-explore-large-repos](../OpenSource/how-to-explore-large-repos.md) — reading a codebase the way you read a paper.
-- [PLAN](PLAN.md) — this library's home directory.
+- [PLAN](./) — this library's home directory.

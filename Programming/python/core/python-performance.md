@@ -20,7 +20,7 @@
 ## The Python-bottleneck tell
 
 - Profile shows >50% time in **Python frames** (not C calls) → the interpreter loop is the cost → vectorize/offload.
-- Profile shows **C-extension time** (numpy, torch kernels) → that's real compute; the fix is algorithm or *fewer kernel launches* → `torch.compile` territory (see [PLAN](../../../Compilers/PyTorchCompiler/PLAN.md)).
+- Profile shows **C-extension time** (numpy, torch kernels) → that's real compute; the fix is algorithm or *fewer kernel launches* → `torch.compile` territory (see [PLAN](../../../Compilers/PyTorchCompiler/)).
 - **GIL contention** (threads fighting) → restructure (processes or GIL-free ops, see [gil-threading](gil-threading.md)).
 
 ## The training-loop case study
@@ -32,4 +32,4 @@ PyTorch training is Python-glue + C-kernels. The classic win order: `torch.compi
 - [frames-namespaces](frames-namespaces.md) — the lookup model you're optimizing.
 - [gil-threading](gil-threading.md) / [python-memory](python-memory.md) — the two runtime constraints.
 - [python-c-api](python-c-api.md) — the offload escape hatch.
-- [PLAN](../../../Compilers/PyTorchCompiler/PLAN.md) — compiled code as the big win.
+- [PLAN](../../../Compilers/PyTorchCompiler/) — compiled code as the big win.

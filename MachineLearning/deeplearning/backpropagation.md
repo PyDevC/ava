@@ -20,7 +20,7 @@ Each backward step uses the chain rule:
 ∂L/∂Wᵢ  = ∂L/∂hᵢ · ∂hᵢ/∂Wᵢ
 ```
 
-The backward pass **reuses the activations saved during forward** — which is why PyTorch keeps intermediate tensors in memory until `backward()` (see [PLAN](../../PyTorch/PLAN.md) autograd internals).
+The backward pass **reuses the activations saved during forward** — which is why PyTorch keeps intermediate tensors in memory until `backward()` (see [PLAN](../../PyTorch/) autograd internals).
 
 ## The two failure modes
 

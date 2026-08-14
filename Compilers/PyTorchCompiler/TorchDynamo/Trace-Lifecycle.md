@@ -19,7 +19,7 @@ TorchDynamo is a **CPython bytecode-level tracer**: it intercepts a Python frame
 ## The config surface that matters
 
 - `torch._dynamo.config.dynamic_shapes`, `recompile_limit`, `suppress_errors`.
-- `torch._dynamo.explain(fn)` reports graphs + breaks per graph — the standard "why am I slow" entry point (see [DebugWithTorchDynamo](DebugWithTorchDynamo.md) and the deep dive in [PLAN](../../../Programming/PLAN.md)).
+- `torch._dynamo.explain(fn)` reports graphs + breaks per graph — the standard "why am I slow" entry point (see [DebugWithTorchDynamo](DebugWithTorchDynamo.md) and the deep dive in [PLAN](../../../Programming/)).
 
 ## Related
 

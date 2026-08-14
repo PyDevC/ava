@@ -17,7 +17,7 @@ That one call runs a **multi-layer stack ensemble**:
 
 ## Why it's different from classic AutoML
 
-- **Smarter than "one pipeline"**: auto-sklearn/H2O search over *pipelines*; AutoGluon fits many model families and combines them — for tabular data, ensembling diverse families beats finding one perfect pipeline (see the comparison note in the [PLAN](../PLAN.md)).
+- **Smarter than "one pipeline"**: auto-sklearn/H2O search over *pipelines*; AutoGluon fits many model families and combines them — for tabular data, ensembling diverse families beats finding one perfect pipeline (see the comparison note in the [PLAN](../)).
 - **Multi-modal**: `autogluon.multimodal` handles image+text+tabular (uses deep learners); `autogluon.timeseries` for forecasting; `autogluon.vision`.
 - **Predict & evaluate**: `predictor.leaderboard()`, `predictor.predict_proba()`, feature importance (`predictor.feature_importance()`), `predictor.save()` — production-grade plumbing.
 
@@ -36,6 +36,6 @@ That one call runs a **multi-layer stack ensemble**:
 ## Related
 
 - [stacking](../algorithms/stacking.md) — the core mechanism.
-- [PLAN](../PLAN.md) — vs auto-sklearn/H2O/cloud.
+- [PLAN](../) — vs auto-sklearn/H2O/cloud.
 - [optuna](hyperparameter-tuning/optuna.md) — the tuning engine underneath.
 - [model-interpretability](../algorithms/model-interpretability.md) — the cost of the ensemble.

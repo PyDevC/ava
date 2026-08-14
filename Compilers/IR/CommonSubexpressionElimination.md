@@ -24,7 +24,7 @@ SSA (see [SsaConstruction](SsaConstruction.md)) makes CSE nearly trivial for *do
 
 ## CSE in ML frameworks
 
-This matters in DL compilers too: model graphs re-compute common subgraphs (shared weights, repeated layer patterns), and graph-level CSE on the FX/ONNX graph is a standard "graph simplification" pass — see [DeadCodeElimination](DeadCodeElimination.md)'s sibling role and the DL compiler pipeline in [DLCompilers](../DLCompilers/PLAN.md).
+This matters in DL compilers too: model graphs re-compute common subgraphs (shared weights, repeated layer patterns), and graph-level CSE on the FX/ONNX graph is a standard "graph simplification" pass — see [DeadCodeElimination](DeadCodeElimination.md)'s sibling role and the DL compiler pipeline in [DLCompilers](../DLCompilers/).
 
 ## Related
 

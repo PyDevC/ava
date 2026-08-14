@@ -16,7 +16,7 @@ The test set is the "exam"; validation is "practice exams". Looking at the exam 
 2. For each fold: train on the other K−1, evaluate on this fold.
 3. Report mean (± std) of the K scores.
 
-K = 5 or 10 are the defaults. **Stratified K-fold** keeps class proportions per fold — important for imbalanced classification. **Group K-fold** keeps groups together (e.g. all rows of one subject in the same fold) — crucial for the gesture/behavior data in [computer-vision](../computer-vision/PLAN.md).
+K = 5 or 10 are the defaults. **Stratified K-fold** keeps class proportions per fold — important for imbalanced classification. **Group K-fold** keeps groups together (e.g. all rows of one subject in the same fold) — crucial for the gesture/behavior data in [computer-vision](../computer-vision/).
 
 ## Variants
 

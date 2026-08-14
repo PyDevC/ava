@@ -6,7 +6,7 @@ Autograd is what turns `loss.backward()` into per-parameter gradients. The mecha
 
 - A tensor with `requires_grad=True` gets an **`AutogradMeta`**: the `grad_fn` (the `torch.autograd.Function` that created it), `grad_accumulator`, `grad` (the accumulated buffer), and `base` (view metadata).
 - Each op with `requires_grad` inputs creates a `Function` node holding (a) a **saved-for-backward** snapshot (inputs/outputs needed by its backward) and (b) a pointer to the node that produced each input — forming a DAG.
-- `torch.no_grad()` / `torch.inference_mode()` *skip* node creation — the same tensor ops, no graph → faster, no memory growth (see the [PyTorch](PLAN.md) perf notes).
+- `torch.no_grad()` / `torch.inference_mode()` *skip* node creation — the same tensor ops, no graph → faster, no memory growth (see the [PyTorch](./) perf notes).
 
 ## The backward walk
 

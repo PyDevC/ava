@@ -5,16 +5,16 @@ The payoff of the roadmaps: map what **this repo already covers** onto the roles
 ## Compiler / systems roles
 
 **AI compiler engineer** ([ai-compiler-engineer](ai-compiler-engineer.md))
-- [x] Compiler fundamentals: IR, SSA, passes, regalloc → [PLAN](../Compilers/IR/PLAN.md)
-- [x] MLIR: ops/regions/passes/DialectConversion → [PLAN](../Compilers/MLIR/PLAN.md)
-- [x] DL compilers: Inductor, IREE, TVM, XLA, ORT → [PLAN](../Compilers/DLCompilers/PLAN.md)
-- [x] PyTorch compiler stack: Dynamo, AOTAutograd, Inductor → [PLAN](../Compilers/PyTorchCompiler/PLAN.md)
+- [x] Compiler fundamentals: IR, SSA, passes, regalloc → [PLAN](../Compilers/IR/)
+- [x] MLIR: ops/regions/passes/DialectConversion → [PLAN](../Compilers/MLIR/)
+- [x] DL compilers: Inductor, IREE, TVM, XLA, ORT → [PLAN](../Compilers/DLCompilers/)
+- [x] PyTorch compiler stack: Dynamo, AOTAutograd, Inductor → [PLAN](../Compilers/PyTorchCompiler/)
 - [ ] Build a dialect end-to-end / contribute a pass to IREE or Inductor (hands-on gap)
 - [ ] GPU kernel writing (Triton/CUDA) beyond reading generated code
 
 **AI framework engineer** ([ai-framework-engineer](ai-framework-engineer.md))
-- [x] PyTorch internals: dispatch, autograd, tensor/impl/storage → [PLAN](../PyTorch/PLAN.md)
-- [x] C++ foundations → [PLAN](../Programming/cpp/PLAN.md)
+- [x] PyTorch internals: dispatch, autograd, tensor/impl/storage → [PLAN](../PyTorch/)
+- [x] C++ foundations → [PLAN](../Programming/cpp/)
 - [x] Build/CI → [CI_Infra](../PyTorch/CI_Infra.md), [cpp-cmake](../Programming/cpp/cpp-cmake.md)
 - [ ] Write a custom op (CPU+CUDA) and get it merged (hands-on gap)
 - [ ] Real profiler-driven performance work on a framework
@@ -27,9 +27,9 @@ The payoff of the roadmaps: map what **this repo already covers** onto the roles
 
 **ML engineer** ([ml-engineer](ml-engineer.md))
 - [x] Algorithms + math toolbox → [algorithms](../MachineLearning/algorithms/), [mathematical-function](../MachineLearning/mathematical-function/)
-- [x] Deep learning: backprop, optimizers, normalization → [PLAN](../MachineLearning/deeplearning/PLAN.md)
+- [x] Deep learning: backprop, optimizers, normalization → [PLAN](../MachineLearning/deeplearning/)
 - [x] AutoML/tuning → [automl](../MachineLearning/automl/)
-- [x] NLP/CV applications → [nlp](../MachineLearning/nlp/), [PLAN](../MachineLearning/computer-vision/PLAN.md)
+- [x] NLP/CV applications → [nlp](../MachineLearning/nlp/), [PLAN](../MachineLearning/computer-vision/)
 - [ ] Ship a complete trained+deployed model to production (hands-on gap)
 
 **LLM engineer** ([llm-engineer](llm-engineer.md))
@@ -45,12 +45,12 @@ The payoff of the roadmaps: map what **this repo already covers** onto the roles
 ## Hardware / infra roles
 
 **GPU architect / ROCm / HPC** ([gpu-architect](gpu-architect.md), [rocm-developers](rocm-developers.md), [hpc-engineer](hpc-engineer.md))
-- [x] Systems/parallelism concepts → [PLAN](../Programming/cpp/PLAN.md), [Distributed-Collectives](../PyTorch/Distributed-Collectives.md)
+- [x] Systems/parallelism concepts → [PLAN](../Programming/cpp/), [Distributed-Collectives](../PyTorch/Distributed-Collectives.md)
 - [x] Distributed training → [distributed-training](../MachineLearning/deeplearning/distributed-training.md)
 - [ ] Write and benchmark HIP/CUDA kernels (hands-on gap)
 
 **MLOps / backend** ([mlops-engineer](mlops-engineer.md), [backend-infra-engineer](backend-infra-engineer.md))
-- [x] Build/deploy/CI fundamentals → [PLAN](../Programming/PLAN.md), [OpenSource](../OpenSource/)
+- [x] Build/deploy/CI fundamentals → [PLAN](../Programming/), [OpenSource](../OpenSource/)
 - [ ] Operating a real serving stack (Triton/K8s) (hands-on gap)
 
 ## The gaps, summed up
@@ -62,4 +62,4 @@ The payoff of the roadmaps: map what **this repo already covers** onto the roles
 ## Related
 
 - Each roadmap note in this directory.
-- The per-directory [PLAN](PLAN.md) files are the "next action" versions of this map.
+- The per-directory [PLAN](./) files are the "next action" versions of this map.

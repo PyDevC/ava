@@ -1,6 +1,6 @@
 # PyTorch performance and memory
 
-The everyday performance toolbox: profile first, then remove the real bottleneck — usually Python/launch overhead, memory churn, or data loading. These notes assume the compiler side is already covered (see [PLAN](../Compilers/PyTorchCompiler/PLAN.md)).
+The everyday performance toolbox: profile first, then remove the real bottleneck — usually Python/launch overhead, memory churn, or data loading. These notes assume the compiler side is already covered (see [PLAN](../Compilers/PyTorchCompiler/)).
 
 ## Profiling: `torch.profiler`
 
@@ -37,7 +37,7 @@ print(prof.key_averages().table(sort_by="cuda_time_total", row_limit=20))
 
 ## Related
 
-- [PLAN](../Compilers/PyTorchCompiler/PLAN.md) — `torch.compile` as the first "make it faster" lever.
+- [PLAN](../Compilers/PyTorchCompiler/) — `torch.compile` as the first "make it faster" lever.
 - [mixed-precision](../MachineLearning/deeplearning/mixed-precision.md) — the 2x-4x knob.
 - [distributed-training](../MachineLearning/deeplearning/distributed-training.md) — beyond one GPU.
 - [Explore](Explore.md) — the repo layout these subsystems live in.

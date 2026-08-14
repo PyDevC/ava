@@ -22,7 +22,7 @@ Tokenization turns raw text into a sequence of integer IDs — the input that ev
 
 - The vocab file *is* part of the model — mismatched tokenizer = garbage in, garbage out. This is the number-one cause of "it worked in my notebook, failed in prod" (a real RAG gotcha, see [RAG](RAG.md)).
 - Token length ≈ 4 chars ≈ 0.75 words for English BPE; context windows are counted in **tokens**, not words (this is why GPT-4 "8k context" is ~6k words).
-- BOS/EOS/PAD/UNK special tokens are real tokenizer state. Padding is what the compiler sees as wasteful (see [TorchInductor](../../Compilers/DLCompilers/TorchInductor/TorchInductor.md) and dynamic shape work in [PLAN](../../Compilers/PyTorchCompiler/PLAN.md)).
+- BOS/EOS/PAD/UNK special tokens are real tokenizer state. Padding is what the compiler sees as wasteful (see [TorchInductor](../../Compilers/DLCompilers/TorchInductor/TorchInductor.md) and dynamic shape work in [PLAN](../../Compilers/PyTorchCompiler/)).
 
 ## Related
 

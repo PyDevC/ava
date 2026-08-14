@@ -12,7 +12,7 @@ For `f: R^n → R`, the gradient `∇f(x)` is the vector of partial derivatives:
 
 - Points in the **direction of steepest ascent**; `-∇f` is steepest descent.
 - Gradient descent: `x ← x - η·∇f(x)` — the update rule of every optimizer (see [model-optimization](../deeplearning/model-optimization.md)).
-- The gradient is a *function of x* — recompute it at every step (that's what `backward()` does; see backprop in [deeplearning](../deeplearning/PLAN.md)).
+- The gradient is a *function of x* — recompute it at every step (that's what `backward()` does; see backprop in [deeplearning](../deeplearning/)).
 
 ## Hessian (matrix of second derivatives)
 

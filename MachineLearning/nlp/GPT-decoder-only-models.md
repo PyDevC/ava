@@ -6,7 +6,7 @@ The decoder-only Transformer is the architecture behind ChatGPT, LLaMA, Mistral,
 
 - **Causal masking**: each token can only attend to itself and earlier tokens (a lower-triangular mask on attention scores). Nothing leaks from the future.
 - **Objective: next-token prediction** — given the prefix, predict the next token (cross-entropy, see [loss-function](../algorithms/loss-function.md)). That's it. The whole capability comes from scale, data, and post-training.
-- **Generation**: at inference you sample one token, append it, and re-run — the **autoregressive loop**. This is where the KV cache lives (avoid recomputing past keys/values), and it's why LLM inference is memory-bandwidth-bound (see [Roadmaps](../../Roadmaps/PLAN.md) and [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md)).
+- **Generation**: at inference you sample one token, append it, and re-run — the **autoregressive loop**. This is where the KV cache lives (avoid recomputing past keys/values), and it's why LLM inference is memory-bandwidth-bound (see [Roadmaps](../../Roadmaps/) and [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md)).
 
 ## Why decoder-only won
 

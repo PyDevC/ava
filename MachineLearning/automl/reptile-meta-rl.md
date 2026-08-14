@@ -22,7 +22,7 @@ MAML does gradient descent on the *meta-objective* `minimize Σ L_task(adapt(φ)
 ## The bridge to modern ML
 
 - Reptile's "one update" view is the ancestor of today's **in-context learning** intuitions: adapt to a task by conditioning on a few examples rather than weight updates (see [prompting-in-context-learning](../nlp/prompting-in-context-learning.md)).
-- Meta-learning's "training procedure that learns procedures" is literally what a foundation model's few-shot prompting does — see the in-context note in the automl [PLAN](../PLAN.md).
+- Meta-learning's "training procedure that learns procedures" is literally what a foundation model's few-shot prompting does — see the in-context note in the automl [PLAN](../).
 
 ## Related
 

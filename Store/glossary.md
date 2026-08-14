@@ -16,14 +16,14 @@ The acronym soup of the ML-compiler world, indexed into the real notes. When a n
 
 ## Compilers / frameworks
 
-- **IR** — Intermediate Representation → [PLAN](../Compilers/IR/PLAN.md)
+- **IR** — Intermediate Representation → [PLAN](../Compilers/IR/)
 - **SSA** — Static Single Assignment → [Dominators](../Compilers/IR/SSA/Dominators.md)
 - **HLO / StableHLO** — (Stable) High-Level Optimizer IR → [XLA-StableHLO](../Compilers/DLCompilers/XLA-StableHLO.md), [tosa-stablehlo](../Compilers/MLIR/Dialects/tosa-stablehlo.md)
-- **MLIR / ODS / DRR** — Multi-Level IR / Operation Definition Spec / Declarative Rewrite Rules → [PLAN](../Compilers/MLIR/PLAN.md)
-- **HAL** — Hardware Abstraction Layer (IREE's runtime dispatch layer) → [IREE](../Compilers/DLCompilers/IREE/PLAN.md)
+- **MLIR / ODS / DRR** — Multi-Level IR / Operation Definition Spec / Declarative Rewrite Rules → [PLAN](../Compilers/MLIR/)
+- **HAL** — Hardware Abstraction Layer (IREE's runtime dispatch layer) → [IREE](../Compilers/DLCompilers/IREE/)
 - **FX** — the torch.fx graph IR → [FX-Graph-IR](../Compilers/PyTorchCompiler/FX-Graph-IR.md)
 - **EP** — Execution Provider (ONNX Runtime) → [ONNXRuntime](../Compilers/DLCompilers/ONNXRuntime.md)
-- **DCE / CSE** — Dead Code Elimination / Common Subexpression Elimination → [PLAN](../Compilers/IR/PLAN.md)
+- **DCE / CSE** — Dead Code Elimination / Common Subexpression Elimination → [PLAN](../Compilers/IR/)
 
 ## Hardware / systems
 
@@ -36,10 +36,10 @@ The acronym soup of the ML-compiler world, indexed into the real notes. When a n
 
 ## The index-of-indexes
 
-- Every `PLAN.md` file at a directory root is the roadmap for that subtree — the "where am I and what's next" of each topic.
+- Each directory's own `README.md`/notes serve as the "what's here"; the per-subtree `PLAN.md` roadmaps were completed and removed.
 - [where-am-i-now](../Roadmaps/where-am-i-now.md) — which areas the repo covers at all.
 
 ## Related
 
 - This index is meant to *link*, not explain — the notes it points to do the explaining.
-- [PLAN](PLAN.md) — the home directory for reference material.
+- [PLAN](./) — the home directory for reference material.
