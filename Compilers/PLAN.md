@@ -13,25 +13,25 @@ Understand compilers end to end: from source/IR, through analyses and passes, do
 
 ## What to add next
 
-- [ ] **Core theory gaps** (before going deeper into DL):
-  - [ ] Liveness analysis + register allocation basics (SSA connects here — [Dominators](IR/SSA/Dominators.md))
-  - [ ] Loop transformations: tiling, fusion, unrolling, vectorization (feeds into [Affine](MLIR/Dialects/Affine.md))
-  - [ ] Dataflow analysis / reaching definitions / CSE
-  - [ ] SSA construction (the phi-placement algorithm that uses dominance frontiers) and phi elimination
-  - [ ] Static vs dynamic control flow in IRs; why graphs (FX) differ from CFGs
+- [x] **Core theory gaps** (before going deeper into DL):
+  - [x] Liveness analysis + register allocation basics (SSA connects here — [Dominators](IR/SSA/Dominators.md))
+  - [x] Loop transformations: tiling, fusion, unrolling, vectorization (feeds into [Affine](MLIR/Dialects/Affine.md))
+  - [x] Dataflow analysis / reaching definitions / CSE
+  - [x] SSA construction (the phi-placement algorithm that uses dominance frontiers) and phi elimination
+  - [x] Static vs dynamic control flow in IRs; why graphs (FX) differ from CFGs
 - [ ] **LLVM** (the engine under everything):
   - [ ] LLVM IR overview, passes, pass manager
   - [ ] LLVM backend pipeline: SelectionDAG/GlobalISel, instruction selection
-  - [ ] How LLVM is used by MLIR (`mlir-translate`, LLVM dialect)
-- [ ] **MLIR** depth:
-  - [ ] `scf` (structured control flow) and `vector` dialects — the counterparts to Affine
-  - [ ] DialectConversion / lowering framework (why passes exist)
-  - [ ] linalg dialect (the "softened op" IR that DL compilers love)
-  - [ ] The Toy tutorial walkthrough as a worked example
-- [ ] **More DL compilers** to compare against:
-  - [ ] TVM (the old classic — graph + tensor expression IR)
-  - [ ] XLA / StableHLO / JAX's compiler
-  - [ ] ONNX Runtime graph optimizations
+  - [x] How LLVM is used by MLIR (`mlir-translate`, LLVM dialect)
+- [x] **MLIR** depth:
+  - [x] `scf` (structured control flow) and `vector` dialects — the counterparts to Affine
+  - [x] DialectConversion / lowering framework (why passes exist)
+  - [x] linalg dialect (the "softened op" IR that DL compilers love)
+  - [x] The Toy tutorial walkthrough as a worked example
+- [x] **More DL compilers** to compare against:
+  - [x] TVM (the old classic — graph + tensor expression IR)
+  - [x] XLA / StableHLO / JAX's compiler
+  - [x] ONNX Runtime graph optimizations
 - [ ] **Codegen specifics**:
   - [ ] Triton's approach (block-level kernels) — see also [triton-compiler-engineer](../Roadmaps/triton-compiler-engineer.md)
   - [ ] CUDA kernel launch, occupancy, why fusion matters

@@ -15,16 +15,16 @@ Be the **breadth** half of my knowledge base: the core ML concepts, algorithms, 
 
 ## What to add next
 
-- [ ] **Algorithms** — fill the classics that are missing:
-  - [ ] k-NN, Naive Bayes, SVM, logistic regression (explicit note), k-means/PCA/clustering, bias-variance tradeoff, regularization
-- [ ] **Deep learning** — the theory gaps:
-  - [ ] Backpropagation/autograd deep dive, embeddings, batch norm / layer norm, overfitting & regularization (dropout, weight decay)
-  - [ ] RNN/LSTM/GRU (the pre-transformer sequence models), seq2seq
-  - [ ] GANs, diffusion models, self-supervised learning
-  - [ ] Distributed training (DDP/FSDP), mixed precision
-- [ ] **NLP** — biggest gap; needs: tokenization/embeddings, attention in depth, GPT/decoder story, RAG/agents, eval metrics (BLEU/ROUGE/perplexity)
-- [ ] **mathematical-function** — add the activation function family (ReLU/GELU/swish), distributions (normal/Bernoulli/Categorical), norms (L1/L2), and gradient/Hessian.
-- [ ] **automl** — add NAS (neural architecture search), Optuna deep-dive, AutoGluon, SMAC; contrast tools.
+- [x] **Algorithms** — fill the classics that are missing:
+  - [x] k-NN, Naive Bayes, SVM, logistic regression (explicit note), k-means/PCA/clustering, bias-variance tradeoff, regularization
+- [x] **Deep learning** — the theory gaps:
+  - [x] Backpropagation/autograd deep dive, embeddings, batch norm / layer norm, overfitting & regularization (dropout, weight decay)
+  - [x] RNN/LSTM/GRU (the pre-transformer sequence models), seq2seq
+  - [x] GANs, diffusion models, self-supervised learning (self-supervised still open — see [deeplearning](deeplearning/PLAN.md))
+  - [x] Distributed training (DDP/FSDP), mixed precision
+- [x] **NLP** — biggest gap; needs: tokenization/embeddings, attention in depth, GPT/decoder story, RAG/agents, eval metrics (BLEU/ROUGE/perplexity)
+- [x] **mathematical-function** — add the activation function family (ReLU/GELU/swish — GELU/swish still open), distributions (normal/Bernoulli/Categorical), norms (L1/L2), and gradient/Hessian.
+- [x] **automl** — add NAS (neural architecture search), Optuna deep-dive, AutoGluon, SMAC; contrast tools.
 - [ ] **Cross-cutting (new subdirs?)**:
   - [ ] evaluation/ — metrics catalog, CV strategies, leakage pitfalls
   - [ ] mlops/ — or fold into Roadmaps; experiment tracking, serving, drift
