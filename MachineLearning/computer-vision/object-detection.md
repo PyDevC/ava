@@ -17,24 +17,24 @@ Cost: two stages = more compute at inference than one-stage. The accuracy lead h
 
 Predict boxes + classes **directly** on a grid of anchor locations:
 
-- **YOLO** (You Only Look Once, 2016→ now YOLOv8/v9/v10): divide image into cells, each predicts boxes+scores+classes. One pass, extremely fast — the edge/realtime standard (and what a palm-detection system like [[hestreg]]'s uses).
-- **RetinaNet**: one-stage with **focal loss** — fixes the "class imbalance drowns the loss" problem that made early one-stage models miss (see [[algorithms/imbalanced-classification]]). This closed the accuracy gap to two-stage.
+- **YOLO** (You Only Look Once, 2016→ now YOLOv8/v9/v10): divide image into cells, each predicts boxes+scores+classes. One pass, extremely fast — the edge/realtime standard (and what a palm-detection system like [hestreg](hestreg.md)'s uses).
+- **RetinaNet**: one-stage with **focal loss** — fixes the "class imbalance drowns the loss" problem that made early one-stage models miss (see [imbalanced-classification](../algorithms/imbalanced-classification.md)). This closed the accuracy gap to two-stage.
 - **Anchor-free** (CenterNet, FCOS, CornerNet): predict object *centers* + sizes instead of pre-defined anchors — simpler, and now the default design (YOLOv8 is anchor-free).
 
 ## The modern entries
 
-- **DETR / deformable DETR**: transformers ([[deeplearning/Transformers]]) treat detection as a *set-prediction* problem (no anchors, no NMS!). Elegant, but slower to converge.
+- **DETR / deformable DETR**: transformers ([Transformers](../deeplearning/Transformers.md)) treat detection as a *set-prediction* problem (no anchors, no NMS!). Elegant, but slower to converge.
 - The practical current choice: **YOLO family** for speed/edge, **Faster R-CNN/RetinaNet** for accuracy-focused pipelines, **DETR** for research.
 
 ## The shared machinery
 
 - **NMS (non-max suppression)**: overlapping boxes for the same object → keep the max-score, suppress the rest. Still the postprocessing everywhere (DETR avoids it).
-- **mAP**: the metric — precision/recall across IoU thresholds (see [[algorithms/model-interpretability]] for eval thinking).
-- Detection→tracking→pose is the *pipeline* pattern ([[hand-gesture-recognition]]): detect the region of interest, then run a lighter model on the crop.
+- **mAP**: the metric — precision/recall across IoU thresholds (see [model-interpretability](../algorithms/model-interpretability.md) for eval thinking).
+- Detection→tracking→pose is the *pipeline* pattern ([hand-gesture-recognition](hand-gesture-recognition.md)): detect the region of interest, then run a lighter model on the crop.
 
 ## Related
 
-- [[hand-gesture-recognition]] — detection as the first stage of the pipeline.
-- [[deeplearning/An-introduction-to-convolutional-neural-networks]] — the backbone.
-- [[algorithms/imbalanced-classification]] — the focal-loss motivation.
-- [[algorithms/model-interpretability]] — the mAP metric.
+- [hand-gesture-recognition](hand-gesture-recognition.md) — detection as the first stage of the pipeline.
+- [An-introduction-to-convolutional-neural-networks](../deeplearning/An-introduction-to-convolutional-neural-networks.md) — the backbone.
+- [imbalanced-classification](../algorithms/imbalanced-classification.md) — the focal-loss motivation.
+- [model-interpretability](../algorithms/model-interpretability.md) — the mAP metric.

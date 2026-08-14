@@ -15,23 +15,23 @@ x_t = √(1-β_t)·x_{t-1} + √β_t·ε
 ## Why it works
 
 - The forward process has a closed form: `x_t = √ᾱ_t·x₀ + √(1-ᾱ_t)·ε` — so training never needs to iterate noise; just sample a random `t`, corrupt once, and predict the noise.
-- Training objective: `L = E[‖ε - ε_θ(x_t, t)‖²]` — simple L2 regression against the noise, which is a [[../mathematical-function/normal-distribution]] regression. The U-Net (or now transformer/DiT) learns to denoise.
+- Training objective: `L = E[‖ε - ε_θ(x_t, t)‖²]` — simple L2 regression against the noise, which is a [normal-distribution](../mathematical-function/normal-distribution.md) regression. The U-Net (or now transformer/DiT) learns to denoise.
 
 ## The key ideas to know
 
-- **Latent diffusion**: run the diffusion in a low-dim *latent* space (autoencoder-encoded, see [[embeddings]]/[[../algorithms/PCA]]-adjacent) instead of pixel space — that's what makes Stable Diffusion tractable.
+- **Latent diffusion**: run the diffusion in a low-dim *latent* space (autoencoder-encoded, see [embeddings](embeddings.md)/[PCA](../algorithms/PCA.md)-adjacent) instead of pixel space — that's what makes Stable Diffusion tractable.
 - **Sampling**: fewer denoising steps via DDIM (deterministic reparam) or flow matching — speed vs quality trade-off.
-- **Conditioning**: guide the denoiser with text (cross-attention to text embeddings), class labels, or images — this is where the transformer/attention machinery from [[Transformers]] enters.
+- **Conditioning**: guide the denoiser with text (cross-attention to text embeddings), class labels, or images — this is where the transformer/attention machinery from [Transformers](Transformers.md) enters.
 
 ## Why they beat GANs
 
-- **Stable training**: a simple L2 regression objective, no adversarial equilibrium (see [[GANs]]).
+- **Stable training**: a simple L2 regression objective, no adversarial equilibrium (see [GANs](GANs.md)).
 - **Mode coverage**: diffusion models cover the whole data distribution instead of collapsing.
 - Cost: sampling is 10–50 sequential denoise steps vs GANs' one shot.
 
 ## Related
 
-- [[../mathematical-function/normal-distribution]] — the noise source.
-- [[GANs]] — the adversarial predecessor.
-- [[embeddings]] — the latent space conditioning runs through.
-- [[Transformers]] — modern diffusion backbones are transformers (DiT).
+- [normal-distribution](../mathematical-function/normal-distribution.md) — the noise source.
+- [GANs](GANs.md) — the adversarial predecessor.
+- [embeddings](embeddings.md) — the latent space conditioning runs through.
+- [Transformers](Transformers.md) — modern diffusion backbones are transformers (DiT).

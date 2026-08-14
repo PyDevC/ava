@@ -28,7 +28,7 @@ Only dims and symbols can appear in affine expressions; anything else must be ma
 ## Why "polyhedral"
 
 Each `affine.for` nest with affine bounds and access functions defines a polyhedron (an integer point set) in iteration space. The dependence between two accesses is a linear constraint problem over these polyhedra, so you can:
-- Compute exact loop nest / data dependences (via [[Dominators]]-style analysis, but over iteration domains).
+- Compute exact loop nest / data dependences (via [Dominators](../../IR/SSA/Dominators.md)-style analysis, but over iteration domains).
 - Reason about legality of fusion, tiling, interchange.
 - Lower to GPU (`gpu.launch`, thread maps) or CPU (`scf.for` + `linalg`/vector) backends.
 

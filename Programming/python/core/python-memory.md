@@ -5,7 +5,7 @@ CPython's memory model is **reference counting** (immediate frees) plus a **cycl
 ## Refcounting — the fast path
 
 - Every object has a `Py_ssize_t ob_refcnt`; `INCREF`/`DECREF` on bind, unbind, pass, return. Refcount hits 0 → freed *immediately*, destructors run *then*, not later. This is why Python memory "just works" for the common case and why `del x` actually releases.
-- **The cost**: every reference manipulation is a `#ifdef`'d atomic-ish op — a big chunk of the GIL-held work (see [[gil-threading]]).
+- **The cost**: every reference manipulation is a `#ifdef`'d atomic-ish op — a big chunk of the GIL-held work (see [gil-threading](gil-threading.md)).
 - Deterministic destruction is why context managers (`with open(...)`) and `finally` matter: they guarantee *when* things happen.
 
 ## The cycle collector (GC)
@@ -20,17 +20,17 @@ CPython's memory model is **reference counting** (immediate frees) plus a **cycl
 
 - **WeakValueDictionary**: cache that auto-drops entries when the object dies — the correct cache type (a plain dict cache = a permanent leak).
 - **`weakref.finalize`**: run cleanup *when the object is collected* — the modern replacement for `__del__` (predictable, no cycle interaction).
-- PyTorch's Tensor: `tensor.data`/`storage` refs, hook registrations (`tensor.register_hook`), and autograd's saved-tensor weakrefs are exactly this pattern (see [[PyTorch/Autograd-Internals]]).
+- PyTorch's Tensor: `tensor.data`/`storage` refs, hook registrations (`tensor.register_hook`), and autograd's saved-tensor weakrefs are exactly this pattern (see [Autograd-Internals](../../../PyTorch/Autograd-Internals.md)).
 
 ## The leak-detection playbook
 
 1. `gc.gc()` + `objgraph.show_growth()` / `gc.get_objects()` — diff object counts across iterations.
-2. Suspicion order: caches, closures, globals, exception tracebacks (`sys.exc_info` holding frames), **tensor storage** (see [[PyTorch/Performance]] for the allocator, not Python, on GPU).
+2. Suspicion order: caches, closures, globals, exception tracebacks (`sys.exc_info` holding frames), **tensor storage** (see [Performance](../../../PyTorch/Performance.md) for the allocator, not Python, on GPU).
 3. **Weakref everywhere that's a cache**. Del anything a name doesn't need.
 
 ## Related
 
-- [[gil-threading]] — the GIL protects this refcount model.
-- [[frames-namespaces]] — namespaces hold the references.
-- [[PyTorch/Performance]] — GPU memory vs Python memory.
-- [[python-performance]] — profiling to find the leak first.
+- [gil-threading](gil-threading.md) — the GIL protects this refcount model.
+- [frames-namespaces](frames-namespaces.md) — namespaces hold the references.
+- [Performance](../../../PyTorch/Performance.md) — GPU memory vs Python memory.
+- [python-performance](python-performance.md) — profiling to find the leak first.

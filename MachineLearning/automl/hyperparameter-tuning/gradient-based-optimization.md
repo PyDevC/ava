@@ -1,6 +1,6 @@
 # Gradient-based hyperparameter optimization
 
-Gradient-based optimization tunes hyperparameters by **computing gradients of the validation loss w.r.t. the hyperparameters** and following them downhill — instead of treating the objective as a black box ([[hyperparameter-tuning/Bayesian-optimization]], [[random-search]]).
+Gradient-based optimization tunes hyperparameters by **computing gradients of the validation loss w.r.t. the hyperparameters** and following them downhill — instead of treating the objective as a black box ([Bayesian-optimization](Bayesian-optimization.md), [random-search](random-search.md)).
 
 ## How it works
 
@@ -19,6 +19,6 @@ In the simplest 1-step case with SGD: `θ₁ = θ₀ - η·∇L_train(θ₀)`, t
 
 ## Related
 
-- [[MachineLearning/deeplearning/how-to-use-lr-scheduler]] — learning-rate schedules are exactly the kind of thing this tunes.
-- [[hyperparameter-tuning]] — the umbrella.
-- Contrast with [[Hyperband]] (bandit, no gradients) and [[hyperparameter-tuning/Bayesian-optimization]] (surrogate, no gradients).
+- [how-to-use-lr-scheduler](../../deeplearning/how-to-use-lr-scheduler.md) — learning-rate schedules are exactly the kind of thing this tunes.
+- [hyperparameter-tuning](../hyperparameter-tuning.md) — the umbrella.
+- Contrast with [Hyperband](Hyperband.md) (bandit, no gradients) and [Bayesian-optimization](Bayesian-optimization.md) (surrogate, no gradients).

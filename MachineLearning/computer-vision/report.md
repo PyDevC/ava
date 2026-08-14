@@ -18,10 +18,10 @@ Over the decades, hand gesture recognition has evolved from simple static image 
 
 ## Where the pieces live in my notes
 
-- System design (sessions, accelerator, model manager, control unit): [[hestreg]]
-- The classification model itself: [[hestreg-model]]
-- The detection/landmark pipeline: [[hand-gesture-recognition]]
-- CNN backbone and transfer learning: [[An-introduction-to-convolutional-neural-networks]], [[MachineLearning/algorithms/transfer-learning]]
+- System design (sessions, accelerator, model manager, control unit): [hestreg](hestreg.md)
+- The classification model itself: [hestreg-model](hestreg-model.md)
+- The detection/landmark pipeline: [hand-gesture-recognition](hand-gesture-recognition.md)
+- CNN backbone and transfer learning: [An-introduction-to-convolutional-neural-networks](../deeplearning/An-introduction-to-convolutional-neural-networks.md), [transfer-learning](../algorithms/transfer-learning.md)
 
 ## Review notes
 

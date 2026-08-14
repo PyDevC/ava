@@ -18,14 +18,14 @@ Plot runtime vs arithmetic intensity (FLOPs/byte) → an L-shape: below the knee
 Decoding is **memory-bound by the weights**:
 
 - 7B model at FP16 = 14GB of weights. At H100's ~3.35TB/s: ~4ms to stream all weights once per token — *regardless* of how fast the math is. GPU utilization while decoding is famously low (5–15%) precisely because bandwidth saturates first.
-- The fixes are all "reduce bytes": **quantization** (FP16→INT8→FP4 shrinks the weight bytes, [[MachineLearning/deeplearning/model-optimization-for-inference]]), KV-cache management (the activations you also stream), and **batching** (share the weights across many requests — the weights are read once per batch, so batches amortize the bandwidth).
+- The fixes are all "reduce bytes": **quantization** (FP16→INT8→FP4 shrinks the weight bytes, [model-optimization-for-inference](../MachineLearning/deeplearning/model-optimization-for-inference.md)), KV-cache management (the activations you also stream), and **batching** (share the weights across many requests — the weights are read once per batch, so batches amortize the bandwidth).
 
 ## Where the model bites in this repo
 
-- **Fusion** ([[Compilers/PyTorchCompiler/TorchInductor/Fusion-Scheduler]]): fusing two kernels saves the *intermediate write+read* (memory traffic) — a memory-bound win. That's why elementwise fusion is nearly always worth it.
+- **Fusion** ([Fusion-Scheduler](../Compilers/PyTorchCompiler/TorchInductor/Fusion-Scheduler.md)): fusing two kernels saves the *intermediate write+read* (memory traffic) — a memory-bound win. That's why elementwise fusion is nearly always worth it.
 - **The `default` vs `max-autotune` decision**: compute-bound GEMMs reward autotuned tile sizes (compute roof); memory-bound pointwise ops don't care (bandwidth slope).
-- **Channels-last / memory layout** ([[PyTorch/Tensor-TensorImpl-Storage]]): layout changes *locality*, i.e. effective bandwidth.
-- **Quantization** ([[MachineLearning/deeplearning/model-optimization-for-inference]]): cutting bytes IS cutting time on the memory-bound slope — the exact reason it wins so reliably on LLMs.
+- **Channels-last / memory layout** ([Tensor-TensorImpl-Storage](../PyTorch/Tensor-TensorImpl-Storage.md)): layout changes *locality*, i.e. effective bandwidth.
+- **Quantization** ([model-optimization-for-inference](../MachineLearning/deeplearning/model-optimization-for-inference.md)): cutting bytes IS cutting time on the memory-bound slope — the exact reason it wins so reliably on LLMs.
 
 ## The practical reflex
 
@@ -33,7 +33,7 @@ For any perf question: **count the bytes**. Is the data bigger than the compute 
 
 ## Related
 
-- [[deep-learning-hardware]] — the hardware numbers the model uses.
-- [[gpu-spec-catalog]] — bandwidth vs FLOPs per generation.
-- [[MachineLearning/deeplearning/model-optimization-for-inference]] — quantization as a bandwidth fix.
-- [[PyTorch/Performance]] — the measurement toolkit.
+- [deep-learning-hardware](deep-learning-hardware.md) — the hardware numbers the model uses.
+- [gpu-spec-catalog](gpu-spec-catalog.md) — bandwidth vs FLOPs per generation.
+- [model-optimization-for-inference](../MachineLearning/deeplearning/model-optimization-for-inference.md) — quantization as a bandwidth fix.
+- [Performance](../PyTorch/Performance.md) — the measurement toolkit.

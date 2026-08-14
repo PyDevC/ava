@@ -2,7 +2,7 @@
 
 ## Goal of this directory
 
-Document the **`torch.compile` stack** — the PyTorch-native compiler pathway (Dynamo → AOTAutograd → Inductor) — with entry points and internals. This is where my PyTorch and compiler interests meet, so it's the directory I want to grow the most. Related notes live in [[../PLAN]] (the PyTorch system view) and [[../Compilers/PyTorchCompiler/PLAN]] (the compiler view).
+Document the **`torch.compile` stack** — the PyTorch-native compiler pathway (Dynamo → AOTAutograd → Inductor) — with entry points and internals. This is where my PyTorch and compiler interests meet, so it's the directory I want to grow the most. Related notes live in [PLAN](../PLAN.md) (the PyTorch system view) and [PLAN](../../Compilers/PyTorchCompiler/PLAN.md) (the compiler view).
 
 ## What's already here
 
@@ -11,10 +11,10 @@ Document the **`torch.compile` stack** — the PyTorch-native compiler pathway (
 ## What to add next
 
 - [ ] **The full pipeline, one note per stage**:
-  - [ ] **Dynamo** — tracing, guards, graph breaks (see [[../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks]])
+  - [ ] **Dynamo** — tracing, guards, graph breaks (see [GraphBreaks](../../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md))
   - [ ] **FX graph** — the graph IR in between (op set, nodes, subgraph semantics)
   - [ ] **AOTAutograd** — how backward is compiled too
-  - [ ] **Inductor** — loop-level IR, scheduler, Triton/C++ codegen (see [[../Compilers/DLCompilers/TorchInductor/TorchInductor]])
+  - [ ] **Inductor** — loop-level IR, scheduler, Triton/C++ codegen (see [TorchInductor](../../Compilers/DLCompilers/TorchInductor/TorchInductor.md))
   - [ ] **Runtime** — how the compiled module executes, cudagraphs
 - [ ] **`torch.compile` user guide**:
   - [ ] Modes: `default`, `reduce-overhead`, `max-autotune` — what each enables
@@ -25,7 +25,7 @@ Document the **`torch.compile` stack** — the PyTorch-native compiler pathway (
   - [ ] Understand fusion decisions (`can_fuse`, `score_fusion`)
   - [ ] Dynamic shapes / symbolic shapes handling
 - [ ] **Debugging & optimization workflows**:
-  - [ ] `TORCH_LOGS=+inductor,dynamo` deep dives (extends [[../Compilers/PyTorchCompiler/TorchDynamo/DebugWithTorchDynamo]])
+  - [ ] `TORCH_LOGS=+inductor,dynamo` deep dives (extends [DebugWithTorchDynamo](../../Compilers/PyTorchCompiler/TorchDynamo/DebugWithTorchDynamo.md))
   - [ ] Profiling compiled vs eager: where the wins/losses are
 
 ## Prioritization

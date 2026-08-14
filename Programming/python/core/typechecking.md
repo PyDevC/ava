@@ -34,5 +34,5 @@ The checker builds a type lattice, does flow analysis (`if isinstance(...)` narr
 
 - Annotations don't change runtime behavior (mostly — unless `from __future__ import annotations`/`typing` machinery is used; `dataclass`/`pydantic` do use them).
 - The point of static typechecking: catch `None` misuse, wrong arg types, refactoring safety, and serve as documentation.
-- Related to the bytecode model: types are erased by the time it becomes [[bytecode]]; the checker works on the source/annotation level, so it's a separate discipline.
-- See also [[conditioning-on-a-python-subclass]] for runtime type-conditional behavior via subclasses.
+- Related to the bytecode model: types are erased by the time it becomes [bytecode](bytecode.md); the checker works on the source/annotation level, so it's a separate discipline.
+- See also [conditioning-on-a-python-subclass](conditioning-on-a-python-subclass.md) for runtime type-conditional behavior via subclasses.

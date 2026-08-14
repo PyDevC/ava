@@ -14,19 +14,19 @@ How do you measure an LLM? Task metrics (BLEU/ROUGE) were built for the pre-LLM 
   - Knowledge: MMLU, GPQA. Reasoning: GSM8K (math), HumanEval/MBPP (code), BBH. Instruction following: IFEval. Agentic: SWE-bench (real GitHub issues).
   - Every one is *contaminated* (appears in pretraining data) — benchmark scores overstate real capability.
 - **LLM-as-judge**: use a strong model to score output quality (helpfulness, correctness, format) with a rubric. Scalable, correlates reasonably with humans — *if* you watch for judge bias (prefers longer/self-similar output).
-- **Human eval**: the gold standard; slow and expensive → used on samples + as judge-training data (see [[instruction-tuning-rlhf]]).
-- **Task-specific / practical**: for RAG ([[RAG]]): retrieval recall@k, faithfulness (does the answer follow the docs), citation accuracy. For agents: task success rate, steps, cost.
+- **Human eval**: the gold standard; slow and expensive → used on samples + as judge-training data (see [instruction-tuning-rlhf](instruction-tuning-rlhf.md)).
+- **Task-specific / practical**: for RAG ([RAG](RAG.md)): retrieval recall@k, faithfulness (does the answer follow the docs), citation accuracy. For agents: task success rate, steps, cost.
 
 ## How to actually measure a system
 
 1. **Define the user goal** first (answer grounded? follows the format? solves the ticket?).
 2. Pick 1–2 proxy metrics per goal — *not* 10.
 3. Build a small labeled **eval set** (50–200 examples), including edge cases (adversarial, injection, out-of-scope).
-4. Regression-run it on every prompt/tool/model change (see [[prompting-in-context-learning]]).
+4. Regression-run it on every prompt/tool/model change (see [prompting-in-context-learning](prompting-in-context-learning.md)).
 5. Track a **human-validated sample** — the proxies lie; spot-check.
 
 ## Related
 
-- [[../algorithms/model-interpretability]] — eval overlaps with "is the model doing what we think".
-- [[instruction-tuning-rlhf]] — the reward model is itself an evaluator.
-- [[RAG]] — the concrete evaluation target.
+- [model-interpretability](../algorithms/model-interpretability.md) — eval overlaps with "is the model doing what we think".
+- [instruction-tuning-rlhf](instruction-tuning-rlhf.md) — the reward model is itself an evaluator.
+- [RAG](RAG.md) — the concrete evaluation target.

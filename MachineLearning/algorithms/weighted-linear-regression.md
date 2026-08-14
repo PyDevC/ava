@@ -6,7 +6,7 @@ Weighted linear regression fits:
 ŷ = Xw        minimizing   Σ_i w_i·(y_i - ŷ_i)²
 ```
 
-Each sample's contribution to the [[cost-function]] is scaled by a per-sample weight. Closed-form solution:
+Each sample's contribution to the [cost-function](cost-function.md) is scaled by a per-sample weight. Closed-form solution:
 
 ```
 w* = (Xᵀ W X)⁻¹ Xᵀ W y
@@ -27,6 +27,6 @@ Weighted regression is equivalent to *duplicating* each sample `w_i` times, or t
 
 ## Related
 
-- [[tabular-regression]] — the general setting this lives in.
-- [[loss-function]] — weighting changes the loss each sample contributes.
+- [tabular-regression](tabular-regression.md) — the general setting this lives in.
+- [loss-function](loss-function.md) — weighting changes the loss each sample contributes.
 - Weighted MSE is a plain linear model with a weighted cost — same closed form, so it's cheap to experiment with.

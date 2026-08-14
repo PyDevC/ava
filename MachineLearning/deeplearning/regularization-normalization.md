@@ -4,13 +4,13 @@ Deep nets overfit *hard* — enough parameters to memorize the training set. Thi
 
 ## Weight-level regularization (the same idea as classic ML)
 
-- **Weight decay** — L2 penalty on weights, `J + ½λ‖w‖²` (see [[../algorithms/regularization]]). In Adam, *decoupled* weight decay (AdamW) is correct; "weight decay" folded into Adam's updates behaves differently.
-- **Dropout** — at training, zero out each neuron with probability `p` (Bernoulli mask, see [[../mathematical-function/bernoulli-categorical]]). At inference, multiply by `(1-p)` (or use inverted dropout). Effect: the network can't rely on any single unit — trains a noisy *ensemble* of sub-networks, which reduces variance (see [[../algorithms/bias-variance-tradeoff]]).
+- **Weight decay** — L2 penalty on weights, `J + ½λ‖w‖²` (see [regularization](../algorithms/regularization.md)). In Adam, *decoupled* weight decay (AdamW) is correct; "weight decay" folded into Adam's updates behaves differently.
+- **Dropout** — at training, zero out each neuron with probability `p` (Bernoulli mask, see [bernoulli-categorical](../mathematical-function/bernoulli-categorical.md)). At inference, multiply by `(1-p)` (or use inverted dropout). Effect: the network can't rely on any single unit — trains a noisy *ensemble* of sub-networks, which reduces variance (see [bias-variance-tradeoff](../algorithms/bias-variance-tradeoff.md)).
 
 ## Data-level regularization
 
 - **Data augmentation** — random transforms (crops, flips, color jitter, for NLP: token masking) so the model never sees the same example twice. The most effective regularizer in practice; it expands the dataset distribution itself.
-- **Early stopping** — stop when validation loss stops improving; the weights have only traveled so far (see [[../algorithms/cross-validation]]).
+- **Early stopping** — stop when validation loss stops improving; the weights have only traveled so far (see [cross-validation](../algorithms/cross-validation.md)).
 - **Label smoothing** — soften one-hot targets (mix with uniform): keeps softmax from over-confident predictions.
 
 ## Batch normalization
@@ -27,16 +27,16 @@ Normalizes each feature across the **batch**, then re-scales/re-shifts with *lea
 
 ## Layer normalization
 
-Normalizes each sample over its **feature dimension** instead of the batch — no dependence on batch size, same behavior at train/inference. This is why **Transformers use LayerNorm**, not BatchNorm (see [[Transformers]] and the [[attention-is-all-you-need]] notes). Zero-shot/few-shot and small-batch training also favor it.
+Normalizes each sample over its **feature dimension** instead of the batch — no dependence on batch size, same behavior at train/inference. This is why **Transformers use LayerNorm**, not BatchNorm (see [Transformers](Transformers.md) and the [attention-is-all-you-need](attention-is-all-you-need.md) notes). Zero-shot/few-shot and small-batch training also favor it.
 
 ## Which to reach for
 
-- Vision CNNs: BatchNorm (fused into conv by inference engines; see the conv note in [[An-introduction-to-convolutional-neural-networks]]).
+- Vision CNNs: BatchNorm (fused into conv by inference engines; see the conv note in [An-introduction-to-convolutional-neural-networks](An-introduction-to-convolutional-neural-networks.md)).
 - Transformers / RNNs / small batches: LayerNorm.
 - Dropout: Transformers prefer *no* dropout in attention post-2020 (or very little); CNNs use it before the classifier.
 
 ## Related
 
-- [[../algorithms/regularization]] — the classic ML framing these generalize.
-- [[model-optimization]] — how weight decay plugs into the optimizer.
-- [[how-to-use-lr-scheduler]] — normalization is what lets you train with aggressive LR schedules.
+- [regularization](../algorithms/regularization.md) — the classic ML framing these generalize.
+- [model-optimization](model-optimization.md) — how weight decay plugs into the optimizer.
+- [how-to-use-lr-scheduler](how-to-use-lr-scheduler.md) — normalization is what lets you train with aggressive LR schedules.

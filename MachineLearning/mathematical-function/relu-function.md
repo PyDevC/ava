@@ -10,7 +10,7 @@ and its derivative is a step: 1 for `x > 0`, 0 for `x < 0` (undefined at exactly
 
 ## Why ReLU won
 
-- **Kills the vanishing gradient problem** (see [[../deeplearning]] backprop notes): for positive inputs the gradient is exactly 1, so it doesn't shrink through layers (unlike [[logistic-function]]/tanh, which saturate to ~0 gradient).
+- **Kills the vanishing gradient problem** (see [deeplearning](../deeplearning/PLAN.md) backprop notes): for positive inputs the gradient is exactly 1, so it doesn't shrink through layers (unlike [logistic-function](logistic-function.md)/tanh, which saturate to ~0 gradient).
 - **Cheap**: a max, trivially parallel (unlike exp in sigmoid).
 - **Sparse activations**: dead neurons output exactly 0, which also regularizes.
 
@@ -31,6 +31,6 @@ The theme: smoothness (better gradients) vs computational cost (exp instead of m
 
 ## Related
 
-- [[logistic-function]] — the sigmoid these replaced; still used for gates/final probabilities.
-- [[lipsschitz-function]] — ReLU is 1-Lipschitz (slope bounded by 1).
-- tanh — see the separate [[tanh-function]] note.
+- [logistic-function](logistic-function.md) — the sigmoid these replaced; still used for gates/final probabilities.
+- [lipsschitz-function](lipsschitz-function.md) — ReLU is 1-Lipschitz (slope bounded by 1).
+- tanh — see the separate [tanh-function](tanh-function.md) note.

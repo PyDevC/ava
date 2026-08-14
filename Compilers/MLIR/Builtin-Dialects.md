@@ -15,7 +15,7 @@ Scalar ops with **type-polymorphic names**: `arith.addi` (int add), `arith.addf`
 `memref<2x3xf64, strided<[3, 1], offset: 0>>` — a **description of memory**: element type, shape, memory layout (strides), memory space. Ops: `memref.alloc`, `memref.load`, `memref.store`, `memref.subview`.
 
 - The key idea: memref separates *"what the data is"* (shape/type) from *"where/how it lives"* (strides/space). A slice isn't a copy — it's a new descriptor with different strides/offset (zero-copy, like NumPy views).
-- `memref` is where the "[[../Dialects/Tensor-memref]]" story bottoms out: high-level `tensor` values are immutable SSA values; `memref` is explicit mutable memory with aliasing — the thing that actually maps to hardware.
+- `memref` is where the "[Tensor-memref](Dialects/Tensor-memref.md)" story bottoms out: high-level `tensor` values are immutable SSA values; `memref` is explicit mutable memory with aliasing — the thing that actually maps to hardware.
 
 ## The roles in a pipeline
 
@@ -27,7 +27,7 @@ High-level: values, immutability, SSA-easy optimization. After **bufferization**
 
 ## Related
 
-- [[Operations-Types-Values]] — the op/type model these dialects use.
-- [[../Dialects/Tensor-memref]] — the value-model split.
-- [[../Passes]] — `-convert-arith-to-llvm` and friends.
-- [[../Dialects/scf]] — the control-flow dialect that `arith` computes inside.
+- [Operations-Types-Values](Operations-Types-Values.md) — the op/type model these dialects use.
+- [Tensor-memref](Dialects/Tensor-memref.md) — the value-model split.
+- [Passes](Passes.md) — `-convert-arith-to-llvm` and friends.
+- [scf](Dialects/scf-vector.md) — the control-flow dialect that `arith` computes inside.

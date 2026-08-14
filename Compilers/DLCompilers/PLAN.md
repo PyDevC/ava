@@ -24,7 +24,7 @@ Cover the **deep learning compiler landscape**: what each compiler does, how it'
 - [x] **ONNX Runtime** — the graph-optimization story for ONNX models; how it differs from full compilers (it's more of an executor + fusion layer).
 - [x] **OpenVINO** (Intel), **TFLite/XNNPACK** (mobile) — quick notes for completeness on the deployment side.
 - [x] **A comparison matrix** — one note comparing: frontends, IRs, backends, dynamic-shape support, open-source? That comparison is the actual payoff of this directory.
-- [ ] **MLIR linalg/tosa** — the common lowering target many of these compilers share (see [[../MLIR]] plan) → covered in [[../MLIR/Dialects/linalg]] and [[../MLIR/Dialects/tosa-stablehlo]]
+- [ ] **MLIR linalg/tosa** — the common lowering target many of these compilers share (see [MLIR](../MLIR/PLAN.md) plan) → covered in [linalg](../MLIR/Dialects/linalg.md) and [tosa-stablehlo](../MLIR/Dialects/tosa-stablehlo.md)
 - [ ] **Per-compiler deep dives** to extend existing notes (as I use each one):
   - [ ] IREE: walk a real `.vmfb` compile+run, the HAL dispatch flow.
   - [ ] TensorRT: working through a real engine build with a graph (tensorrt onnx → engine), precision (FP16/INT8) calibration.

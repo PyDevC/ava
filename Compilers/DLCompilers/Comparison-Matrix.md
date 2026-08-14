@@ -1,6 +1,6 @@
 # DL compiler comparison matrix
 
-The payoff of this directory: one table that maps the compilers side by side. The theme — **they all implement the same pipeline** (frontend → IR → optimization → lowering → codegen → runtime, see [[README]]) — with different choices at each step.
+The payoff of this directory: one table that maps the compilers side by side. The theme — **they all implement the same pipeline** (frontend → IR → optimization → lowering → codegen → runtime, see [README](README.md)) — with different choices at each step.
 
 | Compiler | Frontend input | Graph IR | Optimizations | Codegen | Runtime | Dynamic shapes | Open source |
 |---|---|---|---|---|---|---|---|
@@ -14,9 +14,9 @@ The payoff of this directory: one table that maps the compilers side by side. Th
 
 ## Reading the matrix
 
-- **The frontend-IR convergence**: the whole ecosystem is consolidating on **StableHLO/tosa → linalg** (IREE, XLA, torch-mlir) — see [[../MLIR/Dialects/tosa-stablehlo]]. TorchInductor is the notable exception (own IR, because it must consume PyTorch's live graph).
-- **The split is "executor vs compiler"**: ORT/TensorRT *fuse + dispatch vendor kernels*; TVM/XLA/IREE/Inductor *generate kernels* (via Triton, LLVM, or hand-rolled). Generating beats dispatching once you need custom fusion (see [[ONNXRuntime]]'s note on exactly this).
-- **Dynamic shapes** is the differentiator every team trips on: XLA's shape-polymorphism, DISC's speculation, Inductor's recompile-on-change — same problem, three answers (see [[../DISC/DISC]]).
+- **The frontend-IR convergence**: the whole ecosystem is consolidating on **StableHLO/tosa → linalg** (IREE, XLA, torch-mlir) — see [tosa-stablehlo](../MLIR/Dialects/tosa-stablehlo.md). TorchInductor is the notable exception (own IR, because it must consume PyTorch's live graph).
+- **The split is "executor vs compiler"**: ORT/TensorRT *fuse + dispatch vendor kernels*; TVM/XLA/IREE/Inductor *generate kernels* (via Triton, LLVM, or hand-rolled). Generating beats dispatching once you need custom fusion (see [ONNXRuntime](ONNXRuntime.md)'s note on exactly this).
+- **Dynamic shapes** is the differentiator every team trips on: XLA's shape-polymorphism, DISC's speculation, Inductor's recompile-on-change — same problem, three answers (see [DISC](DISC/DISC.md)).
 - **Runtime story**: Inductor stays *in-process* with PyTorch (no separate artifact); IREE/TensorRT/ORT produce loadable artifacts (`.vmfb`/`.engine`/sessions). That's the "ships to a different process/device" decision.
 
 ## Which to use when
@@ -29,6 +29,6 @@ The payoff of this directory: one table that maps the compilers side by side. Th
 
 ## Related
 
-- [[README]] — the shared pipeline this table is a projection of.
-- [[../MLIR/Dialects/tosa-stablehlo]] — the convergence frontend IR.
+- [README](README.md) — the shared pipeline this table is a projection of.
+- [tosa-stablehlo](../MLIR/Dialects/tosa-stablehlo.md) — the convergence frontend IR.
 - Each compiler's note in this directory.

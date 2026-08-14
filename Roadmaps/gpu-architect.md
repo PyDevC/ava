@@ -8,7 +8,7 @@ GPU architects design the **hardware itself**: the chip's compute units, memory 
 - **GPU-specific architecture**: SM/Compute-Unit design, warp/wavefront execution, scheduling, shared/global memory hierarchy, tensor cores (matrix units), NVLink/PCIe.
 - **VLSI/digital design** (for the microarchitecture side): RTL (Verilog/SystemVerilog), timing, power.
 - **Performance modeling**: cycle-accurate simulation, workload analysis, roofline.
-- **Firmware/driver interface**: how software (CUDA/HIP) talks to the hardware — see [[rocm-developers]] and [[hpc-engineer]] for the software side.
+- **Firmware/driver interface**: how software (CUDA/HIP) talks to the hardware — see [rocm-developers](rocm-developers.md) and [hpc-engineer](hpc-engineer.md) for the software side.
 
 ## What to study on NVIDIA side
 
@@ -25,6 +25,6 @@ GPU architects design the **hardware itself**: the chip's compute units, memory 
 
 ## Related
 
-- [[hpc-engineer]], [[rocm-developers]] — the software that runs on your hardware.
-- [[ai-compiler-engineer]] — compilers must match your hardware (memory layout, instruction selection).
-- [[triton-compiler-engineer]] — Triton's codegen targets exactly what you design.
+- [hpc-engineer](hpc-engineer.md), [rocm-developers](rocm-developers.md) — the software that runs on your hardware.
+- [ai-compiler-engineer](ai-compiler-engineer.md) — compilers must match your hardware (memory layout, instruction selection).
+- [triton-compiler-engineer](triton-compiler-engineer.md) — Triton's codegen targets exactly what you design.

@@ -35,4 +35,4 @@ for epoch in range(epochs):
 ## Notes
 
 - **Warmup** (ramp LR up for the first few hundred steps) helps huge-batch and transformer training a lot — prevents early divergence.
-- The LR schedule is itself a set of [[hyperparameter-search]] targets; see [[MachineLearning/automl/hyperparameter-tuning/gradient-based-optimization]] for tuning it automatically.
+- The LR schedule is itself a set of [hyperparameter-search](hyperparameter-search.md) targets; see [gradient-based-optimization](../automl/hyperparameter-tuning/gradient-based-optimization.md) for tuning it automatically.

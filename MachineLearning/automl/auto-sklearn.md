@@ -22,6 +22,6 @@ Auto-sklearn is an AutoML framework that wraps the sklearn ecosystem: it searche
 
 ## Practical notes
 
-- Great default for tabular AutoML (see [[MachineLearning/algorithms/tabular-regression]]).
+- Great default for tabular AutoML (see [tabular-regression](../algorithms/tabular-regression.md)).
 - Slow on huge datasets (each evaluation trains a full model) — set a time budget (`time_left_for_this_task`).
-- Related: [[mlbox]], [[tpot]], [[h2o-automl]] are the main competitors.
+- Related: [mlbox](mlbox.md), [tpot](tpot.md), [h2o-automl](h2o-automl.md) are the main competitors.

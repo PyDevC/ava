@@ -23,16 +23,16 @@ This is exactly the intuition behind `learning_curve` plots and why a random for
 ## The two failure modes
 
 - **Underfitting (high bias)**: training error is also high. Fix: more capacity, better features, less regularization.
-- **Overfitting (high variance)**: training error low, test error high. Fix: [[regularization]], more data, simpler model, cross-validation (see [[cross-validation]]).
+- **Overfitting (high variance)**: training error low, test error high. Fix: [regularization](regularization.md), more data, simpler model, cross-validation (see [cross-validation](cross-validation.md)).
 
 ## Practical meaning
 
 - More data *reduces variance* without increasing bias — the cleanest lever.
-- The whole point of [[regularization]], bagging (variance ↓ via averaging), and boosting with small trees (bias ↓) is to move along this curve deliberately.
+- The whole point of [regularization](regularization.md), bagging (variance ↓ via averaging), and boosting with small trees (bias ↓) is to move along this curve deliberately.
 - Deep learning's tricks (dropout, weight decay, augmentation) are all variance-reduction.
 
 ## Related
 
-- [[regularization]] — the tool to trade bias for variance explicitly.
-- [[cross-validation]] — how you find the sweet spot without looking at test data.
-- [[descision-trees]] / [[Gradient-boosting]] — concrete places the tradeoff shows up.
+- [regularization](regularization.md) — the tool to trade bias for variance explicitly.
+- [cross-validation](cross-validation.md) — how you find the sweet spot without looking at test data.
+- [descision-trees](descision-trees.md) / [Gradient-boosting](Gradient-boosting.md) — concrete places the tradeoff shows up.

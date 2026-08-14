@@ -11,8 +11,8 @@ learning/training process. Hyperparameter tuning is the process of finding the
 optimal hyperparameters for any given machine learning algorithm.
 
 There are various hyperparameter automation techniques.
-- [[Bayesian-optimization]]
-- [[Hyperband]]
-- [[gradient-based-optimization]]
-- [[grid-search]]
-- [[random-search]]
+- [Bayesian-optimization](hyperparameter-tuning/Bayesian-optimization.md)
+- [Hyperband](hyperparameter-tuning/Hyperband.md)
+- [gradient-based-optimization](hyperparameter-tuning/gradient-based-optimization.md)
+- [grid-search](hyperparameter-tuning/grid-search.md)
+- [random-search](hyperparameter-tuning/random-search.md)

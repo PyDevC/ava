@@ -12,7 +12,7 @@ between 0 and 1, which can be used as a probability score.
 softmax(z)_i = exp(z_i) / Σ_j exp(z_j)
 ```
 
-It "softens" the argmax: the largest input gets the largest probability, but all values get *some* weight (vs. a hard [[indicator-function]]/argmax, which gives 1 to the winner and 0 to everything else).
+It "softens" the argmax: the largest input gets the largest probability, but all values get *some* weight (vs. a hard [indicator-function](indicator-function.md)/argmax, which gives 1 to the winner and 0 to everything else).
 
 ## Key properties
 
@@ -23,14 +23,14 @@ It "softens" the argmax: the largest input gets the largest probability, but all
 
 ## Where it's used
 
-- **Multiclass classification**: the output layer of a classifier → probability over classes; trained with cross-entropy / log loss. See [[MachineLearning/algorithms/classification]].
-- **Attention weights**: in Transformers, attention weights are softmax over score vectors — see [[MachineLearning/deeplearning/Transformers]] and the [[MachineLearning/deeplearning/attention-is-all-you-need]] paper notes.
-- **Ranking losses** (listwise): softmax over scores, e.g. ListNet — see [[MachineLearning/algorithms/ranking]].
-- The multi-class analog of the [[logistic-function]] (sigmoid = softmax on 2 classes).
+- **Multiclass classification**: the output layer of a classifier → probability over classes; trained with cross-entropy / log loss. See [classification](../algorithms/classification.md).
+- **Attention weights**: in Transformers, attention weights are softmax over score vectors — see [Transformers](../deeplearning/Transformers.md) and the [attention-is-all-you-need](../deeplearning/attention-is-all-you-need.md) paper notes.
+- **Ranking losses** (listwise): softmax over scores, e.g. ListNet — see [ranking](../algorithms/ranking.md).
+- The multi-class analog of the [logistic-function](logistic-function.md) (sigmoid = softmax on 2 classes).
 
 ## Related
 
-- [[logistic-function]] — the binary case.
-- [[logit-function]] — its inverse; log-softmax is the numerically-stable form.
-- [[indicator-function]] — the "hard" version softmax is a relaxation of.
-- [[MachineLearning/mathematical-function/softmax-function|softmax]]'s derivative: `J_i = s_i·(δ_ij - s_j)`.
+- [logistic-function](logistic-function.md) — the binary case.
+- [logit-function](logit-function.md) — its inverse; log-softmax is the numerically-stable form.
+- [indicator-function](indicator-function.md) — the "hard" version softmax is a relaxation of.
+- [softmax](softmax-function.md)'s derivative: `J_i = s_i·(δ_ij - s_j)`.

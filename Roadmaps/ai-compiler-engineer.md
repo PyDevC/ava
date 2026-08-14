@@ -4,10 +4,10 @@ AI compiler engineers build the **software that turns ML models into fast machin
 
 ## Core skills
 
-- **Compiler fundamentals**: IRs, SSA (see [[Compilers/IR/SSA/Dominators]]), dataflow analysis, loop transformations, codegen, instruction selection.
-- **MLIR** — the modern IR framework for ML compilers (see [[Compilers/MLIR/CMake_Guide]], [[Compilers/MLIR/Dialects/Affine]]).
-- **Deep learning compiler stack**: a graph-level IR → lowering → kernel-level IR → codegen. Study [[Compilers/DLCompilers/TorchInductor/TorchInductor]], [[Compilers/DLCompilers/IREE/IREE]], [[Compilers/DLCompilers/TensorRT/TensorRT]], [[Compilers/DLCompilers/DISC/DISC]].
-- **Kernel programming**: Triton, CUDA, C++ vectorization (see [[triton-compiler-engineer]], [[gpu-architect]]).
+- **Compiler fundamentals**: IRs, SSA (see [Dominators](../Compilers/IR/SSA/Dominators.md)), dataflow analysis, loop transformations, codegen, instruction selection.
+- **MLIR** — the modern IR framework for ML compilers (see [CMake_Guide](../Compilers/MLIR/CMake_Guide.md), [Affine](../Compilers/MLIR/Dialects/Affine.md)).
+- **Deep learning compiler stack**: a graph-level IR → lowering → kernel-level IR → codegen. Study [TorchInductor](../Compilers/DLCompilers/TorchInductor/TorchInductor.md), [IREE](../Compilers/DLCompilers/IREE/IREE.md), [TensorRT](../Compilers/DLCompilers/TensorRT/TensorRT.md), [DISC](../Compilers/DLCompilers/DISC/DISC.md).
+- **Kernel programming**: Triton, CUDA, C++ vectorization (see [triton-compiler-engineer](triton-compiler-engineer.md), [gpu-architect](gpu-architect.md)).
 - **Performance analysis**: profiling, roofline model, cache behavior.
 
 ## The mental model
@@ -30,6 +30,6 @@ Each of these layers is a career in itself.
 
 ## Related
 
-- [[ai-framework-engineer]] — framework side, overlapping heavily.
-- [[triton-compiler-engineer]] — the kernel-language specialization.
-- [[hpc-engineer]] — traditional HPC compilers (OpenMP, loop transforms) feed into this.
+- [ai-framework-engineer](ai-framework-engineer.md) — framework side, overlapping heavily.
+- [triton-compiler-engineer](triton-compiler-engineer.md) — the kernel-language specialization.
+- [hpc-engineer](hpc-engineer.md) — traditional HPC compilers (OpenMP, loop transforms) feed into this.

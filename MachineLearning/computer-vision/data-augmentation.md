@@ -1,6 +1,6 @@
 # Image data augmentation
 
-Augmentation is the strongest regularization for vision models (see [[deeplearning/regularization-normalization]]) — every transform produces a new training example, so the model sees the distribution's *variability* instead of memorizing pixel patterns.
+Augmentation is the strongest regularization for vision models (see [regularization-normalization](../deeplearning/regularization-normalization.md)) — every transform produces a new training example, so the model sees the distribution's *variability* instead of memorizing pixel patterns.
 
 ## The practical recipe
 
@@ -20,12 +20,12 @@ Augmentation is the strongest regularization for vision models (see [[deeplearni
 
 ## For landmark/gesture pipelines specifically
 
-- Landmark models train on **keypoint-preserving** transforms: the transform must be applied to the *keypoint coordinates* too (flip the x of landmarks on horizontal flip, rotate the landmarks with the image). A mismatch here silently corrupts the labels — the #1 landmark-training bug (see [[pose-landmark-estimation]]).
-- Synthetic backgrounds / chroma-keyed backgrounds for hand segmentation, cutout-style hand occlusion (fingers behind objects) — targeted augmentation for the exact failure modes in [[report]].
+- Landmark models train on **keypoint-preserving** transforms: the transform must be applied to the *keypoint coordinates* too (flip the x of landmarks on horizontal flip, rotate the landmarks with the image). A mismatch here silently corrupts the labels — the #1 landmark-training bug (see [pose-landmark-estimation](pose-landmark-estimation.md)).
+- Synthetic backgrounds / chroma-keyed backgrounds for hand segmentation, cutout-style hand occlusion (fingers behind objects) — targeted augmentation for the exact failure modes in [report](report.md).
 
 ## Related
 
-- [[deeplearning/regularization-normalization]] — why augmentation = regularization.
-- [[pose-landmark-estimation]] — keypoint-aware augmentation.
-- [[hestreg]] — the gesture project that needs these recipes.
-- [[deeplearning/model-optimization-for-inference]] — TTA at the edge is a latency decision.
+- [regularization-normalization](../deeplearning/regularization-normalization.md) — why augmentation = regularization.
+- [pose-landmark-estimation](pose-landmark-estimation.md) — keypoint-aware augmentation.
+- [hestreg](hestreg.md) — the gesture project that needs these recipes.
+- [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md) — TTA at the edge is a latency decision.

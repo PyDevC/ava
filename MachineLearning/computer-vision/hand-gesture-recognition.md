@@ -31,8 +31,8 @@ The two-stage design exists for a reason: detecting a palm (a flat, low-poly pat
 
 ## Why landmarks instead of raw pixels
 
-- Compress the input to ~21×2–3 numbers — tiny, fast, and robust to lighting/background (see [[hestreg-model]] for the classification model that consumes them).
-- The landmark representation is basically automated feature extraction for the gesture classifier (see [[MachineLearning/automl/automated-feature-extraction]]).
+- Compress the input to ~21×2–3 numbers — tiny, fast, and robust to lighting/background (see [hestreg-model](hestreg-model.md) for the classification model that consumes them).
+- The landmark representation is basically automated feature extraction for the gesture classifier (see [automated-feature-extraction](../automl/automated-feature-extraction.md)).
 
 ## Dynamic gestures (my project's focus)
 
@@ -42,7 +42,7 @@ Static gestures = one frame → one label. **Dynamic** gestures span multiple fr
 - Compute per-frame angles between landmarks and classify the pattern.
 - Sliding window + majority vote to smooth predictions.
 
-This is the multi-frame processing mentioned in [[report]].
+This is the multi-frame processing mentioned in [report](report.md).
 
 ## Practical tips
 

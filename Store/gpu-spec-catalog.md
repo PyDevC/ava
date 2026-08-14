@@ -1,6 +1,6 @@
 # GPU spec catalog
 
-The reference for [[deep-learning-hardware]]: NVIDIA/AMD/Intel/cloud-chip generations and the numbers that matter (tensor-core availability, memory, interconnect). Numbers drift with SKUs — this is the *shape* of the catalog, keep the precise clocks current.
+The reference for [deep-learning-hardware](deep-learning-hardware.md): NVIDIA/AMD/Intel/cloud-chip generations and the numbers that matter (tensor-core availability, memory, interconnect). Numbers drift with SKUs — this is the *shape* of the catalog, keep the precise clocks current.
 
 ## NVIDIA (Volta → Blackwell)
 
@@ -16,25 +16,25 @@ The story: tensor cores appeared at Volta; every gen since adds precision (FP16�
 
 ## AMD (CDNA) and Intel
 
-- **CDNA2** (MI250, 2021): BF16/FP16, HBM2e, ~1.6TB/s; **CDNA3** (MI300X, 2023): 192GB HBM3, ~5.3TB/s — the *largest* memory of the era (the reason LLM people started buying AMD). ROCm is the CUDA equivalent (see [[Roadmaps/rocm-developers]]).
+- **CDNA2** (MI250, 2021): BF16/FP16, HBM2e, ~1.6TB/s; **CDNA3** (MI300X, 2023): 192GB HBM3, ~5.3TB/s — the *largest* memory of the era (the reason LLM people started buying AMD). ROCm is the CUDA equivalent (see [rocm-developers](../Roadmaps/rocm-developers.md)).
 - **RDNA** (gaming line): no serious tensor-core story for training; the AI story is CDNA.
-- **Intel Gaudi** (Habana): memory-bandwidth-priced ML accelerators (2×/3×); **Gaudi 2/3** target LLM training/inference with onboard HBM. Intel Arc/iGPU have XMX units (DP4a/XMX) — used for lightweight on-device inference (see [[Compilers/DLCompilers/OpenVINO-TFLite]]).
+- **Intel Gaudi** (Habana): memory-bandwidth-priced ML accelerators (2×/3×); **Gaudi 2/3** target LLM training/inference with onboard HBM. Intel Arc/iGPU have XMX units (DP4a/XMX) — used for lightweight on-device inference (see [OpenVINO-TFLite](../Compilers/DLCompilers/OpenVINO-TFLite.md)).
 
 ## Cloud custom chips
 
-- **Google TPU**: v4 (2021, 4096-chip pods, ~10^17 FLOPs/pod), v5e/v5p (2023), v6 (Trillium). Interconnect = the *pod* (a supercomputer-class network, not PCIe/NVLink) — the "scale-out by design" architecture (XLA is its compiler, [[Compilers/DLCompilers/XLA-StableHLO]]).
+- **Google TPU**: v4 (2021, 4096-chip pods, ~10^17 FLOPs/pod), v5e/v5p (2023), v6 (Trillium). Interconnect = the *pod* (a supercomputer-class network, not PCIe/NVLink) — the "scale-out by design" architecture (XLA is its compiler, [XLA-StableHLO](../Compilers/DLCompilers/XLA-StableHLO.md)).
 - **AWS**: Inferentia (inference, Neuron SDK), Trainium (training). Custom interconnect (EFS, NeuronLink).
 - **Meta** (MTIA), **Microsoft** (Maia) — in-house inference chips; the "chip per hyperscaler" trend.
 
 ## The reference facts to remember
 
-- **Tensor cores** = the matmul engines; mixed-precision is the whole game ([[MachineLearning/deeplearning/mixed-precision]]).
-- **NVLink/NVSwitch** = the intra-node/rack fabric; InfiniBand/Ethernet = the inter-node. Distributed training ([[MachineLearning/deeplearning/distributed-training]]) lives and dies by these numbers.
+- **Tensor cores** = the matmul engines; mixed-precision is the whole game ([mixed-precision](../MachineLearning/deeplearning/mixed-precision.md)).
+- **NVLink/NVSwitch** = the intra-node/rack fabric; InfiniBand/Ethernet = the inter-node. Distributed training ([distributed-training](../MachineLearning/deeplearning/distributed-training.md)) lives and dies by these numbers.
 - **Roofline**: memory-bound vs compute-bound. A 1.7B-param model at FP8 is ~3.4GB of weights — at 3TB/s that's ~1.1ms *just reading the weights* per token. Bandwidth is the LLM-inference constraint (see the roofline note).
 
 ## Related
 
-- [[deep-learning-hardware]] — the concepts behind these numbers.
-- [[Roadmaps/gpu-architect]] — the role this feeds.
-- [[MachineLearning/deeplearning/mixed-precision]] — what the tensor cores compute.
-- [[Roadmaps/rocm-developers]] — the AMD stack.
+- [deep-learning-hardware](deep-learning-hardware.md) — the concepts behind these numbers.
+- [gpu-architect](../Roadmaps/gpu-architect.md) — the role this feeds.
+- [mixed-precision](../MachineLearning/deeplearning/mixed-precision.md) — what the tensor cores compute.
+- [rocm-developers](../Roadmaps/rocm-developers.md) — the AMD stack.

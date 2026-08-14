@@ -30,11 +30,11 @@ Compare: **tensor parallelism** (shard each layer's weight matrix, split matmuls
 ## The practical stack
 
 - `torch.distributed` init → DDP/FSDP wrapper → data loader with a **different shard per rank** (per-rank seed offset, `DistributedSampler`) → checkpointing (sharded + consolidated).
-- The **collectives** are the real primitive: `all-reduce`, `all-gather`, `reduce-scatter` (see [[../../Roadmaps/hpc-engineer]] for the MPI connection).
-- Ties to the compiler story: gradient reduction is a collective op; kernels and comm overlap is where framework engineering shines (see [[../../PyTorch/PLAN]]).
+- The **collectives** are the real primitive: `all-reduce`, `all-gather`, `reduce-scatter` (see [hpc-engineer](../../Roadmaps/hpc-engineer.md) for the MPI connection).
+- Ties to the compiler story: gradient reduction is a collective op; kernels and comm overlap is where framework engineering shines (see [PLAN](../../PyTorch/PLAN.md)).
 
 ## Related
 
-- [[model-optimization]] — the single-GPU baseline this scales up.
-- [[regularization-normalization]] — BatchNorm is not distributed-safe (batch stats differ per rank) → LayerNorm or sync-BN.
-- [[../../Roadmaps/hpc-engineer]] — MPI/collectives background.
+- [model-optimization](model-optimization.md) — the single-GPU baseline this scales up.
+- [regularization-normalization](regularization-normalization.md) — BatchNorm is not distributed-safe (batch stats differ per rank) → LayerNorm or sync-BN.
+- [hpc-engineer](../../Roadmaps/hpc-engineer.md) — MPI/collectives background.

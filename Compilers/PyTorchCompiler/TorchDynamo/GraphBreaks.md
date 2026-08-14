@@ -1,6 +1,6 @@
 # Graph Breaks
 
-TorchDynamo traces Python bytecode and turns it into an FX graph to hand to a backend (like [[PyTorch/Compilers/TorchInductor/EntryPoint|TorchInductor]]). When it hits something it can't faithfully trace, it has to **stop tracing, emit the graph compiled so far, and resume tracing later** — that split is a *graph break*. Everything inside a single trace becomes one fused kernel region; a graph break means more kernels, more Python↔C++ overhead, less fusion.
+TorchDynamo traces Python bytecode and turns it into an FX graph to hand to a backend (like [TorchInductor](../../../PyTorch/Compilers/TorchInductor/EntryPoint.md)). When it hits something it can't faithfully trace, it has to **stop tracing, emit the graph compiled so far, and resume tracing later** — that split is a *graph break*. Everything inside a single trace becomes one fused kernel region; a graph break means more kernels, more Python↔C++ overhead, less fusion.
 
 ## What causes graph breaks
 
@@ -38,4 +38,4 @@ This prints a summary with the number of graph breaks and the reasons for the fi
 
 ## Why you should care
 
-Every graph break means the compiler can't see the whole computation, so it loses fusion, shape/propagation, and low-precision opportunities. The golden rule: **fewer, bigger graphs → faster code**. See also [[DebugWithTorchDynamo]].
+Every graph break means the compiler can't see the whole computation, so it loses fusion, shape/propagation, and low-precision opportunities. The golden rule: **fewer, bigger graphs → faster code**. See also [DebugWithTorchDynamo](DebugWithTorchDynamo.md).

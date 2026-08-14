@@ -1,11 +1,11 @@
 # ASHA, PBT, BOHB
 
-The modern **multi-fidelity** tuning methods — the successors to plain [[Hyperband]] for deep learning, where each evaluation is expensive and you want to stop losers early and keep winners training.
+The modern **multi-fidelity** tuning methods — the successors to plain [Hyperband](Hyperband.md) for deep learning, where each evaluation is expensive and you want to stop losers early and keep winners training.
 
 ## ASHA — Asynchronous Successive Halving
 
 - **Successive halving** (the Hyperband core): run N candidates for a *fraction* of budget, promote the top fraction, repeat. ASHA makes it **asynchronous**: workers pull the next-promote decision whenever they finish, so no worker idles waiting for a synchronized round (perfect for shared clusters).
-- `asha_pruner`/`HyperbandPruner` in Optuna implement it (see [[optuna]]); it's also the default in Ray Tune.
+- `asha_pruner`/`HyperbandPruner` in Optuna implement it (see [optuna](optuna.md)); it's also the default in Ray Tune.
 - **When**: many cheap-to-evaluate candidates (small models, few epochs), parallel workers, "tune with limited budget" mindset.
 
 ## PBT — Population Based Training
@@ -17,7 +17,7 @@ The modern **multi-fidelity** tuning methods — the successors to plain [[Hyper
 
 ## BOHB — Bayesian Optimization + Hyperband
 
-- **Hyperband's** early-stopping structure, but the *candidate generation* uses a **Bayesian surrogate** (a TPE-like model, see [[Bayesian-optimization]]) instead of random draws.
+- **Hyperband's** early-stopping structure, but the *candidate generation* uses a **Bayesian surrogate** (a TPE-like model, see [Bayesian-optimization](Bayesian-optimization.md)) instead of random draws.
 - At each budget level it fits a model on the surviving candidates' results → next candidates come from the model, not the uniform prior → sample-efficient AND multi-fidelity.
 - **When**: you want Hyperband's budget savings but candidates are so expensive that blind random sampling wastes too much (mid-large NNs).
 
@@ -33,7 +33,7 @@ All three assume the **early budget correlates with final quality** — the "mul
 
 ## Related
 
-- [[Hyperband]] — the base they extend.
-- [[Bayesian-optimization]] — BOHB's surrogate.
-- [[optuna]] — where ASHA/BOHB/pruning are used day-to-day.
-- [[MachineLearning/deeplearning/model-optimization]] — PBT adapts LR schedules at training time.
+- [Hyperband](Hyperband.md) — the base they extend.
+- [Bayesian-optimization](Bayesian-optimization.md) — BOHB's surrogate.
+- [optuna](optuna.md) — where ASHA/BOHB/pruning are used day-to-day.
+- [model-optimization](../../deeplearning/model-optimization.md) — PBT adapts LR schedules at training time.

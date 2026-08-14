@@ -1,6 +1,6 @@
 # Model-agnostic meta-learning (MAML)
 
-MAML ("Model-Agnostic Meta-Learning", Finn et al. 2017) is the flagship **optimization-based** approach in [[meta-learning]]. The name says it all: it works with any model trained by gradient descent.
+MAML ("Model-Agnostic Meta-Learning", Finn et al. 2017) is the flagship **optimization-based** approach in [meta-learning](meta-learning.md). The name says it all: it works with any model trained by gradient descent.
 
 ## The core idea
 
@@ -21,12 +21,12 @@ A good `θ` lives near a point where the loss landscape is "flat and steerable" 
 
 ## Properties
 
-- **Task-agnostic**: works for few-shot classification ([[few-shot-learning]]), regression, RL.
+- **Task-agnostic**: works for few-shot classification ([few-shot-learning](few-shot-learning.md)), regression, RL.
 - Needs no special architecture — any differentiable model.
 - Costly: each meta-step unrolls several inner gradient steps (memory/compute heavy).
 
 ## Related
 
-- [[meta-learning]] — umbrella concept.
-- [[few-shot-learning]] — the canonical application.
-- [[MachineLearning/algorithms/transfer-learning]] — contrast: transfer reuses a trained model; MAML learns how to adapt.
+- [meta-learning](meta-learning.md) — umbrella concept.
+- [few-shot-learning](few-shot-learning.md) — the canonical application.
+- [transfer-learning](../algorithms/transfer-learning.md) — contrast: transfer reuses a trained model; MAML learns how to adapt.

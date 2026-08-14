@@ -19,14 +19,14 @@ The AI Engineer is the practitioner who **builds and ships AI products** — app
 ## Roadmap to get there
 
 1. Python + data structures; git.
-2. Classic ML course (sklearn, trees, linear models — see my [[MachineLearning/algorithms]] notes).
-3. Deep learning (CNNs, Transformers — see [[MachineLearning/deeplearning/Transformers]], [[MachineLearning/deeplearning/An-introduction-to-convolutional-neural-networks]]).
-4. PyTorch fluency (see [[PyTorch/Explore]]).
+2. Classic ML course (sklearn, trees, linear models — see my [algorithms](../MachineLearning/algorithms/PLAN.md) notes).
+3. Deep learning (CNNs, Transformers — see [Transformers](../MachineLearning/deeplearning/Transformers.md), [An-introduction-to-convolutional-neural-networks](../MachineLearning/deeplearning/An-introduction-to-convolutional-neural-networks.md)).
+4. PyTorch fluency (see [Explore](../PyTorch/Explore.md)).
 5. LLM application layer: prompt engineering, RAG, fine-tuning, agents.
 6. Deployment: FastAPI/Streamlit, Docker, model serving, monitoring.
 
 ## Related
 
-- [[ml-engineer]] — overlaps heavily; AI engineer skews more product/systems.
-- [[research-scientist]] — the opposite pole (algorithms, not products).
-- [[data-analyst]] — earlier/less engineering-heavy position.
+- [ml-engineer](ml-engineer.md) — overlaps heavily; AI engineer skews more product/systems.
+- [research-scientist](research-scientist.md) — the opposite pole (algorithms, not products).
+- [data-analyst](data-analyst.md) — earlier/less engineering-heavy position.

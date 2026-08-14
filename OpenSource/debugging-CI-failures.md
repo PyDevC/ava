@@ -1,6 +1,6 @@
 # Debugging CI failures
 
-A red CI on your PR is normal — the skill is reading the *right* log quickly. Big-project CI (PyTorch, LLVM, ROCm) runs a matrix of jobs; your job is to find *your* failure, not the 40 unrelated ones (see [[PyTorch/CI_Infra]] for a real runner map).
+A red CI on your PR is normal — the skill is reading the *right* log quickly. Big-project CI (PyTorch, LLVM, ROCm) runs a matrix of jobs; your job is to find *your* failure, not the 40 unrelated ones (see [CI_Infra](../PyTorch/CI_Infra.md) for a real runner map).
 
 ## Reading the matrix
 
@@ -12,13 +12,13 @@ A red CI on your PR is normal — the skill is reading the *right* log quickly. 
 1. **Find the first error, not the last**: scroll to the first `FAILED`/`error:`/`AssertionError`, then look at the ~30 lines *before* it (the traceback root). Log tail after the first error is usually cascade.
 2. **The classic three**:
    - **Lint/format/typing failures** — `clang-format`, `ruff`, `mypy`, pre-commit. Fastest: run the exact local command from the CI config (`git diff --check`, project's lint script) and fix.
-   - **Build failures** — missing include, CMake misconfig, codegen mismatch. For MLIR/PyTorch C++: check the *TableGen/codegen* includes (see [[MLIR/CMake_Guide]]), and that generated `.inc` files are regenerated.
+   - **Build failures** — missing include, CMake misconfig, codegen mismatch. For MLIR/PyTorch C++: check the *TableGen/codegen* includes (see [CMake_Guide](../Compilers/MLIR/CMake_Guide.md)), and that generated `.inc` files are regenerated.
    - **Test failures** — a `pytest`/`unittest`/CTest failure: run *that test* locally with the same args/flags (`pytest path::test -k ...`), reproduce, fix, rerun.
-3. **Flaky/ordering**: tests that pass locally but fail on CI → test *ordering* dependency, resource contention (GPU OOM), or nondeterminism (seeds, see [[automl/hyperparameter-tuning/tuning-methodology]] for seed discipline).
+3. **Flaky/ordering**: tests that pass locally but fail on CI → test *ordering* dependency, resource contention (GPU OOM), or nondeterminism (seeds, see [tuning-methodology](../MachineLearning/automl/hyperparameter-tuning/tuning-methodology.md) for seed discipline).
 
 ## Tooling that saves hours
 
-- `TORCH_LOGS` / `--mlir-print-ir-after-failure` / `gdb` stack traces in the CI log — the project-specific debug flags (see [[PyTorch/Explore]] and [[PyTorchCompiler/DebugWithTorchDynamo]]).
+- `TORCH_LOGS` / `--mlir-print-ir-after-failure` / `gdb` stack traces in the CI log — the project-specific debug flags (see [Explore](../PyTorch/Explore.md) and [DebugWithTorchDynamo](../Compilers/PyTorchCompiler/TorchDynamo/DebugWithTorchDynamo.md)).
 - **Minimize**: reduce the failing test to the smallest repro, then bisect (git bisect on your branch for regressions you introduced).
 - **Run CI locally first**: the repo's "quick checks"/dev-container scripts mirror the matrix — always cheaper than a CI round-trip.
 
@@ -30,7 +30,7 @@ A red CI on your PR is normal — the skill is reading the *right* log quickly. 
 
 ## Related
 
-- [[PR-Lifecycle]] — CI is the gate inside the flow.
-- [[PyTorch/CI_Infra]] — a concrete runner/infra map.
-- [[PyTorch/Explore]] — TORCH_LOGS and debug flags.
-- [[writing-a-good-commit]] — CI etiquette starts at the commit.
+- [PR-Lifecycle](PR-Lifecycle.md) — CI is the gate inside the flow.
+- [CI_Infra](../PyTorch/CI_Infra.md) — a concrete runner/infra map.
+- [Explore](../PyTorch/Explore.md) — TORCH_LOGS and debug flags.
+- [writing-a-good-commit](writing-a-good-commit.md) — CI etiquette starts at the commit.

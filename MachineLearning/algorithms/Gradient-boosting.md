@@ -23,6 +23,6 @@ Gradient descent but in *function space*: instead of updating a parameter vector
 ## Notes
 
 - Works for regression, classification, ranking — any differentiable loss.
-- This family includes [[XGBoost]], [[LightGBM]], and [[descision-trees|decision trees]] as base learners.
+- This family includes [XGBoost](XGBoost.md), [LightGBM](LightGBM.md), and [decision trees](descision-trees.md) as base learners.
 - Key hyperparameters: number of trees (`n_estimators`), learning rate, max depth, subsampling.
-- The base estimator (`base_estimator` / `estimator`) is normally a decision tree — see [[base-esitmator]].
+- The base estimator (`base_estimator` / `estimator`) is normally a decision tree — see [base-esitmator](base-esitmator.md).

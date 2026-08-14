@@ -20,11 +20,11 @@ for each instruction with no uses and no side effects:
     if that operand's use count hits 0 and it's side-effect-free, add to worklist
 ```
 
-**Liveness-based DCE (on the CFG):** an instruction is dead if the variable it defines is never live-out (see [[Liveness]]) — equivalently, never used on any path after the def. This catches more cases than the use-count version because it reasons about *paths*, not just immediate uses.
+**Liveness-based DCE (on the CFG):** an instruction is dead if the variable it defines is never live-out (see [Liveness](Liveness.md)) — equivalently, never used on any path after the def. This catches more cases than the use-count version because it reasons about *paths*, not just immediate uses.
 
 ## Why SSA makes DCE cleaner
 
-In SSA form, every use points directly to its def (the unique reaching def). So "is this value used?" is a question about the def-use list — no must-alias or reaching-definitions analysis needed. This is one of the big practical wins of SSA (see [[SsaConstruction]]).
+In SSA form, every use points directly to its def (the unique reaching def). So "is this value used?" is a question about the def-use list — no must-alias or reaching-definitions analysis needed. This is one of the big practical wins of SSA (see [SsaConstruction](SsaConstruction.md)).
 
 ## The side-effect rule is what actually matters
 
@@ -32,6 +32,6 @@ In SSA form, every use points directly to its def (the unique reaching def). So 
 
 ## Related
 
-- [[Liveness]] — the analysis that powers the CFG form.
-- [[CommonSubexpressionElimination]] — DCE's sibling; CSE creates redundancies that DCE then cleans up.
-- [[PruneSSA]] — DCE is what makes pruning unnecessary for already-dead code; pruning prevents the dead phis in the first place.
+- [Liveness](Liveness.md) — the analysis that powers the CFG form.
+- [CommonSubexpressionElimination](CommonSubexpressionElimination.md) — DCE's sibling; CSE creates redundancies that DCE then cleans up.
+- [PruneSSA](SSA/PruneSSA.md) — DCE is what makes pruning unnecessary for already-dead code; pruning prevents the dead phis in the first place.

@@ -11,9 +11,9 @@ MLIR does transformations as **passes** — each pass walks the IR, rewrites ops
 ## Types of passes
 
 - **Transforms**: rewrite IR in place — `-canonicalize`, `-cse`, `-symbol-dce`.
-- **Conversions / legalizations**: move IR between dialects — `-convert-affine-to-scf`, `-convert-scf-to-cf`, `-convert-to-llvm`, `-one-shot-bufferize`. These are the ones built on **DialectConversion** (see [[../DialectConversion]]).
+- **Conversions / legalizations**: move IR between dialects — `-convert-affine-to-scf`, `-convert-scf-to-cf`, `-convert-to-llvm`, `-one-shot-bufferize`. These are the ones built on **DialectConversion** (see [DialectConversion](DialectConversion.md)).
 - **Analyses**: compute facts (e.g. number of loops) — done inside passes, not as standalone passes.
-- **Canonicalization** (see [[../Canonicalization]]): a special always-run cleanup.
+- **Canonicalization** (see [Canonicalization](Canonicalization.md)): a special always-run cleanup.
 
 ## The standard pipeline shape
 
@@ -21,7 +21,7 @@ MLIR does transformations as **passes** — each pass walks the IR, rewrites ops
 lower to linalg → bufferize (tensor→memref) → scf → vector → convert to llvm
 ```
 
-The canonical DL lowering ladder. `-one-shot-bufferize` is the modern bufferization entry; the "default" lowering pipeline documents the sequence on the MLIR site (see [[Dialects/tosa-stablehlo]] for the frontend side).
+The canonical DL lowering ladder. `-one-shot-bufferize` is the modern bufferization entry; the "default" lowering pipeline documents the sequence on the MLIR site (see [tosa-stablehlo](Dialects/tosa-stablehlo.md) for the frontend side).
 
 ## Writing a pass
 
@@ -34,7 +34,7 @@ struct MyPass : public PassWrapper<MyPass, OperationPass<func::FuncOp>> {
 };
 ```
 
-Register via `registerPass` + `PassRegistration` so `mlir-opt --my-pass` works. In `add_mlir_library` targets the pass must be in an `mlir-opt` plugin or linked into a tool (see [[CMake_Guide]]).
+Register via `registerPass` + `PassRegistration` so `mlir-opt --my-pass` works. In `add_mlir_library` targets the pass must be in an `mlir-opt` plugin or linked into a tool (see [CMake_Guide](CMake_Guide.md)).
 
 ## Gotchas I keep hitting
 
@@ -44,7 +44,7 @@ Register via `registerPass` + `PassRegistration` so `mlir-opt --my-pass` works. 
 
 ## Related
 
-- [[../DialectConversion]] — the framework most "real" passes use.
-- [[../Canonicalization]] — the always-on cleanup pass.
-- [[../CMake_Guide]] — wiring a pass into a build.
-- [[Dialects/scf-vector]] — the concrete pipelines these passes form.
+- [DialectConversion](DialectConversion.md) — the framework most "real" passes use.
+- [Canonicalization](Canonicalization.md) — the always-on cleanup pass.
+- [CMake_Guide](CMake_Guide.md) — wiring a pass into a build.
+- [scf-vector](Dialects/scf-vector.md) — the concrete pipelines these passes form.

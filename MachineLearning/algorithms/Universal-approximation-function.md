@@ -22,10 +22,10 @@ For any continuous `f: [0,1]^n → R` and any `ε > 0`, there exists a network:
 Universal approximation is about **existence + capacity**, not about learnability, generalization, or efficiency:
 
 - Depth trades width: deep networks approximate some functions with exponentially fewer parameters than shallow ones.
-- You still need data, a good [[loss-function]], and an optimizer — see [[neural-network]].
+- You still need data, a good [loss-function](loss-function.md), and an optimizer — see [neural-network](neural-network.md).
 - Smoothness/complexity of the target determines how many units you really need.
 
 ## Related
 
-- Activation functions like the [[MachineLearning/mathematical-function/logistic-function]] are the `σ` in the theorem.
-- [[injectivity]] matters for encoding/decoding architectures built on top of this idea.
+- Activation functions like the [logistic-function](../mathematical-function/logistic-function.md) are the `σ` in the theorem.
+- [injectivity](injectivity.md) matters for encoding/decoding architectures built on top of this idea.

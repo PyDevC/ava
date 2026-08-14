@@ -14,8 +14,8 @@ Understand compilers end to end: from source/IR, through analyses and passes, do
 ## What to add next
 
 - [ ] **Core theory gaps** (before going deeper into DL):
-  - [ ] Liveness analysis + register allocation basics (SSA connects here — [[IR/SSA/Dominators]])
-  - [ ] Loop transformations: tiling, fusion, unrolling, vectorization (feeds into [[MLIR/Dialects/Affine]])
+  - [ ] Liveness analysis + register allocation basics (SSA connects here — [Dominators](IR/SSA/Dominators.md))
+  - [ ] Loop transformations: tiling, fusion, unrolling, vectorization (feeds into [Affine](MLIR/Dialects/Affine.md))
   - [ ] Dataflow analysis / reaching definitions / CSE
   - [ ] SSA construction (the phi-placement algorithm that uses dominance frontiers) and phi elimination
   - [ ] Static vs dynamic control flow in IRs; why graphs (FX) differ from CFGs
@@ -33,7 +33,7 @@ Understand compilers end to end: from source/IR, through analyses and passes, do
   - [ ] XLA / StableHLO / JAX's compiler
   - [ ] ONNX Runtime graph optimizations
 - [ ] **Codegen specifics**:
-  - [ ] Triton's approach (block-level kernels) — see also [[../Roadmaps/triton-compiler-engineer]]
+  - [ ] Triton's approach (block-level kernels) — see also [triton-compiler-engineer](../Roadmaps/triton-compiler-engineer.md)
   - [ ] CUDA kernel launch, occupancy, why fusion matters
   - [ ] Reading the `.s`/PTX that Inductor actually emits
 

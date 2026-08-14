@@ -1,6 +1,6 @@
 # Streamline
 
-Streamline is a lightweight open-source AutoML framework for **tabular data**, made to fit into existing Python workflows (it's built as a thin wrapper that adds AutoML on top of your own code). It's a smaller, friendlier cousin of [[auto-sklearn]] and [[mlbox]].
+Streamline is a lightweight open-source AutoML framework for **tabular data**, made to fit into existing Python workflows (it's built as a thin wrapper that adds AutoML on top of your own code). It's a smaller, friendlier cousin of [auto-sklearn](auto-sklearn.md) and [mlbox](mlbox.md).
 
 ## What it does
 
@@ -17,9 +17,9 @@ Streamline is a lightweight open-source AutoML framework for **tabular data**, m
 ## Practical notes
 
 - Less powerful/robust than H2O or auto-sklearn on gnarly data, but far easier to reason about and debug.
-- Uses Optuna (a modern [[hyperparameter-tuning/Bayesian-optimization]] implementation) under the hood.
+- Uses Optuna (a modern [Bayesian-optimization](hyperparameter-tuning/Bayesian-optimization.md) implementation) under the hood.
 
 ## Related
 
-- [[h2o-automl]], [[auto-sklearn]], [[tpot]], [[mlbox]] — the AutoML landscape it belongs to.
-- [[MachineLearning/algorithms/tabular-regression]] — the task it targets.
+- [h2o-automl](h2o-automl.md), [auto-sklearn](auto-sklearn.md), [tpot](tpot.md), [mlbox](mlbox.md) — the AutoML landscape it belongs to.
+- [tabular-regression](../algorithms/tabular-regression.md) — the task it targets.

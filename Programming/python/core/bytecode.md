@@ -11,7 +11,7 @@ dis.dis(my_function)
 
 - **Performance**: a Python function call overhead is really "set up a frame, run N bytecode instructions". Loops, attribute access, and function calls all map to bytecode instructions.
 - **Debugging**: understanding `LOAD_ATTR`, `CALL_FUNCTION`, `BUILD_TUPLE` etc. explains why some code is slow.
-- **Compilers**: this is *exactly* what TorchDynamo traces! Dynamo reads the bytecode of a function, walks it, and builds a graph. Every frame is bytecode; graph breaks happen at specific bytecode positions. See [[Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks]] and [[Compilers/PyTorchCompiler/TorchDynamo/DebugWithTorchDynamo]].
+- **Compilers**: this is *exactly* what TorchDynamo traces! Dynamo reads the bytecode of a function, walks it, and builds a graph. Every frame is bytecode; graph breaks happen at specific bytecode positions. See [GraphBreaks](../../../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md) and [DebugWithTorchDynamo](../../../Compilers/PyTorchCompiler/TorchDynamo/DebugWithTorchDynamo.md).
 
 ## How a bytecode instruction works
 
@@ -44,5 +44,5 @@ Opcodes change between Python versions (3.11 added specialized opcodes — the s
 
 ## Related
 
-- [[typechecking]] — static checking happens on the source/type level, *before* bytecode.
-- The bytecode is what makes [[Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks|Dynamo's tracing]] possible at all.
+- [typechecking](typechecking.md) — static checking happens on the source/type level, *before* bytecode.
+- The bytecode is what makes [Dynamo's tracing](../../../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md) possible at all.

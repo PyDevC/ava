@@ -2,7 +2,7 @@
 
 ## Goal of this directory
 
-Understand **intermediate representations**: why compilers use them, the theory (SSA, dominance, liveness), and how IR design choices enable (or block) optimizations. This is the "why" behind everything in [[../PLAN]].
+Understand **intermediate representations**: why compilers use them, the theory (SSA, dominance, liveness), and how IR design choices enable (or block) optimizations. This is the "why" behind everything in [PLAN](../PLAN.md).
 
 ## What's already here
 
@@ -24,8 +24,8 @@ Understand **intermediate representations**: why compilers use them, the theory 
 - [x] **Register allocation** — basic graph-coloring approach and why SSA makes it nicer (chordal graphs / linear scan).
 - [ ] **IR taxonomy**:
   - [ ] CFG (basic-block) IRs vs **graph IRs** (like FX in PyTorch) — when each is used
-  - [ ] High-level vs low-level IR (MLIR has both in one framework — [[../MLIR]])
-  - [ ] Stack machines (JVM/CPython bytecode — see [[../../Programming/python/core/bytecode]]) vs register machines
+  - [ ] High-level vs low-level IR (MLIR has both in one framework — [MLIR](../MLIR/PLAN.md))
+  - [ ] Stack machines (JVM/CPython bytecode — see [bytecode](../../Programming/python/core/bytecode.md)) vs register machines
 - [x] **Optimization examples on SSA**:
   - [x] Dead code elimination (DCE)
   - [x] Common subexpression elimination (CSE)

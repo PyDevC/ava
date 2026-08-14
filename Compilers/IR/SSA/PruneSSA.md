@@ -19,4 +19,4 @@ Pruned SSA form is based on a simple observation: Φ functions are only needed f
 ## Why it matters
 
 - Fewer Φ functions = less work for every later pass (register allocation, coalescing, copy propagation).
-- The dominance frontier from [[Dominators]] tells you *where* to put Φ's; liveness tells you *whether* to bother.
+- The dominance frontier from [Dominators](Dominators.md) tells you *where* to put Φ's; liveness tells you *whether* to bother.

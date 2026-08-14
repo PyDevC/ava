@@ -4,7 +4,7 @@ Triton is an open-source **GPU kernel language and compiler** (OpenAI): you writ
 
 ## Core skills
 
-- **GPU programming fundamentals**: CUDA memory hierarchy (registers, shared, global), warps, occupancy, synchronization (see [[gpu-architect]]).
+- **GPU programming fundamentals**: CUDA memory hierarchy (registers, shared, global), warps, occupancy, synchronization (see [gpu-architect](gpu-architect.md)).
 - **Python + C++** (Triton's frontend is Python; the compiler core is C++/LLVM).
 - **LLVM internals**: Triton lowers through LLVM — target-specific passes, PTX generation.
 - **Compiler concepts**: IR (Triton IR), passes, autotuning, tile/block programming model.
@@ -25,11 +25,11 @@ This "let the compiler do the low-level work" philosophy is why Inductor chose T
 2. LLVM basics (IR, passes, backends).
 3. Write many Triton kernels; study how they lower (Triton has great `--ptx` debugging).
 4. Contribute to Triton (OpenAI/triton on GitHub) — kernel language features, autotuning, new targets.
-5. Understand the PyTorch side: how Inductor generates Triton from its IR (see [[Compilers/DLCompilers/TorchInductor/TorchInductor]]).
+5. Understand the PyTorch side: how Inductor generates Triton from its IR (see [TorchInductor](../Compilers/DLCompilers/TorchInductor/TorchInductor.md)).
 
 ## Related
 
-- [[ai-compiler-engineer]] — the broader role; Triton is a specialization.
-- [[ai-framework-engineer]] — Inductor's Triton codegen lives here.
-- [[gpu-architect]] — the hardware you're optimizing for.
-- [[hpc-engineer]] — classic HPC vectorization philosophy, applied to GPUs.
+- [ai-compiler-engineer](ai-compiler-engineer.md) — the broader role; Triton is a specialization.
+- [ai-framework-engineer](ai-framework-engineer.md) — Inductor's Triton codegen lives here.
+- [gpu-architect](gpu-architect.md) — the hardware you're optimizing for.
+- [hpc-engineer](hpc-engineer.md) — classic HPC vectorization philosophy, applied to GPUs.

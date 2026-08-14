@@ -14,7 +14,7 @@ ATen is PyTorch's **C++ tensor library** — the `aten::` ops that back everythi
     CompositeExplicitAutograd: add_out_cpu_meta
 ```
 
-Each entry: the **op schema** (`func:`), whether it's also a method, its `dispatch` table (which kernel per dispatch key, see [[Dispatch-Key]]), `variants`, `structured:`, tag lists (e.g. `tags: core`). The schema IS the source of truth — C++ signatures, Python signatures, and the dispatcher all derive from it.
+Each entry: the **op schema** (`func:`), whether it's also a method, its `dispatch` table (which kernel per dispatch key, see [Dispatch-Key](Dispatch-Key.md)), `variants`, `structured:`, tag lists (e.g. `tags: core`). The schema IS the source of truth — C++ signatures, Python signatures, and the dispatcher all derive from it.
 
 ## What codegen produces
 
@@ -23,7 +23,7 @@ Each entry: the **op schema** (`func:`), whether it's also a method, its `dispat
 - Python bindings (`torch/.../python_bindings.cpp`) — so `torch.add` and `tensor.add` exist.
 - `torch.ops` accessors, `torch._C` symbols, and the `CompositeImplicit`/`CompositeExplicitAutograd` registrations.
 
-That's why "add an op to PyTorch" is: write yaml → write a native kernel (in `aten/src/ATen/native/`) → rebuild → `torch.add` exists. `tools/codegen/gen.py` is the orchestrator (see [[Explore]] for the repo map).
+That's why "add an op to PyTorch" is: write yaml → write a native kernel (in `aten/src/ATen/native/`) → rebuild → `torch.add` exists. `tools/codegen/gen.py` is the orchestrator (see [Explore](Explore.md) for the repo map).
 
 ## The two op worlds
 
@@ -32,17 +32,17 @@ That's why "add an op to PyTorch" is: write yaml → write a native kernel (in `
 
 ## The `torch.library` connection
 
-`torch.library.define` (see [[Custom-Ops]]) is the *extension* API that mirrors this yaml pipeline: schema + per-key impls, registered at runtime instead of codegen. Native ops = yaml + codegen; custom ops = `torch.library` + decorators. Same dispatcher underneath.
+`torch.library.define` (see [Custom-Ops](Custom-Ops.md)) is the *extension* API that mirrors this yaml pipeline: schema + per-key impls, registered at runtime instead of codegen. Native ops = yaml + codegen; custom ops = `torch.library` + decorators. Same dispatcher underneath.
 
 ## Practical debugging
 
 - `torch._C._dispatch_dump()` / `TORCH_DISPATCH_DEBUG` — see which kernel a call resolves to.
 - Wrong signature in yaml → codegen fails with a clear schema error (the schema parser is strict).
-- A missing `Meta`/`CompositeExplicitAutograd` entry = `torch.compile` can't trace the op (see [[Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks]]).
+- A missing `Meta`/`CompositeExplicitAutograd` entry = `torch.compile` can't trace the op (see [GraphBreaks](../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md)).
 
 ## Related
 
-- [[Dispatch-Key]] — what the dispatch tables key on.
-- [[Custom-Ops]] — the runtime equivalent of this machinery.
-- [[Explore]] — where the yaml and codegen live in the repo.
-- [[Compilers/PyTorchCompiler/FX-Graph-IR]] — the graph ops compile from.
+- [Dispatch-Key](Dispatch-Key.md) — what the dispatch tables key on.
+- [Custom-Ops](Custom-Ops.md) — the runtime equivalent of this machinery.
+- [Explore](Explore.md) — where the yaml and codegen live in the repo.
+- [FX-Graph-IR](../Compilers/PyTorchCompiler/FX-Graph-IR.md) — the graph ops compile from.

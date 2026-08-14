@@ -17,7 +17,7 @@ Q(p) = inf { x : F(x) ≥ p }
 
 ## Why it matters in ML
 
-- **Quantile regression**: predict specific quantiles (e.g. 10% and 90%) instead of just the mean — gives prediction intervals, robust to outliers. Loss = quantile (pinball) loss, a weighted [[MachineLearning/algorithms/loss-function]].
+- **Quantile regression**: predict specific quantiles (e.g. 10% and 90%) instead of just the mean — gives prediction intervals, robust to outliers. Loss = quantile (pinball) loss, a weighted [loss-function](../algorithms/loss-function.md).
 - **Inverse transform sampling**: sample `U ~ Uniform(0,1)`, output `Q(U)` → samples from any distribution. Core of GAN sampling and many generative methods.
 - **Value at Risk / risk**: financial models report quantiles of loss distributions.
 - **Normalization / feature engineering**: quantile transformers map data to a uniform distribution (better for some models than z-scaling).
@@ -25,6 +25,6 @@ Q(p) = inf { x : F(x) ≥ p }
 
 ## Related
 
-- Built from the [[indicator-function]]: empirical CDF `F̂(x) = (1/n)Σ 1_{x_i ≤ x}`.
-- The [[logistic-function]]/[[logit-function]] are quantile functions of specific distributions (logistic distribution).
-- Quantile regression generalizes the median (a robust location) — see [[MachineLearning/algorithms/tabular-regression]].
+- Built from the [indicator-function](indicator-function.md): empirical CDF `F̂(x) = (1/n)Σ 1_{x_i ≤ x}`.
+- The [logistic-function](logistic-function.md)/[logit-function](logit-function.md) are quantile functions of specific distributions (logistic distribution).
+- Quantile regression generalizes the median (a robust location) — see [tabular-regression](../algorithms/tabular-regression.md).

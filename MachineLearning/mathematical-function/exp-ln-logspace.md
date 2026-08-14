@@ -11,24 +11,24 @@ Multiplication and powers become addition and multiplication — and tiny probab
 
 ## Why log space
 
-- **Underflow**: `softmax([1000, 1001, 999])` computes `e^1000 ≈ inf/underflow`. Subtract the max first (shift invariance, see [[softmax-function]]), or use **log-softmax** — the log form never leaves moderate range.
+- **Underflow**: `softmax([1000, 1001, 999])` computes `e^1000 ≈ inf/underflow`. Subtract the max first (shift invariance, see [softmax-function](softmax-function.md)), or use **log-softmax** — the log form never leaves moderate range.
 - **The cross-entropy trick**: `-ln σ(z)` = `softplus(-z)` — a single numerically stable function instead of "compute probability, then log it". Every loss library implements the fused form.
-- **Products of probabilities**: `P(x₁..x_n) = Π P(xᵢ)` underflow for n > 100. The **log-likelihood** `Σ ln P(xᵢ)` is the standard objective (see [[../algorithms/loss-function]]).
-- **KL/entropy**: `p·ln(p/q)` — information theory is log-based (see the surprise note in [[logit-function]]).
+- **Products of probabilities**: `P(x₁..x_n) = Π P(xᵢ)` underflow for n > 100. The **log-likelihood** `Σ ln P(xᵢ)` is the standard objective (see [loss-function](../algorithms/loss-function.md)).
+- **KL/entropy**: `p·ln(p/q)` — information theory is log-based (see the surprise note in [logit-function](logit-function.md)).
 
 ## Key stable functions
 
 - **LogSumExp**: `ln(Σ e^zᵢ)` computed as `c + ln(Σ e^(zᵢ-c))` with `c = max zᵢ`. The parent of log-softmax.
-- **Softplus**: `ln(1 + e^x)` ≈ `max(0, x)` for large |x| — smooth ReLU (see [[relu-function]]), numerically stable at the extremes.
+- **Softplus**: `ln(1 + e^x)` ≈ `max(0, x)` for large |x| — smooth ReLU (see [relu-function](relu-function.md)), numerically stable at the extremes.
 - **`stable_softmax` = z - LogSumExp(z)`: the log-softmax, what you actually compute before cross-entropy.
 
 ## The logit/odds link
 
-The [[logit-function]] is itself a log ratio — `ln(p/(1-p))` — and logistic regression is *linear in log-odds* (see [[../algorithms/logistic-regression]]). The whole model runs in log space by design.
+The [logit-function](logit-function.md) is itself a log ratio — `ln(p/(1-p))` — and logistic regression is *linear in log-odds* (see [logistic-regression](../algorithms/logistic-regression.md)). The whole model runs in log space by design.
 
 ## Related
 
-- [[logistic-function]] / [[logit-function]] — log-based links.
-- [[softmax-function]] — LogSumExp is its stable form.
-- [[../algorithms/naive-bayes]] — the canonical log-probability product.
-- [[gradient-hessian]] — derivatives of these functions are what backprop computes.
+- [logistic-function](logistic-function.md) / [logit-function](logit-function.md) — log-based links.
+- [softmax-function](softmax-function.md) — LogSumExp is its stable form.
+- [naive-bayes](../algorithms/naive-bayes.md) — the canonical log-probability product.
+- [gradient-hessian](gradient-hessian.md) — derivatives of these functions are what backprop computes.

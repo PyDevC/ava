@@ -1,11 +1,11 @@
 # MLBox
 
-MLBox is an open-source AutoML Python library focused on **tabular data**, with a simple "load → optimize → build model → predict" workflow. It's a lighter-weight alternative to [[auto-sklearn]] / [[h2o-automl]].
+MLBox is an open-source AutoML Python library focused on **tabular data**, with a simple "load → optimize → build model → predict" workflow. It's a lighter-weight alternative to [auto-sklearn](auto-sklearn.md) / [h2o-automl](h2o-automl.md).
 
 ## The pipeline it automates
 
-1. **Data preparation** — reading, cleaning, missing-value handling, outlier detection, normalization, feature generation (it has some automated feature engineering primitives — see [[automated-feature-extraction]]).
-2. **Hyperparameter optimization** — uses **Hyperopt** (TPE — Tree-structured Parzen Estimator, a form of [[hyperparameter-tuning/Bayesian-optimization]]) over a set of models: LightGBM/XGBoost, random forests, extra trees, etc.
+1. **Data preparation** — reading, cleaning, missing-value handling, outlier detection, normalization, feature generation (it has some automated feature engineering primitives — see [automated-feature-extraction](automated-feature-extraction.md)).
+2. **Hyperparameter optimization** — uses **Hyperopt** (TPE — Tree-structured Parzen Estimator, a form of [Bayesian-optimization](hyperparameter-tuning/Bayesian-optimization.md)) over a set of models: LightGBM/XGBoost, random forests, extra trees, etc.
 3. **Prediction** — trains the best config, predicts, and can export.
 
 ## What stands out
@@ -18,4 +18,4 @@ MLBox is an open-source AutoML Python library focused on **tabular data**, with 
 
 - Best for quick tabular baselines / small-to-medium datasets.
 - Less mature/actively maintained than sklearn, TPOT, or H2O — fine for experiments, be careful for serious production.
-- The model space is mostly tree models, so it inherits their strength on structured data (see [[MachineLearning/algorithms/tabular-regression]]).
+- The model space is mostly tree models, so it inherits their strength on structured data (see [tabular-regression](../algorithms/tabular-regression.md)).

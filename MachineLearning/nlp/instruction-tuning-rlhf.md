@@ -1,11 +1,11 @@
 # Instruction tuning and RLHF
 
-Pretrained LLMs predict the *next token* — they are not useful chatbots. **Post-training** converts a next-token predictor into an instruction-following assistant. There are three increasingly-sophisticated stages (see [[GPT-decoder-only-models]] for where this sits in the pipeline).
+Pretrained LLMs predict the *next token* — they are not useful chatbots. **Post-training** converts a next-token predictor into an instruction-following assistant. There are three increasingly-sophisticated stages (see [GPT-decoder-only-models](GPT-decoder-only-models.md) for where this sits in the pipeline).
 
 ## Stage 1: SFT (supervised fine-tuning)
 
 - Train on human-written (or model-generated + curated) `instruction → response` pairs.
-- Standard cross-entropy (see [[../algorithms/loss-function]]) on the response tokens. Cheap, ~1k–100k examples suffice.
+- Standard cross-entropy (see [loss-function](../algorithms/loss-function.md)) on the response tokens. Cheap, ~1k–100k examples suffice.
 - Turns "predict what the internet would say" into "answer the user's question". But: the model only imitates — it hasn't learned *preferences*.
 
 ## Stage 2: Reward modeling
@@ -27,6 +27,6 @@ Pretrained LLMs predict the *next token* — they are not useful chatbots. **Pos
 
 ## Related
 
-- [[GPT-decoder-only-models]] — the base model this post-processes.
-- [[GPT-evaluation]] — RLHF-trained models *must* be evaluated by humans or better-aligned judges, since standard metrics (BLEU/ROUGE) don't capture preference quality.
-- [[RAG]] — instruction-tuned models still hallucinate; retrieval grounds them.
+- [GPT-decoder-only-models](GPT-decoder-only-models.md) — the base model this post-processes.
+- [GPT-evaluation](GPT-evaluation.md) — RLHF-trained models *must* be evaluated by humans or better-aligned judges, since standard metrics (BLEU/ROUGE) don't capture preference quality.
+- [RAG](RAG.md) — instruction-tuned models still hallucinate; retrieval grounds them.

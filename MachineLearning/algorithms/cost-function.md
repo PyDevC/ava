@@ -7,7 +7,7 @@ The cost function (a.k.a. objective / loss averaged over the whole dataset) meas
 - **Loss**: error for a *single* sample, `L(y, ŷ)`.
 - **Cost**: average (or sum) of losses over the dataset, e.g. mean squared error: `J = (1/m)·Σ L(y_i, ŷ_i)`.
 
-Often the terms are used interchangeably; "cost function" usually implies the aggregate. See [[loss-function]] for the per-sample side.
+Often the terms are used interchangeably; "cost function" usually implies the aggregate. See [loss-function](loss-function.md) for the per-sample side.
 
 ## Why the choice matters
 
@@ -21,9 +21,9 @@ The cost function defines the objective, so it decides:
 
 - Regression: MSE, MAE, Huber.
 - Classification: cross-entropy / log loss.
-- Regularized objectives add a penalty term, e.g. `J = MSE + λ·Σw²` (see [[weighted-linear-regression]] for weighted variants).
+- Regularized objectives add a penalty term, e.g. `J = MSE + λ·Σw²` (see [weighted-linear-regression](weighted-linear-regression.md) for weighted variants).
 
 ## Related
 
-- [[cost-function|cost]] vs [[loss-function|loss]] — pick the right one for the task.
-- The weighted version in [[weighted-linear-regression]] changes the cost to `Σ w_i·(y_i - ŷ_i)²`.
+- [cost](cost-function.md) vs [loss](loss-function.md) — pick the right one for the task.
+- The weighted version in [weighted-linear-regression](weighted-linear-regression.md) changes the cost to `Σ w_i·(y_i - ŷ_i)²`.

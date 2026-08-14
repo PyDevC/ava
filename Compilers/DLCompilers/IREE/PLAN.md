@@ -6,9 +6,9 @@ Note on **IREE** (the MLIR end-to-end compiler): the compile flow, `.vmfb` artif
 
 ## What's here
 
-- [[IREE]] — overview: MLIR-based, "eerie", HAL, backends (llvm-cpu, cuda, vulkan-spirv, metal, vmvx), StableHLO/TOSA/ONNX frontends.
+- [IREE](IREE.md) — overview: MLIR-based, "eerie", HAL, backends (llvm-cpu, cuda, vulkan-spirv, metal, vmvx), StableHLO/TOSA/ONNX frontends.
 
-## What to add next (see also [[../PLAN]])
+## What to add next (see also [PLAN](../PLAN.md))
 
 - [ ] Walk a real compile+run: model → `.vmfb` → HAL execution
 - [ ] The HAL dispatch flow (buffers, dispatches, semaphores) in detail

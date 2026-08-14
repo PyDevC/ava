@@ -1,6 +1,6 @@
 # OpenVINO and TFLite/XNNPACK
 
-Two deployment-side quick notes to complete the DL compiler landscape (from the parent [[PLAN]]): Intel's OpenVINO and the mobile/TFLite stack. Both are *executor-with-fusion* tools (see [[ONNXRuntime]]'s "compiler vs executor" distinction) tuned for specific hardware.
+Two deployment-side quick notes to complete the DL compiler landscape (from the parent [PLAN](PLAN.md)): Intel's OpenVINO and the mobile/TFLite stack. Both are *executor-with-fusion* tools (see [ONNXRuntime](ONNXRuntime.md)'s "compiler vs executor" distinction) tuned for specific hardware.
 
 ## OpenVINO (Intel)
 
@@ -24,10 +24,10 @@ PyTorch/ONNX model
  └─ TFLite/XNN   → mobile/embedded (ARM), tiny + quantized
 ```
 
-Pick by **the target hardware**, not by brand: GPUs → TensorRT/Inductor; Intel servers → OpenVINO; phones → TFLite/XNNPACK (or ORT mobile). The ONNX interchange ([[ONNXRuntime]]) is how you stay hardware-agnostic.
+Pick by **the target hardware**, not by brand: GPUs → TensorRT/Inductor; Intel servers → OpenVINO; phones → TFLite/XNNPACK (or ORT mobile). The ONNX interchange ([ONNXRuntime](ONNXRuntime.md)) is how you stay hardware-agnostic.
 
 ## Related
 
-- [[ONNXRuntime]] — the same "executor + fusion" model, hardware-agnostic.
-- [[Comparison-Matrix]] — where these sit in the full table.
-- [[TensorRT/TensorRT]] — the NVIDIA counterpart of OpenVINO.
+- [ONNXRuntime](ONNXRuntime.md) — the same "executor + fusion" model, hardware-agnostic.
+- [Comparison-Matrix](Comparison-Matrix.md) — where these sit in the full table.
+- [TensorRT](TensorRT/TensorRT.md) — the NVIDIA counterpart of OpenVINO.

@@ -6,7 +6,7 @@ Register allocation maps the unlimited virtual variables of the IR onto the limi
 
 For each virtual variable, find a physical register such that:
 
-- **No two simultaneously-live variables share a register** — the interference condition, computed from [[Liveness]].
+- **No two simultaneously-live variables share a register** — the interference condition, computed from [Liveness](Liveness.md).
 - Register pressure = number of live variables at a point. If pressure exceeds available registers, we **spill** (move values to memory).
 
 ## The classic algorithm: graph coloring
@@ -29,10 +29,10 @@ Graph coloring is NP-hard in general, so compilers use greedy heuristics (Chaiti
 
 ## Why it matters for DL compilers
 
-Inductor/Triton codegen is essentially register allocation + vectorization at the kernel level: "how many accumulators can I keep in registers before I spill to shared memory/global?" The occupancy and register-pressure trade-offs are the same graph-coloring story, just with block-level programming. See [[../DLCompilers/TorchInductor/TorchInductor]] and [[../Roadmaps/triton-compiler-engineer]].
+Inductor/Triton codegen is essentially register allocation + vectorization at the kernel level: "how many accumulators can I keep in registers before I spill to shared memory/global?" The occupancy and register-pressure trade-offs are the same graph-coloring story, just with block-level programming. See [TorchInductor](../DLCompilers/TorchInductor/TorchInductor.md) and [triton-compiler-engineer](../../Roadmaps/triton-compiler-engineer.md).
 
 ## Related
 
-- [[Liveness]] — the analysis that defines the interference graph.
-- [[SsaConstruction]] — why SSA makes allocation tractable.
-- [[PhiElimination]] — phis must be gone (or coalesced) before allocation.
+- [Liveness](Liveness.md) — the analysis that defines the interference graph.
+- [SsaConstruction](SsaConstruction.md) — why SSA makes allocation tractable.
+- [PhiElimination](PhiElimination.md) — phis must be gone (or coalesced) before allocation.

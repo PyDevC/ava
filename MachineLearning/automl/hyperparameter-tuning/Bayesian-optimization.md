@@ -1,6 +1,6 @@
 # Bayesian optimization
 
-Bayesian optimization (BO) is the sample-efficient way to tune black-box functions — like validation accuracy as a function of hyperparameters. Instead of trying many random points ([[random-search]]) it **builds a cheap probabilistic model of the objective** and uses it to decide where to evaluate next.
+Bayesian optimization (BO) is the sample-efficient way to tune black-box functions — like validation accuracy as a function of hyperparameters. Instead of trying many random points ([random-search](random-search.md)) it **builds a cheap probabilistic model of the objective** and uses it to decide where to evaluate next.
 
 ## The two ingredients
 
@@ -15,17 +15,17 @@ The loop: `fit surrogate → maximize acquisition → evaluate that point → re
 
 - Works for expensive evaluations (training a model is minutes to hours).
 - Handles noisy objectives (CV variance), continuous/discrete/categorical params.
-- The standard choice for real tuning (Optuna, Hyperopt, SMAC — used by [[auto-sklearn]]).
+- The standard choice for real tuning (Optuna, Hyperopt, SMAC — used by [auto-sklearn](../auto-sklearn.md)).
 
 ## Practical notes
 
 - Start with log-uniform ranges for scale-like params (learning rate, regularization) — uniform ranges waste most points.
 - Sequential by nature; parallel variants exist (multi-point acquisition) but are harder.
-- Great after a cheap [[random-search]] warm-up to shrink the space.
+- Great after a cheap [random-search](random-search.md) warm-up to shrink the space.
 
 ## Related
 
-- [[random-search]] / [[grid-search]] — the baselines to beat.
-- [[Hyperband]] — a different, bandit-based strategy; combined as BOHB.
-- [[gradient-based-optimization]] — what BO looks like when the function is smooth enough for gradients (rare for HP tuning).
-- [[MachineLearning/automl/auto-sklearn]] — SMAC (BO) is its engine.
+- [random-search](random-search.md) / [grid-search](grid-search.md) — the baselines to beat.
+- [Hyperband](Hyperband.md) — a different, bandit-based strategy; combined as BOHB.
+- [gradient-based-optimization](gradient-based-optimization.md) — what BO looks like when the function is smooth enough for gradients (rare for HP tuning).
+- [auto-sklearn](../auto-sklearn.md) — SMAC (BO) is its engine.

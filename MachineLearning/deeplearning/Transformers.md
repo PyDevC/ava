@@ -1,6 +1,6 @@
 # Transformers
 
-The Transformer is the architecture from "Attention is all you need" (2017) — see [[attention-is-all-you-need]] for my paper notes. It replaced RNNs/CNNs for sequences because it is **fully parallelizable** (no sequential recurrence) and scales massively with data and compute. It's now the backbone of modern NLP (BERT, GPT), vision (ViT), and much of multimodal AI.
+The Transformer is the architecture from "Attention is all you need" (2017) — see [attention-is-all-you-need](attention-is-all-you-need.md) for my paper notes. It replaced RNNs/CNNs for sequences because it is **fully parallelizable** (no sequential recurrence) and scales massively with data and compute. It's now the backbone of modern NLP (BERT, GPT), vision (ViT), and much of multimodal AI.
 
 ## The core building blocks
 
@@ -18,11 +18,11 @@ Stack these N times → you have an encoder or a decoder. Encoder-only (BERT) fo
 
 - **Parallel training**: no recurrence → trains on GPUs in parallel over all tokens. This is why scale exploded.
 - **Scaling laws**: bigger models + more data keep helping smoothly (unlike earlier architectures).
-- **In-context learning**: decoder-only models can solve novel tasks from a few prompt examples — a surprising emergent behavior (see [[MachineLearning/automl/meta-learning]] for the connection).
+- **In-context learning**: decoder-only models can solve novel tasks from a few prompt examples — a surprising emergent behavior (see [meta-learning](../automl/meta-learning.md) for the connection).
 - **One architecture for everything**: text, images, audio, graphs — as tokens/patches.
 
 ## Related
 
-- [[attention-is-all-you-need]] — the paper review.
-- [[An-introduction-to-convolutional-neural-networks]] — the older vision workhorse.
-- [[MachineLearning/nlp/BERT]] — the encoder-only application.
+- [attention-is-all-you-need](attention-is-all-you-need.md) — the paper review.
+- [An-introduction-to-convolutional-neural-networks](An-introduction-to-convolutional-neural-networks.md) — the older vision workhorse.
+- [BERT](../nlp/BERT.md) — the encoder-only application.

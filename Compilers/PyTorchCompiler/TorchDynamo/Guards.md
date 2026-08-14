@@ -4,7 +4,7 @@ Guards are the **contract Dynamo records when it compiles a region**: "this comp
 
 ## What guards capture
 
-- **Shapes**: `s0 == 128`, `s1 > 0` (via symints, see [[SymPy-Symbolic-Shapes]]), tensor `size()`.
+- **Shapes**: `s0 == 128`, `s1 > 0` (via symints, see [SymPy-Symbolic-Shapes](SymPy-Symbolic-Shapes.md)), tensor `size()`.
 - **Dtypes / layout / device** of inputs.
 - **Python object identity / class / dict-contents**: `self is <module instance>`, `config is dict with keys {...}`.
 - **`requires_grad`** on tensors (a *guard*: eager/backward mode changes compile path — this is why `torch.no_grad()` / eval-mode toggles recompile).
@@ -14,9 +14,9 @@ A guard list is attached to each compiled artifact; at call time the inputs are 
 ## Why recompilation hurts
 
 - Recompiling a big graph costs seconds (capture + codegen + autotune). **Guards fine, compile slow** is the classic "first call slow" symptom.
-- **Guards failing every call** → compile-every-time → *slower than eager*. Symptoms: alternating shapes in a loop (batch sizes vary), `python_list_length` guards on a data-dependent list, tensor-`isinstance`-to-`Python` toggling (see [[../../Programming/python/core/conditioning-on-a-python-subclass]]).
+- **Guards failing every call** → compile-every-time → *slower than eager*. Symptoms: alternating shapes in a loop (batch sizes vary), `python_list_length` guards on a data-dependent list, tensor-`isinstance`-to-`Python` toggling (see [conditioning-on-a-python-subclass](../../../Programming/python/core/conditioning-on-a-python-subclass.md)).
 
-## The knobs (from [[DebugWithTorchDynamo]])
+## The knobs (from [DebugWithTorchDynamo](DebugWithTorchDynamo.md))
 
 - `torch._dynamo.config.dynamic_shapes=True` — opt into dynamic dims so a range of sizes shares one compile (fewer, broader guards) instead of per-size recompiles.
 - `torch._dynamo.config.recompile_limit` (default 8) — recompiles allowed before Dynamo falls back to eager for that frame; raise it to see if a few extra compiles actually help, lower it to cap compile time.
@@ -34,7 +34,7 @@ compile(region, guards) → [guards hold? → run compiled
 
 ## Related
 
-- [[Trace-Lifecycle]] — where guards are collected during capture.
-- [[SymPy-Symbolic-Shapes]] — the symbolic shapes guards reason about.
-- [[GraphBreaks]] — breaks and guards are the two "why am I slow" levers.
-- [[DebugWithTorchDynamo]] — the logging that shows guards firing.
+- [Trace-Lifecycle](Trace-Lifecycle.md) — where guards are collected during capture.
+- [SymPy-Symbolic-Shapes](SymPy-Symbolic-Shapes.md) — the symbolic shapes guards reason about.
+- [GraphBreaks](GraphBreaks.md) — breaks and guards are the two "why am I slow" levers.
+- [DebugWithTorchDynamo](DebugWithTorchDynamo.md) — the logging that shows guards firing.

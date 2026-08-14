@@ -26,9 +26,9 @@ Almost every DL compiler follows the same high-level shape:
 
 ## The parts I've written notes on
 
-- [[TorchInductor/TorchInductor]] — PyTorch's default `torch.compile` backend: Dynamo → FX → loop-level IR → Triton/C++.
-- [[IREE/IREE]] — the MLIR-based end-to-end compiler ("eerie") targeting many backends via HAL.
-- [[TensorRT/TensorRT]] — NVIDIA's closed-source engine compiler: Parser → Builder → Engine → Runtime.
-- [[DISC/DISC]] — BladeDISC (Alibaba) for tensor programs.
+- [TorchInductor](TorchInductor/TorchInductor.md) — PyTorch's default `torch.compile` backend: Dynamo → FX → loop-level IR → Triton/C++.
+- [IREE](IREE/IREE.md) — the MLIR-based end-to-end compiler ("eerie") targeting many backends via HAL.
+- [TensorRT](TensorRT/TensorRT.md) — NVIDIA's closed-source engine compiler: Parser → Builder → Engine → Runtime.
+- [DISC](DISC/DISC.md) — BladeDISC (Alibaba) for tensor programs.
 
-Each directory has its own notes. See also [[PyTorch/Compilers/TorchInductor/EntryPoint]] for how `torch.compile` actually reaches inductor.
+Each directory has its own notes. See also [EntryPoint](../../PyTorch/Compilers/TorchInductor/EntryPoint.md) for how `torch.compile` actually reaches inductor.

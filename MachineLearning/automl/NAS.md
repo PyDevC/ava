@@ -16,18 +16,18 @@ NAS is the automl-of-NNs: instead of tuning hyperparameters for a fixed architec
 
 ## Zero-cost proxies and pruning
 
-- Even weight-shared search is expensive (train the supernet). **Zero-cost proxies** score candidates by *one forward/backward pass* on random data without any training — e.g. gradient-norm-based scores ("synflow", "NASWOT"), pruning-based measures (the magnitude-pruning view of [[MachineLearning/deeplearning/model-optimization-for-inference]]: a network's *prunability* correlates with quality).
+- Even weight-shared search is expensive (train the supernet). **Zero-cost proxies** score candidates by *one forward/backward pass* on random data without any training — e.g. gradient-norm-based scores ("synflow", "NASWOT"), pruning-based measures (the magnitude-pruning view of [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md): a network's *prunability* correlates with quality).
 - Cheap enough to search huge spaces; less reliable, but the modern default for "sanity check a design space".
 - **Network pruning as search**: retraining + structured pruning + retraining is literally "search for the smallest good net" — see the inference-optimization note.
 
 ## The modern framing
 
-- **LLM/transformer era**: NAS faded as *scale* + data beat architecture search for foundation models, but the ideas live on in: architecture *scaling laws* (EfficientNet-style width/depth resolution curves), "search-once-serve-anywhere" for edge, and **AutoML for deployment** (latency-constrained NAS, e.g. FBNet, ChamNet with the latency-pareto view from [[tuning-methodology]]).
-- Connections: DARTS/weight-sharing link to [[MachineLearning/deeplearning/backpropagation]] and [[MachineLearning/automl/meta-learning]] (learning the learning machinery).
+- **LLM/transformer era**: NAS faded as *scale* + data beat architecture search for foundation models, but the ideas live on in: architecture *scaling laws* (EfficientNet-style width/depth resolution curves), "search-once-serve-anywhere" for edge, and **AutoML for deployment** (latency-constrained NAS, e.g. FBNet, ChamNet with the latency-pareto view from [tuning-methodology](hyperparameter-tuning/tuning-methodology.md)).
+- Connections: DARTS/weight-sharing link to [backpropagation](../deeplearning/backpropagation.md) and [meta-learning](meta-learning.md) (learning the learning machinery).
 
 ## Related
 
-- [[MachineLearning/automl/PLAN]] — where NAS sits in the AutoML family.
-- [[MachineLearning/automl/meta-learning]] — the learning-to-learn research side.
-- [[MachineLearning/deeplearning/model-optimization-for-inference]] — pruning, the NAS-adjacent technique.
-- [[tuning-methodology]] — the practical alternative for most projects.
+- [PLAN](PLAN.md) — where NAS sits in the AutoML family.
+- [meta-learning](meta-learning.md) — the learning-to-learn research side.
+- [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md) — pruning, the NAS-adjacent technique.
+- [tuning-methodology](hyperparameter-tuning/tuning-methodology.md) — the practical alternative for most projects.

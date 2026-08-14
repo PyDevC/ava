@@ -1,6 +1,6 @@
 # Code review skills
 
-Being a good reviewer is the fastest path to becoming a better contributor — and it's half of what makes big OSS sustainable. This is what maintainers actually look for (see [[PR-Lifecycle]] for the contributor side).
+Being a good reviewer is the fastest path to becoming a better contributor — and it's half of what makes big OSS sustainable. This is what maintainers actually look for (see [PR-Lifecycle](PR-Lifecycle.md) for the contributor side).
 
 ## Reviewing others' PRs
 
@@ -11,9 +11,9 @@ Being a good reviewer is the fastest path to becoming a better contributor — a
 
 ## What reviewers look for (the checklist)
 
-- **Correctness**: edge cases, error handling, resource/lifetime correctness (esp. in C++: ownership, exceptions, see [[Programming/PLAN]]), thread-safety claims.
+- **Correctness**: edge cases, error handling, resource/lifetime correctness (esp. in C++: ownership, exceptions, see [PLAN](../Programming/PLAN.md)), thread-safety claims.
 - **Tests**: do they cover the change? Regression tests for the *fixed bug*, not just the happy path?
-- **Public API**: is the new API well-named, documented, and backward-compatible? (For PyTorch: does it need a `torch.library`/dispatch registration, see [[PyTorch/Custom-Ops]].)
+- **Public API**: is the new API well-named, documented, and backward-compatible? (For PyTorch: does it need a `torch.library`/dispatch registration, see [Custom-Ops](../PyTorch/Custom-Ops.md).)
 - **Performance**: unnecessary copies (C++: passing by value when `const&` is right), hot-path allocations, hidden O(n²).
 - **Scope**: does the PR do one thing? (The single biggest review complaint.)
 - **Docs**: changelog/release-note entries, docstrings, migration notes (ties to the "docs along with code" rule).
@@ -21,7 +21,7 @@ Being a good reviewer is the fastest path to becoming a better contributor — a
 ## The review interaction model
 
 - **Approve vs request changes** honestly; `Approved` is a strong signal.
-- **Automation helps**: CI does lint/tests (see [[debugging-CI-failures]]); a human review focuses on *design and correctness*, not formatting.
+- **Automation helps**: CI does lint/tests (see [debugging-CI-failures](debugging-CI-failures.md)); a human review focuses on *design and correctness*, not formatting.
 - **LGTM ≠ rubber stamp**: the project's "commit to the fast path" culture. A reviewer who reads carefully earns trust; a drive-by "LGTM" loses it.
 - **Respect the project's process**: some repos require two approvals, some require a specific maintainer, some merge via bot (`bors`/`pytorchmergebot`) — follow the CONTRIBUTING.md gate.
 
@@ -31,6 +31,6 @@ Reviewing others' code teaches the codebase's idioms far faster than writing new
 
 ## Related
 
-- [[PR-Lifecycle]] — the flow review is a stage of.
-- [[writing-a-good-commit]] — what a reviewable change looks like.
-- [[debugging-CI-failures]] — the automated checks reviewers rely on.
+- [PR-Lifecycle](PR-Lifecycle.md) — the flow review is a stage of.
+- [writing-a-good-commit](writing-a-good-commit.md) — what a reviewable change looks like.
+- [debugging-CI-failures](debugging-CI-failures.md) — the automated checks reviewers rely on.

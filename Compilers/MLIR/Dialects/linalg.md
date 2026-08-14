@@ -18,7 +18,7 @@ Instead of "loop op containing scalar ops" (scf), linalg inverts it: the **op is
      } -> tensor<2x3xf32>
 ```
 
-- **indexing_maps** (affine maps, see [[../Dialects/Affine]]) describe *which elements each operand touches* — broadcasting, transposes, and reductions are all just different maps.
+- **indexing_maps** (affine maps, see [Affine](Affine.md)) describe *which elements each operand touches* — broadcasting, transposes, and reductions are all just different maps.
 - **iterator_types** say which dims are parallel vs reduction.
 - The **body** is the scalar computation.
 
@@ -26,7 +26,7 @@ Instead of "loop op containing scalar ops" (scf), linalg inverts it: the **op is
 
 - **One op = full knowledge**: the compiler knows the exact iteration structure and access pattern → it can do **tiling, fusion, vectorization** (via `linalg`'s transform dialect), which is the actual high-performance engine inside IREE and TorchInductor's linalg paths.
 - **Named ops** (`linalg.matmul`, `linalg.conv_2d_nchw_fchw`) are macros over `generic` with fixed maps — the recognizer matches *patterns* (e.g. 4 nested scf loops doing a matmul → `linalg.matmul`), then transforms them.
-- Everything high-level lowers *into* linalg (from `tosa`/`stablehlo` frontends), and everything below lowers *out* of it (linalg → scf → vector → llvm, see [[scf-vector]]).
+- Everything high-level lowers *into* linalg (from `tosa`/`stablehlo` frontends), and everything below lowers *out* of it (linalg → scf → vector → llvm, see [scf-vector](scf-vector.md)).
 
 ## The flow in a real DL compiler
 
@@ -36,11 +36,11 @@ linalg ──transform: tile/fuse/vectorize──▶ vector + scf
 vector ──▶ memref / llvm / gpu
 ```
 
-Bufferization happens at the linalg→memref boundary: `linalg.generic` on `tensor` values (immutable) becomes `linalg` on `memref` (mutable memory, see [[Tensor-memref]]).
+Bufferization happens at the linalg→memref boundary: `linalg.generic` on `tensor` values (immutable) becomes `linalg` on `memref` (mutable memory, see [Tensor-memref](Tensor-memref.md)).
 
 ## Related
 
-- [[Tensor-memref]] — the bufferization boundary linalg crosses.
-- [[scf-vector]] — what linalg lowers into.
-- [[../../../PyTorchCompiler/TorchInductor/TorchInductor]] — Inductor's linalg-style fusion (same ideas, own IR).
-- [[../../IR/SSA/Dominators]] — the SSA machinery under the tensors.
+- [Tensor-memref](Tensor-memref.md) — the bufferization boundary linalg crosses.
+- [scf-vector](scf-vector.md) — what linalg lowers into.
+- [TorchInductor](../../DLCompilers/TorchInductor/TorchInductor.md) — Inductor's linalg-style fusion (same ideas, own IR).
+- [Dominators](../../IR/SSA/Dominators.md) — the SSA machinery under the tensors.

@@ -4,13 +4,13 @@ TVM (Apache) is the **historical baseline** of modern DL compilers — many of t
 
 ## The three layers
 
-1. **Relay** — the graph-level IR. High-level compute graph with functional ops (relay ops on tensors). This is the "frontend IR" layer (see [[README]] for the shared pipeline picture). Frontends (TF/PyTorch/ONNX) lower into Relay.
+1. **Relay** — the graph-level IR. High-level compute graph with functional ops (relay ops on tensors). This is the "frontend IR" layer (see [README](README.md) for the shared pipeline picture). Frontends (TF/PyTorch/ONNX) lower into Relay.
 2. **TE (Tensor Expression)** — the expression/loop-level IR. Describe a compute per-element:
    ```
    C = te.compute((n, m), lambda i, j: te.sum(A[i,k]*B[k,j], axis=k))
    ```
    A schedule then says *how* to run it (tiling, vectorization, parallel, reorder). Schedule = the compiler's optimization decision, expressed by the user or by AutoTVM.
-3. **AutoTVM / Ansor** — automatic scheduling/search. AutoTVM tunes cost-model-parameters (tile sizes, unroll factors); **Ansor** goes further and searches whole schedules from scratch ("evolutionary" template-free search) using a learned cost model + measurements on the actual device. This "search the schedule" idea is exactly what `torch.compile`'s autotuning does (see [[TorchInductor/TorchInductor]]).
+3. **AutoTVM / Ansor** — automatic scheduling/search. AutoTVM tunes cost-model-parameters (tile sizes, unroll factors); **Ansor** goes further and searches whole schedules from scratch ("evolutionary" template-free search) using a learned cost model + measurements on the actual device. This "search the schedule" idea is exactly what `torch.compile`'s autotuning does (see [TorchInductor](TorchInductor/TorchInductor.md)).
 
 ## Codegen targets
 
@@ -19,12 +19,12 @@ TVM generates kernels for CUDA, ROCm, OpenCL, Metal, Vitis/Vivado (FPGA), and LL
 ## Why it matters now
 
 - **The template**: graph IR + tensor expressions + schedule search + a runtime is the skeleton of IREE, XLA, and Inductor. Read TVM's docs once and the other compilers stop being a black box.
-- **Autotuning**: Ansor/autoTVM's cost-model-driven search is where `torch.compile`'s `mode="max-autotune"` ideas come from (see [[TorchInductor/TorchInductor]]).
+- **Autotuning**: Ansor/autoTVM's cost-model-driven search is where `torch.compile`'s `mode="max-autotune"` ideas come from (see [TorchInductor](TorchInductor/TorchInductor.md)).
 - The MLIR world largely superseded its IR plumbing (TVM's Relay → StableHLO/tosa → linalg in newer tools), but TVM as a *runtime+search* project is still alive (used in ARM's Corstone and various edge stacks).
 
 ## Related
 
-- [[README]] — the shared pipeline it instantiates.
-- [[TorchInductor/TorchInductor]] — the modern auto-tuning descendant.
-- [[XLA/StableHLO]] — the graph-IR competitor.
-- [[../MLIR/Dialects/linalg]] — the modern equivalent of TE's loop level.
+- [README](README.md) — the shared pipeline it instantiates.
+- [TorchInductor](TorchInductor/TorchInductor.md) — the modern auto-tuning descendant.
+- [StableHLO](XLA-StableHLO.md) — the graph-IR competitor.
+- [linalg](../MLIR/Dialects/linalg.md) — the modern equivalent of TE's loop level.

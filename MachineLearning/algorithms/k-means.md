@@ -17,8 +17,8 @@ Each step monotonically decreases the objective, so it always converges — but 
 
 ## The big questions
 
-- **How to pick `k`?** The elbow method (plot objective vs `k`, look for a bend), the silhouette score, or domain knowledge. There's no free lunch — see [[MachineLearning/automl/hyperparameter-tuning]] for the search mindset.
-- **Feature scaling matters hugely** — k-means is distance-based, so unscaled features dominate. Standardize (see [[k-nearest-neighbors]]'s same caveat).
+- **How to pick `k`?** The elbow method (plot objective vs `k`, look for a bend), the silhouette score, or domain knowledge. There's no free lunch — see [hyperparameter-tuning](../automl/hyperparameter-tuning.md) for the search mindset.
+- **Feature scaling matters hugely** — k-means is distance-based, so unscaled features dominate. Standardize (see [k-nearest-neighbors](k-nearest-neighbors.md)'s same caveat).
 - **Shapes**: k-means finds spherical, same-size clusters. Non-convex or elongated clusters need DBSCAN / hierarchical clustering.
 
 ## Strengths & weaknesses
@@ -30,11 +30,11 @@ Each step monotonically decreases the objective, so it always converges — but 
 ## Relation to other things
 
 - The assignment/update loop is **expectation-maximization (EM)** on a Gaussian-mixture model where the covariance is fixed to identity — k-means is the hard-assignment special case of GMM.
-- As a preprocessing step, cluster assignments are cheap [[automated-feature-extraction]] (cluster-ID features).
-- [[SOM]] is the topology-preserving cousin: k-means without the grid constraint.
+- As a preprocessing step, cluster assignments are cheap [automated-feature-extraction](../automl/automated-feature-extraction.md) (cluster-ID features).
+- [SOM](SOM.md) is the topology-preserving cousin: k-means without the grid constraint.
 
 ## Related
 
-- [[SOM]] — the self-organizing map alternative for visualization.
-- [[classification]] — unsupervised vs supervised: clustering has no labels.
-- [[bias-variance-tradeoff]] — picking `k` is the same complexity-tradeoff decision.
+- [SOM](SOM.md) — the self-organizing map alternative for visualization.
+- [classification](classification.md) — unsupervised vs supervised: clustering has no labels.
+- [bias-variance-tradeoff](bias-variance-tradeoff.md) — picking `k` is the same complexity-tradeoff decision.

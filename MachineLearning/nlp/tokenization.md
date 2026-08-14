@@ -20,12 +20,12 @@ Tokenization turns raw text into a sequence of integer IDs — the input that ev
 
 ## Practical facts I keep rediscovering
 
-- The vocab file *is* part of the model — mismatched tokenizer = garbage in, garbage out. This is the number-one cause of "it worked in my notebook, failed in prod" (a real RAG gotcha, see [[RAG]]).
+- The vocab file *is* part of the model — mismatched tokenizer = garbage in, garbage out. This is the number-one cause of "it worked in my notebook, failed in prod" (a real RAG gotcha, see [RAG](RAG.md)).
 - Token length ≈ 4 chars ≈ 0.75 words for English BPE; context windows are counted in **tokens**, not words (this is why GPT-4 "8k context" is ~6k words).
-- BOS/EOS/PAD/UNK special tokens are real tokenizer state. Padding is what the compiler sees as wasteful (see [[../../Compilers/DLCompilers/TorchInductor/TorchInductor]] and dynamic shape work in [[../../PyTorchCompiler/PLAN]]).
+- BOS/EOS/PAD/UNK special tokens are real tokenizer state. Padding is what the compiler sees as wasteful (see [TorchInductor](../../Compilers/DLCompilers/TorchInductor/TorchInductor.md) and dynamic shape work in [PLAN](../../Compilers/PyTorchCompiler/PLAN.md)).
 
 ## Related
 
-- [[../deeplearning/embeddings]] — token IDs are the index into the embedding table.
-- [[BERT]] / [[GPT-decoder-only-models]] — WordPiece vs BPE in practice.
-- [[RAG]] — tokenizer mismatch is a classic retrieval pipeline bug.
+- [embeddings](../deeplearning/embeddings.md) — token IDs are the index into the embedding table.
+- [BERT](BERT.md) / [GPT-decoder-only-models](GPT-decoder-only-models.md) — WordPiece vs BPE in practice.
+- [RAG](RAG.md) — tokenizer mismatch is a classic retrieval pipeline bug.

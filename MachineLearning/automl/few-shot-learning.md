@@ -1,6 +1,6 @@
 # Few-shot learning
 
-Few-shot learning = training a model to do a task with **only a handful of examples per class** (typically 1–5), as opposed to the thousands normal deep learning needs. It's the subfield of [[meta-learning]] closest to how humans learn.
+Few-shot learning = training a model to do a task with **only a handful of examples per class** (typically 1–5), as opposed to the thousands normal deep learning needs. It's the subfield of [meta-learning](meta-learning.md) closest to how humans learn.
 
 ## The setup
 
@@ -11,10 +11,10 @@ Few-shot learning = training a model to do a task with **only a handful of examp
 ## The three big families (same split as meta-learning)
 
 1. **Metric-based**: learn a distance function so that *similar classes are close together*. Then classify a query by nearest-neighbor against the support set.
-   - Siamese networks (twin nets, contrastive loss), **prototypical networks** (class = mean embedding, "prototype"), matching networks, [[metric-learning]].
+   - Siamese networks (twin nets, contrastive loss), **prototypical networks** (class = mean embedding, "prototype"), matching networks, [metric-learning](metric-learning.md).
 2. **Model-based**: external or internal memory stores training examples and reads them at inference (memory-augmented NNs, MANN).
 3. **Optimization-based**: meta-learn how to take gradient steps so a few steps adapt quickly.
-   - **MAML** — Model-Agnostic Meta-Learning: find init weights from which 1–2 gradient steps solve any new task (see [[model-agnostic-meta-learning]]).
+   - **MAML** — Model-Agnostic Meta-Learning: find init weights from which 1–2 gradient steps solve any new task (see [model-agnostic-meta-learning](model-agnostic-meta-learning.md)).
 
 ## Why it works at all
 
@@ -22,7 +22,7 @@ The trick is **episodic training**: you train on *many small tasks*, each shaped
 
 ## Related
 
-- [[meta-learning]] — the umbrella ("learning to learn").
-- [[model-agnostic-meta-learning]] — the optimization-based approach.
-- [[metric-learning]] — the distance-learning approach.
-- [[MachineLearning/algorithms/transfer-learning]] — different idea (one big pretraining, then adapt), but the same "little data" motivation.
+- [meta-learning](meta-learning.md) — the umbrella ("learning to learn").
+- [model-agnostic-meta-learning](model-agnostic-meta-learning.md) — the optimization-based approach.
+- [metric-learning](metric-learning.md) — the distance-learning approach.
+- [transfer-learning](../algorithms/transfer-learning.md) — different idea (one big pretraining, then adapt), but the same "little data" motivation.

@@ -6,21 +6,21 @@ Cover the **hyperparameter tuning strategies** — the search algorithms that Au
 
 ## What's already here
 
-- [[grid-search]] — exhaustive Cartesian search.
-- [[random-search]] — uniform sampling; beats grid in high dims (Bergstra & Bengio).
-- [[Bayesian-optimization]] — GP/TPE surrogate + acquisition; the sample-efficient workhorse.
-- [[Hyperband]] — successive halving / bandit; early-stopping for many cheap candidates.
-- [[gradient-based-optimization]] — differentiating through training for continuous HPs.
-- [[optuna]] — the de-facto tool (TPE sampler, pruning, define-by-run).
-- [[asha-pbt-bohb]] — the modern multi-fidelity methods.
-- [[tuning-methodology]] — search-space design, budgets, seeds, multi-objective.
+- [grid-search](grid-search.md) — exhaustive Cartesian search.
+- [random-search](random-search.md) — uniform sampling; beats grid in high dims (Bergstra & Bengio).
+- [Bayesian-optimization](Bayesian-optimization.md) — GP/TPE surrogate + acquisition; the sample-efficient workhorse.
+- [Hyperband](Hyperband.md) — successive halving / bandit; early-stopping for many cheap candidates.
+- [gradient-based-optimization](gradient-based-optimization.md) — differentiating through training for continuous HPs.
+- [optuna](optuna.md) — the de-facto tool (TPE sampler, pruning, define-by-run).
+- [asha-pbt-bohb](asha-pbt-bohb.md) — the modern multi-fidelity methods.
+- [tuning-methodology](tuning-methodology.md) — search-space design, budgets, seeds, multi-objective.
 
 ## What to add next
 
 - [x] **The implementations** (how it's actually used):
   - [x] **Optuna** sampler walkthrough (TPE by default) + pruning — the tool I'll actually use
-  - [x] SMAC (auto-sklearn's engine) vs TPE — comparing the two dominant surrogates → see [[Bayesian-optimization]] + [[optuna]]
-  - [x] scikit-learn `GridSearchCV` / `RandomizedSearchCV` mapping to these notes → they are literally [[grid-search]]/[[random-search]] with a CV split inside
+  - [x] SMAC (auto-sklearn's engine) vs TPE — comparing the two dominant surrogates → see [Bayesian-optimization](Bayesian-optimization.md) + [optuna](optuna.md)
+  - [x] scikit-learn `GridSearchCV` / `RandomizedSearchCV` mapping to these notes → they are literally [grid-search](grid-search.md)/[random-search](random-search.md) with a CV split inside
 - [x] **Advanced multi-fidelity methods** (beyond plain Hyperband):
   - [x] ASHA (Asynchronous Successive Halving) — the parallel-friendly version
   - [x] PBT (Population Based Training) — evolutionary, used for large NN training
@@ -29,7 +29,7 @@ Cover the **hyperparameter tuning strategies** — the search algorithms that Au
   - [x] Warm-starting and search-space design (log-uniform ranges for scales)
   - [x] Multi-objective tuning (accuracy + latency), Pareto fronts
   - [x] When tuning is pointless (few evals, cheap training → random search wins)
-- [ ] **Reproducibility** — seeds, fixed search budgets, reporting best-config-with-metrics (ties to eval discipline in [[../algorithms]]) → covered in [[tuning-methodology]]
+- [ ] **Reproducibility** — seeds, fixed search budgets, reporting best-config-with-metrics (ties to eval discipline in [algorithms](../../algorithms/PLAN.md)) → covered in [tuning-methodology](tuning-methodology.md)
 
 ## Prioritization
 

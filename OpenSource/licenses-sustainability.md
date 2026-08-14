@@ -17,12 +17,12 @@ The legal + ecosystem layer of OSS. For contributors the two questions are: "wha
 
 ## Sustainability — what keeps OSS alive
 
-- **Maintainer burden**: triage, reviews, releases, security — 90% invisible work. Contributors who *also* review, triage, and document are the sustainers (see [[code-review-skills]]).
-- **Security disclosures**: the `SECURITY.md` flow — private disclosure, coordinated fix window, CVE assignment, then public advisory. Never post a 0-day as a normal issue (see [[good-issue-reports]]).
+- **Maintainer burden**: triage, reviews, releases, security — 90% invisible work. Contributors who *also* review, triage, and document are the sustainers (see [code-review-skills](code-review-skills.md)).
+- **Security disclosures**: the `SECURITY.md` flow — private disclosure, coordinated fix window, CVE assignment, then public advisory. Never post a 0-day as a normal issue (see [good-issue-reports](good-issue-reports.md)).
 - **Funding models**: corporate sponsorship, foundations (Linux Foundation, Apache Foundation), donations, dual-licensing. Understanding the model tells you how to get a *fix* accepted (a corporation-maintained component has a governance process, not just a repo).
 
 ## Related
 
-- [[good-issue-reports]] — the security-disclosure etiquette.
-- [[PR-Lifecycle]] — CLA/DCO are part of the flow.
-- [[writing-a-good-commit]] — header/attribution style.
+- [good-issue-reports](good-issue-reports.md) — the security-disclosure etiquette.
+- [PR-Lifecycle](PR-Lifecycle.md) — CLA/DCO are part of the flow.
+- [writing-a-good-commit](writing-a-good-commit.md) — header/attribution style.

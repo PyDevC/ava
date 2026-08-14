@@ -25,10 +25,10 @@ H2O AutoML is the in-memory, distributed AutoML from the H2O platform. You give 
 
 ## Practical notes
 
-- The search is *not* full Bayesian AutoML like [[auto-sklearn]]; it's a smart heuristic over a curated model zoo. Results are excellent but the "search" is less principled.
-- Good tabular baseline vs [[auto-sklearn]], [[mlbox]], [[tpot]], and [[azureml]] AutoML.
+- The search is *not* full Bayesian AutoML like [auto-sklearn](auto-sklearn.md); it's a smart heuristic over a curated model zoo. Results are excellent but the "search" is less principled.
+- Good tabular baseline vs [auto-sklearn](auto-sklearn.md), [mlbox](mlbox.md), [tpot](tpot.md), and [azureml](azureml.md) AutoML.
 
 ## Related
 
-- [[MachineLearning/algorithms/Gradient-boosting]] — GBM is usually the workhorse under the hood.
-- [[ranking]] — leaderboard = ranking models by a chosen metric.
+- [Gradient-boosting](../algorithms/Gradient-boosting.md) — GBM is usually the workhorse under the hood.
+- [ranking](../algorithms/ranking.md) — leaderboard = ranking models by a chosen metric.

@@ -1,6 +1,6 @@
 # PyTorch performance and memory
 
-The everyday performance toolbox: profile first, then remove the real bottleneck — usually Python/launch overhead, memory churn, or data loading. These notes assume the compiler side is already covered (see [[Compilers/PyTorchCompiler/PLAN]]).
+The everyday performance toolbox: profile first, then remove the real bottleneck — usually Python/launch overhead, memory churn, or data loading. These notes assume the compiler side is already covered (see [PLAN](../Compilers/PyTorchCompiler/PLAN.md)).
 
 ## Profiling: `torch.profiler`
 
@@ -19,14 +19,14 @@ print(prof.key_averages().table(sort_by="cuda_time_total", row_limit=20))
 ## The caching allocator
 
 - PyTorch **caches freed GPU memory** (doesn't return to the driver every time) → allocation is cheap, but the cache grows to the high-water mark and *appears* as a leak (`torch.cuda.empty_cache()` reclaims it to the driver; `torch.cuda.memory_summary()` shows the truth).
-- **Peak-memory reduction order**: `torch.compile` (fuses, reuses buffers) > gradient accumulation / checkpointing (`torch.utils.checkpoint` trades compute for memory) > mixed precision ([[MachineLearning/deeplearning/mixed-precision]]) > FSDP (shards optimizer states, [[MachineLearning/deeplearning/distributed-training]]).
+- **Peak-memory reduction order**: `torch.compile` (fuses, reuses buffers) > gradient accumulation / checkpointing (`torch.utils.checkpoint` trades compute for memory) > mixed precision ([mixed-precision](../MachineLearning/deeplearning/mixed-precision.md)) > FSDP (shards optimizer states, [distributed-training](../MachineLearning/deeplearning/distributed-training.md)).
 - `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` (or `max_split_size_mb`) can cut fragmentation spikes on big-tensor workloads.
 
 ## no_grad vs inference_mode
 
 - `torch.no_grad()`: disables the Autograd **dispatch key** (no graph recorded), but still tracks `requires_grad` metadata and (with grad tensors) can be slow.
 - `torch.inference_mode()`: the *stronger* one — no autograd at all, tensors become "inference-only" (`inference` dispatch key), allows bigger fusion/optimization headroom. Use for pure inference; assert-free.
-- `model.eval()` ≠ `no_grad` — eval changes *layers* (dropout/BN, see [[MachineLearning/deeplearning/regularization-normalization]]), `no_grad` changes the *runtime*. You need both at inference.
+- `model.eval()` ≠ `no_grad` — eval changes *layers* (dropout/BN, see [regularization-normalization](../MachineLearning/deeplearning/regularization-normalization.md)), `no_grad` changes the *runtime*. You need both at inference.
 
 ## Data loading
 
@@ -37,7 +37,7 @@ print(prof.key_averages().table(sort_by="cuda_time_total", row_limit=20))
 
 ## Related
 
-- [[Compilers/PyTorchCompiler/PLAN]] — `torch.compile` as the first "make it faster" lever.
-- [[MachineLearning/deeplearning/mixed-precision]] — the 2x-4x knob.
-- [[MachineLearning/deeplearning/distributed-training]] — beyond one GPU.
-- [[Explore]] — the repo layout these subsystems live in.
+- [PLAN](../Compilers/PyTorchCompiler/PLAN.md) — `torch.compile` as the first "make it faster" lever.
+- [mixed-precision](../MachineLearning/deeplearning/mixed-precision.md) — the 2x-4x knob.
+- [distributed-training](../MachineLearning/deeplearning/distributed-training.md) — beyond one GPU.
+- [Explore](Explore.md) — the repo layout these subsystems live in.

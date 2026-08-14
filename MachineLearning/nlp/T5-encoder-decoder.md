@@ -12,22 +12,22 @@ input:  "stsb sentence1: ... sentence2: ..."                    →  "4.0"
 
 - **Unification**: classification becomes generation of the label word; regression becomes generation of the number. One architecture, one objective, zero task-specific heads.
 - **Beam search works everywhere**: because outputs are text, decoding-time tricks (beam search, temperature) apply to every task.
-- This is the "text-to-text" idea that modern instruction-tuned models (see [[instruction-tuning-rlhf]]) inherit — "format the problem as text, generate the answer".
+- This is the "text-to-text" idea that modern instruction-tuned models (see [instruction-tuning-rlhf](instruction-tuning-rlhf.md)) inherit — "format the problem as text, generate the answer".
 
 ## Architecture notes
 
-- **Encoder-decoder Transformer** (the "complete" Transformer from [[seq2seq-attention]], unlike decoder-only [[GPT-decoder-only-models]] and encoder-only [[BERT]]).
-- **Relative position biases** (see [[positional-encodings]]) — learned per attention head.
+- **Encoder-decoder Transformer** (the "complete" Transformer from [seq2seq-attention](seq2seq-attention.md), unlike decoder-only [GPT-decoder-only-models](GPT-decoder-only-models.md) and encoder-only [BERT](BERT.md)).
+- **Relative position biases** (see [positional-encodings](positional-encodings.md)) — learned per attention head.
 - Trained on **C4** (Colossal Clean Crawled Corpus, ~750GB of filtered web text) with a span-corruption objective: mask random spans, predict them. Equivalent to BERT-style masking but as text-to-text.
 
 ## Sizes and the modern status
 
 - T5-Small → T5-Large → T5-3B → T5-11B ("XXL"). The size ladder and its scaling story became the template for later LLM families.
-- Modern successors: **Flan-T5** (instruction-tuned T5), **UL2** — but for generation at scale, decoder-only won (see [[GPT-decoder-only-models]]). T5-class models still shine for tasks needing strong *bidirectional* context + generation (summarization, grammar).
+- Modern successors: **Flan-T5** (instruction-tuned T5), **UL2** — but for generation at scale, decoder-only won (see [GPT-decoder-only-models](GPT-decoder-only-models.md)). T5-class models still shine for tasks needing strong *bidirectional* context + generation (summarization, grammar).
 
 ## Related
 
-- [[BERT]] — the encoder-only ancestor it supersedes for generation.
-- [[GPT-decoder-only-models]] — the decoder-only competitor.
-- [[instruction-tuning-rlhf]] — the text-to-text idea taken to chat models.
-- [[seq2seq-attention]] — the encoder-decoder frame.
+- [BERT](BERT.md) — the encoder-only ancestor it supersedes for generation.
+- [GPT-decoder-only-models](GPT-decoder-only-models.md) — the decoder-only competitor.
+- [instruction-tuning-rlhf](instruction-tuning-rlhf.md) — the text-to-text idea taken to chat models.
+- [seq2seq-attention](seq2seq-attention.md) — the encoder-decoder frame.

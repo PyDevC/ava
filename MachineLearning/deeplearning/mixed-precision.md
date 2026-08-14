@@ -1,6 +1,6 @@
 # Mixed precision training
 
-Mixed precision trains with **half precision (FP16/BF16)** where possible and **FP32** for the parts that need it — getting ~2x throughput and half the memory on tensor-core GPUs (see [[Store/deep-learning-hardware]]).
+Mixed precision trains with **half precision (FP16/BF16)** where possible and **FP32** for the parts that need it — getting ~2x throughput and half the memory on tensor-core GPUs (see [deep-learning-hardware](../../Store/deep-learning-hardware.md)).
 
 ## Why it works
 
@@ -12,7 +12,7 @@ Mixed precision trains with **half precision (FP16/BF16)** where possible and **
 
 1. **Master weights in FP32** — updates accumulate in full precision; only the *copy* used in forward/backward is FP16.
 2. **Loss scaling** — multiply loss by a big constant (e.g. 2^11) before backward so small gradients don't underflow to 0 in FP16; divide them back before the update. Dynamic loss scaling auto-adjusts when inf/nan appears.
-3. **FP32 for sensitive ops** — reductions, losses, softmax, exp stay FP32 (this is exactly the "keep it in log/FP32" theme of [[../mathematical-function/exp-ln-logspace]]).
+3. **FP32 for sensitive ops** — reductions, losses, softmax, exp stay FP32 (this is exactly the "keep it in log/FP32" theme of [exp-ln-logspace](../mathematical-function/exp-ln-logspace.md)).
 
 ## BF16 vs FP16
 
@@ -35,10 +35,10 @@ scaler.update()
 
 ## Interaction with the compiler story
 
-`torch.compile` handles autocast itself (the graph is compiled for the mixed-precision types). Inductor also does **automatic mixed precision + FP16/BF16 kernel generation** when the input dtype allows (see [[Compilers/DLCompilers/TorchInductor/TorchInductor]]).
+`torch.compile` handles autocast itself (the graph is compiled for the mixed-precision types). Inductor also does **automatic mixed precision + FP16/BF16 kernel generation** when the input dtype allows (see [TorchInductor](../../Compilers/DLCompilers/TorchInductor/TorchInductor.md)).
 
 ## Related
 
-- [[model-optimization]] — the performance chapter this belongs to.
-- [[distributed-training]] — mixed precision + FSDP is the standard huge-model stack.
-- [[Store/deep-learning-hardware]] — the tensor cores it exploits.
+- [model-optimization](model-optimization.md) — the performance chapter this belongs to.
+- [distributed-training](distributed-training.md) — mixed precision + FSDP is the standard huge-model stack.
+- [deep-learning-hardware](../../Store/deep-learning-hardware.md) — the tensor cores it exploits.

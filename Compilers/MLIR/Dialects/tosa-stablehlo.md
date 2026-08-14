@@ -4,7 +4,7 @@
 
 ## StableHLO — the Google/JAX story
 
-- Comes from XLA's HLO (see [[../../DLCompilers/XLA/StableHLO]]). `stablehlo.add`, `stablehlo.dot_general`, `stablehlo.convolution` — a portable, versioned form of HLO.
+- Comes from XLA's HLO (see [StableHLO](../../DLCompilers/XLA-StableHLO.md)). `stablehlo.add`, `stablehlo.dot_general`, `stablehlo.convolution` — a portable, versioned form of HLO.
 - The interchange format: **PyTorch, JAX, TF** all have `to stablehlo` exporters. The goal: stable semantics across compiler versions and vendors (MLIR "portable" spec).
 - Op set is the *high-level tensor ops* — einsum-style `dot_general` with dimension contracts, `convolution`, `reduce_window`, `scatter`, `gather` — no loops, no scalar code visible.
 
@@ -25,7 +25,7 @@ tosa / stablehlo ──(legalize)──▶ linalg
                                vector/scf/memref → llvm/gpu
 ```
 
-Both dialects lower to **linalg** ([[linalg]]) — the generic structured target where the real optimization happens. The frontend dialect choice is about *portability and standardization*, not about optimization; the linalg step is where fusion/vectorization lives.
+Both dialects lower to **linalg** ([linalg](linalg.md)) — the generic structured target where the real optimization happens. The frontend dialect choice is about *portability and standardization*, not about optimization; the linalg step is where fusion/vectorization lives.
 
 ## Why learn them
 
@@ -34,7 +34,7 @@ Both dialects lower to **linalg** ([[linalg]]) — the generic structured target
 
 ## Related
 
-- [[linalg]] — the lowering target for both.
-- [[../../DLCompilers/XLA/StableHLO]] — StableHLO's compiler-side parent.
-- [[../../DLCompilers/TVM/TVM]] — TVM's equivalent frontend story.
-- [[../../DLCompilers/ONNXRuntime/ONNXRuntime]] — the other "standard op set" world (ONNX).
+- [linalg](linalg.md) — the lowering target for both.
+- [StableHLO](../../DLCompilers/XLA-StableHLO.md) — StableHLO's compiler-side parent.
+- [TVM](../../DLCompilers/TVM.md) — TVM's equivalent frontend story.
+- [ONNXRuntime](../../DLCompilers/ONNXRuntime.md) — the other "standard op set" world (ONNX).

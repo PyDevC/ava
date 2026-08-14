@@ -6,7 +6,7 @@ A knowledge base page on how to navigate the PyTorch monorepo, what lives where,
 
 - `torch/` - the Python package, this is where most of the work happens
     - `torch/_dynamo/` - the tracing frontend, converts eager Python into FX graphs
-    - `torch/_inductor/` - the default compiler backend (see [[PyTorch/Compilers/TorchInductor/EntryPoint]])
+    - `torch/_inductor/` - the default compiler backend (see [EntryPoint](Compilers/TorchInductor/EntryPoint.md))
     - `torch/_functorch/` - function transforms (grad, vmap, etc)
     - `torch/onnx/` - ONNX export
     - `torch/distributed/` - distributed training, `dist.all_reduce` and friends
@@ -17,7 +17,7 @@ A knowledge base page on how to navigate the PyTorch monorepo, what lives where,
 - `c10/` - low level utilities: intrusive pointer, dispatcher, device types
 - `torch/csrc/` - C++ glue that binds the Python API to ATen, includes the autograd engine
 - `test/` - the tests. Python tests in `test/`, C++ tests in `test/cpp`
-- `.ci/` and `.github/workflows/` - the CI config (see [[PyTorch/CI_Infra]])
+- `.ci/` and `.github/workflows/` - the CI config (see [CI_Infra](CI_Infra.md))
 - `scripts/`, `tools/`, `third_party/` - build helpers, codegen scripts, vendored deps
 
 ## Things to check when exploring

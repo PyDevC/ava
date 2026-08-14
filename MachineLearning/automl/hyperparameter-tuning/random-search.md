@@ -1,6 +1,6 @@
 # Random search
 
-Random search samples hyperparameter configurations **uniformly at random** from the specified distributions (instead of trying a fixed Cartesian grid like [[grid-search]]).
+Random search samples hyperparameter configurations **uniformly at random** from the specified distributions (instead of trying a fixed Cartesian grid like [grid-search](grid-search.md)).
 
 ## Why it's usually better than grid search (Bergstra & Bengio 2012)
 
@@ -21,10 +21,10 @@ With the same budget, random search finds better (or equal) optima in high dimen
 
 - **+** Beats grid in high dims, trivial to implement, gives good results fast.
 - **+** Can be refined later by narrowing ranges around the best point (sequential refinement).
-- **−** No memory: doesn't learn from past evaluations → still sample-inefficient vs [[hyperparameter-tuning/Bayesian-optimization]].
+- **−** No memory: doesn't learn from past evaluations → still sample-inefficient vs [Bayesian-optimization](Bayesian-optimization.md).
 
 ## Related
 
-- [[grid-search]] — the brute-force baseline.
-- [[hyperparameter-tuning/Bayesian-optimization]] — the sample-efficient sequential successor.
-- [[random-search]] is what many libraries' `random_search` / `RandomizedSearchCV` implement.
+- [grid-search](grid-search.md) — the brute-force baseline.
+- [Bayesian-optimization](Bayesian-optimization.md) — the sample-efficient sequential successor.
+- [random-search](random-search.md) is what many libraries' `random_search` / `RandomizedSearchCV` implement.

@@ -13,9 +13,9 @@ The eigenvalue (singular value) tells you how much variance that component captu
 
 ## Why it matters
 
-- **Visualization**: project to 2–3 dims to plot high-dim data (like [[SOM]] does, but linear).
+- **Visualization**: project to 2–3 dims to plot high-dim data (like [SOM](SOM.md) does, but linear).
 - **Noise reduction / compression**: drop the low-variance directions.
-- **Speed**: train on fewer, decorrelated features (helps linear models; see [[tabular-regression]]).
+- **Speed**: train on fewer, decorrelated features (helps linear models; see [tabular-regression](tabular-regression.md)).
 - **Data whitening / decorrelation**: a preprocessing step for some algorithms.
 
 ## The caveats
@@ -26,11 +26,11 @@ The eigenvalue (singular value) tells you how much variance that component captu
 
 ## The information view
 
-PCA is a *lossy* compression that preserves the most variance: in the [[injectivity]] framing it deliberately gives up exact invertibility to squeeze out noise — an **approximately injective** map onto a subspace. Autoencoders (neural nets) learn the same idea non-linearly; see [[automated-feature-extraction]].
+PCA is a *lossy* compression that preserves the most variance: in the [injectivity](injectivity.md) framing it deliberately gives up exact invertibility to squeeze out noise — an **approximately injective** map onto a subspace. Autoencoders (neural nets) learn the same idea non-linearly; see [automated-feature-extraction](../automl/automated-feature-extraction.md).
 
 ## Related
 
-- [[automated-feature-extraction]] — PCA is an automated, unsupervised feature transform.
-- [[k-means]] — the two most-used unsupervised tools.
-- [[SOM]] — the non-linear neighbor for visualization.
-- [[metric-learning]] — PCA finds variance; metric learning finds *task-relevant* directions.
+- [automated-feature-extraction](../automl/automated-feature-extraction.md) — PCA is an automated, unsupervised feature transform.
+- [k-means](k-means.md) — the two most-used unsupervised tools.
+- [SOM](SOM.md) — the non-linear neighbor for visualization.
+- [metric-learning](../automl/metric-learning.md) — PCA finds variance; metric learning finds *task-relevant* directions.

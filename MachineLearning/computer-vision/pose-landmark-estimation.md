@@ -1,6 +1,6 @@
 # Pose and landmark estimation
 
-Pose estimation predicts **keypoints** on a person (joints) or on a part (hand: the 21-point model) from an image. This is the core of the [[hand-gesture-recognition]] pipeline: palm detection → 21 landmarks → gesture classification.
+Pose estimation predicts **keypoints** on a person (joints) or on a part (hand: the 21-point model) from an image. This is the core of the [hand-gesture-recognition](hand-gesture-recognition.md) pipeline: palm detection → 21 landmarks → gesture classification.
 
 ## The two tasks
 
@@ -11,14 +11,14 @@ Pose estimation predicts **keypoints** on a person (joints) or on a part (hand: 
 
 MediaPipe's hand model is a **two-stage pipeline**:
 
-1. **Palm detector** (a fast detector, see [[object-detection]]) — palms are easy to detect (rigid, small rotation); the hand *itself* has huge articulation variance, so detecting the palm first is the trick.
+1. **Palm detector** (a fast detector, see [object-detection](object-detection.md)) — palms are easy to detect (rigid, small rotation); the hand *itself* has huge articulation variance, so detecting the palm first is the trick.
 2. **Hand landmark model** — takes the cropped palm region, regresses 21 3D landmarks with per-point visibility. Trained to predict 3D coordinates (z in a local frame), which is why the output includes depth-like values.
 
 MediaPipe also has pose (33 points, for the body) and face landmarks (468 points) — same design: detect region → regress landmarks.
 
 ## Landmark → semantics
 
-The 21 hand landmarks have a fixed ordering (wrist, then 4 fingers × 4 joints, thumb=2). Downstream logic (like [[hestreg]]'s gesture classification) consumes the *relative geometry*: finger *states* (extended/curled) via inter-joint angles, or the landmark *coordinates* fed to a small classifier. This is where the "gesture recognition" module comes from — see [[hand-gesture-recognition]].
+The 21 hand landmarks have a fixed ordering (wrist, then 4 fingers × 4 joints, thumb=2). Downstream logic (like [hestreg](hestreg.md)'s gesture classification) consumes the *relative geometry*: finger *states* (extended/curled) via inter-joint angles, or the landmark *coordinates* fed to a small classifier. This is where the "gesture recognition" module comes from — see [hand-gesture-recognition](hand-gesture-recognition.md).
 
 ## Keypoint models — the big picture
 
@@ -28,11 +28,11 @@ The 21 hand landmarks have a fixed ordering (wrist, then 4 fingers × 4 joints, 
 
 ## The robustness reality
 
-Landmarks are *only* as good as detection + lighting + occlusion. Gesture systems fail on: occlusion (fingers behind the hand), motion blur (fast gestures), and ambiguous geometry (fist vs open palm closeups). See the failure-mode discussion in [[report]] and [[hand-gesture-recognition]].
+Landmarks are *only* as good as detection + lighting + occlusion. Gesture systems fail on: occlusion (fingers behind the hand), motion blur (fast gestures), and ambiguous geometry (fist vs open palm closeups). See the failure-mode discussion in [report](report.md) and [hand-gesture-recognition](hand-gesture-recognition.md).
 
 ## Related
 
-- [[hand-gesture-recognition]] — the pipeline that consumes landmarks.
-- [[object-detection]] — the palm detector stage.
-- [[hestreg]] — the system integration.
-- [[data-augmentation]] — what makes the landmark model robust.
+- [hand-gesture-recognition](hand-gesture-recognition.md) — the pipeline that consumes landmarks.
+- [object-detection](object-detection.md) — the palm detector stage.
+- [hestreg](hestreg.md) — the system integration.
+- [data-augmentation](data-augmentation.md) — what makes the landmark model robust.

@@ -2,7 +2,7 @@
 
 Generative Adversarial Networks (Goodfellow et al. 2014) train a generator and a discriminator **against each other**:
 
-- **Generator G**: maps noise `z ~ U(0,1)` (see [[../mathematical-function/uniform-distribution]]) into fake samples that try to fool the discriminator.
+- **Generator G**: maps noise `z ~ U(0,1)` (see [uniform-distribution](../mathematical-function/uniform-distribution.md)) into fake samples that try to fool the discriminator.
 - **Discriminator D**: a binary classifier trying to tell real from fake.
 
 The game: `D` gets better at detecting fakes; `G` gets better at faking. The equilibrium is a generator whose samples are indistinguishable from real data.
@@ -14,7 +14,7 @@ The game: `D` gets better at detecting fakes; `G` gets better at faking. The equ
 # G step: minimize log(1 - D(G(z)))   →   maximize log D(G(z))
 ```
 
-Each step updates one side while the other is frozen. Both are trained with the binary cross-entropy loss (see [[../algorithms/loss-function]]).
+Each step updates one side while the other is frozen. Both are trained with the binary cross-entropy loss (see [loss-function](../algorithms/loss-function.md)).
 
 ## Why training is hard
 
@@ -22,7 +22,7 @@ Each step updates one side while the other is frozen. Both are trained with the 
   - **Mode collapse**: `G` finds one sample that fools `D` and outputs only that.
   - **Oscillation / non-convergence**: the two players chase each other forever.
   - **Vanishing discriminator gradient**: when `D` is too good, `G` learns nothing.
-- Practical mitigations: **Wasserstein loss** (WGAN — use earth-mover distance via a critic with Lipschitz constraint, see [[../mathematical-function/lipsschitz-function]]), **spectral normalization**, **label smoothing**, feature matching.
+- Practical mitigations: **Wasserstein loss** (WGAN — use earth-mover distance via a critic with Lipschitz constraint, see [lipsschitz-function](../mathematical-function/lipsschitz-function.md)), **spectral normalization**, **label smoothing**, feature matching.
 
 ## Where they stand now
 
@@ -32,7 +32,7 @@ For images, **diffusion models** (DDPM — denoise from noise step by step) over
 
 ## Related
 
-- [[../mathematical-function/logistic-function]] — the binary loss both players use.
-- [[../mathematical-function/lipsschitz-function]] — WGAN's constraint.
-- [[model-optimization-for-inference]] — a trained generator is a small feed-forward net (cheap to serve).
-- [[../automl/metric-learning]] — feature matching / contrastive tricks appear in GAN discriminators.
+- [logistic-function](../mathematical-function/logistic-function.md) — the binary loss both players use.
+- [lipsschitz-function](../mathematical-function/lipsschitz-function.md) — WGAN's constraint.
+- [model-optimization-for-inference](model-optimization-for-inference.md) — a trained generator is a small feed-forward net (cheap to serve).
+- [metric-learning](../automl/metric-learning.md) — feature matching / contrastive tricks appear in GAN discriminators.

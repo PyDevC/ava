@@ -6,13 +6,13 @@ Capture **how to work in open source**: navigating large codebases, making good 
 
 ## What's already here
 
-- [[how-to-explore-large-repos]] — using the software, reading docs/wikis/contribution guides, starting small, the practical workflow for big repos.
-- [[writing-a-good-commit]] — commit message guidelines and a comprehensive commit-type reference.
-- [[PR-Lifecycle]] — finding/claiming work, WIP PRs, branch/CI/review etiquette, merge.
-- [[code-review-skills]] — what reviewers look for, reviewing others' PRs.
-- [[debugging-CI-failures]] — reading CI logs, test matrices, local-first debugging.
-- [[good-issue-reports]] — repro-first bug reports, feature/RFC vs security channels.
-- [[licenses-sustainability]] — MIT/Apache/GPL, DCO/CLA, maintainer burden, security disclosures.
+- [how-to-explore-large-repos](how-to-explore-large-repos.md) — using the software, reading docs/wikis/contribution guides, starting small, the practical workflow for big repos.
+- [writing-a-good-commit](writing-a-good-commit.md) — commit message guidelines and a comprehensive commit-type reference.
+- [PR-Lifecycle](PR-Lifecycle.md) — finding/claiming work, WIP PRs, branch/CI/review etiquette, merge.
+- [code-review-skills](code-review-skills.md) — what reviewers look for, reviewing others' PRs.
+- [debugging-CI-failures](debugging-CI-failures.md) — reading CI logs, test matrices, local-first debugging.
+- [good-issue-reports](good-issue-reports.md) — repro-first bug reports, feature/RFC vs security channels.
+- [licenses-sustainability](licenses-sustainability.md) — MIT/Apache/GPL, DCO/CLA, maintainer burden, security disclosures.
 
 ## What to add next
 
@@ -21,12 +21,12 @@ Capture **how to work in open source**: navigating large codebases, making good 
   - [x] PR workflow: branches, CI, review etiquette, addressing feedback, when to request review
   - [x] Code review skills: what reviewers look for, reviewing others' PRs
 - [x] **Working with big-project CI** (extends the repo-exploration note):
-  - [x] Reading CI logs, debugging a failing check (see [[PyTorch/CI_Infra]] for a real example)
+  - [x] Reading CI logs, debugging a failing check (see [CI_Infra](../PyTorch/CI_Infra.md) for a real example)
   - [x] Understanding the test matrix (which CI job tests what)
 - [x] **Communication**:
   - [x] Writing good issue reports / bug reports (repro, environment, expected vs actual)
   - [x] RFC/discussion etiquette; reading design docs (PyTorch RFCs, LLVM discourse)
-  - [x] Update docs along with code (maintainers love this — ties to [[writing-a-good-commit]])
+  - [x] Update docs along with code (maintainers love this — ties to [writing-a-good-commit](writing-a-good-commit.md))
 - [x] **Sustainability / licensing** (nice-to-have):
   - [x] Open source licenses at a glance (MIT/Apache/GPL) — what they mean for contributions
   - [x] Maintainer responsibilities, security disclosures, CVE etiquette

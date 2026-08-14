@@ -2,7 +2,7 @@
 
 Liveness answers: **for each program point, which variables might still be used before being overwritten?** A variable is *live* at a point if its value could be read along some path from that point to the end of the program.
 
-This is the analysis [[PruneSSA]] needs (dead phis are phis for dead variables), and the foundation of register allocation.
+This is the analysis [PruneSSA](SSA/PruneSSA.md) needs (dead phis are phis for dead variables), and the foundation of register allocation.
 
 ## The model
 
@@ -33,11 +33,11 @@ The union over *all* successors (not intersection) is important: a value is live
 
 ## Why it matters
 
-- **Register allocation** — only live variables need registers (see [[RegisterAllocation]]).
-- **Pruned SSA** — only insert a phi for a variable live at the join (see [[PruneSSA]]).
-- **Dead code elimination** — an instruction defining a variable that is never live is dead (see [[DeadCodeElimination]]).
+- **Register allocation** — only live variables need registers (see [RegisterAllocation](RegisterAllocation.md)).
+- **Pruned SSA** — only insert a phi for a variable live at the join (see [PruneSSA](SSA/PruneSSA.md)).
+- **Dead code elimination** — an instruction defining a variable that is never live is dead (see [DeadCodeElimination](DeadCodeElimination.md)).
 
 ## Related
 
-- [[Dominators]] — the other workhorse analysis; both are required reading before SSA construction.
-- [[SsaConstruction]] — puts liveness + dominance to work.
+- [Dominators](SSA/Dominators.md) — the other workhorse analysis; both are required reading before SSA construction.
+- [SsaConstruction](SsaConstruction.md) — puts liveness + dominance to work.

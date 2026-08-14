@@ -22,16 +22,16 @@ The "naive" part is the independence assumption — it's almost never literally 
 
 ## The generative view
 
-Unlike discriminative models ([[logistic-regression]], [[SVM]]) that learn `P(y|x)` directly, NB models the *joint* `P(x, y) = P(y)·ΠP(xᵢ|y)` and derives the posterior. This means it can also *sample* new examples of each class — the generator half of generative modeling.
+Unlike discriminative models ([logistic-regression](logistic-regression.md), [SVM](SVM.md)) that learn `P(y|x)` directly, NB models the *joint* `P(x, y) = P(y)·ΠP(xᵢ|y)` and derives the posterior. This means it can also *sample* new examples of each class — the generator half of generative modeling.
 
 ## Practical notes
 
-- Feature *log*-probability sums (use `log P`) — numerically stable and avoids underflow (see [[../mathematical-function/logit-function]]).
+- Feature *log*-probability sums (use `log P`) — numerically stable and avoids underflow (see [logit-function](../mathematical-function/logit-function.md)).
 - Laplace smoothing (`alpha`) handles zero-count categories — a small count added to every bin.
-- Strong baseline for text; for tabular data, boosted trees usually win (see [[tabular-regression]]).
+- Strong baseline for text; for tabular data, boosted trees usually win (see [tabular-regression](tabular-regression.md)).
 
 ## Related
 
-- [[classification]] — the task.
-- [[logistic-regression]] — the discriminative contrast (NB is generative).
-- [[loss-function]] — cross-entropy view: NB minimizes log loss on the joint model.
+- [classification](classification.md) — the task.
+- [logistic-regression](logistic-regression.md) — the discriminative contrast (NB is generative).
+- [loss-function](loss-function.md) — cross-entropy view: NB minimizes log loss on the joint model.

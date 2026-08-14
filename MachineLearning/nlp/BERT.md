@@ -32,7 +32,7 @@ BERT is trained on unlabeled text with two objectives:
 
 ## How it's used
 
-**Fine-tuning**: take the pretrained model, swap the output head for a task head, and train briefly on a small labeled dataset. That's the [[MachineLearning/algorithms/transfer-learning]] story — the pretrained encoder gives you language understanding "for free", and you only learn a small task-specific layer.
+**Fine-tuning**: take the pretrained model, swap the output head for a task head, and train briefly on a small labeled dataset. That's the [transfer-learning](../algorithms/transfer-learning.md) story — the pretrained encoder gives you language understanding "for free", and you only learn a small task-specific layer.
 
 - Classification (sentiment, spam) → [CLS] token + classifier head.
 - QA → predict start/end spans.
@@ -40,5 +40,5 @@ BERT is trained on unlabeled text with two objectives:
 
 ## Related
 
-- Built on the Transformer encoder — see [[MachineLearning/deeplearning/Transformers]] and the [[MachineLearning/deeplearning/attention-is-all-you-need]] notes.
+- Built on the Transformer encoder — see [Transformers](../deeplearning/Transformers.md) and the [attention-is-all-you-need](../deeplearning/attention-is-all-you-need.md) notes.
 - Follow-ups: RoBERTa (better training, no NSP), DistilBERT (smaller), ALBERT (shared params).

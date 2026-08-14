@@ -4,7 +4,7 @@ The practical path from "I want to contribute" to "merged" — the #1 blocker fo
 
 ## Finding and claiming work
 
-- **`good-first-issue` / `help-wanted` / `low-risk`** labels, and the project's contributor guide (every repo has one — read it; [[how-to-explore-large-repos]]).
+- **`good-first-issue` / `help-wanted` / `low-risk`** labels, and the project's contributor guide (every repo has one — read it; [how-to-explore-large-repos](how-to-explore-large-repos.md)).
 - **Triage**: pick issues that are (a) real, (b) scoped, (c) have a clear acceptance test. Avoid "feature requests" needing design sign-off for your *first* PR.
 - **Claim**: comment "I'll take this" / "I'd like to work on this" before spending effort — avoids duplicating a co-contributor; big projects track ownership on the issue.
 - **WIP PRs**: opening a `Draft`/WIP PR *early* ("here's my direction, feedback welcome") is standard and valued — you get course-correction before writing 2000 lines. Follow the project's PR template.
@@ -12,7 +12,7 @@ The practical path from "I want to contribute" to "merged" — the #1 blocker fo
 ## The branch and commit dance
 
 - Branch from the project's `main`/`nightly` (not master), keep it **rebased** (not merged) onto upstream before merge-request.
-- **Small PRs win**: one logical change per PR. Reviewers prefer 5 focused PRs to one monster (see [[writing-a-good-commit]] for commit message style; a clean commit *story* helps review).
+- **Small PRs win**: one logical change per PR. Reviewers prefer 5 focused PRs to one monster (see [writing-a-good-commit](writing-a-good-commit.md) for commit message style; a clean commit *story* helps review).
 - Sign-offs/CLA: many projects require `Signed-off-by` (DCO) or a Contributor License Agreement check — the CI will tell you.
 
 ## CI and the review loop
@@ -31,7 +31,7 @@ The practical path from "I want to contribute" to "merged" — the #1 blocker fo
 
 ## Related
 
-- [[writing-a-good-commit]] — the commit half of the flow.
-- [[code-review-skills]] — what reviewers are looking for.
-- [[how-to-explore-large-repos]] — the pre-PR preparation.
-- [[debugging-CI-failures]] — when your PR's CI goes red.
+- [writing-a-good-commit](writing-a-good-commit.md) — the commit half of the flow.
+- [code-review-skills](code-review-skills.md) — what reviewers are looking for.
+- [how-to-explore-large-repos](how-to-explore-large-repos.md) — the pre-PR preparation.
+- [debugging-CI-failures](debugging-CI-failures.md) — when your PR's CI goes red.

@@ -6,22 +6,22 @@ Organize **programming-language knowledge**, one sub-directory per language/area
 
 ## What's already here
 
-- **python/core/** — Python internals: [[core/bytecode]], [[core/typechecking]], [[core/conditioning-on-a-python-subclass]], plus the execution model, data model, C API, and performance notes (see its own [[core/PLAN]]).
-- **python/** — [[python/packaging]], [[python/asyncio]] (see [[python/PLAN]]).
-- **cpp/** — C++ memory model, smart pointers, templates/STL, debugging, CMake (see [[cpp/PLAN]]).
+- **python/core/** — Python internals: [bytecode](python/core/bytecode.md), [typechecking](python/core/typechecking.md), [conditioning-on-a-python-subclass](python/core/conditioning-on-a-python-subclass.md), plus the execution model, data model, C API, and performance notes (see its own [PLAN](python/core/PLAN.md)).
+- **python/** — [packaging](python/packaging.md), [asyncio](python/asyncio.md) (see [PLAN](python/PLAN.md)).
+- **cpp/** — C++ memory model, smart pointers, templates/STL, debugging, CMake (see [PLAN](cpp/PLAN.md)).
 
 ## What to add next
 
-- [x] **C++** (needed for all the compiler/GPU work — see [[../Roadmaps/ai-framework-engineer]]):
+- [x] **C++** (needed for all the compiler/GPU work — see [ai-framework-engineer](../Roadmaps/ai-framework-engineer.md)):
   - [x] A `cpp/` sub-directory: move semantics, RAII, templates/CRTP, STL performance, memory layout
-  - [x] Build systems: CMake basics (extends [[../Compilers/MLIR/CMake_Guide]])
+  - [x] Build systems: CMake basics (extends [CMake_Guide](../Compilers/MLIR/CMake_Guide.md))
   - [x] Debugging: gdb/lldb, sanitizers (ASAN/TSAN), profilers (perf)
 - [x] **Python non-core topics**:
-  - [x] The C API / CPython extension writing (ties to [[core/bytecode]] and PyTorch bindings)
+  - [x] The C API / CPython extension writing (ties to [bytecode](python/core/bytecode.md) and PyTorch bindings)
   - [x] GIL and threading vs multiprocessing (ties to PyTorch DataLoader perf)
   - [x] Memory model: refcounting, GC, `weakref` (a natural companion note)
 - [ ] **Bash/shell** (day-to-day tooling) — a small `shell/` section.
-- [ ] **Version control beyond basics** — interactive rebase, bisect, worktrees, submodules (useful for OSS work; see [[../OpenSource]]).
+- [ ] **Version control beyond basics** — interactive rebase, bisect, worktrees, submodules (useful for OSS work; see [OpenSource](../OpenSource/PLAN.md)).
 
 ## Prioritization
 

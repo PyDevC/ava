@@ -8,29 +8,29 @@ Accuracy lies. Use metrics that care about the minority class:
 
 - **Precision / Recall / F1** — precision = of my positive predictions, how many were right; recall = of all true positives, how many I caught. F1 = harmonic mean. Trade-off controlled by the decision threshold.
 - **PR-AUC** — precision-recall curve area; the right summary for imbalanced data (ROC-AUC can look great while PR is terrible).
-- **Confusion matrix** — always look at it; it shows where the failure is (see [[classification]]).
+- **Confusion matrix** — always look at it; it shows where the failure is (see [classification](classification.md)).
 
 Choose based on cost: if missing a fraud is expensive → high recall (accept false alarms); if false alarms annoy users → high precision.
 
 ## Data-level fixes
 
 - **Resampling**: undersample the majority (loses data) or oversample the minority (risk of overfitting; SMOTE synthesizes neighbors instead of duplicating).
-- **Class weights**: make the [[loss-function]] penalize minority mistakes more (`class_weight='balanced'`). Cheap and often enough.
-- **Ensemble with resampling**: train trees on balanced subsets (EasyEnsemble/BalancedRandomForest) — combines [[bagging-random-forests]] with balance.
+- **Class weights**: make the [loss-function](loss-function.md) penalize minority mistakes more (`class_weight='balanced'`). Cheap and often enough.
+- **Ensemble with resampling**: train trees on balanced subsets (EasyEnsemble/BalancedRandomForest) — combines [bagging-random-forests](bagging-random-forests.md) with balance.
 
 ## Algorithm/decision fixes
 
-- **Threshold tuning**: a classifier's 0.5 cutoff is arbitrary. Calibrate, then move the threshold to where precision/recall trade off best on validation data (see [[cross-validation]]).
+- **Threshold tuning**: a classifier's 0.5 cutoff is arbitrary. Calibrate, then move the threshold to where precision/recall trade off best on validation data (see [cross-validation](cross-validation.md)).
 - **Focal loss** (for NNs): down-weight easy examples so training focuses on hard minority cases.
 - **One-class / anomaly framing**: when the minority is tiny, treat it as anomaly detection rather than classification.
 
 ## Notes
 
-- Stratified folds when cross-validating, or you'll train on folds with zero positives (see [[cross-validation]]).
+- Stratified folds when cross-validating, or you'll train on folds with zero positives (see [cross-validation](cross-validation.md)).
 - Imbalanced data is not *inherently* broken — trees/boosting often handle moderate imbalance fine; the problem is mainly evaluation + extreme imbalance.
 
 ## Related
 
-- [[classification]] — the task and its eval metrics.
-- [[cross-validation]] — stratification matters most here.
-- [[loss-function]] — where class weights and focal loss plug in.
+- [classification](classification.md) — the task and its eval metrics.
+- [cross-validation](cross-validation.md) — stratification matters most here.
+- [loss-function](loss-function.md) — where class weights and focal loss plug in.

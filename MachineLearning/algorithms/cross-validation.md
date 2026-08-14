@@ -1,6 +1,6 @@
 # Cross-validation
 
-Cross-validation (CV) estimates how well a model generalizes by **training and evaluating on different splits** of the data — so you can pick hyperparameters and detect overfitting *without* touching the test set (see [[bias-variance-tradeoff]]).
+Cross-validation (CV) estimates how well a model generalizes by **training and evaluating on different splits** of the data — so you can pick hyperparameters and detect overfitting *without* touching the test set (see [bias-variance-tradeoff](bias-variance-tradeoff.md)).
 
 ## The discipline: train / validation / test
 
@@ -16,7 +16,7 @@ The test set is the "exam"; validation is "practice exams". Looking at the exam 
 2. For each fold: train on the other K−1, evaluate on this fold.
 3. Report mean (± std) of the K scores.
 
-K = 5 or 10 are the defaults. **Stratified K-fold** keeps class proportions per fold — important for imbalanced classification. **Group K-fold** keeps groups together (e.g. all rows of one subject in the same fold) — crucial for the gesture/behavior data in [[../computer-vision]].
+K = 5 or 10 are the defaults. **Stratified K-fold** keeps class proportions per fold — important for imbalanced classification. **Group K-fold** keeps groups together (e.g. all rows of one subject in the same fold) — crucial for the gesture/behavior data in [computer-vision](../computer-vision/PLAN.md).
 
 ## Variants
 
@@ -33,6 +33,6 @@ K = 5 or 10 are the defaults. **Stratified K-fold** keeps class proportions per 
 
 ## Related
 
-- [[bias-variance-tradeoff]] — CV is how you locate the sweet spot.
-- [[regularization]] — `λ` selection is the classic CV use.
-- [[classification]] / [[tabular-regression]] — where the discipline gets applied.
+- [bias-variance-tradeoff](bias-variance-tradeoff.md) — CV is how you locate the sweet spot.
+- [regularization](regularization.md) — `λ` selection is the classic CV use.
+- [classification](classification.md) / [tabular-regression](tabular-regression.md) — where the discipline gets applied.

@@ -1,12 +1,12 @@
 # Autograd internals
 
-Autograd is what turns `loss.backward()` into per-parameter gradients. The mechanism: during the forward pass, every tensor op **records** the operation in a graph (the `Function` DAG); `backward()` then walks it. This is the runtime counterpart of the compiled story in [[Compilers/PyTorchCompiler/AOTAutograd]].
+Autograd is what turns `loss.backward()` into per-parameter gradients. The mechanism: during the forward pass, every tensor op **records** the operation in a graph (the `Function` DAG); `backward()` then walks it. This is the runtime counterpart of the compiled story in [AOTAutograd](../Compilers/PyTorchCompiler/AOTAutograd.md).
 
 ## The forward recording
 
 - A tensor with `requires_grad=True` gets an **`AutogradMeta`**: the `grad_fn` (the `torch.autograd.Function` that created it), `grad_accumulator`, `grad` (the accumulated buffer), and `base` (view metadata).
 - Each op with `requires_grad` inputs creates a `Function` node holding (a) a **saved-for-backward** snapshot (inputs/outputs needed by its backward) and (b) a pointer to the node that produced each input — forming a DAG.
-- `torch.no_grad()` / `torch.inference_mode()` *skip* node creation — the same tensor ops, no graph → faster, no memory growth (see the [[PyTorch]] perf notes).
+- `torch.no_grad()` / `torch.inference_mode()` *skip* node creation — the same tensor ops, no graph → faster, no memory growth (see the [PyTorch](PLAN.md) perf notes).
 
 ## The backward walk
 
@@ -33,16 +33,16 @@ class MyOp(torch.autograd.Function):
         return grad_out * x.cos()
 ```
 
-Rules: `save_for_backward` (not `self`) for tensors you need in backward; the backward's input is the incoming gradient (this is the chain rule, see [[MachineLearning/deeplearning/backpropagation]]). Custom ops must *also* be `torch.library`-registered with `FakeTensor`/`Meta` impls for `torch.compile` to trace them (see [[Custom-Ops]]).
+Rules: `save_for_backward` (not `self`) for tensors you need in backward; the backward's input is the incoming gradient (this is the chain rule, see [backpropagation](../MachineLearning/deeplearning/backpropagation.md)). Custom ops must *also* be `torch.library`-registered with `FakeTensor`/`Meta` impls for `torch.compile` to trace them (see [Custom-Ops](Custom-Ops.md)).
 
 ## Why it matters to the compiler story
 
-- `torch.compile` does this *ahead of time* on the FX graph ([[Compilers/PyTorchCompiler/AOTAutograd]]), so eager recording disappears in the compiled region.
+- `torch.compile` does this *ahead of time* on the FX graph ([AOTAutograd](../Compilers/PyTorchCompiler/AOTAutograd.md)), so eager recording disappears in the compiled region.
 - Understanding the DAG is what makes debugging backward bugs (`RuntimeError: a leaf Variable that requires grad...`, `element 0 of tensors does not require grad`) straightforward.
 
 ## Related
 
-- [[Dispatch-Key]] — Autograd is one of the keys in the stack.
-- [[Custom-Ops]] — where custom autograd meets `torch.library`.
-- [[MachineLearning/deeplearning/backpropagation]] — the math it implements.
-- [[Compilers/PyTorchCompiler/AOTAutograd]] — the compiled-mode version.
+- [Dispatch-Key](Dispatch-Key.md) — Autograd is one of the keys in the stack.
+- [Custom-Ops](Custom-Ops.md) — where custom autograd meets `torch.library`.
+- [backpropagation](../MachineLearning/deeplearning/backpropagation.md) — the math it implements.
+- [AOTAutograd](../Compilers/PyTorchCompiler/AOTAutograd.md) — the compiled-mode version.

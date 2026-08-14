@@ -18,8 +18,8 @@ def SimplifyAddZero : Pat<
 
 ## The two uses
 
-1. **Canonicalization patterns** — a `Folded`/`CanonicalizationPattern` set (see [[Canonicalization]]): `Pat` rules get the op into normal form.
-2. **DialectConversion patterns** — `DialectConversionPattern` via `Let NativeType = "ConvertOpToLLVMPattern"` etc., so DRR rules can drive *legalization* against a target dialect (see [[DialectConversion]]).
+1. **Canonicalization patterns** — a `Folded`/`CanonicalizationPattern` set (see [Canonicalization](Canonicalization.md)): `Pat` rules get the op into normal form.
+2. **DialectConversion patterns** — `DialectConversionPattern` via `Let NativeType = "ConvertOpToLLVMPattern"` etc., so DRR rules can drive *legalization* against a target dialect (see [DialectConversion](DialectConversion.md)).
 
 ## When to use DRR vs hand-written patterns
 
@@ -33,11 +33,11 @@ def SimplifyAddZero : Pat<
 ## Why it matters
 
 - Pattern code is the *bulk* of any real compiler; DRR makes it data, reviewable as a spec and regenerated — less C++ plumbing, fewer bugs.
-- It's also how the **Toy tutorial** writes most of its "canonicalize to the right shape" logic — read that to see it in context (see [[../Toy-Tutorial]]).
+- It's also how the **Toy tutorial** writes most of its "canonicalize to the right shape" logic — read that to see it in context (see [Toy-Tutorial](Toy-Tutorial.md)).
 
 ## Related
 
-- [[TableGen]] — the `.td` framework DRR is written in.
-- [[Canonicalization]] — where fold-patterns land.
-- [[DialectConversion]] — where conversion-patterns land.
-- [[Toy-Tutorial]] — worked examples.
+- [TableGen](TableGen.md) — the `.td` framework DRR is written in.
+- [Canonicalization](Canonicalization.md) — where fold-patterns land.
+- [DialectConversion](DialectConversion.md) — where conversion-patterns land.
+- [Toy-Tutorial](Toy-Tutorial.md) — worked examples.

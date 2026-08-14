@@ -9,7 +9,7 @@ ROCm is AMD's open-source GPU compute platform (CUDA counterpart). ROCm develope
 - **Low-level systems**: device driver stack, ROCm runtime (`rocr`), HSA (Heterogeneous System Architecture) — the underlying model.
 - **Kernel optimization**: occupancy, vectorization, `__shfl`-like lane ops, local memory.
 - **Compilers**: LLVM backend for AMDGPU, code object format (COFF/AMDGCN), assembler tooling.
-- **The PyTorch/AI connection**: ROCm provides the PyTorch build path for AMD (see [[PyTorch/Explore]]'s CI notes and the AMD runners).
+- **The PyTorch/AI connection**: ROCm provides the PyTorch build path for AMD (see [Explore](../PyTorch/Explore.md)'s CI notes and the AMD runners).
 
 ## The ecosystem to learn
 
@@ -22,12 +22,12 @@ ROCm is AMD's open-source GPU compute platform (CUDA counterpart). ROCm develope
 ## Roadmap to get there
 
 1. C++ + one GPU programming model (CUDA first is fine — HIP is nearly 1:1).
-2. Learn the AMD GPU model (wavefronts, memory tiers) — see [[gpu-architect]].
+2. Learn the AMD GPU model (wavefronts, memory tiers) — see [gpu-architect](gpu-architect.md).
 3. Write HIP kernels; learn MIOpen/rocBLAS patterns.
 4. Contribute to ROCm or a framework's ROCm backend (PyTorch ROCm wheels).
 
 ## Related
 
-- [[gpu-architect]] — the hardware knowledge underneath.
-- [[ai-framework-engineer]] — where ROCm skills plug into frameworks.
-- [[hpc-engineer]] — systems-level parallel computing overlap.
+- [gpu-architect](gpu-architect.md) — the hardware knowledge underneath.
+- [ai-framework-engineer](ai-framework-engineer.md) — where ROCm skills plug into frameworks.
+- [hpc-engineer](hpc-engineer.md) — systems-level parallel computing overlap.

@@ -1,6 +1,6 @@
 # Regularization
 
-Regularization adds a **penalty on model complexity** to the objective, trading a bit of bias (see [[bias-variance-tradeoff]]) for a large reduction in variance. It's the main way to stop overfitting when you can't add data.
+Regularization adds a **penalty on model complexity** to the objective, trading a bit of bias (see [bias-variance-tradeoff](bias-variance-tradeoff.md)) for a large reduction in variance. It's the main way to stop overfitting when you can't add data.
 
 ```
 J_reg(w) = J(w) + λ · R(w)
@@ -14,7 +14,7 @@ J_reg(w) = J(w) + λ · R(w)
 R(w) = Σ wᵢ²
 ```
 
-Pulls weights toward 0 but never exactly 0. Shrinks large weights the most (squaring punishes big values). The closed-form solution becomes `(XᵀX + λI)⁻¹Xᵀy` — the `λI` also fixes numerical instability when `XᵀX` is near-singular. This is what `weight_decay` in AdamW does (see [[model-optimization]]).
+Pulls weights toward 0 but never exactly 0. Shrinks large weights the most (squaring punishes big values). The closed-form solution becomes `(XᵀX + λI)⁻¹Xᵀy` — the `λI` also fixes numerical instability when `XᵀX` is near-singular. This is what `weight_decay` in AdamW does (see [model-optimization](../deeplearning/model-optimization.md)).
 
 ## L1 / Lasso
 
@@ -36,20 +36,20 @@ Both penalties: L1 for sparsity, L2 for grouping correlated features. The practi
 
 The same "complexity penalty" idea shows up everywhere:
 
-- **Tree-based**: `max_depth`, `min_samples_leaf`, and the `γ`/`λ` terms in [[XGBoost]]'s objective.
-- **Dropout** (NNs): randomly zero neurons — a form of implicit ensembling (see [[../deeplearning]]).
+- **Tree-based**: `max_depth`, `min_samples_leaf`, and the `γ`/`λ` terms in [XGBoost](XGBoost.md)'s objective.
+- **Dropout** (NNs): randomly zero neurons — a form of implicit ensembling (see [deeplearning](../deeplearning/PLAN.md)).
 - **Early stopping**: stop training when validation error stops improving — limits how far weights travel.
 - **Data augmentation**: a "regularizer" on the data distribution itself.
 
 ## Practical rules
 
 - **Standardize features first** — penalties are scale-sensitive (a big-valued feature looks "large").
-- `λ` is a [[MachineLearning/automl/hyperparameter-tuning]] target — cross-validate it (see [[cross-validation]]).
+- `λ` is a [hyperparameter-tuning](../automl/hyperparameter-tuning.md) target — cross-validate it (see [cross-validation](cross-validation.md)).
 - Linear/regression: ridge when features are correlated; lasso when you want sparsity; elastic net when in doubt.
 
 ## Related
 
-- [[bias-variance-tradeoff]] — why you regularize.
-- [[cost-function]] — where the penalty term attaches (`J + λR`).
-- [[cross-validation]] — how you pick `λ`.
-- [[weighted-linear-regression]] — the base model ridge/lasso modify.
+- [bias-variance-tradeoff](bias-variance-tradeoff.md) — why you regularize.
+- [cost-function](cost-function.md) — where the penalty term attaches (`J + λR`).
+- [cross-validation](cross-validation.md) — how you pick `λ`.
+- [weighted-linear-regression](weighted-linear-regression.md) — the base model ridge/lasso modify.

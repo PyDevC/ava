@@ -37,7 +37,7 @@ You have a base class and subclasses, and some code must behave differently *dep
 
 4. **`__init_subclass__`** — the base class hooks into the creation of each subclass at class-definition time, so behavior is wired up automatically when the subclass is declared.
 
-5. **Protocols / structural checks** — don't condition on the subclass at all; check it *has* the attribute/method (`hasattr` or a `Protocol`), which is more flexible (see [[typechecking]]).
+5. **Protocols / structural checks** — don't condition on the subclass at all; check it *has* the attribute/method (`hasattr` or a `Protocol`), which is more flexible (see [typechecking](typechecking.md)).
 
 ## The rule of thumb
 

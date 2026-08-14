@@ -29,6 +29,6 @@ The union of brackets means good configs get found whether they're quick winners
 
 ## Related
 
-- [[random-search]], [[grid-search]] — the naive baselines it outperforms.
-- [[hyperparameter-tuning/Bayesian-optimization]] — the smarter sampling strategy Hyperband can wrap.
-- [[MachineLearning/deeplearning/hyperparameter-search]] — where you'd actually use it.
+- [random-search](random-search.md), [grid-search](grid-search.md) — the naive baselines it outperforms.
+- [Bayesian-optimization](Bayesian-optimization.md) — the smarter sampling strategy Hyperband can wrap.
+- [hyperparameter-search](../../deeplearning/hyperparameter-search.md) — where you'd actually use it.

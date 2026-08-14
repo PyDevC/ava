@@ -17,12 +17,12 @@ A function `f` is **Lipschitz (continuous)** with constant `K` if its outputs ca
 
 ## Facts
 
-- Every **linear** map is Lipschitz: `K = ‖W‖` (operator norm) — see [[linear-function]].
-- Smooth activations like [[logistic-function]] and [[softmax-function]] are Lipschitz; ReLU is Lipschitz with K=1 (it just clips the slope).
+- Every **linear** map is Lipschitz: `K = ‖W‖` (operator norm) — see [linear-function](linear-function.md).
+- Smooth activations like [logistic-function](logistic-function.md) and [softmax-function](softmax-function.md) are Lipschitz; ReLU is Lipschitz with K=1 (it just clips the slope).
 - If a network uses only K-Lipschitz layers (e.g. L2-norm weights, GroupSort, lip-swish activations), the whole network is `K^depth`-Lipschitz.
 - Rademacher's theorem: Lipschitz functions are differentiable almost everywhere — you can do calculus on them.
 
 ## Related
 
-- [[logistic-function]] — a 1-Lipschitz (actually 1/4-slope-max) squashing function.
-- [[linear-function]] / [[affine-function]] — the simplest Lipschitz maps.
+- [logistic-function](logistic-function.md) — a 1-Lipschitz (actually 1/4-slope-max) squashing function.
+- [linear-function](linear-function.md) / [affine-function](affine-function.md) — the simplest Lipschitz maps.

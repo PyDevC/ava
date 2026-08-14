@@ -12,7 +12,7 @@ Averaging independent-ish models cuts variance by roughly `1/m` (uncorrelated ca
 
 ## Why it works
 
-Models trained on slightly different data make *different* mistakes; averaging cancels the noise (variance ↓) while keeping the same bias (see [[bias-variance-tradeoff]]). The trees must be **decorrelated** for this to work — which is where forests go further than plain bagging.
+Models trained on slightly different data make *different* mistakes; averaging cancels the noise (variance ↓) while keeping the same bias (see [bias-variance-tradeoff](bias-variance-tradeoff.md)). The trees must be **decorrelated** for this to work — which is where forests go further than plain bagging.
 
 ## Random forests: the extra trick
 
@@ -21,21 +21,21 @@ Beyond bagging, each split considers only a random subset of `m` features (typic
 Key facts:
 
 - **No cross-validation needed** — OOB error estimates test error well.
-- Handles high-dim, non-linear, and mixed data with no scaling (see [[tabular-regression]]).
+- Handles high-dim, non-linear, and mixed data with no scaling (see [tabular-regression](tabular-regression.md)).
 - `n_estimators` (more is better, diminishing returns), `max_depth`/`min_samples_leaf` control variance further.
-- Feature importance = how much splitting on a feature reduces impurity (see the interpretability note in [[../PLAN]]).
+- Feature importance = how much splitting on a feature reduces impurity (see the interpretability note in [PLAN](../PLAN.md)).
 
 ## Bagging vs boosting
 
 - **Bagging**: parallel, variance-reducing, deep trees (each individual model is allowed to overfit; the average fixes it).
-- **Boosting**: sequential, bias-reducing, shallow trees that fix the previous trees' mistakes (see [[Gradient-boosting]], [[XGBoost]]).
+- **Boosting**: sequential, bias-reducing, shallow trees that fix the previous trees' mistakes (see [Gradient-boosting](Gradient-boosting.md), [XGBoost](XGBoost.md)).
 
 ## Stacking
 
-Where bagging averages *same-type* models, **stacking** trains *diverse* models and lets a meta-model learn how to combine their predictions (see [[base-esitmator]]). Both are "ensembles"; bagging reduces variance, stacking adds a learned combiner.
+Where bagging averages *same-type* models, **stacking** trains *diverse* models and lets a meta-model learn how to combine their predictions (see [base-esitmator](base-esitmator.md)). Both are "ensembles"; bagging reduces variance, stacking adds a learned combiner.
 
 ## Related
 
-- [[descision-trees]] — the base learner.
-- [[Gradient-boosting]] — the sequential alternative.
-- [[cross-validation]] — OOB makes it partially unnecessary, but still use CV for tuning.
+- [descision-trees](descision-trees.md) — the base learner.
+- [Gradient-boosting](Gradient-boosting.md) — the sequential alternative.
+- [cross-validation](cross-validation.md) — OOB makes it partially unnecessary, but still use CV for tuning.

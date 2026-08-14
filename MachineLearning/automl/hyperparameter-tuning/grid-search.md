@@ -1,6 +1,6 @@
 # Grid search
 
-Grid search is the simplest [[hyperparameter-tuning]] strategy: define a **fixed set of values per hyperparameter**, try **all combinations** (Cartesian product), pick the best by cross-validation score.
+Grid search is the simplest [hyperparameter-tuning](../hyperparameter-tuning.md) strategy: define a **fixed set of values per hyperparameter**, try **all combinations** (Cartesian product), pick the best by cross-validation score.
 
 ## Example
 
@@ -23,10 +23,10 @@ Each config is evaluated with CV and the best-scoring one wins (with the model r
 ## When to use it
 
 - Small parameter spaces (≤ 2–3 dims), cheap models.
-- As a first sanity baseline before [[random-search]] or [[hyperparameter-tuning/Bayesian-optimization]].
+- As a first sanity baseline before [random-search](random-search.md) or [Bayesian-optimization](Bayesian-optimization.md).
 
 ## Related
 
-- [[random-search]] — same idea but samples randomly; works better in high dims.
-- [[hyperparameter-tuning/Bayesian-optimization]] — the smarter, sequential version.
+- [random-search](random-search.md) — same idea but samples randomly; works better in high dims.
+- [Bayesian-optimization](Bayesian-optimization.md) — the smarter, sequential version.
 - In sklearn: `GridSearchCV`.

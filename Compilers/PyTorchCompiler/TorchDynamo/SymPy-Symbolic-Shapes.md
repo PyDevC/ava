@@ -5,7 +5,7 @@
 ## What symints are
 
 - During tracing, `tensor.size(0)` returns a `torch.SymInt`, not a Python int. All shape arithmetic (`x.size(0) * 2`, `reshape`, `broadcast`) produces SymPy expressions: `s0*2`, `s0+s1`, `max(s0, s1)`.
-- Symbolic dims get **concrete values at runtime**; the compiled code checks guards (see [[Guards]]) to confirm the concrete value matches the symbolic constraints the compile assumed.
+- Symbolic dims get **concrete values at runtime**; the compiled code checks guards (see [Guards](Guards.md)) to confirm the concrete value matches the symbolic constraints the compile assumed.
 - `torch._dynamo.config.dynamic_shapes` / `torch.export`'s `dynamic_shapes=` argument turn *specific* dims into symints; with `dynamic_shapes=False`, every dim is specialized (constant) — fast, but recompiles per shape.
 
 ## Why symbolic is the right model
@@ -21,7 +21,7 @@
 
 ## Related
 
-- [[Guards]] — symints are *what* guards check.
-- [[Trace-Lifecycle]] — where the symbolic shapes are born.
-- [[../../Programming/python/core/bytecode]] — the bytecode view of the same trace.
-- [[../../DLCompilers/XLA-StableHLO]] — XLA's equivalent shape-polymorphism model.
+- [Guards](Guards.md) — symints are *what* guards check.
+- [Trace-Lifecycle](Trace-Lifecycle.md) — where the symbolic shapes are born.
+- [bytecode](../../../Programming/python/core/bytecode.md) — the bytecode view of the same trace.
+- [XLA-StableHLO](../../DLCompilers/XLA-StableHLO.md) — XLA's equivalent shape-polymorphism model.

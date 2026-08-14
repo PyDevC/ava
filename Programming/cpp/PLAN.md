@@ -6,19 +6,19 @@ The **C++ language area** — the foundations for compiler, GPU, and framework-e
 
 ## What's here
 
-- [[cpp-memory-model]] — values, moves, RAII; the ownership model everything follows.
-- [[cpp-smart-pointers]] — unique/shared/weak, and the raw-pointer conventions of LLVM/MLIR.
-- [[cpp-templates-stl]] — templates/CRTP, STL containers, cache-locality.
-- [[cpp-debugging]] — ASAN/UBSAN/TSAN, gdb/lldb, perf; the workflow that finds bugs.
-- [[cpp-cmake]] — targets, generators, find_package; reading and writing CMake beyond the basics.
+- [cpp-memory-model](cpp-memory-model.md) — values, moves, RAII; the ownership model everything follows.
+- [cpp-smart-pointers](cpp-smart-pointers.md) — unique/shared/weak, and the raw-pointer conventions of LLVM/MLIR.
+- [cpp-templates-stl](cpp-templates-stl.md) — templates/CRTP, STL containers, cache-locality.
+- [cpp-debugging](cpp-debugging.md) — ASAN/UBSAN/TSAN, gdb/lldb, perf; the workflow that finds bugs.
+- [cpp-cmake](cpp-cmake.md) — targets, generators, find_package; reading and writing CMake beyond the basics.
 
-## What to add next (see also [[../PLAN]])
+## What to add next (see also [PLAN](../PLAN.md))
 
-- [x] Move semantics, RAII, templates/CRTP, STL performance, memory layout → [[cpp-memory-model]] + [[cpp-templates-stl]]
-- [x] Build systems: CMake basics (extends [[../Compilers/MLIR/CMake_Guide]]) → [[cpp-cmake]]
-- [x] Debugging: gdb/lldb, sanitizers (ASAN/TSAN), profilers (perf) → [[cpp-debugging]]
+- [x] Move semantics, RAII, templates/CRTP, STL performance, memory layout → [cpp-memory-model](cpp-memory-model.md) + [cpp-templates-stl](cpp-templates-stl.md)
+- [x] Build systems: CMake basics (extends [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md)) → [cpp-cmake](cpp-cmake.md)
+- [x] Debugging: gdb/lldb, sanitizers (ASAN/TSAN), profilers (perf) → [cpp-debugging](cpp-debugging.md)
 - [ ] Memory layout details (struct layout, padding, alignment, cache lines) — deeper than the templates note
-- [ ] Concurrency: std::thread/atomics, lock-free basics (pairs with the GIL note in [[../python/core]])
+- [ ] Concurrency: std::thread/atomics, lock-free basics (pairs with the GIL note in [core](../python/core/PLAN.md))
 
 ## Prioritization
 

@@ -1,6 +1,6 @@
 # LightGBM
 
-LightGBM (Light Gradient Boosting Machine) is a gradient boosting framework from Microsoft, designed to be faster and more memory-efficient than [[XGBoost]] while keeping (usually) comparable or better accuracy, especially on large datasets.
+LightGBM (Light Gradient Boosting Machine) is a gradient boosting framework from Microsoft, designed to be faster and more memory-efficient than [XGBoost](XGBoost.md) while keeping (usually) comparable or better accuracy, especially on large datasets.
 
 ## Key ideas
 
@@ -18,4 +18,4 @@ LightGBM (Light Gradient Boosting Machine) is a gradient boosting framework from
 
 - Categorical features supported natively (`categorical_feature`).
 - `num_leaves` is the most important tuning knob; `min_data_in_leaf` helps avoid overfitting.
-- Both are specializations of [[Gradient-boosting]] with decision trees as the weak learner ([[descision-trees]]).
+- Both are specializations of [Gradient-boosting](Gradient-boosting.md) with decision trees as the weak learner ([descision-trees](descision-trees.md)).

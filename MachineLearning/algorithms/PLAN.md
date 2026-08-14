@@ -6,15 +6,15 @@ Cover the **core algorithms and modeling building blocks**: how the main ML algo
 
 ## What's already here
 
-- Boosting family: [[Gradient-boosting]], [[XGBoost]], [[LightGBM]], [[base-esitmator]]
-- Trees: [[descision-trees]]
-- Linear-ish: [[weighted-linear-regression]], [[tabular-regression]], [[cost-function]], [[loss-function]], [[regularization]], [[logistic-regression]]
-- Tasks: [[classification]], [[ranking]], [[imbalanced-classification]]
-- Ensembles: [[bagging-random-forests]], [[stacking]]
-- NN: [[neural-network]], [[transfer-learning]], [[Universal-approximation-function]], [[injectivity]]
-- Unsupervised: [[SOM]], [[k-means]], [[PCA]]
-- Lazy/similarity: [[k-nearest-neighbors]], [[SVM]], [[naive-bayes]]
-- Concepts: [[bias-variance-tradeoff]], [[cross-validation]]
+- Boosting family: [Gradient-boosting](Gradient-boosting.md), [XGBoost](XGBoost.md), [LightGBM](LightGBM.md), [base-esitmator](base-esitmator.md)
+- Trees: [descision-trees](descision-trees.md)
+- Linear-ish: [weighted-linear-regression](weighted-linear-regression.md), [tabular-regression](tabular-regression.md), [cost-function](cost-function.md), [loss-function](loss-function.md), [regularization](regularization.md), [logistic-regression](logistic-regression.md)
+- Tasks: [classification](classification.md), [ranking](ranking.md), [imbalanced-classification](imbalanced-classification.md)
+- Ensembles: [bagging-random-forests](bagging-random-forests.md), [stacking](stacking.md)
+- NN: [neural-network](neural-network.md), [transfer-learning](transfer-learning.md), [Universal-approximation-function](Universal-approximation-function.md), [injectivity](injectivity.md)
+- Unsupervised: [SOM](SOM.md), [k-means](k-means.md), [PCA](PCA.md)
+- Lazy/similarity: [k-nearest-neighbors](k-nearest-neighbors.md), [SVM](SVM.md), [naive-bayes](naive-bayes.md)
+- Concepts: [bias-variance-tradeoff](bias-variance-tradeoff.md), [cross-validation](cross-validation.md)
 
 ## What to add next
 
@@ -24,17 +24,17 @@ Cover the **core algorithms and modeling building blocks**: how the main ML algo
   - [x] Support Vector Machines (max margin, kernels, dual)
   - [x] Naive Bayes (generative model, independence assumption)
   - [x] k-means + hierarchical clustering (only SOM covers unsupervised now)
-  - [x] PCA / dimensionality reduction (see [[injectivity]] for the info-preservation framing)
+  - [x] PCA / dimensionality reduction (see [injectivity](injectivity.md) for the info-preservation framing)
 - [x] **Model behavior concepts**:
   - [x] Bias-variance tradeoff, underfitting/overfitting
-  - [x] Regularization: L1/L2/elastic net (extends [[cost-function]]'s penalty mention)
-  - [x] Cross-validation and the train/val/test split discipline (extends [[classification]]'s eval section)
+  - [x] Regularization: L1/L2/elastic net (extends [cost-function](cost-function.md)'s penalty mention)
+  - [x] Cross-validation and the train/val/test split discipline (extends [classification](classification.md)'s eval section)
   - [x] Imbalanced classification (resampling, class weights, PR-vs-ROC)
 - [x] **Ensembles beyond boosting**:
   - [x] Bagging + random forests (the diversity story vs boosting)
-  - [x] Stacking / voting (mentioned in [[base-esitmator]])
+  - [x] Stacking / voting (mentioned in [base-esitmator](base-esitmator.md))
 - [x] **Interpretability** (grows in importance):
-  - [x] Feature importance (tree-based), SHAP/permutation — ties to [[ranking]] and tabular work
+  - [x] Feature importance (tree-based), SHAP/permutation — ties to [ranking](ranking.md) and tabular work
 
 ## Prioritization
 

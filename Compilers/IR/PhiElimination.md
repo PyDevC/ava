@@ -35,5 +35,5 @@ Bad phi elimination = wrong code (values read after being overwritten) or redund
 
 ## Related
 
-- [[SsaConstruction]] — phis are created here, eliminated here.
-- [[RegisterAllocation]] — runs right after; coalescing with phi elimination is a major peephole win.
+- [SsaConstruction](SsaConstruction.md) — phis are created here, eliminated here.
+- [RegisterAllocation](RegisterAllocation.md) — runs right after; coalescing with phi elimination is a major peephole win.

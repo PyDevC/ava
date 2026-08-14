@@ -25,10 +25,10 @@ Modern AzureML favors **MLflow** for tracking + **AzureML SDK v2 (Python)** with
 ## Practical notes
 
 - Best used when you already live in the Azure cloud ecosystem (integration with AKS, Storage, Key Vault).
-- AutoML here is comparable to [[auto-sklearn]] / [[h2o-automl]], but fully managed and with cloud-scale compute.
+- AutoML here is comparable to [auto-sklearn](auto-sklearn.md) / [h2o-automl](h2o-automl.md), but fully managed and with cloud-scale compute.
 - Costs money per compute-hour; set explicit limits.
 
 ## Related
 
-- [[h2o-automl]], [[mlbox]], [[tpot]] — open-source/on-prem AutoML alternatives.
-- [[hyperparameter-tuning]] — the underlying technique AutoML relies on.
+- [h2o-automl](h2o-automl.md), [mlbox](mlbox.md), [tpot](tpot.md) — open-source/on-prem AutoML alternatives.
+- [hyperparameter-tuning](hyperparameter-tuning.md) — the underlying technique AutoML relies on.

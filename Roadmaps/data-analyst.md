@@ -21,9 +21,9 @@ Data analysts turn raw data into **insight for decisions**: dashboards, reports,
 2. Statistics fundamentals (distributions, p-values, A/B tests).
 3. A BI tool (Tableau/Power BI).
 4. Python: pandas + plotting.
-5. Optional progression: analytics engineering → data science (add ML — see [[ml-engineer]]).
+5. Optional progression: analytics engineering → data science (add ML — see [ml-engineer](ml-engineer.md)).
 
 ## Related
 
-- [[ml-engineer]] — the natural next step if you want to move into modeling.
-- [[MachineLearning/algorithms]] — descriptive stats and simple models are where analysts touch ML.
+- [ml-engineer](ml-engineer.md) — the natural next step if you want to move into modeling.
+- [algorithms](../MachineLearning/algorithms/PLAN.md) — descriptive stats and simple models are where analysts touch ML.

@@ -1,6 +1,6 @@
 # Custom ops and torch.library
 
-The practical "extend PyTorch" path: write an op in C++ (CPU/CUDA), register it, and make it work with `torch.compile`. This is also the *contribution* path into PyTorch itself (native ops go through the same machinery via `native_functions.yaml`, see [[../PyTorch/PLAN]]).
+The practical "extend PyTorch" path: write an op in C++ (CPU/CUDA), register it, and make it work with `torch.compile`. This is also the *contribution* path into PyTorch itself (native ops go through the same machinery via `native_functions.yaml`, see [PLAN](PLAN.md)).
 
 ## The modern API: `torch.library`
 
@@ -12,7 +12,7 @@ def quantize_cpu(x, bits): ...
 def quantize_cuda(x, bits): ...
 ```
 
-- **`torch.library.define`** — declare the op signature (name, schema: arg types → result types). The schema is the contract the dispatcher ([[Dispatch-Key]]) uses.
+- **`torch.library.define`** — declare the op signature (name, schema: arg types → result types). The schema is the contract the dispatcher ([Dispatch-Key](Dispatch-Key.md)) uses.
 - **`torch.library.impl`** — attach a kernel per dispatch key (`CPU`, `CUDA`, `Meta`, `CompositeExplicitAutograd`, ...).
 - C++ ops live in `torch/csrc/ops` style; Python ops via `torch.library` can wrap C++ kernels (`torch.ops.mylib.quantize.default`).
 
@@ -20,15 +20,15 @@ def quantize_cuda(x, bits): ...
 
 For `torch.compile` to handle a custom op (instead of graph-breaking), it must be able to **trace it without running it**. Register:
 
-1. **`Meta` / `FakeTensor` impl** — computes the output *shapes/dtypes* from input shapes without allocating (this is what makes shape inference work, see [[Compilers/PyTorchCompiler/FX-Graph-IR]]). Missing this = `torch.compile` fails or breaks.
-2. **`CompositeExplicitAutograd`** or a **`torch.autograd.Function`** — so backward can be traced (see [[Autograd-Internals]]).
+1. **`Meta` / `FakeTensor` impl** — computes the output *shapes/dtypes* from input shapes without allocating (this is what makes shape inference work, see [FX-Graph-IR](../Compilers/PyTorchCompiler/FX-Graph-IR.md)). Missing this = `torch.compile` fails or breaks.
+2. **`CompositeExplicitAutograd`** or a **`torch.autograd.Function`** — so backward can be traced (see [Autograd-Internals](Autograd-Internals.md)).
 3. Optionally register with `torch.compiler.allow_in_graph` to force in-graph placement.
 
-If your op can't satisfy these, `torch.compile` emits a graph break (see [[Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks]]).
+If your op can't satisfy these, `torch.compile` emits a graph break (see [GraphBreaks](../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md)).
 
 ## The `native_functions.yaml` route (contributing upstream)
 
-Core ops are declared in `aten/src/ATen/native/native_functions.yaml`, and **codegen** produces the C++ decls, the Python bindings, the dispatcher entries, and the `torch.ops` accessors. A contribution = yaml entry + `native/` kernel + tests. The `torch.library` path is the *extension* equivalent of the same pipeline (see [[PyTorch/PLAN]] for the repo-layout map in [[Explore]]).
+Core ops are declared in `aten/src/ATen/native/native_functions.yaml`, and **codegen** produces the C++ decls, the Python bindings, the dispatcher entries, and the `torch.ops` accessors. A contribution = yaml entry + `native/` kernel + tests. The `torch.library` path is the *extension* equivalent of the same pipeline (see [PLAN](PLAN.md) for the repo-layout map in [Explore](Explore.md)).
 
 ## The practical checklist
 
@@ -38,7 +38,7 @@ Core ops are declared in `aten/src/ATen/native/native_functions.yaml`, and **cod
 
 ## Related
 
-- [[Dispatch-Key]] — what `impl(..., key)` registers against.
-- [[Autograd-Internals]] — custom `torch.autograd.Function` integration.
-- [[Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks]] — what happens without the Meta impl.
-- [[Programming/python/core/conditioning-on-a-python-subclass]] — the other extension point.
+- [Dispatch-Key](Dispatch-Key.md) — what `impl(..., key)` registers against.
+- [Autograd-Internals](Autograd-Internals.md) — custom `torch.autograd.Function` integration.
+- [GraphBreaks](../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md) — what happens without the Meta impl.
+- [conditioning-on-a-python-subclass](../Programming/python/core/conditioning-on-a-python-subclass.md) — the other extension point.

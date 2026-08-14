@@ -32,4 +32,4 @@ The idea: a join node `b` only needs a Φ function for a variable if the variabl
 ## Why bother
 
 - Inserting Φ functions only at dominance frontiers keeps SSA **minimal** (fewest Φ's while still making each name unique).
-- The dominance frontier is what makes the later algorithms (e.g. inserting Φ's for pruned SSA, see [[PruneSSA]]) possible.
+- The dominance frontier is what makes the later algorithms (e.g. inserting Φ's for pruned SSA, see [PruneSSA](PruneSSA.md)) possible.

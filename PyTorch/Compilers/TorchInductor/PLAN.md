@@ -6,9 +6,9 @@ Notes on **TorchInductor as the entry point of `torch.compile`** — the call pa
 
 ## What's here
 
-- [[EntryPoint]] — `torch.compile()` → `torch/_inductor/__init__.py:compile()` → `compile_fx()` → AOTAutograd → lowering → Triton/C++; debugging via `TORCH_LOGS`.
+- [EntryPoint](EntryPoint.md) — `torch.compile()` → `torch/_inductor/__init__.py:compile()` → `compile_fx()` → AOTAutograd → lowering → Triton/C++; debugging via `TORCH_LOGS`.
 
-## What to add next (see also [[../PLAN]] and [[Compilers/DLCompilers/TorchInductor]])
+## What to add next (see also [PLAN](../PLAN.md) and [TorchInductor](../../../Compilers/DLCompilers/TorchInductor/PLAN.md))
 
 - [ ] AOTAutograd in detail (how backward gets compiled)
 - [ ] `torch.compile` modes and backends user guide

@@ -1,6 +1,6 @@
 # ONNX Runtime
 
-ONNX Runtime (ORT) is the **production executor for ONNX models** — the .py/.onnx → serve path most ML products actually ship. Key distinction: it's a *runtime with a fusion layer*, not a full compiler like TVM/XLA (see [[README]] for the spectrum).
+ONNX Runtime (ORT) is the **production executor for ONNX models** — the .py/.onnx → serve path most ML products actually ship. Key distinction: it's a *runtime with a fusion layer*, not a full compiler like TVM/XLA (see [README](README.md) for the spectrum).
 
 ## What it does
 
@@ -27,7 +27,7 @@ The trade: you trade full compile-time freedom (custom kernels, exotic fusion, d
 
 ## Related
 
-- [[README]] — the pipeline map and where ORT sits.
-- [[TensorRT/TensorRT]] — the NVIDIA backend EP (often THE reason to use ORT on GPUs).
-- [[TorchInductor/TorchInductor]] — the "generate everything" alternative.
-- [[../MLIR/Dialects/tosa-stablehlo]] — the modern MLIR-y alternative to ONNX as an interchange.
+- [README](README.md) — the pipeline map and where ORT sits.
+- [TensorRT](TensorRT/TensorRT.md) — the NVIDIA backend EP (often THE reason to use ORT on GPUs).
+- [TorchInductor](TorchInductor/TorchInductor.md) — the "generate everything" alternative.
+- [tosa-stablehlo](../MLIR/Dialects/tosa-stablehlo.md) — the modern MLIR-y alternative to ONNX as an interchange.

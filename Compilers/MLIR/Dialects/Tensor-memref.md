@@ -6,7 +6,7 @@ MLIR deliberately has **two ways to describe an array of data**, and the entire 
 
 `tensor<2x3xf64>` is a *value*: pure data, no location, no aliasing. Like a NumPy array that can never be mutated in place.
 
-- Ops on tensors are functional: `tensor.extract_slice`, `tensor.insert_slice`, `tensor.concat` — every "modification" creates a new value. That immutability is what makes **reordering and fusion legal for free** (SSA reasoning: if nothing can alias, you can move ops around, see [[../IR/SSA/Dominators]]).
+- Ops on tensors are functional: `tensor.extract_slice`, `tensor.insert_slice`, `tensor.concat` — every "modification" creates a new value. That immutability is what makes **reordering and fusion legal for free** (SSA reasoning: if nothing can alias, you can move ops around, see [Dominators](../../IR/SSA/Dominators.md)).
 - No memory exists yet — a tensor is an abstraction.
 
 ## `memref` — mutable memory descriptor
@@ -18,7 +18,7 @@ MLIR deliberately has **two ways to describe an array of data**, and the entire 
 
 ## Bufferization — the crossing
 
-**Bufferization** rewrites `tensor`-world ops into `memref`-world ops (allocations + stores). It's a *pass* (`-one-shot-bufferize`), and it decides the alloc/ownership strategy. After it, the IR is "real": memory exists, aliases appear, and the remaining pipeline (→ vector → llvm, see [[scf-vector]]) never has to undo it.
+**Bufferization** rewrites `tensor`-world ops into `memref`-world ops (allocations + stores). It's a *pass* (`-one-shot-bufferize`), and it decides the alloc/ownership strategy. After it, the IR is "real": memory exists, aliases appear, and the remaining pipeline (→ vector → llvm, see [scf-vector](scf-vector.md)) never has to undo it.
 
 The trade it encodes:
 
@@ -35,7 +35,7 @@ High-level optimization wants *values* (easy reasoning); codegen needs *memory* 
 
 ## Related
 
-- [[Builtin-Dialects]] — `tensor`/`memref` are builtin types.
-- [[linalg]] — the ops that live on the tensor→memref boundary.
-- [[scf-vector]] — the codegen side after bufferization.
-- [[Regions]] — nesting + these value models = the full MLIR picture.
+- [Builtin-Dialects](../Builtin-Dialects.md) — `tensor`/`memref` are builtin types.
+- [linalg](linalg.md) — the ops that live on the tensor→memref boundary.
+- [scf-vector](scf-vector.md) — the codegen side after bufferization.
+- [Regions](../Regions.md) — nesting + these value models = the full MLIR picture.

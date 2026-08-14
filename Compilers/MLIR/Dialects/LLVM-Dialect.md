@@ -28,12 +28,12 @@ The memref→LLVM lowering is where descriptors become real: a memref becomes a 
 
 ## Why it matters
 
-- MLIR deliberately does NOT have a dialect for every CPU instruction — it stops at LLVM IR and lets LLVM's backend (SelectionDAG/GlobalISel, scheduling, register allocation — see [[../../IR/RegisterAllocation]]) do the rest. MLIR adds value *above* LLVM; LLVM is the rock below.
+- MLIR deliberately does NOT have a dialect for every CPU instruction — it stops at LLVM IR and lets LLVM's backend (SelectionDAG/GlobalISel, scheduling, register allocation — see [RegisterAllocation](../../IR/RegisterAllocation.md)) do the rest. MLIR adds value *above* LLVM; LLVM is the rock below.
 - Interop: a dialect that lowers to LLVM can be JIT'd, AOT'd, and called from C/C++/Python — the whole "compiler in a library" story.
 
 ## Related
 
-- [[Builtin-Dialects]] — `arith`/`memref`/`func` are the dialects that feed this one.
-- [[../../IR/RegisterAllocation]] — what happens after LLVM IR.
-- [[../../PyTorchCompiler/TorchInductor/TorchInductor]] — Inductor's `cpp`/CUDA backends play this role without MLIR.
-- [[../CMake_Guide]] — linking MLIR into a project that then lowers to LLVM.
+- [Builtin-Dialects](../Builtin-Dialects.md) — `arith`/`memref`/`func` are the dialects that feed this one.
+- [RegisterAllocation](../../IR/RegisterAllocation.md) — what happens after LLVM IR.
+- [TorchInductor](../../DLCompilers/TorchInductor/TorchInductor.md) — Inductor's `cpp`/CUDA backends play this role without MLIR.
+- [CMake_Guide](../CMake_Guide.md) — linking MLIR into a project that then lowers to LLVM.

@@ -21,7 +21,7 @@ A descriptor is any object with `__get__`/`__set__`/`__delete__`:
 
 - A metaclass = the *type* of a class: `class Meta(type)`, then `class C(metaclass=Meta)`. `Meta.__new__`/`__init__` run when `class C` is *defined*, letting you rewrite the class (collect methods, inject attrs, register subclasses). The old-school way to build framework plumbing (`abc.ABCMeta`, Django's `Model`).
 - **`__init_subclass__`** is the modern, simpler 90%: `class Base:` with `def __init_subclass__(cls, **kw)` runs on every subclass definition — PyTorch uses this pattern to auto-collect `nn.Module` parameters/buffers. Prefer it over a metaclass unless you need `__new__`-level control.
-- Connections: [[conditioning-on-a-python-subclass]] shows `__instancecheck__`/`__subclasscheck__` overrides (how `isinstance` can lie) — the same protocol layer.
+- Connections: [conditioning-on-a-python-subclass](conditioning-on-a-python-subclass.md) shows `__instancecheck__`/`__subclasscheck__` overrides (how `isinstance` can lie) — the same protocol layer.
 
 ## Why it matters for frameworks
 
@@ -29,7 +29,7 @@ Every framework is "define a subclass, the base class does the rest" — that's 
 
 ## Related
 
-- [[conditioning-on-a-python-subclass]] — `isinstance`/dispatch overrides.
-- [[frames-namespaces]] — where names/attrs resolve.
-- [[typechecking]] — `Protocol` as the static mirror of these protocols.
-- [[../../Compilers/PyTorchCompiler/TorchDynamo/VariableTracker]] — Dynamo must model all of this symbolically.
+- [conditioning-on-a-python-subclass](conditioning-on-a-python-subclass.md) — `isinstance`/dispatch overrides.
+- [frames-namespaces](frames-namespaces.md) — where names/attrs resolve.
+- [typechecking](typechecking.md) — `Protocol` as the static mirror of these protocols.
+- [VariableTracker](../../../Compilers/PyTorchCompiler/TorchDynamo/VariableTracker.md) — Dynamo must model all of this symbolically.

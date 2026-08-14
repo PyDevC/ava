@@ -1,12 +1,12 @@
 # SSA construction
 
-This is the complete algorithm that turns ordinary (non-SSA) code into SSA form — putting together [[Dominators]] and [[Liveness]]. The classic reference is Cytron, Ferrante, Rosen, Wegman & Zadeck (1991).
+This is the complete algorithm that turns ordinary (non-SSA) code into SSA form — putting together [Dominators](SSA/Dominators.md) and [Liveness](Liveness.md). The classic reference is Cytron, Ferrante, Rosen, Wegman & Zadeck (1991).
 
 ## The two phases
 
 **Phase 1 — Phi insertion (place the Φ functions).**
 
-For each variable, its Φ functions go exactly at the *join nodes* where the variable needs merging. That set of nodes is computed using dominance frontiers (see [[Dominators]]):
+For each variable, its Φ functions go exactly at the *join nodes* where the variable needs merging. That set of nodes is computed using dominance frontiers (see [Dominators](SSA/Dominators.md)):
 
 ```
 for each variable v with definition node d:
@@ -48,10 +48,10 @@ The renaming processes blocks in **dominator-tree order** (not program order) so
 
 ## Result
 
-Unique names, Φ functions at joins, and — if you only place Φ's for *live* variables (see [[Liveness]], [[PruneSSA]]) — no dead phis.
+Unique names, Φ functions at joins, and — if you only place Φ's for *live* variables (see [Liveness](Liveness.md), [PruneSSA](SSA/PruneSSA.md)) — no dead phis.
 
 ## Related
 
-- [[Dominators]] — the frontier algorithm powering phase 1.
-- [[PruneSSA]] — minimal vs pruned SSA (pruned = liveness-aware phi insertion).
-- [[PhiElimination]] — the reverse problem: getting rid of Φ's before codegen.
+- [Dominators](SSA/Dominators.md) — the frontier algorithm powering phase 1.
+- [PruneSSA](SSA/PruneSSA.md) — minimal vs pruned SSA (pruned = liveness-aware phi insertion).
+- [PhiElimination](PhiElimination.md) — the reverse problem: getting rid of Φ's before codegen.

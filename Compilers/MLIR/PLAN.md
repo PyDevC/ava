@@ -7,16 +7,16 @@ Learn **MLIR** well enough to read and write dialects, passes, and lowerings —
 ## What's already here
 
 - **CMake_Guide.md** — how to structure a CMake project using MLIR (`find_package`, `mlir_tablegen`, `add_mlir_library`).
-- **Core concept notes**: [[Operations-Types-Values]], [[Regions]], [[Builtin-Dialects]] (`arith`, `func`, `memref`)
-- **Dialects**: [[Dialects/Affine]], [[Dialects/scf-vector]], [[Dialects/linalg]], [[Dialects/Tensor-memref]], [[Dialects/tosa-stablehlo]], [[Dialects/LLVM-Dialect]]
-- **Passes & rewrites**: [[Passes]], [[DialectConversion]], [[Canonicalization]]
-- **TableGen / ODS**: [[TableGen]], [[DRR]]
-- **Hands-on**: [[Toy-Tutorial]] (the map), a tiny dialect (see [[Toy-Tutorial]] template)
+- **Core concept notes**: [Operations-Types-Values](Operations-Types-Values.md), [Regions](Regions.md), [Builtin-Dialects](Builtin-Dialects.md) (`arith`, `func`, `memref`)
+- **Dialects**: [Affine](Dialects/Affine.md), [scf-vector](Dialects/scf-vector.md), [linalg](Dialects/linalg.md), [Tensor-memref](Dialects/Tensor-memref.md), [tosa-stablehlo](Dialects/tosa-stablehlo.md), [LLVM-Dialect](Dialects/LLVM-Dialect.md)
+- **Passes & rewrites**: [Passes](Passes.md), [DialectConversion](DialectConversion.md), [Canonicalization](Canonicalization.md)
+- **TableGen / ODS**: [TableGen](TableGen.md), [DRR](DRR.md)
+- **Hands-on**: [Toy-Tutorial](Toy-Tutorial.md) (the map), a tiny dialect (see [Toy-Tutorial](Toy-Tutorial.md) template)
 
 ## What to add next
 
 - [x] **Core concept notes**:
-  - [x] What an operation/type/attribute is; the `Operation`/`Value` model, SSA in MLIR (see [[../IR/SSA/Dominators]])
+  - [x] What an operation/type/attribute is; the `Operation`/`Value` model, SSA in MLIR (see [Dominators](../IR/SSA/Dominators.md))
   - [x] Regions (nested), the "two-level" IR idea
   - [x] The builtin dialects: `arith`, `func`, `memref`
   - [x] `scf` (structured control flow) and `vector` — Affine's siblings, then

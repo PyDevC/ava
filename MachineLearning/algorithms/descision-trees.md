@@ -17,7 +17,7 @@ Splitting on accuracy doesn't directly reduce the loss in a greedy way, and it's
 ## Strengths & weaknesses
 
 - **+** Interpretable (you can read the rules), no feature scaling needed, handles non-linearities and interactions naturally.
-- **+** Base learner for ensembles — see [[Gradient-boosting]], [[XGBoost]], [[LightGBM]], random forests, and the [[base-esitmator]] role.
+- **+** Base learner for ensembles — see [Gradient-boosting](Gradient-boosting.md), [XGBoost](XGBoost.md), [LightGBM](LightGBM.md), random forests, and the [base-esitmator](base-esitmator.md) role.
 - **−** Deep single trees overfit badly; unstable (small data changes flip splits).
 - **−** Greedy, axis-aligned splits (a linear boundary needs many splits).
 

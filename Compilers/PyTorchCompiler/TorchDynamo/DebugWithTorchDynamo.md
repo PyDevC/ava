@@ -8,7 +8,7 @@ TorchDynamo is the tracing frontend that turns Python bytecode into a graph. Whe
 TORCH_LOGS=dynamo python my_script.py
 ```
 
-This prints the guard conditions, the trace events, and — critically — any `[graph break]` lines. Each break tells you *why* tracing stopped (see [[GraphBreaks]]). For a quick summary:
+This prints the guard conditions, the trace events, and — critically — any `[graph break]` lines. Each break tells you *why* tracing stopped (see [GraphBreaks](GraphBreaks.md)). For a quick summary:
 
 ```python
 from torch._dynamo.explain import explain

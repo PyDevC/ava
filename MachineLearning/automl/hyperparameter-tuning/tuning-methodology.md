@@ -1,10 +1,10 @@
 # Tuning methodology and search-space design
 
-Most tuning projects fail on **methodology**, not on the sampler: a badly designed search space, no seeds, or a meaningless budget. This note is the "how to actually tune" companion to the algorithm notes ([[grid-search]], [[random-search]], [[Bayesian-optimization]]).
+Most tuning projects fail on **methodology**, not on the sampler: a badly designed search space, no seeds, or a meaningless budget. This note is the "how to actually tune" companion to the algorithm notes ([grid-search](grid-search.md), [random-search](random-search.md), [Bayesian-optimization](Bayesian-optimization.md)).
 
 ## Search-space design (the highest-leverage step)
 
-- **Use log-uniform for scale parameters**: learning rates, regularizers, network sizes live across orders of magnitude — `lr ~ U(-5, -1)` in log10 is right; uniform in raw value wastes most samples on the wrong range. Optuna: `suggest_float(..., log=True)` (see [[optuna]]).
+- **Use log-uniform for scale parameters**: learning rates, regularizers, network sizes live across orders of magnitude — `lr ~ U(-5, -1)` in log10 is right; uniform in raw value wastes most samples on the wrong range. Optuna: `suggest_float(..., log=True)` (see [optuna](optuna.md)).
 - **Sample around the reference point**: if a published/previous run used `lr=3e-4`, center the range there (1e-4…1e-3) instead of the full academic span.
 - **Only tune what matters**: structure (layers, heads, dropout, normalization) >> scalar knobs. Measure sensitivity first (one-at-a-time or a fast random run), then search the few that move the needle.
 - **Conditional spaces** (only sample `dropout` when a dropout layer exists) — define-by-run APIs (Optuna) make this trivial.
@@ -12,7 +12,7 @@ Most tuning projects fail on **methodology**, not on the sampler: a badly design
 ## Warm-starting and budgets
 
 - **Warm start**: `study.optimize(...)` resumes from a previous storage (or pass `init` trials) — never throw away history; transfer a tuned config to a new dataset as a *center* for a narrower search.
-- **Budget = samples × cost per sample**. Rule of thumb: fewer than ~20–30 total evaluations → **random search** ([[random-search]]) beats Bayesian (the surrogate has nothing to learn); 30–300 → BO/TPE; with cheap epochs → add pruning/ASHA ([[asha-pbt-bohb]]).
+- **Budget = samples × cost per sample**. Rule of thumb: fewer than ~20–30 total evaluations → **random search** ([random-search](random-search.md)) beats Bayesian (the surrogate has nothing to learn); 30–300 → BO/TPE; with cheap epochs → add pruning/ASHA ([asha-pbt-bohb](asha-pbt-bohb.md)).
 - Fix **total compute**, not trial count, when pruning is involved — pruning changes what "n_trials" means.
 
 ## Multi-objective tuning
@@ -24,7 +24,7 @@ Most tuning projects fail on **methodology**, not on the sampler: a badly design
 ## Reproducibility — non-negotiable
 
 - **Seeds**: fix the seed *per trial* (`seed = trial.number`) so a config maps to a deterministic result — otherwise tuning looks like it found improvement when it just caught variance.
-- **Report best config WITH its metric + the seed + the budget** — a tuned config without its eval protocol is untrustworthy (ties to the eval discipline in [[../algorithms/cross-validation]]).
+- **Report best config WITH its metric + the seed + the budget** — a tuned config without its eval protocol is untrustworthy (ties to the eval discipline in [cross-validation](../../algorithms/cross-validation.md)).
 - **Honest comparison**: same train/val split across trials (a single fixed split, or a fixed CV fold scheme), same eval metric.
 
 ## When tuning is pointless
@@ -35,7 +35,7 @@ Most tuning projects fail on **methodology**, not on the sampler: a badly design
 
 ## Related
 
-- [[grid-search]] / [[random-search]] / [[Bayesian-optimization]] — the algorithms.
-- [[asha-pbt-bohb]] — multi-fidelity options.
-- [[optuna]] — the practical driver.
-- [[../algorithms/cross-validation]] — the eval protocol each trial needs.
+- [grid-search](grid-search.md) / [random-search](random-search.md) / [Bayesian-optimization](Bayesian-optimization.md) — the algorithms.
+- [asha-pbt-bohb](asha-pbt-bohb.md) — multi-fidelity options.
+- [optuna](optuna.md) — the practical driver.
+- [cross-validation](../../algorithms/cross-validation.md) — the eval protocol each trial needs.

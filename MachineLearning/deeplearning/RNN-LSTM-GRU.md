@@ -10,11 +10,11 @@ The same weights `W` are reused at every step — that's "recurrence", and it's 
 
 ## The problem: vanishing/exploding gradients over time
 
-Backprop through time (BPTT) chains the hidden state across *all* time steps, so the gradient is a product of `∂h_t/∂h_{t-1}` terms. Each is < 1 → the past is forgotten (vanishing); > 1 → explosion (see [[backpropagation]]). RNNs effectively can't remember more than ~10 steps, and short-term memory dominates.
+Backprop through time (BPTT) chains the hidden state across *all* time steps, so the gradient is a product of `∂h_t/∂h_{t-1}` terms. Each is < 1 → the past is forgotten (vanishing); > 1 → explosion (see [backpropagation](backpropagation.md)). RNNs effectively can't remember more than ~10 steps, and short-term memory dominates.
 
 ## LSTM — the fix with gates
 
-Long Short-Term Memory adds a **cell state** `c_t` (the long-term memory) and three gates, each a sigmoid (see [[../mathematical-function/logistic-function]]) between 0 and 1:
+Long Short-Term Memory adds a **cell state** `c_t` (the long-term memory) and three gates, each a sigmoid (see [logistic-function](../mathematical-function/logistic-function.md)) between 0 and 1:
 
 - **forget gate** `f_t`: what to drop from the cell state.
 - **input gate** `i_t`: what new info to write.
@@ -28,14 +28,14 @@ Gated Recurrent Unit merges forget+input into a single **update gate** and drops
 
 ## Where they stand now
 
-For most sequence tasks, **Transformers replaced RNNs** (parallelizable, long-range — see [[Transformers]]). RNNs still appear in:
+For most sequence tasks, **Transformers replaced RNNs** (parallelizable, long-range — see [Transformers](Transformers.md)). RNNs still appear in:
 
 - **Streaming/online** settings (speech, sensor data) where you can't attend to the future.
 - Efficient decoding on tiny devices.
-- History: seq2seq with attention (see [[../nlp]] plan) was the bridge RNN→Transformer.
+- History: seq2seq with attention (see [nlp](../nlp/PLAN.md) plan) was the bridge RNN→Transformer.
 
 ## Related
 
-- [[../mathematical-function/tanh-function]] — the candidate-cell activation.
-- [[backpropagation]] — BPTT is the recurring-gradient story.
-- [[Transformers]] — the successor architecture.
+- [tanh-function](../mathematical-function/tanh-function.md) — the candidate-cell activation.
+- [backpropagation](backpropagation.md) — BPTT is the recurring-gradient story.
+- [Transformers](Transformers.md) — the successor architecture.

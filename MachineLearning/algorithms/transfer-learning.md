@@ -25,6 +25,6 @@ Models learn features in stages: early layers learn generic features (edges, tex
 
 ## Related
 
-- Pretraining is the extreme version of this — see the Transformer/BERT story in [[MachineLearning/deeplearning/Transformers]] and [[MachineLearning/nlp/BERT]].
-- [[MachineLearning/automl/meta-learning]] and [[MachineLearning/automl/few-shot-learning]] are close cousins (learning-to-learn, and using very few examples).
-- In AutoML ([[MachineLearning/automl/auto-sklearn]]) transfer can seed warm-starting models.
+- Pretraining is the extreme version of this — see the Transformer/BERT story in [Transformers](../deeplearning/Transformers.md) and [BERT](../nlp/BERT.md).
+- [meta-learning](../automl/meta-learning.md) and [few-shot-learning](../automl/few-shot-learning.md) are close cousins (learning-to-learn, and using very few examples).
+- In AutoML ([auto-sklearn](../automl/auto-sklearn.md)) transfer can seed warm-starting models.

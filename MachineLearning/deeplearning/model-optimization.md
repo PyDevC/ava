@@ -36,5 +36,5 @@ Note: `zero_grad()` must be called *before* `backward()` — doing it after `ste
 
 ## Related
 
-- The learning-rate part of optimization is handled by schedulers — see [[how-to-use-lr-scheduler]].
-- Tuning optimizer/LR/weight-decay is the core of [[hyperparameter-search]].
+- The learning-rate part of optimization is handled by schedulers — see [how-to-use-lr-scheduler](how-to-use-lr-scheduler.md).
+- Tuning optimizer/LR/weight-decay is the core of [hyperparameter-search](hyperparameter-search.md).

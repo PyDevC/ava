@@ -1,10 +1,10 @@
 # AOTAutograd
 
-AOTAutograd is the **piece between Dynamo and Inductor** (see [[../PLAN]]): it takes the forward-only FX graph from Dynamo and produces the *backward graph* too — ahead of time, before Inductor compiles kernels. This is what makes `torch.compile` fast on training: both the forward *and* backward become compiled Triton/C++.
+AOTAutograd is the **piece between Dynamo and Inductor** (see [PLAN](../PLAN.md)): it takes the forward-only FX graph from Dynamo and produces the *backward graph* too — ahead of time, before Inductor compiles kernels. This is what makes `torch.compile` fast on training: both the forward *and* backward become compiled Triton/C++.
 
 ## The problem it solves
 
-In eager PyTorch, autograd builds the backward on the fly during `loss.backward()` (see [[../../PyTorch/PLAN]] autograd internals). In compile mode we want the backward **compiled as eagerly as the forward** — so AOTAutograd runs autograd's machinery at *compile time* on the traced graph:
+In eager PyTorch, autograd builds the backward on the fly during `loss.backward()` (see [PLAN](../../PyTorch/PLAN.md) autograd internals). In compile mode we want the backward **compiled as eagerly as the forward** — so AOTAutograd runs autograd's machinery at *compile time* on the traced graph:
 
 ```
 forward_fx → AOTAutograd → (fwd_fx, bwd_fx)
@@ -28,7 +28,7 @@ Result: one compile pass, then forward+backward both run as fused kernels with n
 
 ## Related
 
-- [[../TorchDynamo/Trace-Lifecycle]] — the graph source.
-- [[../TorchInductor/TorchInductor]] — what consumes both graphs.
-- [[../../PyTorch/PLAN]] — autograd internals the AOT part relies on.
-- [[../TorchDynamo/Guards]] — both graphs share the same guards.
+- [Trace-Lifecycle](TorchDynamo/Trace-Lifecycle.md) — the graph source.
+- [TorchInductor](../DLCompilers/TorchInductor/TorchInductor.md) — what consumes both graphs.
+- [PLAN](../../PyTorch/PLAN.md) — autograd internals the AOT part relies on.
+- [Guards](TorchDynamo/Guards.md) — both graphs share the same guards.

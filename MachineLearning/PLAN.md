@@ -2,7 +2,7 @@
 
 ## Goal of this directory
 
-Be the **breadth** half of my knowledge base: the core ML concepts, algorithms, and techniques that any ML engineer must know, organized by sub-topic. It's intentionally library-agnostic (concepts first), with PyTorch-specific notes living in [[../PyTorch/PLAN]].
+Be the **breadth** half of my knowledge base: the core ML concepts, algorithms, and techniques that any ML engineer must know, organized by sub-topic. It's intentionally library-agnostic (concepts first), with PyTorch-specific notes living in [PLAN](../PyTorch/PLAN.md).
 
 ## What's already here
 

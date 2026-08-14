@@ -1,6 +1,6 @@
 # torch.distributed and NCCL/RCCL
 
-`torch.distributed` is PyTorch's distributed training layer; the *actual* communication runs on **NCCL** (NVIDIA) or **RCCL** (AMD ROCm) — both collective libraries derived from the MPI model (see [[Roadmaps/rocm-developers]]). The backend choice (`nccl`, `gloo`, `mpi`) decides what the collectives run on.
+`torch.distributed` is PyTorch's distributed training layer; the *actual* communication runs on **NCCL** (NVIDIA) or **RCCL** (AMD ROCm) — both collective libraries derived from the MPI model (see [rocm-developers](../Roadmaps/rocm-developers.md)). The backend choice (`nccl`, `gloo`, `mpi`) decides what the collectives run on.
 
 ## Init and the process model
 
@@ -10,9 +10,9 @@
 
 ## The collectives (the vocabulary)
 
-- **`all_reduce(t, op=SUM)`** — sum/avg tensors across all ranks, all ranks get the result. DDP's gradient averaging is one `all_reduce` (see [[MachineLearning/deeplearning/distributed-training]]).
+- **`all_reduce(t, op=SUM)`** — sum/avg tensors across all ranks, all ranks get the result. DDP's gradient averaging is one `all_reduce` (see [distributed-training](../MachineLearning/deeplearning/distributed-training.md)).
 - **`broadcast`** — one rank's tensor to all (parameter init sync, model loading).
-- **`all_gather`** — concatenate each rank's tensor into a full set (FSDP's weight gathering, [[MachineLearning/deeplearning/distributed-training]]).
+- **`all_gather`** — concatenate each rank's tensor into a full set (FSDP's weight gathering, [distributed-training](../MachineLearning/deeplearning/distributed-training.md)).
 - **`reduce_scatter`** — sum partial tensors then scatter the result (FSDP's gradient sharding).
 - **`send`/`recv`** (point-to-point), `scatter`, `gather`, `reduce`.
 - All are **blocking** (per default) and must be called in the *same order* on all ranks or you deadlock — the #1 distributed bug.
@@ -27,12 +27,12 @@
 ## The failure modes
 
 - **Deadlock**: mismatched collective order between ranks — log with `rank:` prefixes, always the fix.
-- **Silent wrong results**: un-averaged batch norm (see [[MachineLearning/deeplearning/regularization-normalization]] for sync-BN), rank-different data transforms.
+- **Silent wrong results**: un-averaged batch norm (see [regularization-normalization](../MachineLearning/deeplearning/regularization-normalization.md) for sync-BN), rank-different data transforms.
 - **Slow**: comm-bound (not overlapping), small message sizes (bucket padding matters in DDP).
 
 ## Related
 
-- [[MachineLearning/deeplearning/distributed-training]] — the training-pattern layer on top.
-- [[CI_Infra]] — where distributed tests run in CI.
-- [[Roadmaps/rocm-developers]] — RCCL and the AMD side.
-- [[Performance]] — profiler shows the comm gaps.
+- [distributed-training](../MachineLearning/deeplearning/distributed-training.md) — the training-pattern layer on top.
+- [CI_Infra](CI_Infra.md) — where distributed tests run in CI.
+- [rocm-developers](../Roadmaps/rocm-developers.md) — RCCL and the AMD side.
+- [Performance](Performance.md) — profiler shows the comm gaps.

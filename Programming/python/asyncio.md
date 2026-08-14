@@ -1,6 +1,6 @@
 # asyncio
 
-`asyncio` is Python's **cooperative concurrency** for I/O — an event loop that multiplexes many "concurrent" tasks on one thread. It's the GIL-era answer for I/O-bound work without threads (see [[gil-threading]]), and the model behind modern network/serving code.
+`asyncio` is Python's **cooperative concurrency** for I/O — an event loop that multiplexes many "concurrent" tasks on one thread. It's the GIL-era answer for I/O-bound work without threads (see [gil-threading](core/gil-threading.md)), and the model behind modern network/serving code.
 
 ## The mental model
 
@@ -11,14 +11,14 @@
 ## Why asyncio (not threads) for I/O
 
 - I/O-bound: the wait is the cost, and an event loop waits on *all* connections at once (no thread per request). Scale = thousands of concurrent connections on one process.
-- CPU-bound: **wrong tool** — it serializes (GIL anyway, see [[gil-threading]]). Use threads/processes, or offload the compute (NumPy/torch, [[python-performance]]).
+- CPU-bound: **wrong tool** — it serializes (GIL anyway, see [gil-threading](core/gil-threading.md)). Use threads/processes, or offload the compute (NumPy/torch, [python-performance](core/python-performance.md)).
 
 ## The integration patterns
 
 - **asyncio + threads**: `loop.run_in_executor(None, sync_fn)` — run a blocking/CPU call in a threadpool and await its result from async code (the standard bridge).
 - **asyncio + subprocess**: `asyncio.create_subprocess_exec` — manage subprocesses concurrently.
 - **asyncio + FastAPI**: the server is `async`; a sync route runs in a threadpool automatically (same `run_in_executor` under the hood).
-- **Generators↔async**: `async for` (async iterables), `async with` (async context managers) — the same protocols from [[data-model]], but `__anext__`/`__aenter__`.
+- **Generators↔async**: `async for` (async iterables), `async with` (async context managers) — the same protocols from [data-model](core/data-model.md), but `__anext__`/`__aenter__`.
 
 ## The failure modes
 
@@ -28,7 +28,7 @@
 
 ## Related
 
-- [[gil-threading]] — the threading contrast.
-- [[python-performance]] — when asyncio is the right concurrency fix.
-- [[data-model]] — the async protocol dunders.
-- [[Packaging]] — the tooling to run these apps.
+- [gil-threading](core/gil-threading.md) — the threading contrast.
+- [python-performance](core/python-performance.md) — when asyncio is the right concurrency fix.
+- [data-model](core/data-model.md) — the async protocol dunders.
+- [Packaging](packaging.md) — the tooling to run these apps.

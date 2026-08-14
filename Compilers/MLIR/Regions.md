@@ -17,20 +17,20 @@ scf.for %i = %lb to %ub step %st iter_args(%acc = %init) {
 
 ## Why nesting matters
 
-- **Hierarchy without loss**: high-level structure (a loop nest, an affine region) stays explicit and optimizable — no flattening to CFG until *you* decide (see [[../Passes]] lowering order).
+- **Hierarchy without loss**: high-level structure (a loop nest, an affine region) stays explicit and optimizable — no flattening to CFG until *you* decide (see [Passes](Passes.md) lowering order).
 - **SSA stays local**: values can't be used outside the region that defines them (with capture rules for ops that allow it) — the two-level structure keeps SSA's single-assignment property clean at every level.
 - **The "two-level IR" idea**: one IR that is simultaneously high-level (nesting = structure, see `linalg`/`scf`) and low-level (flattened blocks, see `cf`/`llvm`). Lowering = progressively *un-nesting*.
 
 ## Ops with regions
 
 - `func.func`, `module` — top-level nesting.
-- `scf.if` / `scf.for` / `scf.while` — control flow as regions ([[../Dialects/scf]]).
-- `affine.for` — polyhedral loops ([[../Dialects/Affine]]).
-- `linalg.generic` — an op whose body defines a per-element computation ([[../Dialects/linalg]]).
+- `scf.if` / `scf.for` / `scf.while` — control flow as regions ([scf](Dialects/scf-vector.md)).
+- `affine.for` — polyhedral loops ([Affine](Dialects/Affine.md)).
+- `linalg.generic` — an op whose body defines a per-element computation ([linalg](Dialects/linalg.md)).
 - A region is also how **custom ops carry semantics**: any dialect op can declare `let regions = 1` and embed a computation body.
 
 ## Related
 
-- [[Operations-Types-Values]] — ops/values/types; regions are the 4th element of the model.
-- [[../Dialects/scf]] — structured control flow via regions.
-- [[../Passes]] — passes traverse/manipulate this nested structure.
+- [Operations-Types-Values](Operations-Types-Values.md) — ops/values/types; regions are the 4th element of the model.
+- [scf](Dialects/scf-vector.md) — structured control flow via regions.
+- [Passes](Passes.md) — passes traverse/manipulate this nested structure.

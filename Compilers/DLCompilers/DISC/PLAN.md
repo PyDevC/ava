@@ -6,9 +6,9 @@ Note on **BladeDISC** (Alibaba's deep learning compiler): what it optimizes (gra
 
 ## What's here
 
-- [[DISC]] — overview: open-sourcing, XLA/static-shape history, paper arXiv:2103.05288.
+- [DISC](DISC.md) — overview: open-sourcing, XLA/static-shape history, paper arXiv:2103.05288.
 
-## What to add next (see also [[../PLAN]])
+## What to add next (see also [PLAN](../PLAN.md))
 
 - [ ] The graph/kernel two-level design in detail
 - [ ] Dynamic-shape handling mechanics

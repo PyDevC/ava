@@ -19,18 +19,18 @@ Each op call walks down the stack until a layer claims it. `set_default_dispatch
 
 ## The two override hooks
 
-- **`__torch_dispatch__`** — called *before* autograd/backend resolution for ops on your tensor subclass. The power lever: your class intercepts `torch.add(...)` etc. and can redirect (this is how FakeTensor, FunctionalTensor, `torch.compile`'s tracing, and distributed checkpointing all hook in). See [[Programming/python/core/conditioning-on-a-python-subclass]] for why subclass dispatch is the canonical extension point.
+- **`__torch_dispatch__`** — called *before* autograd/backend resolution for ops on your tensor subclass. The power lever: your class intercepts `torch.add(...)` etc. and can redirect (this is how FakeTensor, FunctionalTensor, `torch.compile`'s tracing, and distributed checkpointing all hook in). See [conditioning-on-a-python-subclass](../Programming/python/core/conditioning-on-a-python-subclass.md) for why subclass dispatch is the canonical extension point.
 - **`__torch_function__`** — the legacy whole-API hook (lower-level, called for *any* torch function on your type).
 
 ## The dispatch-key practicals
 
-- **FakeTensor / Meta device**: a `Meta`-keyed tensor that never allocates — used by `torch.compile` to infer shapes without memory (see [[Compilers/PyTorchCompiler/FX-Graph-IR]]).
+- **FakeTensor / Meta device**: a `Meta`-keyed tensor that never allocates — used by `torch.compile` to infer shapes without memory (see [FX-Graph-IR](../Compilers/PyTorchCompiler/FX-Graph-IR.md)).
 - **Autograd is a dispatch key too** — `requires_grad` sets the Autograd key, which builds the backward graph. `torch.no_grad()` *disables* that layer (cheaper, no graph).
-- **Custom ops** (see [[Custom-Ops]]): your op gets a kernel per backend key; dispatch picks it. `torch.library` lets you register `FakeTensor`/`Meta` impls so `torch.compile` can trace your op without running it.
+- **Custom ops** (see [Custom-Ops](Custom-Ops.md)): your op gets a kernel per backend key; dispatch picks it. `torch.library` lets you register `FakeTensor`/`Meta` impls so `torch.compile` can trace your op without running it.
 
 ## Related
 
-- [[Tensor-TensorImpl-Storage]] — what the keys read from the tensor.
-- [[Autograd-Internals]] — the Autograd key in detail.
-- [[Custom-Ops]] — registering per-key kernels.
-- [[Compilers/PyTorchCompiler/AOTAutograd]] — functionalization lives in this stack.
+- [Tensor-TensorImpl-Storage](Tensor-TensorImpl-Storage.md) — what the keys read from the tensor.
+- [Autograd-Internals](Autograd-Internals.md) — the Autograd key in detail.
+- [Custom-Ops](Custom-Ops.md) — registering per-key kernels.
+- [AOTAutograd](../Compilers/PyTorchCompiler/AOTAutograd.md) — functionalization lives in this stack.

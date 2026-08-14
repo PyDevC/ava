@@ -33,7 +33,7 @@ Every C++ API you read (MLIR passes, ATen kernels, LLVM) is built on these three
 
 ## Related
 
-- [[cpp-smart-pointers]] — `unique_ptr`/`shared_ptr`/`weak_ptr` in practice.
-- [[Compilers/MLIR/Passes]] — MLIR code that lives by these rules.
-- [[PyTorch/Tensor-TensorImpl-Storage]] — ownership via `Storage`/refcounts.
-- [[cpp-debugging]] — ASAN finds the violations of these rules.
+- [cpp-smart-pointers](cpp-smart-pointers.md) — `unique_ptr`/`shared_ptr`/`weak_ptr` in practice.
+- [Passes](../../Compilers/MLIR/Passes.md) — MLIR code that lives by these rules.
+- [Tensor-TensorImpl-Storage](../../PyTorch/Tensor-TensorImpl-Storage.md) — ownership via `Storage`/refcounts.
+- [cpp-debugging](cpp-debugging.md) — ASAN finds the violations of these rules.

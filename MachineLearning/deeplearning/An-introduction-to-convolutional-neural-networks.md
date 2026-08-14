@@ -37,7 +37,7 @@ Pooling downsamples each feature map by taking a statistic over a window (max po
 Input → [Conv + ReLU (+ pooling)] × N → Flatten → Fully-connected (ANN) → Softmax output
 ```
 
-The conv part is a learned **feature extractor** (see [[MachineLearning/automl/automated-feature-extraction]]), the FC part is the classifier on top ([[MachineLearning/algorithms/classification]]).
+The conv part is a learned **feature extractor** (see [automated-feature-extraction](../automl/automated-feature-extraction.md)), the FC part is the classifier on top ([classification](../algorithms/classification.md)).
 
 ## Notes
 

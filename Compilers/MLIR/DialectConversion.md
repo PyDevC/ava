@@ -29,7 +29,7 @@ Every real MLIR compiler's core is: *declare target legality, write patterns, co
 
 ## Related
 
-- [[Passes]] — conversion passes are built on this.
-- [[Canonicalization]] — the "match+rewrite but same dialect" cousin.
-- [[TableGen]] — DRR lets you write conversion patterns declaratively.
-- [[../Dialects/scf-vector]] / [[../Dialects/LLVM-Dialect]] — the concrete conversions.
+- [Passes](Passes.md) — conversion passes are built on this.
+- [Canonicalization](Canonicalization.md) — the "match+rewrite but same dialect" cousin.
+- [TableGen](TableGen.md) — DRR lets you write conversion patterns declaratively.
+- [scf-vector](Dialects/scf-vector.md) / [LLVM-Dialect](Dialects/LLVM-Dialect.md) — the concrete conversions.
