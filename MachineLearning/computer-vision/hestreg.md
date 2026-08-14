@@ -26,6 +26,14 @@ Allow users to migrate from window session to windowless session and Vice Versa.
 
 ### Working
 
+A session lifecycle looks like this:
+
+1. Start camera → create a Session (windowed or windowless, see above).
+2. For each frame: detect the hand, segment it, remove background (HAND SEGMENTATION).
+3. Extract landmarks / features → feed to the GESTURE RECOGNITION model.
+4. Model outputs a gesture class (with confidence) → CONTROL UNIT maps it to an action.
+5. Close session → release camera resources.
+
 ## ACCELERATOR
 
 Only apply gpu accelerations that are useful for this project don't overdo it.
