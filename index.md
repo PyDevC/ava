@@ -157,4 +157,4 @@ Reference material that spans the rest.
 - **Per-subtree `PLAN.md` roadmaps are all completed and removed** — the notes in each directory are the content.
 - **Links are plain markdown** — `name → path/to/note.md` — so everything works on GitHub and any markdown viewer.
 - **Start broad, then deep**: `Roadmaps/where-am-i-now.md` → `Compilers/DLCompilers/Comparison-Matrix.md` (or `MachineLearning/automl/automl-comparison.md`) → the individual notes.
-- **`TODO.md`** at the root tracks the original completion checklist.
+- **`index.md`** is this file — the map of the whole KB; individual notes are the content.
