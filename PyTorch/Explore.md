@@ -6,7 +6,7 @@ A knowledge base page on how to navigate the PyTorch monorepo, what lives where,
 
 - `torch/` - the Python package, this is where most of the work happens
     - `torch/_dynamo/` - the tracing frontend, converts eager Python into FX graphs
-    - `torch/_inductor/` - the default compiler backend (see [EntryPoint](Compilers/TorchInductor/EntryPoint.md))
+    - `torch/_inductor/` - the default compiler backend (see [EntryPoint](../Compilers/PyTorchCompiler/TorchInductor/EntryPoint.md))
     - `torch/_functorch/` - function transforms (grad, vmap, etc)
     - `torch/onnx/` - ONNX export
     - `torch/distributed/` - distributed training, `dist.all_reduce` and friends

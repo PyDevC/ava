@@ -7,6 +7,7 @@ Notes on **TorchInductor's behavior** as seen from the compiler side of `torch.c
 ## What's here
 
 - [BehaviourOfTorchInductorWithDifferentThingsInstalled](BehaviourOfTorchInductorWithDifferentThingsInstalled.md) — how installed libraries change codegen (Triton, cudagraphs, oneDNN, CUTLASS).
+- [EntryPoint](EntryPoint.md) — the `torch.compile()` → `compile_fx` call chain.
 - [Inductor-IR](Inductor-IR.md) — the loop-level IR in detail (Pointwise/Reduction ops, templates).
 - [Fusion-Scheduler](Fusion-Scheduler.md) — `can_fuse`, `score_fusion`, why ops fuse or not.
 

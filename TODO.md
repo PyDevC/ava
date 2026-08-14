@@ -8,7 +8,7 @@ Track what has to be done and what is already done. Tick a box once the file is 
 ## PyTorch
 - [x] PyTorch/Explore.md
 - [x] PyTorch/CI_Infra.md
-- [x] PyTorch/Compilers/TorchInductor/EntryPoint.md
+- [x] Compilers/PyTorchCompiler/TorchInductor/EntryPoint.md
 
 ## Compilers / DLCompilers
 - [x] Compilers/DLCompilers/README.md (review/expand)

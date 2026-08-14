@@ -8,7 +8,7 @@ PyTorch developers contribute to PyTorch itself (or build heavily on its interna
 - **ATen** — the operator library: `Tensor` API, CPU/CUDA kernels, native functions, codegen from `native_functions.yaml`.
 - **Python binding layer** — `torch/csrc` (pybind/THP), how `torch.add` reaches ATen.
 - **Autograd** — the graph that backprop builds; custom backward functions.
-- **torch.compile** — Dynamo (bytecode tracing → FX graph) + AOTAutograd + Inductor (codegen). See [TorchInductor](../Compilers/DLCompilers/TorchInductor/TorchInductor.md), [GraphBreaks](../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md), and [EntryPoint](../PyTorch/Compilers/TorchInductor/EntryPoint.md).
+- **torch.compile** — Dynamo (bytecode tracing → FX graph) + AOTAutograd + Inductor (codegen). See [TorchInductor](../Compilers/DLCompilers/TorchInductor/TorchInductor.md), [GraphBreaks](../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md), and [EntryPoint](../Compilers/PyTorchCompiler/TorchInductor/EntryPoint.md).
 - **Distributed** — DDP, FSDP, NCCL/RCCL, `torch.distributed`.
 
 ## How to contribute

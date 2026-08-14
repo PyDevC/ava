@@ -107,7 +107,7 @@ From classic IR passes up to modern MLIR-based compilers and the `torch.compile`
 - Autograd: [Autograd-Internals](PyTorch/Autograd-Internals.md)
 - Performance/scale: [Performance](PyTorch/Performance.md), [Distributed-Collectives](PyTorch/Distributed-Collectives.md)
 - Dev workflow: [Explore](PyTorch/Explore.md), [CI_Infra](PyTorch/CI_Infra.md)
-- `Compilers/TorchInductor/` — [EntryPoint](PyTorch/Compilers/TorchInductor/EntryPoint.md) — `torch.compile()` → `compile_fx` call chain
+- `Compilers/PyTorchCompiler/TorchInductor/` — [EntryPoint](Compilers/PyTorchCompiler/TorchInductor/EntryPoint.md) — `torch.compile()` → `compile_fx` call chain
 
 ---
 

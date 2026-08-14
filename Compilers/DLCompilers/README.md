@@ -31,4 +31,4 @@ Almost every DL compiler follows the same high-level shape:
 - [TensorRT](TensorRT/TensorRT.md) — NVIDIA's closed-source engine compiler: Parser → Builder → Engine → Runtime.
 - [DISC](DISC/DISC.md) — BladeDISC (Alibaba) for tensor programs.
 
-Each directory has its own notes. See also [EntryPoint](../../PyTorch/Compilers/TorchInductor/EntryPoint.md) for how `torch.compile` actually reaches inductor.
+Each directory has its own notes. See also [EntryPoint](../PyTorchCompiler/TorchInductor/EntryPoint.md) for how `torch.compile` actually reaches inductor.

@@ -2,7 +2,7 @@
 
 TorchInductor (usually just "Inductor") is PyTorch's default compilation backend. It is the `inductor` backend used by `torch.compile()` with no arguments. It turns the FX graphs produced by TorchDynamo into generated GPU kernels (Triton) and CPU kernels (C++/OpenMP).
 
-> See [EntryPoint](../../../PyTorch/Compilers/TorchInductor/EntryPoint.md) for the entry point / call chain.
+> See [EntryPoint](../../PyTorchCompiler/TorchInductor/EntryPoint.md) for the entry point / call chain.
 
 ## Compiler stack
 

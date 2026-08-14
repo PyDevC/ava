@@ -12,7 +12,7 @@ Understand PyTorch's **compiler stack** (`torch.compile`): how TorchDynamo trace
 - **Dynamo internals**: [Trace-Lifecycle](TorchDynamo/Trace-Lifecycle.md), [VariableTracker](TorchDynamo/VariableTracker.md), [Guards](TorchDynamo/Guards.md), [SymPy-Symbolic-Shapes](TorchDynamo/SymPy-Symbolic-Shapes.md)
 - **AOTAutograd** — how the compiled region gets its backward graph.
 - **FX graph as IR** — the graph Dynamo emits and backends consume.
-- **Inductor internals**: [Inductor-IR](TorchInductor/Inductor-IR.md), [Fusion-Scheduler](TorchInductor/Fusion-Scheduler.md)
+- **Inductor internals**: [Inductor-IR](TorchInductor/Inductor-IR.md), [Fusion-Scheduler](TorchInductor/Fusion-Scheduler.md), [EntryPoint](TorchInductor/EntryPoint.md) (the `torch.compile()` → `compile_fx` call chain)
 - **Integration points**: [Integration-Points](Integration-Points.md) (modes, backends, allow_in_graph/disable)
 
 ## What to add next

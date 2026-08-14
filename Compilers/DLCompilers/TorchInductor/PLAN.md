@@ -6,7 +6,7 @@ Note on **TorchInductor** (PyTorch's default compile backend): the define-by-run
 
 ## What's here
 
-- [TorchInductor](TorchInductor.md) — overview of the inductor internals (see the two sibling notes in [TorchInductor](../../PyTorchCompiler/TorchInductor/PLAN.md) and [TorchInductor](../../../PyTorch/Compilers/TorchInductor/PLAN.md) too).
+- [TorchInductor](TorchInductor.md) — overview of the inductor internals (see the sibling [TorchInductor](../../PyTorchCompiler/TorchInductor/PLAN.md) notes too).
 
 ## What to add next (see also [PLAN](../PLAN.md) and [PLAN](../../PyTorchCompiler/PLAN.md))
 
