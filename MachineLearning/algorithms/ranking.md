@@ -17,7 +17,7 @@ Ranking is a supervised task where the goal is to order items by relevance for a
 
 ## Practical notes
 
-- Ranking models are usually [Gradient-boosting](Gradient-boosting.md) on pairwise/listwise losses (LambdaMART is exactly this, used in LightGBM's `lambdarank` objective and [XGBoost](XGBoost.md)'s `rank:ndcg`).
+- Ranking models are usually [gradient-boosting](gradient-boosting.md) on pairwise/listwise losses (LambdaMART is exactly this, used in LightGBM's `lambdarank` objective and [XGBoost](XGBoost.md)'s `rank:ndcg`).
 - Features are typically per (query, document) pairs: content similarity, popularity, click data, freshness.
 - Be careful with train/test splitting: must split by query, not random rows (leakage).
 

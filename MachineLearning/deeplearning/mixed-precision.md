@@ -39,6 +39,6 @@ scaler.update()
 
 ## Related
 
-- [model-optimization](model-optimization.md) — the performance chapter this belongs to.
+- [optimizers](optimizers.md) — the performance chapter this belongs to.
 - [distributed-training](distributed-training.md) — mixed precision + FSDP is the standard huge-model stack.
 - [deep-learning-hardware](../../Store/deep-learning-hardware.md) — the tensor cores it exploits.

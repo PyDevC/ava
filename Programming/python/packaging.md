@@ -31,4 +31,4 @@ How a Python environment actually works — `pip`/`uv`, `pyproject.toml`, wheels
 - [python-c-api](core/python-c-api.md) — why wheels contain compiled extensions.
 - [frames-namespaces](core/frames-namespaces.md) — what `sys.path`/import resolution is.
 - [PR-Lifecycle](../../OpenSource/PR-Lifecycle.md) — packaging changes get reviewed as code.
-- [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md) — building the compiled parts.
+- [CMake-Guide](../../Compilers/MLIR/CMake-Guide.md) — building the compiled parts.

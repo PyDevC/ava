@@ -24,7 +24,7 @@ Debug a slow endpoint (profile → cache/query fix), review a PR that touches th
 ## How this repo maps
 
 - [PLAN](../Programming/) — the C++/Python/shell foundations.
-- [CMake_Guide](../Compilers/MLIR/CMake_Guide.md) + [cpp-cmake](../Programming/cpp/cpp-cmake.md) — build systems.
+- [CMake-Guide](../Compilers/MLIR/CMake-Guide.md) + [cpp-cmake](../Programming/cpp/cpp-cmake.md) — build systems.
 - [OpenSource](../OpenSource/) — PR/CI/review etiquette is the daily work.
 - [hpc-engineer](hpc-engineer.md) — the high-performance extreme of this role.
 

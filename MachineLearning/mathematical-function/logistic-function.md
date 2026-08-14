@@ -14,7 +14,7 @@ The logistic (sigmoid) function squashes any real number into `(0, 1)`:
 - **Binary classification**: logistic regression pushes a linear score `w·x + b` through `σ` to get a probability `P(y=1 | x)`, trained with [log loss](../algorithms/loss-function.md). See [classification](../algorithms/classification.md).
 - **Neural network activation**: the classic "squashing" non-linearity (see [neural-network](../algorithms/neural-network.md)). Modern nets prefer ReLU (avoids vanishing gradients), but sigmoid is still used in gates (LSTM, GRU) and final probability outputs.
 - **It is the inverse of the logit** — see [logit-function](logit-function.md).
-- Smooth version of the [indicator-function](indicator-function.md)/step (a 0→1 jump, relaxed to be differentiable), making it Lipschitz and gradient-friendly (see [lipsschitz-function](lipsschitz-function.md)).
+- Smooth version of the [indicator-function](indicator-function.md)/step (a 0→1 jump, relaxed to be differentiable), making it Lipschitz and gradient-friendly (see [lipschitz-function](lipschitz-function.md)).
 
 ## Notes
 

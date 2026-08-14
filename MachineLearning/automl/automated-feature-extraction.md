@@ -11,7 +11,7 @@ Feature extraction = transforming raw data into a **set of informative, model-re
 
 The model learns its own features from raw input:
 
-- **Neural networks** — a CNN learns edge→texture→object features automatically; see [An-introduction-to-convolutional-neural-networks](../deeplearning/An-introduction-to-convolutional-neural-networks.md). This is the ultimate "automated feature extraction".
+- **Neural networks** — a CNN learns edge→texture→object features automatically; see [intro-to-convolutional-neural-networks](../deeplearning/intro-to-convolutional-neural-networks.md). This is the ultimate "automated feature extraction".
 - **Autoencoders / representation learning** — unsupervised encoders that compress data into a latent space (see [injectivity](../algorithms/injectivity.md) for why injective encoders preserve info).
 - **Embedding layers** — learn dense vectors for categorical tokens (the [BERT](../nlp/BERT.md) story).
 

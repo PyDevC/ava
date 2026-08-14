@@ -4,6 +4,8 @@ aliases: []
 tags: []
 ---
 
+# Hand gesture recognition
+
 A hand gesture recognition model is a program that detects the hand, figures out which gesture the hand is performing, and predicts that gesture. We may additionally decide to perform certain actions based on certain predictions. 
 
 Main Idea of working:
@@ -12,7 +14,7 @@ Main Idea of working:
 
 - optional step: perform various tasks in a sequence to activate a commands.
 
-get dataset for training the hand gesture recognition model: https://www.kaggle.com/datasets/gti-upm/leapgestrecog
+Data: https://www.kaggle.com/datasets/gti-upm/leapgestrecog
 
 ## Steps
 - Detect hand in the image

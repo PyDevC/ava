@@ -36,5 +36,5 @@ For "hand segmentation" the practical question is usually **foreground/backgroun
 
 - [hand-gesture-recognition](hand-gesture-recognition.md) — where segmentation sits in the pipeline.
 - [object-detection](object-detection.md) — Mask R-CNN's parent.
-- [An-introduction-to-convolutional-neural-networks](../deeplearning/An-introduction-to-convolutional-neural-networks.md) — the encoder backbone.
+- [intro-to-convolutional-neural-networks](../deeplearning/intro-to-convolutional-neural-networks.md) — the encoder backbone.
 - [imbalanced-classification](../algorithms/imbalanced-classification.md) — why Dice loss.

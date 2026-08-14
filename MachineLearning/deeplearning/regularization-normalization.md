@@ -31,12 +31,12 @@ Normalizes each sample over its **feature dimension** instead of the batch — n
 
 ## Which to reach for
 
-- Vision CNNs: BatchNorm (fused into conv by inference engines; see the conv note in [An-introduction-to-convolutional-neural-networks](An-introduction-to-convolutional-neural-networks.md)).
+- Vision CNNs: BatchNorm (fused into conv by inference engines; see the conv note in [intro-to-convolutional-neural-networks](intro-to-convolutional-neural-networks.md)).
 - Transformers / RNNs / small batches: LayerNorm.
 - Dropout: Transformers prefer *no* dropout in attention post-2020 (or very little); CNNs use it before the classifier.
 
 ## Related
 
 - [regularization](../algorithms/regularization.md) — the classic ML framing these generalize.
-- [model-optimization](model-optimization.md) — how weight decay plugs into the optimizer.
+- [optimizers](optimizers.md) — how weight decay plugs into the optimizer.
 - [how-to-use-lr-scheduler](how-to-use-lr-scheduler.md) — normalization is what lets you train with aggressive LR schedules.

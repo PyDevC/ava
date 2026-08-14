@@ -20,7 +20,7 @@ The hashing gives you *value numbering*-like behavior without full equivalence a
 
 ## In SSA form
 
-SSA (see [SsaConstruction](SsaConstruction.md)) makes CSE nearly trivial for *dominance-scalar* expressions: a def dominates every use, so a value is available at a use exactly when its def dominates it. The check "is the earlier computation still valid here" becomes a dominator-tree query instead of a dataflow analysis.
+SSA (see [SSAConstruction](SSAConstruction.md)) makes CSE nearly trivial for *dominance-scalar* expressions: a def dominates every use, so a value is available at a use exactly when its def dominates it. The check "is the earlier computation still valid here" becomes a dominator-tree query instead of a dataflow analysis.
 
 ## CSE in ML frameworks
 

@@ -60,6 +60,18 @@ Line by line:
 
 Everything in the kernel answers a prior decision: one block per contiguous slice (coalescing), masked tail (dynamic shapes), vectorized ops (bandwidth), no shared memory (no reuse to stage), `XBLOCK` fixed at compile time (the autotuner benchmarked it, or the heuristic picked 1024). The C++ CPU path is the same story with `#pragma omp` loops instead of `tl.arange`. On a bigger graph you see *why it became N kernels* — each separate `@triton.jit` function is a fusion decision from the [scheduler](../PyTorchCompiler/TorchInductor/Fusion-Scheduler.md).
 
+A matmul kernel instead ends with `tl.dot(a, b)` (the MMA path), an epilogue `tl.load`/`tl.store` for the output tile, and the wrapper passes `num_warps` (e.g. 4/8) which sets the block thread count.
+
+## Config knobs that change what you see
+
+- `torch._inductor.config.triton.cudagraphs = True` — captures kernels into a CUDA graph so launches replay at ~zero CPU overhead (the "reduce-overhead" trick).
+- `torch._inductor.config.max_autotune = True` — autotunes block sizes/`num_warps` (and templates) against your GPU.
+- `torch._inductor.config.trace.enabled = True` — dumps the IR schedule to `torch_compile_*` files.
+
+## The debugging loop
+
+Reading kernels is the fastest debugger in compiled PyTorch: "why N kernels?" → count the `triton_poi_*` functions; "why slow?" → look for a tail mask everywhere (shape not a multiple of the block → padding wins) or unmasked whole-tensor loops that should have fused; and it confirms what Inductor *actually* fused vs what you thought it fused.
+
 ## Related
 
 - [Triton](Triton.md) — the language being read.

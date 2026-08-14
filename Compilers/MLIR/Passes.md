@@ -34,11 +34,11 @@ struct MyPass : public PassWrapper<MyPass, OperationPass<func::FuncOp>> {
 };
 ```
 
-Register via `registerPass` + `PassRegistration` so `mlir-opt --my-pass` works. In `add_mlir_library` targets the pass must be in an `mlir-opt` plugin or linked into a tool (see [CMake_Guide](CMake_Guide.md)).
+Register via `registerPass` + `PassRegistration` so `mlir-opt --my-pass` works. In `add_mlir_library` targets the pass must be in an `mlir-opt` plugin or linked into a tool (see [CMake-Guide](CMake-Guide.md)).
 
 ## Gotchas I keep hitting
 
-- Passes run on a **snapshot**; you must call `runOnOperation` and return a new `Operation` if you replace the op (or use the pattern driver).
+- Passes run on a **snapshot** of the IR; `runOnOperation` returns `void` — there is no "return a new op". You mutate in place (insert/erase ops, or `replaceAllUsesWith` + erase), and say what changed via the pattern rewriter or `markAllAnalysesPreserved`/`markAnalysesPreserved`. For whole-op replacement, build the new op, `replaceOp` it, then erase — or use DialectConversion (see [DialectConversion](DialectConversion.md)).
 - **Order matters** for legality: converting before legalizing means the later pass sees the *wrong* dialect. This is why "legalization" pipelines are carefully ordered.
 - Caching: `mlir-opt` print stats with `--mlir-pass-statistics`; passes that don't declare dependencies can be reordered — declare them (`getDependentDialects`).
 
@@ -46,5 +46,5 @@ Register via `registerPass` + `PassRegistration` so `mlir-opt --my-pass` works. 
 
 - [DialectConversion](DialectConversion.md) — the framework most "real" passes use.
 - [Canonicalization](Canonicalization.md) — the always-on cleanup pass.
-- [CMake_Guide](CMake_Guide.md) — wiring a pass into a build.
+- [CMake-Guide](CMake-Guide.md) — wiring a pass into a build.
 - [scf-vector](Dialects/scf-vector.md) — the concrete pipelines these passes form.

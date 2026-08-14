@@ -4,6 +4,8 @@ aliases: []
 tags: []
 ---
 
+# Gradient boosting
+
 Gradient boosting builds a strong model as an *additive ensemble* of weak learners (typically shallow decision trees), where each new tree is trained to fit the **negative gradient of the loss** w.r.t. the current prediction. This is why it's "gradient" boosting — it's essentially functional gradient descent over the space of predictors.
 
 ## Intuition
@@ -23,6 +25,6 @@ Gradient descent but in *function space*: instead of updating a parameter vector
 ## Notes
 
 - Works for regression, classification, ranking — any differentiable loss.
-- This family includes [XGBoost](XGBoost.md), [LightGBM](LightGBM.md), and [decision trees](descision-trees.md) as base learners.
+- This family includes [XGBoost](XGBoost.md), [LightGBM](LightGBM.md), and [decision trees](decision-trees.md) as base learners.
 - Key hyperparameters: number of trees (`n_estimators`), learning rate, max depth, subsampling.
-- The base estimator (`base_estimator` / `estimator`) is normally a decision tree — see [base-esitmator](base-esitmator.md).
+- The base estimator (`base_estimator` / `estimator`) is normally a decision tree — see [base-estimator](base-estimator.md).

@@ -8,7 +8,7 @@ In `GradientBoostingClassifier` / `GradientBoostingRegressor` the default is a s
 
 - **Weak but slightly better than random**: if it's too strong it overfits the residuals; too weak and you need thousands of rounds.
 - **Stable / low variance** at small size — trees with small depth are the classic choice.
-- For [Gradient-boosting](Gradient-boosting.md), [XGBoost](XGBoost.md), [LightGBM](LightGBM.md) the base learner is always a regression tree, regardless of the final task (classification is handled by the loss function, e.g. logistic).
+- For [gradient-boosting](gradient-boosting.md), [XGBoost](XGBoost.md), [LightGBM](LightGBM.md) the base learner is always a regression tree, regardless of the final task (classification is handled by the loss function, e.g. logistic).
 
 ## Other uses of the term
 

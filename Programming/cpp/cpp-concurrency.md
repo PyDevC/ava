@@ -6,7 +6,7 @@ The C++ side of "make it parallel": `std::thread`, mutexes, and `std::atomic`. P
 
 - `std::thread t(f, args...);` starts `f` on a new thread. `t.join()` waits for it (the RAII-friendly way — the destructor of a *joinable* thread calls `std::terminate`, so always join or detach). `t.detach()` lets it run free — only safe if the function outlives everything it touches (threads + lambdas capturing stack refs = use-after-free).
 - Compare with Python: `threading.Thread` (see [gil-threading](../python/core/gil-threading.md)) — same shape, but no GIL here, so CPU-bound C++ *does* parallelize.
-- `std::async` is a thin wrapper that manages a thread pool for you; the C++ threading model still treats each `thread` as a real OS thread.
+- `std::async` spawns a thread per launch (or runs `deferred` on the calling thread) — it does **not** manage a thread pool. For bounded concurrency you bring your own pool (`std::jthread` + a queue, or a library); the C++ threading model treats each `thread` as a real OS thread.
 
 ## Mutexes and locks
 
@@ -16,7 +16,7 @@ The C++ side of "make it parallel": `std::thread`, mutexes, and `std::atomic`. P
 
 ## std::atomic and memory_order
 
-- `std::atomic<T>` (integral, pointer, or your own type if trivially copyable): every op is an atomic RMW. Default `memory_order_seq_cst` — the strongest, gives you one total order, but the most expensive on weak-hardware CPUs.
+- `std::atomic<T>` (integral, pointer, or your own type if trivially copyable): atomicity applies to every op, but only RMW ops (`fetch_add`, `exchange`, `compare_exchange`) are read-modify-write; plain `load`/`store` are single reads/writes. Default `memory_order_seq_cst` — the strongest, gives you one total order, but the most expensive on weak-hardware CPUs.
 - **The memory_order ladder** (see [cpp-memory-model](cpp-memory-model.md) for why orderings even exist): `seq_cst` (safe default) → `acq_rel`/`acquire`/`release` (lock-free queue protocol: acquire pairs with release, no reordering past them) → `relaxed` (only atomicity, no ordering — fine for counters). Start with `seq_cst`, downgrade only with a proof, not a hunch.
 - **Don't hand-roll**: `std::atomic_flag` for spinlocks, `std::mutex` for anything more. The practical rules: use `atomic` for flags/counters and lock-free queue handoff, `mutex` for actual shared data.
 

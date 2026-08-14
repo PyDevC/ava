@@ -20,7 +20,7 @@ The loss must be:
 
 ## In boosting
 
-Boosting ([Gradient-boosting](Gradient-boosting.md)) is defined *by* a loss: each tree fits the **gradient of the loss** w.r.t. predictions. Change the loss and you change the whole algorithm behavior (e.g. binomial deviance for classification, `reg:squarederror` for regression in [XGBoost](XGBoost.md)).
+Boosting ([gradient-boosting](gradient-boosting.md)) is defined *by* a loss: each tree fits the **gradient of the loss** w.r.t. predictions. Change the loss and you change the whole algorithm behavior (e.g. binomial deviance for classification, `reg:squarederror` for regression in [XGBoost](XGBoost.md)).
 
 ## Related
 

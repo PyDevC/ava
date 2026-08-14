@@ -21,7 +21,7 @@ Choosing the Hyperparameters for the model can be challenging and choosing a clo
 
 - **Manual / experience-based** — decent starting points from prior knowledge, then iterate. Still the practical norm.
 - **[grid-search](../automl/hyperparameter-tuning/grid-search.md) / [random-search](../automl/hyperparameter-tuning/random-search.md)** — brute force baselines; random usually beats grid in high dims.
-- **[Bayesian-optimization](../automl/hyperparameter-tuning/Bayesian-optimization.md)** — sample-efficient, the smart choice for expensive runs.
+- **[bayesian-optimization](../automl/hyperparameter-tuning/bayesian-optimization.md)** — sample-efficient, the smart choice for expensive runs.
 - **[Hyperband](../automl/hyperparameter-tuning/Hyperband.md)** — early-stopping bandit method, great for many quick candidates.
 - Automated tools wrap all of this: see [auto-sklearn](../automl/auto-sklearn.md), [h2o-automl](../automl/h2o-automl.md).
 

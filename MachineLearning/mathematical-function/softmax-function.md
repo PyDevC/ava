@@ -4,6 +4,8 @@ aliases: []
 tags: []
 ---
 
+# Softmax function
+
 The softmax function is a function that turns a vector of K real values into a
 vector of K real values that sum to 1. The output of the function is always 
 between 0 and 1, which can be used as a probability score.
@@ -18,7 +20,7 @@ It "softens" the argmax: the largest input gets the largest probability, but all
 
 - Outputs form a probability distribution: `Σ_i softmax(z)_i = 1`, all in `(0,1)`.
 - **Shift invariance**: `softmax(z) = softmax(z + c)` (adding a constant doesn't change it) — this is why implementations subtract the max `z` first for numerical stability.
-- **Temperature**: `softmax(z/T)` — higher `T` smooths (more uniform), lower `T` sharpens (hotter). Used in LLM sampling.
+- **Temperature**: `softmax(z/T)` — higher `T` flattens the distribution (hotter: closer to uniform, more random), lower `T` sharpens it (colder: closer to argmax, more deterministic). Used in LLM sampling.
 - Differentiable — gradients flow to all inputs, scaled by the probabilities (the "soft" part).
 
 ## Where it's used

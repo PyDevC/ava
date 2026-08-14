@@ -1,23 +1,32 @@
-# Deep Learning Hardware
+# Deep learning hardware
 
-There are several hardware used to train and inference deep learning models, 
-each has it's own way of executing the model and interacting with DL frameworks.
+Hardware used to train and inference deep learning models, and how each type executes models and interacts with DL frameworks.
 
-- General-purpose hardware: this includes GPUs, which can achieve high 
-    parallelism due to it's high bandwidth and high number of cores. After Volta
-    architecture the NVIDIA GPUs started adding tensor cores in their gpus, 
-    allowing for efficient tensor and matrix operations at larger scale, rather
-    than running tensor operations on Ray Tracing cores. For GPUs there are 
-    several frameworks developed by vendors to increase the performance and 
-    enegry efficiency of the GPU like cuDNN, ROCm, TensorRT, etc.
+## General-purpose hardware: GPUs
 
-- Dedicated Hardware: this includes specialised hardware developed to improve
-    performance and efficiency of these DL computations. With rise of Deep
-    Learning in more and more applications, there is increase in many startups
-    having their own custom hardwares dedicated to run DL models. Some of the
-    Big hardware companies are also developing these specialised hardware such
-    as Intel NNP, Qualcomm Cloud AI 100. There are also cloud providers how are 
-    making these chips such as Google TPUs, Amazon Inferenatia, Alibaba Hanguang.
-    The most well known hardware is TPUs, which consists of Matrix Multiplier 
-    Unit (MXU), Unified Buffer (UB), and Activation Unit (AU), which is driven 
-    with CISC instructions by the host processor.
+GPUs achieve high parallelism via high memory bandwidth and a high core count. After the Volta architecture, NVIDIA GPUs added **tensor cores** for efficient matrix/matrix-multiply at scale (instead of running tensor ops on generic ALUs). Vendors ship acceleration libraries on top of the raw hardware:
+
+- NVIDIA: cuDNN, TensorRT, NCCL
+- AMD: ROCm, MIOpen, RCCL
+- Generic/portable: oneAPI, OpenCL/Vulkan
+
+See the [gpu-spec-catalog](gpu-spec-catalog.md) for concrete hardware numbers and [roofline-model](roofline-model.md) for reasoning about whether a workload is bandwidth- or compute-bound on these chips.
+
+## Dedicated hardware: accelerators
+
+Specialized chips built for DL compute, either from startups or big vendors:
+
+- NVIDIA — tensor cores (consumer→datacenter), plus the whole CUDA software stack
+- Google — **TPUs**: matrix-multiply unit (MXU), unified buffer (UB), activation unit (AU), driven with CISC instructions by the host CPU
+- Intel — NNP (Nervana), Gaudi
+- Qualcomm — Cloud AI 100 (and NPUs in phones)
+- AWS — Inferentia/Trainium
+- Alibaba — Hanguang
+
+The tradeoff vs GPUs: higher efficiency per watt per dollar on the specific op mix you design for, but a much smaller software ecosystem and tight coupling to the vendor's compiler (XLA/StableHLO on TPU, custom stacks on the others).
+
+## Related
+
+- [gpu-spec-catalog](gpu-spec-catalog.md) — the spec sheet.
+- [roofline-model](roofline-model.md) — how to decide what the hardware is good at.
+- [model-optimization-for-inference](../MachineLearning/deeplearning/model-optimization-for-inference.md) — what you do to fit on this hardware.

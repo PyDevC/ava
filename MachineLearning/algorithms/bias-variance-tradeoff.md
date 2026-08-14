@@ -18,7 +18,7 @@ As model complexity grows:
 - Variance ↑ (more knobs = more sensitivity to training data)
 - Total error is **U-shaped** — there's a complexity sweet spot.
 
-This is exactly the intuition behind `learning_curve` plots and why a random forest with 500 trees can still overfit if trees are deep, while a depth-1 stump underfits.
+This is exactly the intuition behind `learning_curve` plots and why a random forest of deep trees can still overfit while a depth-1 stump underfits. Note the count isn't the culprit: adding more trees to a forest *reduces* variance (averaging), so overfitting comes from the individual trees being too deep — forest depth is the complexity dial, tree count is not.
 
 ## The two failure modes
 
@@ -35,4 +35,4 @@ This is exactly the intuition behind `learning_curve` plots and why a random for
 
 - [regularization](regularization.md) — the tool to trade bias for variance explicitly.
 - [cross-validation](cross-validation.md) — how you find the sweet spot without looking at test data.
-- [descision-trees](descision-trees.md) / [Gradient-boosting](Gradient-boosting.md) — concrete places the tradeoff shows up.
+- [decision-trees](decision-trees.md) / [gradient-boosting](gradient-boosting.md) — concrete places the tradeoff shows up.

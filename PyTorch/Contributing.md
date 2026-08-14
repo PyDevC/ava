@@ -14,7 +14,7 @@ The practical path from "I want to help" to "my PR is green and reviewed". PyTor
 
 ## Tests: how PyTorch tests run
 
-- Tests live in `test/` (`test/test_*.py`), driven by pytest: `pytest test/test_ops.py -k "add"` runs the matching subset. CI runs the whole matrix (CPU/CUDA/ROCm, plus lint) via the workflows in [CI_Infra](CI_Infra.md).
+- Tests live in `test/` (`test/test_*.py`), driven by pytest: `pytest test/test_ops.py -k "add"` runs the matching subset. CI runs the whole matrix (CPU/CUDA/ROCm, plus lint) via the workflows in [CI-Infra](CI-Infra.md).
 - **Write the test that proves the fix**: a regression test for the bug, placed in the module's existing test file, following the file's conventions (see [code-review-skills](../OpenSource/code-review-skills.md) — missing/weak tests are the #1 review complaint).
 - New ops need tests in the right generated suites; a custom op needs `torch.library` coverage (see [Custom-Ops](Custom-Ops.md)).
 
@@ -44,7 +44,7 @@ This checklist *is* the PyTorch contribution experience — most first PRs fail 
 ## Related
 
 - [Build-From-Source](Build-From-Source.md) — the mandatory first step.
-- [CI_Infra](CI_Infra.md) — what CI runs and how to read failures.
+- [CI-Infra](CI-Infra.md) — what CI runs and how to read failures.
 - [Custom-Ops](Custom-Ops.md) — the "write a custom op" contribution path.
 - [Dispatch-Key](Dispatch-Key.md) — for dispatch-bug fixes.
 - [pytorch-developers](../Roadmaps/pytorch-developers.md) — the role roadmap with PR-sized tasks.

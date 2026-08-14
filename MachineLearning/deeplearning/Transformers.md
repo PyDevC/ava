@@ -24,5 +24,5 @@ Stack these N times → you have an encoder or a decoder. Encoder-only (BERT) fo
 ## Related
 
 - [attention-is-all-you-need](attention-is-all-you-need.md) — the paper review.
-- [An-introduction-to-convolutional-neural-networks](An-introduction-to-convolutional-neural-networks.md) — the older vision workhorse.
+- [intro-to-convolutional-neural-networks](intro-to-convolutional-neural-networks.md) — the older vision workhorse.
 - [BERT](../nlp/BERT.md) — the encoder-only application.

@@ -37,7 +37,7 @@ For me the value is conceptual: SSA is half the picture. Asking "where is this v
 
 ## Related
 
-- [SSA](SSA/) — the thing SSI is dual to; [SsaConstruction](SsaConstruction.md) for how SSA is actually built.
+- [SSA](SSA/) — the thing SSI is dual to; [SSAConstruction](SSAConstruction.md) for how SSA is actually built.
 - [Liveness](Liveness.md) — SSI's use-splitting is liveness made structural.
 - [RegisterAllocation](RegisterAllocation.md) — the chordality argument SSI exploits.
 - [IR-Taxonomy](IR-Taxonomy.md) — where SSA-style register IRs sit among IR designs.

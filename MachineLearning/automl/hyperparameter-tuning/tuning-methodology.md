@@ -1,6 +1,6 @@
 # Tuning methodology and search-space design
 
-Most tuning projects fail on **methodology**, not on the sampler: a badly designed search space, no seeds, or a meaningless budget. This note is the "how to actually tune" companion to the algorithm notes ([grid-search](grid-search.md), [random-search](random-search.md), [Bayesian-optimization](Bayesian-optimization.md)).
+Most tuning projects fail on **methodology**, not on the sampler: a badly designed search space, no seeds, or a meaningless budget. This note is the "how to actually tune" companion to the algorithm notes ([grid-search](grid-search.md), [random-search](random-search.md), [bayesian-optimization](bayesian-optimization.md)).
 
 ## Search-space design (the highest-leverage step)
 
@@ -35,7 +35,7 @@ Most tuning projects fail on **methodology**, not on the sampler: a badly design
 
 ## Related
 
-- [grid-search](grid-search.md) / [random-search](random-search.md) / [Bayesian-optimization](Bayesian-optimization.md) — the algorithms.
+- [grid-search](grid-search.md) / [random-search](random-search.md) / [bayesian-optimization](bayesian-optimization.md) — the algorithms.
 - [asha-pbt-bohb](asha-pbt-bohb.md) — multi-fidelity options.
 - [optuna](optuna.md) — the practical driver.
 - [cross-validation](../../algorithms/cross-validation.md) — the eval protocol each trial needs.

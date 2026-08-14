@@ -17,8 +17,8 @@ Each layer applies a linear map (`W·x + b`) followed by a non-linear activation
 
 ## The families (expanding the list above)
 
-- **Feed-forward / MLP** — plain dense layers; universal approximator (see [Universal-approximation-function](Universal-approximation-function.md)).
-- **Convolutional (CNN)** — weight sharing + locality via kernels; the standard for images (see [An-introduction-to-convolutional-neural-networks](../deeplearning/An-introduction-to-convolutional-neural-networks.md)).
+- **Feed-forward / MLP** — plain dense layers; universal approximator (see [universal-approximation-function](universal-approximation-function.md)).
+- **Convolutional (CNN)** — weight sharing + locality via kernels; the standard for images (see [intro-to-convolutional-neural-networks](../deeplearning/intro-to-convolutional-neural-networks.md)).
 - **Recurrent (RNN/LSTM/GRU)** — hidden state carried across time steps; for sequences.
 - **Graph neural networks (GNN)** — message passing between nodes; for graph-structured data.
 - **Transformer** — self-attention; the modern default for sequences (see [Transformers](../deeplearning/Transformers.md)).
@@ -33,4 +33,4 @@ Each layer applies a linear map (`W·x + b`) followed by a non-linear activation
 ## Notes
 
 - Depth, width, activation, and regularization choices matter more than "which family" once the data type is fixed.
-- A neural net *is* an estimator — interchangeable with trees/linear models in the sklearn sense (see [base-esitmator](base-esitmator.md)), just usually needing much more data.
+- A neural net *is* an estimator — interchangeable with trees/linear models in the sklearn sense (see [base-estimator](base-estimator.md)), just usually needing much more data.

@@ -20,7 +20,7 @@ The AI Engineer is the practitioner who **builds and ships AI products** — app
 
 1. Python + data structures; git.
 2. Classic ML course (sklearn, trees, linear models — see my [algorithms](../MachineLearning/algorithms/) notes).
-3. Deep learning (CNNs, Transformers — see [Transformers](../MachineLearning/deeplearning/Transformers.md), [An-introduction-to-convolutional-neural-networks](../MachineLearning/deeplearning/An-introduction-to-convolutional-neural-networks.md)).
+3. Deep learning (CNNs, Transformers — see [Transformers](../MachineLearning/deeplearning/Transformers.md), [intro-to-convolutional-neural-networks](../MachineLearning/deeplearning/intro-to-convolutional-neural-networks.md)).
 4. PyTorch fluency (see [Explore](../PyTorch/Explore.md)).
 5. LLM application layer: prompt engineering, RAG, fine-tuning, agents.
 6. Deployment: FastAPI/Streamlit, Docker, model serving, monitoring.

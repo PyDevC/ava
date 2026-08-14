@@ -5,7 +5,7 @@ AI compiler engineers build the **software that turns ML models into fast machin
 ## Core skills
 
 - **Compiler fundamentals**: IRs, SSA (see [Dominators](../Compilers/IR/SSA/Dominators.md)), dataflow analysis, loop transformations, codegen, instruction selection.
-- **MLIR** — the modern IR framework for ML compilers (see [CMake_Guide](../Compilers/MLIR/CMake_Guide.md), [Affine](../Compilers/MLIR/Dialects/Affine.md)).
+- **MLIR** — the modern IR framework for ML compilers (see [CMake-Guide](../Compilers/MLIR/CMake-Guide.md), [Affine](../Compilers/MLIR/Dialects/Affine.md)).
 - **Deep learning compiler stack**: a graph-level IR → lowering → kernel-level IR → codegen. Study [TorchInductor](../Compilers/DLCompilers/TorchInductor/TorchInductor.md), [IREE](../Compilers/DLCompilers/IREE/IREE.md), [TensorRT](../Compilers/DLCompilers/TensorRT/TensorRT.md), [DISC](../Compilers/DLCompilers/DISC/DISC.md).
 - **Kernel programming**: Triton, CUDA, C++ vectorization (see [triton-compiler-engineer](triton-compiler-engineer.md), [gpu-architect](gpu-architect.md)).
 - **Performance analysis**: profiling, roofline model, cache behavior.

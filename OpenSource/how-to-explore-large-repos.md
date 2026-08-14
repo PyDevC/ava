@@ -1,15 +1,25 @@
-# How to explore large repositories 
+# How to explore large repositories
 
-When working in opensource you might want to contribute to really large projects such as Kubernetes, PyTorch, Tensorflow, ROCm, Linux, etc. Understanding these codebases is not easy and sometimes takes months or years to get familiar with the process and contribution cycle.
+Contributing to really large projects (PyTorch, TensorFlow, Kubernetes, ROCm, Linux) is a months-long ramp-up, but the process is learnable. The goal isn't to read everything — it's to build enough mental model to make your first useful contribution.
 
-There are many ways how you can approch such projects, which involves asking active questions, reading the wiki, learning how to contributions are made, exploring how other people make their contribution.
+## Get familiar before you dig in
 
-## How to Get familiar with the project
+1. **Use the thing first.** If it's a library, build small projects with it; if it's a tool, use it day-to-day. Using gives you the "what happens" layer that makes the code make sense. Work on projects you already care about or use — that keeps you motivated and gives you real bugs to hit.
+2. **Read the contribution guidelines** (CONTRIBUTING.md, the repo wiki, docs). Following them signals you take the maintainers' workflow seriously — that's most of the first-impression game in OSS.
+3. **Find the entry-point docs**: wiki, docs site, or `docs/` dir. That's the fast path to the architecture before you touch code.
+4. **Use `git log`/`git blame`** to see how the code evolved and who owns it — history is often the best documentation of *why*.
 
-Before you dive deep into the project and look for bugs in the system, you must take a step back and learn how to actually use the repo (if it's a library then use that library to make projects, if it's a software then use that software for some time before you start exploring, there is one important thing I would like to state here "Work on the projects you care about and what them to grow or if you are already a user then you can try fixing some bugs to make things easier for the maintiners.") Learning how to use them gives you sort of idea on what the project is about and how does things happen in it.
+## Don't read everything
 
-Its a good practice to look for any specific contribution guidelines before you can make such changes and this gives a good impression to the maintiners that you take there workflow seriously and are willingly to work on this project with some seriousness and are not here just to get your name in opensource.
+In a big project you can't know all parts — and shouldn't. The codebase changes constantly, so staying fully current is a losing game. Start small and grow outward:
 
-Now lets get into what things you should read first inorder to learn how does the repo work. Usually most repo provides a wiki attached the their project's repo, you can read that, and if the repo does not provides a wiki then you can read the docs or contribution guides which can either be on a separate file or builtin to docs. 
+- Pick one subsystem or one feature area and understand it end-to-end.
+- Follow one code path (e.g. in PyTorch: a tensor op from Python → dispatch → kernel — see [PyTorch/Explore](../PyTorch/Explore.md) and [how-to-explore-large-repos](../OpenSource/how-to-explore-large-repos.md)).
+- Let issues and PRs you care about pull you into the parts you need.
 
-You don't need to all the parts of repo, even in some cases you can't even know all the parts as in a big opensource projects things are always changing so keeping up with all these changes can be heafty of work. It is recommened to start small and build up your general knowledge around the repo. This makes sure that you are not lost into the piles of files in the project trying to understand why it's programmed a certain way which is really complex to understand.
+Working this way means you never drown in the file tree trying to reverse-engineer "why it's programmed that way" — you learn what you need, when you need it.
+
+## Related
+
+- [PyTorch/Explore](../PyTorch/Explore.md) — a concrete map of a huge repo.
+- [good-issue-reports](good-issue-reports.md), [PR-Lifecycle](PR-Lifecycle.md) — the contribution cycle once you're in.

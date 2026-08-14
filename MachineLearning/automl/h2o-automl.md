@@ -30,5 +30,5 @@ H2O AutoML is the in-memory, distributed AutoML from the H2O platform. You give 
 
 ## Related
 
-- [Gradient-boosting](../algorithms/Gradient-boosting.md) — GBM is usually the workhorse under the hood.
+- [gradient-boosting](../algorithms/gradient-boosting.md) — GBM is usually the workhorse under the hood.
 - [ranking](../algorithms/ranking.md) — leaderboard = ranking models by a chosen metric.

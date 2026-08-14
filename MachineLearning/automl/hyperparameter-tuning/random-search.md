@@ -21,10 +21,10 @@ With the same budget, random search finds better (or equal) optima in high dimen
 
 - **+** Beats grid in high dims, trivial to implement, gives good results fast.
 - **+** Can be refined later by narrowing ranges around the best point (sequential refinement).
-- **−** No memory: doesn't learn from past evaluations → still sample-inefficient vs [Bayesian-optimization](Bayesian-optimization.md).
+- **−** No memory: doesn't learn from past evaluations → still sample-inefficient vs [bayesian-optimization](bayesian-optimization.md).
 
 ## Related
 
 - [grid-search](grid-search.md) — the brute-force baseline.
-- [Bayesian-optimization](Bayesian-optimization.md) — the sample-efficient sequential successor.
+- [bayesian-optimization](bayesian-optimization.md) — the sample-efficient sequential successor.
 - [random-search](random-search.md) is what many libraries' `random_search` / `RandomizedSearchCV` implement.

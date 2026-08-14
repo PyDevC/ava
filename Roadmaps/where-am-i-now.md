@@ -15,7 +15,7 @@ The payoff of the roadmaps: map what **this repo already covers** onto the roles
 **AI framework engineer** ([ai-framework-engineer](ai-framework-engineer.md))
 - [x] PyTorch internals: dispatch, autograd, tensor/impl/storage → [PLAN](../PyTorch/)
 - [x] C++ foundations → [PLAN](../Programming/cpp/)
-- [x] Build/CI → [CI_Infra](../PyTorch/CI_Infra.md), [cpp-cmake](../Programming/cpp/cpp-cmake.md)
+- [x] Build/CI → [CI-Infra](../PyTorch/CI-Infra.md), [cpp-cmake](../Programming/cpp/cpp-cmake.md)
 - [ ] Write a custom op (CPU+CUDA) and get it merged (hands-on gap)
 - [ ] Real profiler-driven performance work on a framework
 

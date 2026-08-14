@@ -13,7 +13,7 @@ f(x; μ, σ²) = (1/√(2πσ²)) · exp(-(x-μ)² / (2σ²))
 
 - **The noise model**: least-squares regression *is* maximum likelihood under Gaussian errors — see [weighted-linear-regression](../algorithms/weighted-linear-regression.md). That's why squared error is the "natural" regression loss.
 - **Central Limit Theorem**: sums of many independent things → normal. Averages, sampling means, and error residuals all end up normal-ish, which justifies z-scores, confidence intervals, and t-tests.
-- **Weight initialization**: the classic init is `N(0, 1/√fan_in)` (Xavier/He) — keeps activations' variance stable across layers (see [deeplearning](../deeplearning/)).
+- **Weight initialization**: sample weights from a zero-mean normal scaled by fan-in/fan-out — Xavier/Glorot uses variance `2/(fan_in+fan_out)`, He uses `2/fan_in` (std `√(2/fan_in)`), the rule of thumb `√(1/fan_in)` being only an approximation when `fan_in ≈ fan_out`. The scaling keeps activations' variance stable across layers (see [deeplearning](../deeplearning/)).
 - **Gaussian Mixture Models**: k-means is the hard-assignment special case (see [k-means](../algorithms/k-means.md)).
 - **Bayesian ML**: Gaussian priors = L2/ridge regularization; the posterior is also Gaussian (conjugate).
 

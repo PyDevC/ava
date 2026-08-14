@@ -18,7 +18,7 @@ When do you reach for auto-sklearn vs H2O vs AutoGluon vs cloud AutoML? This is 
 2. **Tabular, need to inspect/ship each model** (regulatory, R/Java) → **H2O** (leaderboard + MOJO export) or **auto-sklearn** (sklearn-native).
 3. **Need a quick, explainable, code-free-ish baseline** → **auto-sklearn** or **TPOT** on a downsampled dataset.
 4. **No local compute / need managed tracking & deployment** → cloud (Azure AutoML / SageMaker AutoPilot / GCP Vertex).
-5. **Not tabular** (NLP/CV) → these tools underperform; use Optuna + your own deep-learning stack ([optuna](hyperparameter-tuning/optuna.md), [model-optimization](../deeplearning/model-optimization.md)).
+5. **Not tabular** (NLP/CV) → these tools underperform; use Optuna + your own deep-learning stack ([optuna](hyperparameter-tuning/optuna.md), [optimizers](../deeplearning/optimizers.md)).
 
 ## The universal caveats
 

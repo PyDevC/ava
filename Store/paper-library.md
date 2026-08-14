@@ -7,7 +7,7 @@ The "to read / read" shelf — one-line summaries with links into the notes. The
 - **Attention Is All You Need** (Vaswani et al., 2017) — the Transformer paper: self-attention, multi-head, positional encodings. → [attention-is-all-you-need](../MachineLearning/deeplearning/attention-is-all-you-need.md)
 - **BERT** (Devlin et al., 2018) — masked-LM pretraining for bidirectional encoders. → [BERT](../MachineLearning/nlp/BERT.md)
 - **T5** (Raffel et al., 2020) — everything-is-text-to-text. → [T5-encoder-decoder](../MachineLearning/nlp/T5-encoder-decoder.md)
-- **Adam** (Kingma & Ba, 2014) — the optimizer everyone uses. → [model-optimization](../MachineLearning/deeplearning/model-optimization.md)
+- **Adam** (Kingma & Ba, 2014) — the optimizer everyone uses. → [optimizers](../MachineLearning/deeplearning/optimizers.md)
 - **U-Net** (Ronneberger et al., 2015) — encoder-decoder with skip connections for segmentation. → [segmentation](../MachineLearning/computer-vision/segmentation.md)
 - **YOLO** (Redmon et al., 2016) — one-stage detection. → [object-detection](../MachineLearning/computer-vision/object-detection.md)
 - **Prototypical Networks** (Snell et al., 2017) — metric-based few-shot. → [prototypical-matching-networks](../MachineLearning/automl/prototypical-matching-networks.md)

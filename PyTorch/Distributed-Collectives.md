@@ -33,6 +33,6 @@
 ## Related
 
 - [distributed-training](../MachineLearning/deeplearning/distributed-training.md) — the training-pattern layer on top.
-- [CI_Infra](CI_Infra.md) — where distributed tests run in CI.
+- [CI-Infra](CI-Infra.md) — where distributed tests run in CI.
 - [rocm-developers](../Roadmaps/rocm-developers.md) — RCCL and the AMD side.
 - [Performance](Performance.md) — profiler shows the comm gaps.

@@ -11,7 +11,7 @@ predictor = TabularPredictor(label="target").fit(train_data)
 
 That one call runs a **multi-layer stack ensemble**:
 
-1. **Fit many base models** per family: GBDTs (LightGBM/XGBoost/CatBoost), RF/extra-trees, k-NN, neural nets (its own), linear models — each with its own hyperparameter search (Bayesian, see [Bayesian-optimization](hyperparameter-tuning/Bayesian-optimization.md)).
+1. **Fit many base models** per family: GBDTs (LightGBM/XGBoost/CatBoost), RF/extra-trees, k-NN, neural nets (its own), linear models — each with its own hyperparameter search (Bayesian, see [bayesian-optimization](hyperparameter-tuning/bayesian-optimization.md)).
 2. **Stack**: train a second-level model on the base models' predictions (stacking — [stacking](../algorithms/stacking.md)).
 3. **Repeat / bag**: bagged (repeated CV) base models + a stacking level → the famous "AutoGluon just wins tabular" result comes mostly from this ensembling, *not* from brilliant hyperparameter search.
 

@@ -1,14 +1,25 @@
-# Seft-organizing maps
+# Self-organizing maps
 
-Self organizing maps is the unsupervised machine learning technique use to map high dimensional dataset to two dimensions using the similarity in the values, clustering them together in fixed hexagon like shapes.
-It does all this without losing any structural topology. Using SOM we can visualize and analyze the higher dimensional data on a plane.
+Self-organizing maps (SOM, Kohonen maps) is an unsupervised technique that maps a high-dimensional dataset onto a low-dimensional grid (typically 2D) using value similarity, clustering similar points into fixed hexagonal/circular cells — all while preserving the data's topology. The result is a 2D visualization you can look at.
 
-Instead of using Graident decent and backpropagation it uses competitive learning (A form of learning where nodes compete for the right to respond to a input of data).
+## How it learns
 
-It works in two modes: Training and mapping
-Training is the phase where map adjusts itself according the data, for some nodes (neuron, hexagon) with p variables (p dimensions) it maps to two dimensional plane, the number of nodes and their arragement is predetermined.
-In Mapping mode we get the mapped value of a subset of input data.
+Instead of gradient descent + backpropagation, SOM uses **competitive learning**: nodes compete to respond to each input, and the winner (plus its neighbors) moves toward the input.
 
-Each node in map space is associated with a weighted vector which is to be adjusted towards the input data without losing it's topological structure. After training, map can be used to classify the additonal observations from input data by finding the node closest to the weighted vector.
+- Each node in the grid carries a weight vector in the input space.
+- For each input, the **best matching unit** (BMU) — the node whose weights are closest — wins.
+- The BMU's weights, and those of its grid neighbors, are pulled toward the input. The neighborhood shrinks over training, so the map first organizes globally, then refines locally.
+- Because updates move *neighbors* too, similar inputs map to nearby cells — that's the topology preservation.
 
-For more info check [https://mlab.taik.fi/~timo/som/thesis-som.html](https://mlab.taik.fi/~timo/som/thesis-som.html).
+Two phases: **training** (the grid adjusts to the data) and **mapping** (new inputs are assigned to their nearest node, i.e. classified).
+
+## Why it matters
+
+- Dimensionality reduction + visualization: see high-dimensional clusters on a plane (vs [PCA](PCA.md), which is linear).
+- After training, the map acts as a nearest-prototype classifier for new observations.
+
+## Related
+
+- [PCA](PCA.md) — the linear dimensionality-reduction alternative.
+- [k-means](k-means.md) — the hard-clustering cousin (the grid adds topology).
+- [mlab.taik.fi/~timo/som/thesis-som.html](https://mlab.taik.fi/~timo/som/thesis-som.html) — the original SOM thesis (Kohonen).

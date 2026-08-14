@@ -17,13 +17,13 @@ My per-role prep: what each interview loop actually asks, and which notes in thi
 
 - **Model selection**: when to reach for which architecture/approach; trade-offs (accuracy vs latency vs cost). Grounded in [ml-engineer](ml-engineer.md) and the model notes.
 - **Evaluation**: metrics choice, train/val/test discipline, failure analysis. The eval pieces in [GPT-evaluation](../MachineLearning/nlp/GPT-evaluation.md) and the CV eval notes are the concrete examples to cite.
-- **Debugging training**: why loss is stuck — LR, data, label noise, overfitting — the checklist from the optimization/regularization notes ([regularization-normalization](../MachineLearning/deeplearning/regularization-normalization.md), [model-optimization](../MachineLearning/deeplearning/model-optimization.md)).
+- **Debugging training**: why loss is stuck — LR, data, label noise, overfitting — the checklist from the optimization/regularization notes ([regularization-normalization](../MachineLearning/deeplearning/regularization-normalization.md), [optimizers](../MachineLearning/deeplearning/optimizers.md)).
 
 ## Role-specific axes
 
 - **Compiler roles** (AI compiler, framework engineer): IR design, pass ordering, lowering correctness, codegen targets — and *performance*: roofline, tiling, vectorization ([roofline-model](../Store/roofline-model.md), [TorchInductor](../Compilers/DLCompilers/TorchInductor/TorchInductor.md)). Expect whiteboard "lower this expression" questions.
 - **ML/DS roles**: loss functions (when and why), overfitting/underfitting, metric choice per task, class imbalance. More statistics-fluent than the others.
-- **MLOps/backend roles**: deployment, model versioning, monitoring, rollout, cost — the serving design above plus CI/CD ([CI_Infra](../PyTorch/CI_Infra.md), [devops-engineer](devops-engineer.md)).
+- **MLOps/backend roles**: deployment, model versioning, monitoring, rollout, cost — the serving design above plus CI/CD ([CI-Infra](../PyTorch/CI-Infra.md), [devops-engineer](devops-engineer.md)).
 
 ## The drill
 

@@ -36,4 +36,4 @@ The memref→LLVM lowering is where descriptors become real: a memref becomes a 
 - [Builtin-Dialects](../Builtin-Dialects.md) — `arith`/`memref`/`func` are the dialects that feed this one.
 - [RegisterAllocation](../../IR/RegisterAllocation.md) — what happens after LLVM IR.
 - [TorchInductor](../../DLCompilers/TorchInductor/TorchInductor.md) — Inductor's `cpp`/CUDA backends play this role without MLIR.
-- [CMake_Guide](../CMake_Guide.md) — linking MLIR into a project that then lowers to LLVM.
+- [CMake-Guide](../CMake-Guide.md) — linking MLIR into a project that then lowers to LLVM.

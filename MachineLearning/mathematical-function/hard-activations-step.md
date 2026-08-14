@@ -24,11 +24,11 @@ The "clipped linear" version of [tanh-function](tanh-function.md) — just a cla
 step(x) = 1 if x ≥ 0, else 0
 ```
 
-The *hardest* of the hard functions — a literal jump (the [indicator-function](indicator-function.md) at x ≥ 0). No gradient (0 almost everywhere), so it can't be trained directly — this is why activations must be continuous (see [Universal-approximation-function](../algorithms/Universal-approximation-function.md) and the loss-differentiability rule in [loss-function](../algorithms/loss-function.md)). It lives in the *inference/symbolic* world: binarized networks, decision thresholds, gating logic.
+The *hardest* of the hard functions — a literal jump (the [indicator-function](indicator-function.md) at x ≥ 0). No gradient (0 almost everywhere), so it can't be trained directly — this is why activations must be continuous (see [universal-approximation-function](../algorithms/universal-approximation-function.md) and the loss-differentiability rule in [loss-function](../algorithms/loss-function.md)). It lives in the *inference/symbolic* world: binarized networks, decision thresholds, gating logic.
 
 ## Why "hard" versions matter
 
-- **Quantization**: after weight/activation quantization, exact `exp`/`tanh` are expensive; clamps are free (see [model-optimization](../deeplearning/model-optimization.md) inference notes).
+- **Quantization**: after weight/activation quantization, exact `exp`/`tanh` are expensive; clamps are free (see [model-optimization-for-inference](../deeplearning/model-optimization-for-inference.md) inference notes).
 - **FPGA/edge inference**: no transcendental instructions; piecewise-linear is the only option.
 - **Training with hard functions**: either train the smooth version and swap at inference, or use **straight-through estimation** (treat the hard op as identity in backward) — the standard trick for binarized networks.
 
@@ -37,4 +37,4 @@ The *hardest* of the hard functions — a literal jump (the [indicator-function]
 - [logistic-function](logistic-function.md) / [tanh-function](tanh-function.md) — the smooth originals.
 - [indicator-function](indicator-function.md) — Heaviside's "≥ 0" form.
 - [relu-function](relu-function.md) — hard tanh is literally ReLU shifted/clipped.
-- [lipsschitz-function](lipsschitz-function.md) — all these hard versions are 1-Lipschitz.
+- [lipschitz-function](lipschitz-function.md) — all these hard versions are 1-Lipschitz.

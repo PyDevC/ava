@@ -28,14 +28,14 @@ Key facts:
 ## Bagging vs boosting
 
 - **Bagging**: parallel, variance-reducing, deep trees (each individual model is allowed to overfit; the average fixes it).
-- **Boosting**: sequential, bias-reducing, shallow trees that fix the previous trees' mistakes (see [Gradient-boosting](Gradient-boosting.md), [XGBoost](XGBoost.md)).
+- **Boosting**: sequential, bias-reducing, shallow trees that fix the previous trees' mistakes (see [gradient-boosting](gradient-boosting.md), [XGBoost](XGBoost.md)).
 
 ## Stacking
 
-Where bagging averages *same-type* models, **stacking** trains *diverse* models and lets a meta-model learn how to combine their predictions (see [base-esitmator](base-esitmator.md)). Both are "ensembles"; bagging reduces variance, stacking adds a learned combiner.
+Where bagging averages *same-type* models, **stacking** trains *diverse* models and lets a meta-model learn how to combine their predictions (see [base-estimator](base-estimator.md)). Both are "ensembles"; bagging reduces variance, stacking adds a learned combiner.
 
 ## Related
 
-- [descision-trees](descision-trees.md) — the base learner.
-- [Gradient-boosting](Gradient-boosting.md) — the sequential alternative.
+- [decision-trees](decision-trees.md) — the base learner.
+- [gradient-boosting](gradient-boosting.md) — the sequential alternative.
 - [cross-validation](cross-validation.md) — OOB makes it partially unnecessary, but still use CV for tuning.

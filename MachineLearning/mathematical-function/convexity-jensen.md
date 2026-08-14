@@ -17,7 +17,7 @@ Equivalently (smooth case): `f(y) ≥ f(x) + ∇f(x)·(y-x)` — the tangent is 
 - **Linear/logistic regression** losses (see [logistic-regression](../algorithms/logistic-regression.md)) — convex in the weights. This is why they converge from any start.
 - **SVMs** (hinge + regularization) — convex (see [SVM](../algorithms/SVM.md)).
 - **Ridge/lasso** objectives — convex (see [regularization](../algorithms/regularization.md)).
-- **Neural nets** — *not* convex (many local minima/saddles). The whole discipline of optimizers, momentum, and LR schedules (see [model-optimization](../deeplearning/model-optimization.md)) exists because of this.
+- **Neural nets** — *not* convex (many local minima/saddles). The whole discipline of optimizers, momentum, and LR schedules (see [optimizers](../deeplearning/optimizers.md)) exists because of this.
 
 ## Jensen's inequality
 
@@ -34,4 +34,4 @@ f(E[x]) ≤ E[f(x)]
 
 - [gradient-hessian](gradient-hessian.md) — the Hessian test for convexity.
 - [logistic-regression](../algorithms/logistic-regression.md) — a convex objective in practice.
-- [model-optimization](../deeplearning/model-optimization.md) — the non-convex world where the tools differ.
+- [optimizers](../deeplearning/optimizers.md) — the non-convex world where the tools differ.

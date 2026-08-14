@@ -18,7 +18,7 @@ XGBoost (eXtreme Gradient Boosting) is a highly optimized, scalable implementati
 
 ## Why it was so dominant
 
-Before neural nets took over unstructured data, XGBoost won almost every tabular competition. It's still the default first model for many tabular pipelines, and it's what [Gradient-boosting](Gradient-boosting.md) looks like when you care about engineering + speed.
+Before neural nets took over unstructured data, XGBoost won almost every tabular competition. It's still the default first model for many tabular pipelines, and it's what [gradient-boosting](gradient-boosting.md) looks like when you care about engineering + speed.
 
 ## Roughly how it's trained
 
@@ -27,4 +27,4 @@ Before neural nets took over unstructured data, XGBoost won almost every tabular
 3. Grow a tree greedily: for each split, the gain is a closed-form function of the sums of `g` and `h` on each side — this is the "exact greedy" vs "approx" (quantile sketch) choice.
 4. Prune (γ threshold) and add the tree to the ensemble with shrinkage factor.
 
-Related: [LightGBM](LightGBM.md) is the leaf-wise competitor, [base-esitmator](base-esitmator.md) explains the estimator abstraction.
+Related: [LightGBM](LightGBM.md) is the leaf-wise competitor, [base-estimator](base-estimator.md) explains the estimator abstraction.

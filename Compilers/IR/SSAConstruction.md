@@ -23,21 +23,26 @@ Why the phi defs cascade: a Φ is a definition of `v`, so it can force further �
 
 **Phase 2 — Renaming (give every def a unique name, rewrite uses).**
 
-Walk the dominator tree pre-order, maintaining a stack of current versions per variable:
+Walk the dominator tree pre-order, maintaining a stack of current versions per variable. The order inside a block matters: phi defs go on the stack **before** the block's ordinary uses are renamed, and phi operands are filled **per predecessor edge** after that predecessor finishes:
 
 ```
 rename(n):
-    for each instruction i in n:
-        for each use of variable v in i:      # replace with top of stack
+    for each phi in n:                       # phi defs first: push a fresh
+        push new version v_<k> for its var   #   version BEFORE ordinary uses
+    for each instruction i in n:             #   (loop-carried reads must see it)
+        for each use of variable v in i:
             replace with version v_<top(stack[v])>
         if i defines variable v:
             push new version v_<k>; record def
-    for each phi in n:                         # rename phi operands too
-        rewrite uses with the version live on the corresponding predecessor
+    for each successor s of n:               # fill s's phi operands edge-by-edge
+        for each phi in s whose operand is edge n→s:
+            set operand = v_<top(stack[v])>  # version live at END of n
     for each child c of n in dominator tree:
         rename(c)
     pop versions introduced in this block
 ```
+
+Filling phi operands at the *end* of the predecessor (from that predecessor's stack) is the non-obvious bit: when you're inside `n` you can't know the value coming into `s` from a different, not-yet-visited predecessor — so each edge's operand is resolved while its predecessor is on top of the stack.
 
 The renaming processes blocks in **dominator-tree order** (not program order) so that every def is on the stack before the uses it dominates.
 

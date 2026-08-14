@@ -24,4 +24,4 @@ where `σ` is the [logistic-function](logistic-function.md). It's the sigmoid *c
 
 - [logistic-function](logistic-function.md) — its shifted/scaled twin.
 - [relu-function](relu-function.md) — the modern default it lost to.
-- [lipsschitz-function](lipsschitz-function.md) — tanh is 1-Lipschitz.
+- [lipschitz-function](lipschitz-function.md) — tanh is 1-Lipschitz.

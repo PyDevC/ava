@@ -18,7 +18,7 @@ The relationship: `‖x‖∞ ≤ ‖x‖₂ ≤ ‖x‖₁ ≤ √d·‖x‖₂
 
 - **Distance functions** — k-NN, k-means, and clustering all need a metric (see [k-nearest-neighbors](../algorithms/k-nearest-neighbors.md), [k-means](../algorithms/k-means.md)).
 - **Regularization** — L2 shrinks all weights smoothly; L1 drives some to zero (see [regularization](../algorithms/regularization.md)). Elastic net = both.
-- **Lipschitz constants** — the Lipschitz constant of a linear map is its operator norm `‖W‖` = largest singular value (see [lipsschitz-function](lipsschitz-function.md)). Spectral normalization enforces exactly this.
+- **Lipschitz constants** — the Lipschitz constant of a linear map is its operator norm `‖W‖` = largest singular value (see [lipschitz-function](lipschitz-function.md)). Spectral normalization enforces exactly this.
 - **Adversarial robustness** — perturbation budgets are balls: L2 ball, L∞ box.
 - **Normalization** — dividing by a norm (L2-normalize embeddings) makes cosine similarity meaningful (see [metric-learning](../automl/metric-learning.md)).
 
@@ -26,4 +26,4 @@ The relationship: `‖x‖∞ ≤ ‖x‖₂ ≤ ‖x‖₁ ≤ √d·‖x‖₂
 
 - [linear-function](linear-function.md) — norms measure the output of linear maps (operator norm).
 - [regularization](../algorithms/regularization.md) — the practical consumer of L1/L2.
-- [lipsschitz-function](lipsschitz-function.md) — the operator-norm connection.
+- [lipschitz-function](lipschitz-function.md) — the operator-norm connection.

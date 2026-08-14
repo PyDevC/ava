@@ -28,4 +28,4 @@ For prediction `f(x)`, find `φ₀ + Σ φᵢ = f(x)` where `φᵢ` is feature `
 
 - [tabular-regression](tabular-regression.md) — interpretability matters most on structured data.
 - [ranking](ranking.md) — feature importance feeds into feature engineering for search.
-- [descision-trees](descision-trees.md) — the most interpretable base models.
+- [decision-trees](decision-trees.md) — the most interpretable base models.

@@ -31,11 +31,11 @@ The backward pass **reuses the activations saved during forward** — which is w
 
 - The loss must be differentiable (see [loss-function](../algorithms/loss-function.md)) — this is why we don't train on accuracy directly.
 - The graph must be a DAG of differentiable ops — that's exactly the "graph" Dynamo/autograd builds (see [GraphBreaks](../../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md) for what breaks it).
-- In PyTorch: `loss.backward()` walks the autograd graph, then the optimizer does `w -= η·g` (see [model-optimization](model-optimization.md)).
+- In PyTorch: `loss.backward()` walks the autograd graph, then the optimizer does `w -= η·g` (see [optimizers](optimizers.md)).
 
 ## Related
 
-- [model-optimization](model-optimization.md) — the optimizer consumes the gradients backprop produces.
+- [optimizers](optimizers.md) — the optimizer consumes the gradients backprop produces.
 - [gradient-hessian](../mathematical-function/gradient-hessian.md) — the math behind it.
 - [relu-function](../mathematical-function/relu-function.md) — the activation that keeps backprop alive in deep nets.
 - [GraphBreaks](../../Compilers/PyTorchCompiler/TorchDynamo/GraphBreaks.md) — what happens when backprop can't trace.

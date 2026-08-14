@@ -40,4 +40,4 @@ The union over *all* successors (not intersection) is important: a value is live
 ## Related
 
 - [Dominators](SSA/Dominators.md) — the other workhorse analysis; both are required reading before SSA construction.
-- [SsaConstruction](SsaConstruction.md) — puts liveness + dominance to work.
+- [SSAConstruction](SSAConstruction.md) — puts liveness + dominance to work.

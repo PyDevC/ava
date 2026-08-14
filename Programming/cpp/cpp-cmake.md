@@ -1,6 +1,6 @@
 # CMake beyond the basics
 
-CMake is the build system of every C++ project you'll touch (LLVM/MLIR, PyTorch, ROCm). This note is the *model* behind [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md) — targets, options, generators — so you can read and extend existing CMake instead of fearing it.
+CMake is the build system of every C++ project you'll touch (LLVM/MLIR, PyTorch, ROCm). This note is the *model* behind [CMake-Guide](../../Compilers/MLIR/CMake-Guide.md) — targets, options, generators — so you can read and extend existing CMake instead of fearing it.
 
 ## The mental model
 
@@ -24,7 +24,7 @@ add_executable(mytool src/main.cpp)
 target_link_libraries(mytool PRIVATE mylib)
 ```
 
-- **`find_package(MLIR)`** — the interface to *other projects'* build systems (their exported targets). The package must have been built+installed with CMake *and* export its targets (see [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md)).
+- **`find_package(MLIR)`** — the interface to *other projects'* build systems (their exported targets). The package must have been built+installed with CMake *and* export its targets (see [CMake-Guide](../../Compilers/MLIR/CMake-Guide.md)).
 - **Build types**: `Debug` (asserts), `Release` (`-O2`), `RelWithDebInfo` (release + symbols — the default for "fast but debuggable"). Sanitizers: add flags yourself (see [cpp-debugging](cpp-debugging.md)).
 
 ## The pain points (and fixes)
@@ -36,11 +36,11 @@ target_link_libraries(mytool PRIVATE mylib)
 
 ## The LLVM/MLIR flavor
 
-LLVM builds CMake *itself* (add_subdirectory of `llvm/`), so MLIR is a subproject of LLVM's CMake — that's why you need LLVM's build (or a release) before your MLIR project (see [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md)). PyTorch similarly is one huge CMake project (`torch/csrc` + subprojects).
+LLVM builds CMake *itself* (add_subdirectory of `llvm/`), so MLIR is a subproject of LLVM's CMake — that's why you need LLVM's build (or a release) before your MLIR project (see [CMake-Guide](../../Compilers/MLIR/CMake-Guide.md)). PyTorch similarly is one huge CMake project (`torch/csrc` + subprojects).
 
 ## Related
 
-- [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md) — the concrete MLIR wiring.
+- [CMake-Guide](../../Compilers/MLIR/CMake-Guide.md) — the concrete MLIR wiring.
 - [cpp-debugging](cpp-debugging.md) — build types/sanitizer flags.
 - [TableGen](../../Compilers/MLIR/TableGen.md) — generated-file confusion.
 - [PLAN](../) — where this fits the C++ plan.

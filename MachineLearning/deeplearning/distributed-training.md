@@ -35,6 +35,6 @@ Compare: **tensor parallelism** (shard each layer's weight matrix, split matmuls
 
 ## Related
 
-- [model-optimization](model-optimization.md) — the single-GPU baseline this scales up.
+- [optimizers](optimizers.md) — the single-GPU baseline this scales up.
 - [regularization-normalization](regularization-normalization.md) — BatchNorm is not distributed-safe (batch stats differ per rank) → LayerNorm or sync-BN.
 - [hpc-engineer](../../Roadmaps/hpc-engineer.md) — MPI/collectives background.

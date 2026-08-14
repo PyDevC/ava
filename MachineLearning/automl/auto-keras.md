@@ -6,25 +6,25 @@ tags: []
 
 # Auto Keras
 
-## Efficient architecture
+Auto-Keras (paper: "Auto-Keras: An Efficient Neural Architecture Search System") is a NAS tool for deep learning, built on Keras, that makes the search **efficient** rather than brute-force.
 
-Network morphism, which keeps the functionality of a neural network while 
-changing its neural architecture, could be helpful for NAS by enabling more 
-efficient training during the search.
+## Efficient architecture search
 
-## working
-It has a predefined set of model architectures which have their own pre-defined 
-weights.
-The general neural architecture search problem we studied in this
-paper is defined as: Given a neural architecture search space F , the
-input data D divided into Dtrain and Dval , and the cost function
-Cost(·), we aim at finding an optimal neural network f ∗ ∈ F ,
-which could achieve the lowest cost on dataset D. The definition is
-equivalent to finding f∗ satisfying.
+The key idea is **network morphism**: changing a neural architecture while *preserving the functionality* of the current network. Because each morph (widening, deepening, adding a skip connection) keeps what's already learned, the search can warm-start from previously trained weights instead of retraining from scratch at every step — a huge saving vs [NAS](NAS.md)'s naive train-every-candidate approach.
 
-f ∗ = argmin Cost(f (θ ∗), Dval ), (1)
-       f ∈ F
-θ ∗ = argmin L(f (θ ), Dtrain ). 
-         θ
+## The search problem
 
+Formally, given a search space `F`, data split into `D_train`/`D_val`, and a cost function, the goal is:
 
+```
+f*  = argmin_{f∈F} Cost(f(θ*), D_val)
+θ*  = argmin_θ     L(f(θ),  D_train)
+```
+
+The inner problem finds the best weights for a given architecture; the outer problem searches over architectures. Auto-Keras' contribution is making the *outer* loop cheap via network morphism + Bayesian optimization over the morph space (it uses a graph neural network to model which morphs are promising).
+
+## Related
+
+- [NAS](NAS.md) — the general architecture-search problem.
+- [model-agnostic-meta-learning](model-agnostic-meta-learning.md) — another "search/warm-start" family (meta-learning).
+- [automl-comparison](automl-comparison.md) — the tool landscape.

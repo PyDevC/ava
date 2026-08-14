@@ -12,7 +12,7 @@ At its heart the ML Engineer **productionizes models**: trains them, makes them 
 
 - **Data Engineer-ish**: building/cleaning datasets, feature pipelines, versioning data.
 - **MLOps**: experiment tracking, training pipelines, model registries, deployment, monitoring/drift.
-- **Model Optimization (sometimes)**: quantization, pruning, distillation, `torch.compile` to hit latency budgets — see [model-optimization](../MachineLearning/deeplearning/model-optimization.md) and [TorchInductor](../Compilers/DLCompilers/TorchInductor/TorchInductor.md).
+- **Model Optimization (sometimes)**: quantization, pruning, distillation, `torch.compile` to hit latency budgets — see [model-optimization-for-inference](../MachineLearning/deeplearning/model-optimization-for-inference.md) and [TorchInductor](../Compilers/DLCompilers/TorchInductor/TorchInductor.md).
 - **SWE**: writing clean Python, tests, APIs around the model.
 - **Light research**: when the company needs a bespoke architecture, you may need paper-level skills.
 

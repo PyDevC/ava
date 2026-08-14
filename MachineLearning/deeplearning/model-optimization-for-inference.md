@@ -39,5 +39,6 @@ The soft teacher probabilities (temperature-smoothed softmax, see [softmax-funct
 ## Related
 
 - [TorchInductor](../../Compilers/DLCompilers/TorchInductor/TorchInductor.md) — how `torch.compile` fuses and lowers all of this.
+- [TensorRT-Precision-Calibration](../../Compilers/DLCompilers/TensorRT/TensorRT-Precision-Calibration.md) — INT8 calibration in practice.
 - [mixed-precision](mixed-precision.md) — the FP16/BF16 training-side counterpart.
 - [transfer-learning](../algorithms/transfer-learning.md) — distillation is a sibling "knowledge transfer".

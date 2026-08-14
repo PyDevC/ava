@@ -5,7 +5,7 @@ DevOps engineers build and maintain the **infrastructure that software (and ML) 
 ## Core skills
 
 - **Linux + shell** fundamentals, system administration.
-- **Version control** (git), **CI/CD** (GitHub Actions, GitLab CI, Jenkins) — see [CI_Infra](../PyTorch/CI_Infra.md) for how a big project does this.
+- **Version control** (git), **CI/CD** (GitHub Actions, GitLab CI, Jenkins) — see [CI-Infra](../PyTorch/CI-Infra.md) for how a big project does this.
 - **Containers & orchestration**: Docker, Kubernetes (pods, services, Helm), container registries.
 - **Cloud**: AWS/GCP/Azure — VMs, storage, IAM, networking. **Infra-as-code**: Terraform, Ansible.
 - **Observability**: logging, metrics, alerting (Prometheus, Grafana, Datadog).
@@ -30,4 +30,4 @@ DevOps engineers build and maintain the **infrastructure that software (and ML) 
 
 - [hpc-engineer](hpc-engineer.md) — higher-performance, research-grade infra cousin.
 - [ml-engineer](ml-engineer.md) — ML's deployment needs land on DevOps skills.
-- [CI_Infra](../PyTorch/CI_Infra.md) — real-world example of CI infrastructure at scale.
+- [CI-Infra](../PyTorch/CI-Infra.md) — real-world example of CI infrastructure at scale.

@@ -41,6 +41,13 @@ The runtime is intentionally small and uses the HAL (Hardware Abstraction Layer)
 - Vulkan-first deployment (ship SPIR-V, run on any vendor)
 - Latency-sensitive datacenter inference (CUDA backend)
 
+## Contents
+
+- [IREE-Compile-Run](IREE-Compile-Run.md) — the hands-on compile+run walkthrough
+- [IREE-HAL-Dispatch](IREE-HAL-Dispatch.md) — the runtime's dispatch flow
+- [IREE-Backends](IREE-Backends.md) — llvm-cpu vs CUDA vs Vulkan
+- [IREE-vs-Inductor](IREE-vs-Inductor.md) — how IREE compares to `torch.compile`'s backend
+
 ## References
 
 - Repo: https://github.com/iree-org/iree

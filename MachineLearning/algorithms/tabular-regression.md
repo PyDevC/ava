@@ -5,7 +5,7 @@ Tabular regression = predicting a **continuous target** from rows of structured 
 ## The go-to toolset (my order of attack)
 
 1. **[XGBoost](XGBoost.md) / [LightGBM](LightGBM.md)** — best-in-class defaults for tabular data; fast, robust, handle missing values + categoricals.
-2. **[Gradient-boosting](Gradient-boosting.md)** — the family they belong to; understand it first.
+2. **[gradient-boosting](gradient-boosting.md)** — the family they belong to; understand it first.
 3. Random forest / ExtraTrees — good baseline, no learning rate to tune.
 4. Linear regression / ridge — cheap sanity check, interpretable.
 5. Neural nets (MLP) — last; tabular NNs need careful feature scaling and often lose to trees.
@@ -26,4 +26,4 @@ Tabular regression = predicting a **continuous target** from rows of structured 
 
 - [weighted-linear-regression](weighted-linear-regression.md) — when samples have unequal importance.
 - [loss-function](loss-function.md) — pick RMSE vs MAE by outlier tolerance.
-- [descision-trees](descision-trees.md) — the base learner underneath everything tree-based.
+- [decision-trees](decision-trees.md) — the base learner underneath everything tree-based.

@@ -21,7 +21,7 @@ f(x) = W·x + b
 
 - The building block of every linear model: regression `ŷ = w·x + b`, classification boundary.
 - A **linear regression** is an affine model fit to data (see [tabular-regression](../algorithms/tabular-regression.md), [weighted-linear-regression](../algorithms/weighted-linear-regression.md)).
-- In a NN, stacking affine layers without non-linearities collapses to a single affine map — the activation is what makes networks non-linear (see the Universal approximation idea in [Universal-approximation-function](../algorithms/Universal-approximation-function.md)).
+- In a NN, stacking affine layers without non-linearities collapses to a single affine map — the activation is what makes networks non-linear (see the Universal approximation idea in [universal-approximation-function](../algorithms/universal-approximation-function.md)).
 - The slope `a` is the *rate of change* — small `|a|` means output barely responds to input (cf. saturation in activations like the [logistic-function](logistic-function.md)).
 
 ## Properties

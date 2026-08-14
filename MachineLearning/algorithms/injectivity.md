@@ -12,7 +12,7 @@ No two distinct elements of the domain share the same image. Equivalently: the g
 
 - **Information preservation**: an injective map never collapses two different inputs, so nothing gets lost — this is what makes `map`/feature-encodings lossless.
 - **Autoencoders / representation learning**: we *want* the encoder to be (close to) injective so the latent code uniquely identifies each input.
-- **Universal approximation** (see [Universal-approximation-function](Universal-approximation-function.md)): with injective encoders + smooth decoders you can build networks that separate distinct points while reconstructing them.
+- **Universal approximation** (see [universal-approximation-function](universal-approximation-function.md)): with injective encoders + smooth decoders you can build networks that separate distinct points while reconstructing them.
 - **Generative models**: a generative function should be "almost injective" — distinct latents should give distinct samples.
 - **Dimensionality reduction** (e.g. SOM in the same folder) tries to embed data *approximately* injectively into a low-dim space.
 

@@ -1,6 +1,6 @@
 # Python ecosystem tooling
 
-The modern Python toolchain — linters, formatters, type checkers, test runners, pre-commit — is what makes a Python repo feel professional. PyTorch CI runs exactly this stack (see [CI_Infra](../../PyTorch/CI_Infra.md)), so this note doubles as "how to read that CI's checks".
+The modern Python toolchain — linters, formatters, type checkers, test runners, pre-commit — is what makes a Python repo feel professional. PyTorch CI runs exactly this stack (see [CI-Infra](../../PyTorch/CI-Infra.md)), so this note doubles as "how to read that CI's checks".
 
 ## Linters and formatters: ruff
 
@@ -39,5 +39,5 @@ Every Python repo I'll work in has this exact stack, and the PR flow is the same
 
 - [typechecking](core/typechecking.md) — what the type checker is actually checking.
 - [packaging](packaging.md) — the env/pip/uv layer underneath.
-- [CI_Infra](../../PyTorch/CI_Infra.md) — a real CI running this stack.
+- [CI-Infra](../../PyTorch/CI-Infra.md) — a real CI running this stack.
 - [code-review-skills](../../OpenSource/code-review-skills.md) — why the tools exist (to keep reviews about design).

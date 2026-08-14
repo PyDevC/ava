@@ -23,10 +23,10 @@ Each config is evaluated with CV and the best-scoring one wins (with the model r
 ## When to use it
 
 - Small parameter spaces (≤ 2–3 dims), cheap models.
-- As a first sanity baseline before [random-search](random-search.md) or [Bayesian-optimization](Bayesian-optimization.md).
+- As a first sanity baseline before [random-search](random-search.md) or [bayesian-optimization](bayesian-optimization.md).
 
 ## Related
 
 - [random-search](random-search.md) — same idea but samples randomly; works better in high dims.
-- [Bayesian-optimization](Bayesian-optimization.md) — the smarter, sequential version.
+- [bayesian-optimization](bayesian-optimization.md) — the smarter, sequential version.
 - In sklearn: `GridSearchCV`.

@@ -27,7 +27,7 @@ Run with the ODS: `mlir-tblgen -gen-op-decls -gen-op-defs`:
 - `.cpp.inc` — the `parse`/`print`, `verify`, trait implementations.
 - `-gen-dialect-decls/-defs` — the dialect class; `-gen-type-decls/-defs` — custom types; `-gen-rewriters` — DRR rewrites (see [TableGen](TableGen.md) note).
 
-The generated files are `#include`d into a `.h/.cpp` you write that just instantiates/registers them. This is the `.inc` include pattern — see [CMake_Guide](CMake_Guide.md) for the `mlir_tablegen` + `add_mlir_library` wiring that produces these.
+The generated files are `#include`d into a `.h/.cpp` you write that just instantiates/registers them. This is the `.inc` include pattern — see [CMake-Guide](CMake-Guide.md) for the `mlir_tablegen` + `add_mlir_library` wiring that produces these.
 
 ## Why ODS instead of hand-written C++
 
@@ -37,13 +37,13 @@ The generated files are `#include`d into a `.h/.cpp` you write that just instant
 
 ## Gotchas
 
-- Generated file **names must match the `#include`** exactly (`.h.inc` vs `.inc` confusion is a classic CMake error — see [CMake_Guide](CMake_Guide.md)).
+- Generated file **names must match the `#include`** exactly (`.h.inc` vs `.inc` confusion is a classic CMake error — see [CMake-Guide](CMake-Guide.md)).
 - `mlir-tblgen` runs **at build time**: edit `.td` → rebuild → regenerate. There's no source-to-source refresh; the `.inc` files are build artifacts.
 - Not everything is expressible in ODS: custom `parse`/`print`, unusual verifiers → opt out with `hasCustomAssemblyFormat`/`hasVerifier`.
 
 ## Related
 
 - [TableGen](TableGen.md) — DRR rewrites on top of ODS.
-- [CMake_Guide](CMake_Guide.md) — the build wiring.
+- [CMake-Guide](CMake-Guide.md) — the build wiring.
 - [scf-vector](Dialects/scf-vector.md) — real dialect ops to crib from.
 - [Operations-Types-Values](Operations-Types-Values.md) — what the generated ops *are*.

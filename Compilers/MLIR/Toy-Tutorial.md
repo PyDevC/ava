@@ -32,7 +32,7 @@ In ~1000 lines you build a whole compiler stack and touch *every* concept in thi
 
 ## Doing it for real
 
-- Grab the code from the MLIR source tree (`mlir/examples/toy/`), build with the [CMake_Guide](CMake_Guide.md) pattern, and `mlir-opt` each stage. Chapters 1–5 are the must-do; 6–7 are depth.
+- Grab the code from the MLIR source tree (`mlir/examples/toy/`), build with the [CMake-Guide](CMake-Guide.md) pattern, and `mlir-opt` each stage. Chapters 1–5 are the must-do; 6–7 are depth.
 - The natural next step: my own tiny dialect (the plan's goal) — Toy IS the template for that.
 
 ## Related

@@ -22,7 +22,7 @@ Each step updates one side while the other is frozen. Both are trained with the 
   - **Mode collapse**: `G` finds one sample that fools `D` and outputs only that.
   - **Oscillation / non-convergence**: the two players chase each other forever.
   - **Vanishing discriminator gradient**: when `D` is too good, `G` learns nothing.
-- Practical mitigations: **Wasserstein loss** (WGAN — use earth-mover distance via a critic with Lipschitz constraint, see [lipsschitz-function](../mathematical-function/lipsschitz-function.md)), **spectral normalization**, **label smoothing**, feature matching.
+- Practical mitigations: **Wasserstein loss** (WGAN — use earth-mover distance via a critic with Lipschitz constraint, see [lipschitz-function](../mathematical-function/lipschitz-function.md)), **spectral normalization**, **label smoothing**, feature matching.
 
 ## Where they stand now
 
@@ -33,6 +33,6 @@ For images, **diffusion models** (DDPM — denoise from noise step by step) over
 ## Related
 
 - [logistic-function](../mathematical-function/logistic-function.md) — the binary loss both players use.
-- [lipsschitz-function](../mathematical-function/lipsschitz-function.md) — WGAN's constraint.
+- [lipschitz-function](../mathematical-function/lipschitz-function.md) — WGAN's constraint.
 - [model-optimization-for-inference](model-optimization-for-inference.md) — a trained generator is a small feed-forward net (cheap to serve).
 - [metric-learning](../automl/metric-learning.md) — feature matching / contrastive tricks appear in GAN discriminators.

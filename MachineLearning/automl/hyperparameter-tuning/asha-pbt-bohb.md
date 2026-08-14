@@ -17,7 +17,7 @@ The modern **multi-fidelity** tuning methods — the successors to plain [Hyperb
 
 ## BOHB — Bayesian Optimization + Hyperband
 
-- **Hyperband's** early-stopping structure, but the *candidate generation* uses a **Bayesian surrogate** (a TPE-like model, see [Bayesian-optimization](Bayesian-optimization.md)) instead of random draws.
+- **Hyperband's** early-stopping structure, but the *candidate generation* uses a **Bayesian surrogate** (a TPE-like model, see [bayesian-optimization](bayesian-optimization.md)) instead of random draws.
 - At each budget level it fits a model on the surviving candidates' results → next candidates come from the model, not the uniform prior → sample-efficient AND multi-fidelity.
 - **When**: you want Hyperband's budget savings but candidates are so expensive that blind random sampling wastes too much (mid-large NNs).
 
@@ -34,6 +34,6 @@ All three assume the **early budget correlates with final quality** — the "mul
 ## Related
 
 - [Hyperband](Hyperband.md) — the base they extend.
-- [Bayesian-optimization](Bayesian-optimization.md) — BOHB's surrogate.
+- [bayesian-optimization](bayesian-optimization.md) — BOHB's surrogate.
 - [optuna](optuna.md) — where ASHA/BOHB/pruning are used day-to-day.
-- [model-optimization](../../deeplearning/model-optimization.md) — PBT adapts LR schedules at training time.
+- [optimizers](../../deeplearning/optimizers.md) — PBT adapts LR schedules at training time.

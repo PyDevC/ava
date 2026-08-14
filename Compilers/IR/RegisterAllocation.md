@@ -34,5 +34,5 @@ Inductor/Triton codegen is essentially register allocation + vectorization at th
 ## Related
 
 - [Liveness](Liveness.md) — the analysis that defines the interference graph.
-- [SsaConstruction](SsaConstruction.md) — why SSA makes allocation tractable.
+- [SSAConstruction](SSAConstruction.md) — why SSA makes allocation tractable.
 - [PhiElimination](PhiElimination.md) — phis must be gone (or coalesced) before allocation.

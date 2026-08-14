@@ -1,6 +1,6 @@
 # Building PyTorch from source
 
-Building PyTorch is a rite of passage for contributors — it takes an hour+, and getting it *right* the first time saves an afternoon. The flow is standard CMake + ninja + a Python env, but the scale and the submodule setup have their own gotchas. (For what CI does with the build, see [CI_Infra](CI_Infra.md); for the repo layout, see [Explore](Explore.md).)
+Building PyTorch is a rite of passage for contributors — it takes an hour+, and getting it *right* the first time saves an afternoon. The flow is standard CMake + ninja + a Python env, but the scale and the submodule setup have their own gotchas. (For what CI does with the build, see [CI-Infra](CI-Infra.md); for the repo layout, see [Explore](Explore.md).)
 
 ## Setup: clone, submodules, env
 
@@ -35,7 +35,7 @@ DEBUG=1               # very slow, only for deep C++ debugging
 
 ## Dev containers
 
-- Official dev containers (`dev/containers/`) give a pre-baked image (CUDA/ROCm variants) so you skip compiler/driver roulette. Worth using when the host toolchain is unfamiliar — they're how CI-like environments get reproduced locally (see [CI_Infra](CI_Infra.md) for the runner side).
+- Official dev containers (`dev/containers/`) give a pre-baked image (CUDA/ROCm variants) so you skip compiler/driver roulette. Worth using when the host toolchain is unfamiliar — they're how CI-like environments get reproduced locally (see [CI-Infra](CI-Infra.md) for the runner side).
 
 ## Debugging the build
 
@@ -50,6 +50,6 @@ Everything after this — running a custom op, hacking an inductor pass, fixing 
 ## Related
 
 - [Explore](Explore.md) — what the repo contains and how to walk it.
-- [CI_Infra](CI_Infra.md) — how CI builds/tests the same tree at scale.
+- [CI-Infra](CI-Infra.md) — how CI builds/tests the same tree at scale.
 - [Contributing](Contributing.md) — the checklist that starts with a working build.
 - [ATen-Codegen](ATen-Codegen.md) — what `native_functions.yaml` changes do to the build.

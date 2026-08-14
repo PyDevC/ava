@@ -5,7 +5,7 @@ MLBox is an open-source AutoML Python library focused on **tabular data**, with 
 ## The pipeline it automates
 
 1. **Data preparation** — reading, cleaning, missing-value handling, outlier detection, normalization, feature generation (it has some automated feature engineering primitives — see [automated-feature-extraction](automated-feature-extraction.md)).
-2. **Hyperparameter optimization** — uses **Hyperopt** (TPE — Tree-structured Parzen Estimator, a form of [Bayesian-optimization](hyperparameter-tuning/Bayesian-optimization.md)) over a set of models: LightGBM/XGBoost, random forests, extra trees, etc.
+2. **Hyperparameter optimization** — uses **Hyperopt** (TPE — Tree-structured Parzen Estimator, a form of [bayesian-optimization](hyperparameter-tuning/bayesian-optimization.md)) over a set of models: LightGBM/XGBoost, random forests, extra trees, etc.
 3. **Prediction** — trains the best config, predicts, and can export.
 
 ## What stands out

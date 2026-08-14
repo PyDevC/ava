@@ -16,7 +16,7 @@ PyTorch developers contribute to PyTorch itself (or build heavily on its interna
 1. Get the build working (CMake + ninja; takes a while — see the build guide in [Explore](../PyTorch/Explore.md)).
 2. Read the contributor guide; pick a **good first issue** (often op implementations, tests, docs).
 3. Understand codegen: many ops are declared in YAML and generated — don't hand-write boilerplate.
-4. CI is everything: tests + linters (see [CI_Infra](../PyTorch/CI_Infra.md)).
+4. CI is everything: tests + linters (see [CI-Infra](../PyTorch/CI-Infra.md)).
 
 ## Typical tasks
 

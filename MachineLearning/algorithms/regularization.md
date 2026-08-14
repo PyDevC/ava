@@ -14,7 +14,7 @@ J_reg(w) = J(w) + λ · R(w)
 R(w) = Σ wᵢ²
 ```
 
-Pulls weights toward 0 but never exactly 0. Shrinks large weights the most (squaring punishes big values). The closed-form solution becomes `(XᵀX + λI)⁻¹Xᵀy` — the `λI` also fixes numerical instability when `XᵀX` is near-singular. This is what `weight_decay` in AdamW does (see [model-optimization](../deeplearning/model-optimization.md)).
+Pulls weights toward 0 but never exactly 0. Shrinks large weights the most (squaring punishes big values). The closed-form solution becomes `(XᵀX + λI)⁻¹Xᵀy` — the `λI` also fixes numerical instability when `XᵀX` is near-singular. This is what `weight_decay` in AdamW does (see [optimizers](../deeplearning/optimizers.md)).
 
 ## L1 / Lasso
 

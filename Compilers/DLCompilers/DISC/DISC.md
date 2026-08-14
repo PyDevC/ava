@@ -28,6 +28,12 @@ DISC solves the problem by enforcing dynamic shapes in it's High level IR. It ad
 
 In their evaluation, BladeDISC shows up to 6.95x speedup compared to PyTorch eager, and comparable or better performance than static optimizing compilers like XLA and TensorRT on dynamic shape workloads.
 
+## Contents
+
+- [DISC-Two-Level-Design](DISC-Two-Level-Design.md) — the graph/kernel two-level architecture
+- [DISC-Dynamic-Shapes](DISC-Dynamic-Shapes.md) — symbolic shapes as a first-class IR feature
+- [DISC-Serving](DISC-Serving.md) — where it sits in Alibaba's serving stack
+
 ## References
 
 - Paper: "DISC: A Dynamic Shape Compiler for Machine Learning Workloads" https://arxiv.org/abs/2103.05288

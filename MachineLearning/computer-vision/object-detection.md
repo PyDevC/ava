@@ -35,6 +35,6 @@ Predict boxes + classes **directly** on a grid of anchor locations:
 ## Related
 
 - [hand-gesture-recognition](hand-gesture-recognition.md) — detection as the first stage of the pipeline.
-- [An-introduction-to-convolutional-neural-networks](../deeplearning/An-introduction-to-convolutional-neural-networks.md) — the backbone.
+- [intro-to-convolutional-neural-networks](../deeplearning/intro-to-convolutional-neural-networks.md) — the backbone.
 - [imbalanced-classification](../algorithms/imbalanced-classification.md) — the focal-loss motivation.
 - [model-interpretability](../algorithms/model-interpretability.md) — the mAP metric.

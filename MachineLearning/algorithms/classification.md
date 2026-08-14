@@ -11,7 +11,7 @@ Classification is a supervised learning task where the target `y` is a **discret
 ## Common algorithms
 
 - Logistic regression (binary: sigmoid, multiclass: softmax) — see [logistic-function](../mathematical-function/logistic-function.md).
-- Decision trees / random forests / boosting — see [descision-trees](descision-trees.md), [Gradient-boosting](Gradient-boosting.md).
+- Decision trees / random forests / boosting — see [decision-trees](decision-trees.md), [gradient-boosting](gradient-boosting.md).
 - SVMs (separating hyperplane with max margin).
 - k-NN (label by majority vote of neighbors).
 - Neural networks (softmax output + cross-entropy loss).

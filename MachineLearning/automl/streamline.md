@@ -17,7 +17,7 @@ Streamline is a lightweight open-source AutoML framework for **tabular data**, m
 ## Practical notes
 
 - Less powerful/robust than H2O or auto-sklearn on gnarly data, but far easier to reason about and debug.
-- Uses Optuna (a modern [Bayesian-optimization](hyperparameter-tuning/Bayesian-optimization.md) implementation) under the hood.
+- Uses Optuna (a modern [bayesian-optimization](hyperparameter-tuning/bayesian-optimization.md) implementation) under the hood.
 
 ## Related
 

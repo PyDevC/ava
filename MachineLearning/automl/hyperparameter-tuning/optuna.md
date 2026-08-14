@@ -1,6 +1,6 @@
 # Optuna
 
-Optuna is the de-facto Python hyperparameter tuning library — the practical face of the [Bayesian-optimization](Bayesian-optimization.md)/[Hyperband](Hyperband.md) theory. Its two superpowers over older tools: a **define-by-run API** and **pruning** built in.
+Optuna is the de-facto Python hyperparameter tuning library — the practical face of the [bayesian-optimization](bayesian-optimization.md)/[Hyperband](Hyperband.md) theory. Its two superpowers over older tools: a **define-by-run API** and **pruning** built in.
 
 ## The define-by-run API
 
@@ -22,7 +22,7 @@ study.optimize(objective, n_trials=100)
 
 ## The default sampler: TPE
 
-Optuna defaults to **TPE** (Tree-structured Parzen Estimator, see [Bayesian-optimization](Bayesian-optimization.md)): it models `p(x | good)` and `p(x | bad)` from observed trials and proposes points where the good/bad ratio is highest. `create_study(sampler=optuna.samplers.TPESampler(n_startup_trials=10))` — the startup random trials bootstrap the surrogate.
+Optuna defaults to **TPE** (Tree-structured Parzen Estimator, see [bayesian-optimization](bayesian-optimization.md)): it models `p(x | good)` and `p(x | bad)` from observed trials and proposes points where the good/bad ratio is highest. `create_study(sampler=optuna.samplers.TPESampler(n_startup_trials=10))` — the startup random trials bootstrap the surrogate.
 
 ## Pruning — the killer feature
 
@@ -46,7 +46,7 @@ for epoch in range(epochs):
 
 ## Related
 
-- [Bayesian-optimization](Bayesian-optimization.md) — the TPE theory.
+- [bayesian-optimization](bayesian-optimization.md) — the TPE theory.
 - [Hyperband](Hyperband.md) / [ASHA](asha-pbt-bohb.md) — the pruning machinery.
 - [PLAN](../../) — where Optuna sits vs AutoGluon/auto-sklearn.
 - [cross-validation](../../algorithms/cross-validation.md) — the eval protocol inside each trial.

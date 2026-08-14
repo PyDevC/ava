@@ -17,7 +17,7 @@ A knowledge base page on how to navigate the PyTorch monorepo, what lives where,
 - `c10/` - low level utilities: intrusive pointer, dispatcher, device types
 - `torch/csrc/` - C++ glue that binds the Python API to ATen, includes the autograd engine
 - `test/` - the tests. Python tests in `test/`, C++ tests in `test/cpp`
-- `.ci/` and `.github/workflows/` - the CI config (see [CI_Infra](CI_Infra.md))
+- `.ci/` and `.github/workflows/` - the CI config (see [CI-Infra](CI-Infra.md))
 - `scripts/`, `tools/`, `third_party/` - build helpers, codegen scripts, vendored deps
 
 ## Things to check when exploring

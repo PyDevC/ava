@@ -40,7 +40,7 @@ Each step just moves the weights toward the misclassified examples, scaled by th
 ## Limitations
 
 - Linear boundary only — needs feature engineering or kernels for non-linear problems.
-- Sensitive to feature scaling (unlike trees, see [descision-trees](descision-trees.md)).
+- Sensitive to feature scaling (unlike trees, see [decision-trees](decision-trees.md)).
 
 ## Related
 

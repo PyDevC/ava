@@ -24,7 +24,7 @@ for each instruction with no uses and no side effects:
 
 ## Why SSA makes DCE cleaner
 
-In SSA form, every use points directly to its def (the unique reaching def). So "is this value used?" is a question about the def-use list — no must-alias or reaching-definitions analysis needed. This is one of the big practical wins of SSA (see [SsaConstruction](SsaConstruction.md)).
+In SSA form, every use points directly to its def (the unique reaching def). So "is this value used?" is a question about the def-use list — no must-alias or reaching-definitions analysis needed. This is one of the big practical wins of SSA (see [SSAConstruction](SSAConstruction.md)).
 
 ## The side-effect rule is what actually matters
 

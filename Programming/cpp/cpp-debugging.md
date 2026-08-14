@@ -15,7 +15,7 @@ The debugging stack for the compiler/GPU work — and for reading C++ crashes in
 - The debugger: `gdb ./binary`, `break`, `run`, `bt` (backtrace), `p var` (print), `continue`, `finish`. The `bt` after a crash is the reflex.
 - **Core dumps**: `ulimit -c unlimited`, `gdb ./binary core` — debugging a crash post-mortem.
 - Python/C++ interop: `gdb python` with the `python-gdb.py` extension → `py-bt` shows the *Python* frames under a C++ crash (invaluable for PyTorch extension crashes, see [python-c-api](../python/core/python-c-api.md)).
-- LLVM/MLIR have `LLVM_ENABLE_ABI_BREAKING_CHECKS`/assert builds — asserts are your cheapest debugger (see [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md)).
+- LLVM/MLIR have `LLVM_ENABLE_ABI_BREAKING_CHECKS`/assert builds — asserts are your cheapest debugger (see [CMake-Guide](../../Compilers/MLIR/CMake-Guide.md)).
 
 ## perf (the profiler)
 
@@ -35,4 +35,4 @@ The debugging stack for the compiler/GPU work — and for reading C++ crashes in
 - [cpp-memory-model](cpp-memory-model.md) / [cpp-smart-pointers](cpp-smart-pointers.md) — the bug classes sanitizers detect.
 - [debugging-CI-failures](../../OpenSource/debugging-CI-failures.md) — CI logs are the same skills at scale.
 - [python-c-api](../python/core/python-c-api.md) — `py-bt` for extension crashes.
-- [CMake_Guide](../../Compilers/MLIR/CMake_Guide.md) — build flags for assert/sanitizer builds.
+- [CMake-Guide](../../Compilers/MLIR/CMake-Guide.md) — build flags for assert/sanitizer builds.

@@ -9,7 +9,7 @@ Level 0 (base models):  M1(x), M2(x), M3(x)   — different algorithms
 Level 1 (meta-model):   F(M1(x), M2(x), M3(x)) — learns to combine
 ```
 
-The base models can be anything: trees, linear, k-NN, NN (see [base-esitmator](base-esitmator.md)). The meta-model is usually a simple logistic regression / small tree.
+The base models can be anything: trees, linear, k-NN, NN (see [base-estimator](base-estimator.md)). The meta-model is usually a simple logistic regression / small tree.
 
 ## The critical detail: no leakage
 
@@ -36,6 +36,6 @@ This is exactly the "nested CV" discipline from [cross-validation](cross-validat
 
 ## Related
 
-- [base-esitmator](base-esitmator.md) — the base models being stacked.
+- [base-estimator](base-estimator.md) — the base models being stacked.
 - [bagging-random-forests](bagging-random-forests.md) — the variance-reduction ensemble (vs stacking's learned combiner).
 - [cross-validation](cross-validation.md) — the machinery that makes stacking honest.

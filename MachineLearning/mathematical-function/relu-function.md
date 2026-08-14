@@ -32,5 +32,5 @@ The theme: smoothness (better gradients) vs computational cost (exp instead of m
 ## Related
 
 - [logistic-function](logistic-function.md) — the sigmoid these replaced; still used for gates/final probabilities.
-- [lipsschitz-function](lipsschitz-function.md) — ReLU is 1-Lipschitz (slope bounded by 1).
+- [lipschitz-function](lipschitz-function.md) — ReLU is 1-Lipschitz (slope bounded by 1).
 - tanh — see the separate [tanh-function](tanh-function.md) note.

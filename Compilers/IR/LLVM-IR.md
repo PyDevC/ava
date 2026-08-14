@@ -59,7 +59,7 @@ opt -passes='function(mem2reg,instcombine),loop(loop-rotate,loop-unroll),simplif
 
 ## Canonical passes (what they do to the IR)
 
-- **mem2reg** — promote `alloca`+`load`+`store` to SSA registers (inserting `phi`). This is the *whole point* of the "SSA with a hat" approach: frontends emit allocas and let mem2reg build real SSA. See [SsaConstruction](SsaConstruction.md).
+- **mem2reg** — promote `alloca`+`load`+`store` to SSA registers (inserting `phi`). This is the *whole point* of the "SSA with a hat" approach: frontends emit allocas and let mem2reg build real SSA. See [SSAConstruction](SSAConstruction.md).
 - **instcombine** — the catch-all algebraic simplifier (like MLIR canonicalization, see [Canonicalization](../MLIR/Canonicalization.md)): `x+0 → x`, strength reduction, constant folding. Runs constantly, between almost everything.
 - **loop-rotate** — turns a `while` loop into a `do-while` (test at the bottom), making the body straight-line and enabling later transforms.
 - **simplifycfg** — CFG cleanup: merge identical blocks, drop empty/unreachable blocks, convert branch-on-branch to goto.
