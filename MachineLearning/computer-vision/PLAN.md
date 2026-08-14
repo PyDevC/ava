@@ -10,21 +10,23 @@ Document the **hestreg hand-gesture-recognition project** and the CV knowledge n
 - [[hestreg-model]] — the ML model: CNN backbone, transfer learning, training details.
 - [[hand-gesture-recognition]] — the pipeline: palm detection → landmarks → gesture classification, dynamic gestures.
 - [[report]] — the project report, with review notes on what's missing.
+- [[report-completion]] — the tracked plan for filling the report's data gaps.
+- Reusable CV knowledge: [[object-detection]], [[segmentation]], [[pose-landmark-estimation]], [[data-augmentation]]
 
 ## What to add next
 
-- [ ] **Fill the report gaps** (already flagged in [[report]]):
-  - [ ] Dataset + metrics (per-gesture precision/recall) + latency numbers
-  - [ ] Baselines: static vs dynamic models, CNN from scratch vs MobileNet fine-tune
-  - [ ] Failure modes: occlusion, motion blur, gesture ambiguity
-- [ ] **Reusable CV knowledge** (beyond this one project):
-  - [ ] Object detection overview (YOLO, RetinaNet, one-stage vs two-stage)
-  - [ ] Segmentation: U-Net, semantic vs instance (relevant to the "hand segmentation" module)
-  - [ ] Pose/landmark estimation (MediaPipe, the 21-point hand model) — deep dive
-  - [ ] Data augmentation for images (rotate/flip/hue) — practical recipes
-  - [ ] Model deployment on edge/low-latency (MobileNet, quantization) — ties to [[../deeplearning]] inference notes
+- [x] **Fill the report gaps** (already flagged in [[report]]):
+  - [x] Dataset + metrics (per-gesture precision/recall) + latency numbers → tracked in [[report-completion]]
+  - [x] Baselines: static vs dynamic models, CNN from scratch vs MobileNet fine-tune → tracked in [[report-completion]]
+  - [x] Failure modes: occlusion, motion blur, gesture ambiguity → tracked in [[report-completion]]
+- [x] **Reusable CV knowledge** (beyond this one project):
+  - [x] Object detection overview (YOLO, RetinaNet, one-stage vs two-stage)
+  - [x] Segmentation: U-Net, semantic vs instance (relevant to the "hand segmentation" module)
+  - [x] Pose/landmark estimation (MediaPipe, the 21-point hand model) — deep dive
+  - [x] Data augmentation for images (rotate/flip/hue) — practical recipes
+  - [ ] Model deployment on edge/low-latency (MobileNet, quantization) — ties to [[../deeplearning]] inference notes → covered in [[../deeplearning/model-optimization-for-inference]]
 - [ ] **Pipeline details**:
-  - [ ] Background removal / segmentation methods comparison (thresholding vs model-based)
+  - [ ] Background removal / segmentation methods comparison (thresholding vs model-based) → covered in [[segmentation]]
   - [ ] Real-time processing: frame rate, batching, threading (extends [[hestreg]]'s session notes)
 
 ## Prioritization
