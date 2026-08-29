@@ -264,3 +264,53 @@ Depending on the hardware the data layout performance differs, so these can be a
 Not only the data layouts of input, output, and intermediate tensors have a nontrivial inﬂuence on
 the ﬁnal performance, but also the transformation operations have a signiﬁcant overhead. Because
 the transformation operations also consume the memory and computation resource.
+
+## Backend Optimizations
+
+### Hardware specific optimization
+Compilers perform hardware specific optimizations for targets like CPU, GPU, NPU, etc. Each has it's own paradigm, which makes it difficult to port one optimization to another. Most compilers lower to LLVM IR, to reuse LLVM Infrastructure for optimizating and generate target code for CPU/GPU. The other way is ot design custom optimizations wiht DL domain knowledge, which can leverage  the target hardware more efficiently.
+
+There are five main optimizations performed on the low-level IR:
+
+- Hardware Intrinsic mapping
+- Memory Allocation and Fetching
+- Memory Lactency hiding
+- Parallelization
+- Loop Oriented Optimization
+
+#### Hardware Intrinsic Mapping
+> I will translate what is actually happening in the this optimization
+
+The hardware vendors design their hardware to optimize for certain kinds of operations by adding specific instructions, exploiting which can lead to significant performance gains. This is mostly done by searching for such opeartions in the low-level IR and replacing it with a small micro-kernel that can leverage that instruction optimization effectively.
+
+There is one other way we can perform optimization to reduce the memory footprint, by adding profile guided optimization to quantize certain nodes which does not lead to significant loss of accuracy.
+
+#### Memory Allocation and Fetching
+
+There are two types of memory heirarchy in GPU:
+
+- Shared memory space: it is fast and has low latency but low space (just like L1 cache)
+- Local memory space: it is slower ad has higher latency than shared memory (just like other caches)
+
+To improve the performance and reduce the memory bottlenecks, we try to improve memory allocation and fetchning for improving data locality. The optimize it, TVM uses something called memory scope which  schedules which part of data is stored where like on shared thread or local thread.
+
+
+#### Memory Latency Hiding 
+
+The concept of memory latecny hiding is similar to pipelining in CPUs. Data is fetched from memory and added to pipeline, the better the ordering or pipeline the better low latency we get (we can call it fake latency), it is easier to do in GPU in comparision to TPU which uses a different compute architecture. GPU uses wrap context swtiching to handle pipelining.
+
+#### Loop Oriented Optimizations
+
+Mostly incorporating Polyhedral model, the DL Compilers optimize loops to increase performance.
+
+Few such optimizations include:
+
+- Loop fusion: The loops with same data boundaries are fused together for better data access.
+
+- Sliding Window: it uses the concept of compute and store the needed values and remove them when no longer needed. it is used to serialize the loops, and is good for caching but will be harmful for parallelization.
+
+- Tiling: Tiling is a technique that splits the loop into two parts outer loop which iteraties through the tiles, and an inner loop which has values generated as a tile. This allows fiting hte tile inside the hardware specific cache to attain better cache locality and exploit the memory heirarchy. Since tile size is hardware dependent, it is usually computed via auto-tuning.
+
+- Loop reordering: it changes the order of iteartions in a nested loop which optimizes the memory access and thus increase the spatial locality. It is specific to data layout and hardware features. Loop reordering can't be performed if there is some sort of dependency.
+
+- Loop unrolling: Loop unrolling is when you speard the loop iteartors to specific number of copies making it easier to perform several instructions simultaneously. It can be applied with loop split to achieve higher performance.
