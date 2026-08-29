@@ -314,3 +314,40 @@ Few such optimizations include:
 - Loop reordering: it changes the order of iteartions in a nested loop which optimizes the memory access and thus increase the spatial locality. It is specific to data layout and hardware features. Loop reordering can't be performed if there is some sort of dependency.
 
 - Loop unrolling: Loop unrolling is when you speard the loop iteartors to specific number of copies making it easier to perform several instructions simultaneously. It can be applied with loop split to achieve higher performance.
+
+
+#### Parallelization
+To maximize the hardware potential, the compiler should utilize the available multi-threads and SIMD parallisim.
+
+Halide and Polyhedral models are two major techniques for SIMD vectorization and hardware parallelization. Apart from these techniques the Compilers also rely on optimized libraries that hardware vendors provide.
+
+Compared to the approaches relying on optimized libraries and LLVM infra, exploiting the parallisim entirely by compiler backend allows to apply more domain-specific knowledge of DL models, and thus achieve higher performance on diverse hardware targets, however at the expense of more engineering efforts.
+
+### Auto-Tuning
+
+Auto-tuning is a technique used to search for the optimal parameter settings for the compiler to define hardware specific optimizations.
+
+Implementation of auto-tuning includes three parts:
+
+- parameterization:
+    - Data and Target: data parameter describes the specification of data such as input shape and the target describes hardware specific things like shared memory size or register size, required for optimization and codegen.
+    - Optimization options: Optimization options include optimization scheduling like tile size, loop oriented optimizations.
+
+- cost model: A cost model decides how much the auto-tuning should be performed. There are several models:
+    - Black box model: This model only consider the final execution time rather than the characterstics of the compilation task. It is easier to build but leads to higher overhead and less optimal solution wihtout guidance of task characterstics.
+    - Pre-defined cost model
+    - ML based cost model
+
+- searching techniques: To search for the space of options available we use following techniques:
+    - Initialization and searching space determination
+    - Genetic algorithm
+    - Simulated annealing algorithm
+
+- performance optimization:
+    - Parallelization
+    - configuration reuse
+
+
+### Optimized Kernel Libraries
+
+There are several optimized kernel libraries which provides high infernece and training performance for the specific model blocks. But they come with a downside which is you can't apply the optimizations like opeartor fusion on a kernel since kernels are black boxes to the Compiler. You also need to adjust the options like data layout according to the kernel you are invoking.
